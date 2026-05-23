@@ -578,6 +578,13 @@
       />
     );
 
+    const getTEIcon = (type) => {
+      if (type === "hire") return <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>;
+      if (type === "build") return <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M9 17h6"/></svg>;
+      if (type === "retain") return <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>;
+      return null;
+    };
+
     /* ═══ RING ════════════════════════════════════════════════════════ */
     const Ring = ({ score, size = 84, stroke = 7, color = "#1a4f96", animate = true }) => {
       const r = (size - stroke * 2) / 2;
@@ -1020,22 +1027,25 @@ html{}
 .cscl{font-family:var(--M);font-size:9.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);line-height:1.55;}
 
 /* TALENT ENGINE */
-.tephases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px;}
-.tephase{background:var(--bg2);border:1.5px solid var(--l1);border-radius:16px;padding:26px 22px;cursor:pointer;transition:all 280ms;position:relative;overflow:hidden;}
-.tephase::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--blue2));transform:scaleX(0);transition:transform 350ms var(--eout);}
-.tephase:hover::before,.tephase.act::before{transform:scaleX(1);}
+.te-main-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;margin-top:28px;}
+.te-options-panel{display:flex;flex-direction:column;gap:16px;}
+.tephase{background:var(--bg2);border:1.5px solid var(--l1);border-radius:16px;padding:20px 24px;cursor:pointer;transition:all 280ms;position:relative;overflow:hidden;display:flex;align-items:center;gap:18px;}
+.tephase::before{content:'';position:absolute;top:0;bottom:0;left:0;width:4px;background:linear-gradient(180deg,var(--blue),var(--blue2));transform:scaleY(0);transition:transform 350ms var(--eout);transform-origin:top;}
+.tephase:hover::before,.tephase.act::before{transform:scaleY(1);}
 .tephase.act{background:var(--bs);border-color:var(--bl);}
-.tephase .picon{width:44px;height:44px;border-radius:11px;background:var(--bs);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:22px;transition:background 200ms;}
-.tephase.act .picon{background:var(--blue);}
-.tephase h4{font-family:var(--F);font-size:clamp(20px,1.9vw,26px);font-weight:350;color:var(--navy);letter-spacing:-.02em;margin-bottom:8px;}
-.tephase p{font-size:13px;color:var(--ink3);line-height:1.5;}
-.tedet{background:var(--bg);border:1.5px solid var(--l1);border-radius:16px;padding:clamp(24px,3vw,40px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,40px);min-height:260px;position:relative;overflow:hidden;transition:opacity 250ms;}
+.tephase .picon{width:44px;height:44px;border-radius:11px;background:var(--bs);display:flex;align-items:center;justify-content:center;transition:background 200ms;flex-shrink:0;color:var(--blue);}
+.tephase.act .picon{background:var(--blue);color:#fff;}
+.tephase .picon svg{width:22px;height:22px;}
+.tephase .te-card-text{flex:1;}
+.tephase h4{font-family:var(--F);font-size:clamp(16px,1.6vw,20px);font-weight:550;color:var(--navy);letter-spacing:-.01em;margin:0 0 4px 0;}
+.tephase p{font-size:12.5px;color:var(--ink3);line-height:1.45;margin:0;}
+.tedet{background:var(--bg);border:1.5px solid var(--l1);border-radius:16px;padding:clamp(24px,3vw,40px);min-height:260px;position:relative;overflow:hidden;transition:opacity 250ms;display:flex;flex-direction:column;gap:24px;}
 .tedet::before{content:'';position:absolute;top:0;right:0;width:220px;height:220px;background:radial-gradient(circle,var(--bs),transparent 60%);pointer-events:none;}
-.tedet h3{font-family:var(--F);font-size:clamp(22px,2.2vw,30px);font-weight:300;margin-bottom:8px;letter-spacing:-.025em;color:var(--navy);}
-.tedet .tmeta{font-family:var(--M);font-size:9.5px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:16px;display:flex;align-items:center;gap:7px;}
+.tedet h3{font-family:var(--F);font-size:clamp(22px,2.2vw,30px);font-weight:300;margin:0;letter-spacing:-.025em;color:var(--navy);}
+.tedet .tmeta{font-family:var(--M);font-size:9.5px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;display:flex;align-items:center;gap:7px;}
 .tedet .tmeta::before{content:'';width:14px;height:1.5px;background:var(--blue);}
-.tedet p{font-size:14px;color:var(--ink2);line-height:1.65;}
-.telist{display:flex;flex-direction:column;gap:10px;}
+.tedet p{font-size:14px;color:var(--ink2);line-height:1.65;margin:0;}
+.telist{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;}
 .teli{display:flex;align-items:flex-start;gap:11px;font-size:13px;color:var(--ink2);line-height:1.5;}
 .tec{flex-shrink:0;width:16px;height:16px;border:1.5px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:var(--blue);background:var(--bs);margin-top:1px;}
 
@@ -3646,9 +3656,33 @@ html{}
     ];
 
     const TE_PHASES = [
-      { icon: "🎯", title: "Phase 1: Hire", sub: "Industrialized talent acquisition", desc: "Rigorous role taxonomy, leveling, and market benchmarking using GAP platform. Targeted leadership hiring first, followed by core squad formation. Rapid scaling via repeatable hiring pods across both cities.", items: ["Role taxonomy + leveling framework locked pre-Day 1", "Leadership spine hired before wave 1 opens", "Hiring pods scale 50→200 in cohort sprints", "Niche premiums activated: Audio DSP +18–27% above P65", "Salary bands at P55–P65 GCC positioning", "ATS, BGV, and offer management: fully automated"] },
-      { icon: "🏗️", title: "Phase 2: Build", sub: "Capability academies + certification", desc: "Deployment of skill academies covering Cloud, Data, AI, Cyber, and Audio DSP. Structured, on-the-job certification pathways. AI-native tooling deployed from Month 1. Knowledge transfer from incumbents with 4–6 week parallel run.", items: ["Cloud Academy: AWS, Azure, GCP certification tracks", "Data Academy: Databricks, dbt, Snowflake", "AI Academy: MLOps, LLMOps, Agentic architecture", "Cyber Academy: SIEM, SOAR, SecOps tooling", "Audio DSP: proprietary onboarding with Bose engineers", "Structured KT from incumbents — parallel run protocol"] },
-      { icon: "🔒", title: "Phase 3: Retain", sub: "Data-driven retention playbook", desc: "Data-driven retention playbook. Clear career paths, internal mobility tracks, skills premiums, and modern hybrid policies. Attrition prediction modeled quarterly. Employer branding co-designed with Bose to ensure employees see India as a career, not a posting.", items: ["Attrition modeled monthly using predictive signals", "Clear career ladder: IC1 to Principal, M1 to VP-India", "Internal mobility tracks across functions", "Hybrid work policy: 3 days in-office standard", "Employer branding co-designed with Bose", "Annual compensation review at P55–P65 benchmarks"] },
+      {
+        icon: (
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
+        ),
+        title: "Phase 1: Hire",
+        sub: "Industrialized talent acquisition",
+        desc: "Rigorous role taxonomy, leveling, and market benchmarking using GAP platform. Targeted leadership hiring first, followed by core squad formation. Rapid scaling via repeatable hiring pods across both cities.",
+        items: ["Role taxonomy + leveling framework locked pre-Day 1", "Leadership spine hired before wave 1 opens", "Hiring pods scale 50→200 in cohort sprints", "Niche premiums activated: Audio DSP +18–27% above P65", "Salary bands at P55–P65 GCC positioning", "ATS, BGV, and offer management: fully automated"]
+      },
+      {
+        icon: (
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg>
+        ),
+        title: "Phase 2: Build",
+        sub: "Capability academies + certification",
+        desc: "Deployment of skill academies covering Cloud, Data, AI, Cyber, and Audio DSP. Structured, on-the-job certification pathways. AI-native tooling deployed from Month 1. Knowledge transfer from incumbents with 4–6 week parallel run.",
+        items: ["Cloud Academy: AWS, Azure, GCP certification tracks", "Data Academy: Databricks, dbt, Snowflake", "AI Academy: MLOps, LLMOps, Agentic architecture", "Cyber Academy: SIEM, SOAR, SecOps tooling", "Audio DSP: proprietary onboarding with Bose engineers", "Structured KT from incumbents — parallel run protocol"]
+      },
+      {
+        icon: (
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+        ),
+        title: "Phase 3: Retain",
+        sub: "Data-driven retention playbook",
+        desc: "Data-driven retention playbook. Clear career paths, internal mobility tracks, skills premiums, and modern hybrid policies. Attrition prediction modeled quarterly. Employer branding co-designed with Bose to ensure employees see India as a career, not a posting.",
+        items: ["Attrition modeled monthly using predictive signals", "Clear career ladder: IC1 to Principal, M1 to VP-India", "Internal mobility tracks across functions", "Hybrid work policy: 3 days in-office standard", "Employer branding co-designed with Bose", "Annual compensation review at P55–P65 benchmarks"]
+      }
     ];
 
     const JOURNEY = [
@@ -3983,7 +4017,7 @@ html{}
       const rstr = rpts.map(p => `${p.x},${p.y}`).join(" ");
 
       const jp = JOURNEY[activeJ];
-      const jPct = ((activeJ + 1) / JOURNEY.length) * 100;
+      const jPct = (activeJ / (JOURNEY.length - 1)) * 100;
       const city = CITIES[activeCity];
       const bd = BOT[botPhase];
       const rLabels = ["Leadership", "Process", "Infra", "People", "Govern", "Commerc"];
@@ -6906,45 +6940,54 @@ html{}
                   <p className="slede">A three-stage parallelized execution methodology designed for rapid scale. Select a phase to explore targeted milestones across hiring, infrastructure build, and core retention systems.</p>
                 </div>
               </div>
-              <div className="tephases rv" ref={addRef}>
-                {TE_PHASES.map((p, i) => (
-                  <div key={i} className={`tephase${tePhase === i ? " act" : ""}`} onClick={() => setTePhase(i)}>
-                    <div className="picon" style={{ fontSize: tePhase === i ? "22px" : "22px" }}>{p.icon}</div>
-                    <h4>{p.title}</h4>
-                    <p>{p.sub}</p>
+              <div className="te-main-layout rv" ref={addRef}>
+                {/* LEFT SIDE: Active details text */}
+                <div className="tedet" style={{ opacity: 1 }}>
+                  <div className="tedet-top" style={{ position: "relative" }}>
+                    <button
+                      className="talent-zoom-btn"
+                      {...bindZoom({
+                        tag: `Talent Engine · Phase 0${tePhase + 1}`,
+                        title: `Talent Engine: <em>${TE_PHASES[tePhase].title} (${TE_PHASES[tePhase].sub})</em>`,
+                        content: `<p><strong>Strategic Mandate:</strong> ${TE_PHASES[tePhase].desc}</p>`,
+                        stats: [
+                          [`Phase ${tePhase + 1}`, "Engine Phase"],
+                          [tePhase === 0 ? "Hire" : tePhase === 1 ? "Build" : "Retain", "Core Focus"],
+                          ["Day 1", "Incubation Ready"]
+                        ],
+                        bullets: TE_PHASES[tePhase].items.map(it => `Key Mechanic: ${it}`),
+                        footer: "Bose GCC Proposal · Human Capital & Talent Engine"
+                      })}
+                    >
+                      ⛶
+                    </button>
+                    <div className="tmeta">Phase {tePhase + 1} of 3 · {TE_PHASES[tePhase].title}</div>
+                    <h3>{TE_PHASES[tePhase].title}</h3>
+                    <p>{TE_PHASES[tePhase].desc}</p>
                   </div>
-                ))}
-              </div>
-              <div className="tedet rv" ref={addRef} style={{ opacity: 1 }}>
-                <div style={{ position: "relative" }}>
-                  <button
-                    className="talent-zoom-btn"
-                    {...bindZoom({
-                      tag: `Talent Engine · Phase 0${tePhase + 1}`,
-                      title: `Talent Engine: <em>${TE_PHASES[tePhase].title} (${TE_PHASES[tePhase].sub})</em>`,
-                      content: `<p><strong>Strategic Mandate:</strong> ${TE_PHASES[tePhase].desc}</p>`,
-                      stats: [
-                        [`Phase ${tePhase + 1}`, "Engine Phase"],
-                        [tePhase === 0 ? "Hire" : tePhase === 1 ? "Build" : "Retain", "Core Focus"],
-                        ["Day 1", "Incubation Ready"]
-                      ],
-                      bullets: TE_PHASES[tePhase].items.map(it => `Key Mechanic: ${it}`),
-                      footer: "Bose GCC Proposal · Human Capital & Talent Engine"
-                    })}
-                  >
-                    ⛶
-                  </button>
-                  <div className="tmeta">Phase {tePhase + 1} of 3 · {TE_PHASES[tePhase].title}</div>
-                  <h3>{TE_PHASES[tePhase].title}</h3>
-                  <p>{TE_PHASES[tePhase].desc}</p>
+                  <div className="tedet-bottom">
+                    <h4 style={{ fontFamily: "var(--M)", fontSize: 9.5, fontWeight: 500, letterSpacing: ".15em", textTransform: "uppercase", color: "var(--ink3)", margin: "0 0 12px 0", display: "flex", alignItems: "center", gap: 7 }}><span style={{ width: 12, height: 1.5, background: "var(--ink3)", display: "inline-block" }}></span>Key mechanics</h4>
+                    <div className="telist">
+                      {TE_PHASES[tePhase].items.map(it => (
+                        <div key={it} className="teli"><div className="tec">✓</div><span>{it}</span></div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h4 style={{ fontFamily: "var(--M)", fontSize: 9.5, fontWeight: 500, letterSpacing: ".15em", textTransform: "uppercase", color: "var(--ink3)", marginBottom: 16, display: "flex", alignItems: "center", gap: 7 }}><span style={{ width: 12, height: 1.5, background: "var(--ink3)", display: "inline-block" }}></span>Key mechanics</h4>
-                  <div className="telist">
-                    {TE_PHASES[tePhase].items.map(it => (
-                      <div key={it} className="teli"><div className="tec">✓</div><span>{it}</span></div>
-                    ))}
-                  </div>
+
+                {/* RIGHT SIDE: Interactive options selection */}
+                <div className="te-options-panel">
+                  {TE_PHASES.map((p, i) => (
+                    <div key={i} className={`tephase${tePhase === i ? " act" : ""}`} onClick={() => setTePhase(i)}>
+                      <div className="picon">
+                        {p.icon}
+                      </div>
+                      <div className="te-card-text">
+                        <h4>{p.title}</h4>
+                        <p>{p.sub}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

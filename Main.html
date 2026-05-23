@@ -450,6 +450,13 @@
         />
       );
 
+      const getTEIcon = (type) => {
+        if (type === "hire") return <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>;
+        if (type === "build") return <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M9 17h6"/></svg>;
+        if (type === "retain") return <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>;
+        return null;
+      };
+
       /* ═══ RING ════════════════════════════════════════════════════════ */
       const Ring = ({
         score,
@@ -848,22 +855,25 @@ html{}
 .cscl{font-family:var(--M);font-size:9.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);line-height:1.55;}
 
 /* TALENT ENGINE */
-.tephases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px;}
-.tephase{background:var(--bg2);border:1.5px solid var(--l1);border-radius:16px;padding:26px 22px;cursor:pointer;transition:all 280ms;position:relative;overflow:hidden;}
-.tephase::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--blue2));transform:scaleX(0);transition:transform 350ms var(--eout);}
-.tephase:hover::before,.tephase.act::before{transform:scaleX(1);}
+.te-main-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;margin-top:28px;}
+.te-options-panel{display:flex;flex-direction:column;gap:16px;}
+.tephase{background:var(--bg2);border:1.5px solid var(--l1);border-radius:16px;padding:20px 24px;cursor:pointer;transition:all 280ms;position:relative;overflow:hidden;display:flex;align-items:center;gap:18px;}
+.tephase::before{content:'';position:absolute;top:0;bottom:0;left:0;width:4px;background:linear-gradient(180deg,var(--blue),var(--blue2));transform:scaleY(0);transition:transform 350ms var(--eout);transform-origin:top;}
+.tephase:hover::before,.tephase.act::before{transform:scaleY(1);}
 .tephase.act{background:var(--bs);border-color:var(--bl);}
-.tephase .picon{width:44px;height:44px;border-radius:11px;background:var(--bs);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:22px;transition:background 200ms;}
-.tephase.act .picon{background:var(--blue);}
-.tephase h4{font-family:var(--F);font-size:clamp(20px,1.9vw,26px);font-weight:350;color:var(--navy);letter-spacing:-.02em;margin-bottom:8px;}
-.tephase p{font-size:13px;color:var(--ink3);line-height:1.5;}
-.tedet{background:var(--bg);border:1.5px solid var(--l1);border-radius:16px;padding:clamp(24px,3vw,40px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,40px);min-height:260px;position:relative;overflow:hidden;transition:opacity 250ms;}
+.tephase .picon{width:44px;height:44px;border-radius:11px;background:var(--bs);display:flex;align-items:center;justify-content:center;transition:background 200ms;flex-shrink:0;color:var(--blue);}
+.tephase.act .picon{background:var(--blue);color:#fff;}
+.tephase .picon svg{width:22px;height:22px;}
+.tephase .te-card-text{flex:1;}
+.tephase h4{font-family:var(--F);font-size:clamp(16px,1.6vw,20px);font-weight:550;color:var(--navy);letter-spacing:-.01em;margin:0 0 4px 0;}
+.tephase p{font-size:12.5px;color:var(--ink3);line-height:1.45;margin:0;}
+.tedet{background:var(--bg);border:1.5px solid var(--l1);border-radius:16px;padding:clamp(24px,3vw,40px);min-height:260px;position:relative;overflow:hidden;transition:opacity 250ms;display:flex;flex-direction:column;gap:24px;}
 .tedet::before{content:'';position:absolute;top:0;right:0;width:220px;height:220px;background:radial-gradient(circle,var(--bs),transparent 60%);pointer-events:none;}
-.tedet h3{font-family:var(--F);font-size:clamp(22px,2.2vw,30px);font-weight:300;margin-bottom:8px;letter-spacing:-.025em;color:var(--navy);}
-.tedet .tmeta{font-family:var(--M);font-size:9.5px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:16px;display:flex;align-items:center;gap:7px;}
+.tedet h3{font-family:var(--F);font-size:clamp(22px,2.2vw,30px);font-weight:300;margin:0;letter-spacing:-.025em;color:var(--navy);}
+.tedet .tmeta{font-family:var(--M);font-size:9.5px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;display:flex;align-items:center;gap:7px;}
 .tedet .tmeta::before{content:'';width:14px;height:1.5px;background:var(--blue);}
-.tedet p{font-size:14px;color:var(--ink2);line-height:1.65;}
-.telist{display:flex;flex-direction:column;gap:10px;}
+.tedet p{font-size:14px;color:var(--ink2);line-height:1.65;margin:0;}
+.telist{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;}
 .teli{display:flex;align-items:flex-start;gap:11px;font-size:13px;color:var(--ink2);line-height:1.5;}
 .tec{flex-shrink:0;width:16px;height:16px;border:1.5px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:var(--blue);background:var(--bs);margin-top:1px;}
 
@@ -1096,7 +1106,15 @@ html{}
   background:
     linear-gradient(135deg,rgba(140,180,220,.85) 0%,rgba(100,140,180,.78) 50%,rgba(140,180,220,.85) 100%);
   backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);
-  border-radius:12px;transition:all 800ms cubic-bezier(.16,1,.3,1);overflow:hidden;}
+  border-radius:12px;transition:opacity 400ms ease, backdrop-filter 400ms ease, visibility 400ms;overflow:hidden;
+  opacity: 1; visibility: visible;}
+.wglass.cleared {
+  opacity: 0 !important;
+  backdrop-filter: blur(0px) !important;
+  -webkit-backdrop-filter: blur(0px) !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
 .wglass::before{content:'';position:absolute;inset:0;background:
   repeating-linear-gradient(45deg,rgba(255,255,255,.04) 0px,rgba(255,255,255,.04) 1px,transparent 1px,transparent 4px),
   repeating-linear-gradient(-45deg,rgba(255,255,255,.03) 0px,rgba(255,255,255,.03) 1px,transparent 1px,transparent 4px);
@@ -1726,11 +1744,11 @@ html{}
 .amstage::after{content:'';position:absolute;bottom:-25%;right:-15%;width:50%;height:50%;background:radial-gradient(circle,rgba(192,28,28,.06),transparent 60%);pointer-events:none;}
 .amctrls{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;position:relative;z-index:1;}
 .amctrl{background:var(--bg);border:1.5px solid var(--l1);border-radius:14px;padding:20px 22px;}
-.amctrl .mmcl{margin-bottom:14px;}
+.amctrl .mmcl{margin-bottom:14px;color:var(--ink3) !important;}
 .amctrl .mmsw{margin-bottom:10px;}
 .amctrl .amrange{display:flex;justify-content:space-between;align-items:center;}
 .amctrl .amval{font-family:var(--F);font-size:clamp(28px,3vw,40px);font-weight:300;color:var(--blue);letter-spacing:-.03em;line-height:1;}
-.amctrl .ament{font-family:var(--M);font-size:9px;color:var(--ink4);letter-spacing:.1em;}
+.amctrl .ament{font-family:var(--M);font-size:9px;color:var(--ink3) !important;letter-spacing:.1em;}
 .amviz{background:#fff;border:1.5px solid var(--l1);border-radius:14px;padding:clamp(20px,2.5vw,30px);position:relative;z-index:1;}
 .amrow{display:grid;grid-template-columns:160px 1fr 100px;gap:18px;align-items:center;padding:14px 0;border-bottom:1px solid var(--l1);}
 .amrow:last-child{border-bottom:none;}
@@ -5660,155 +5678,25 @@ html{}
                               </div>
 
                               {/* Glass Overlay */}
-                              {!isPunched && (
-                                <div
-                                  className="wglass"
-                                  onClick={(e) => {
-                                    if (isPunching) return;
-                                    setWallPunching(i);
-                                    setTimeout(() => {
-                                      setWallPunched((p) => ({
-                                        ...p,
-                                        [i]: true,
-                                      }));
-                                      setWallPunching(null);
-                                    }, 700);
-                                  }}
-                                >
-                                  <div className="whaze">
-                                    <div className="whcat">▒ ▒ ▒ ▒ ▒</div>
-                                    <div className="whtitle">
-                                      ▒▒▒▒▒▒▒▒▒▒ ▒▒▒▒▒▒▒▒
-                                    </div>
+                              <div
+                                className={`wglass${isPunched ? " cleared" : ""}`}
+                                onClick={(e) => {
+                                  if (isPunched) return;
+                                  setWallPunched((p) => ({
+                                    ...p,
+                                    [i]: true,
+                                  }));
+                                }}
+                              >
+                                <div className="whaze">
+                                  <div className="whcat">▒ ▒ ▒ ▒ ▒</div>
+                                  <div className="whtitle">
+                                    ▒▒▒▒▒▒▒▒▒▒ ▒▒▒▒▒▒▒▒
                                   </div>
-                                  <div className="whicon">⊕</div>
-                                  <div className="whtag">Tap to punch</div>
                                 </div>
-                              )}
-
-                              {/* Crack SVG */}
-                              {isPunching && (
-                                <svg
-                                  className="wcracks"
-                                  viewBox="0 0 100 100"
-                                  preserveAspectRatio="none"
-                                >
-                                  <defs>
-                                    <radialGradient
-                                      id={`g${i}`}
-                                      cx="50%"
-                                      cy="50%"
-                                      r="50%"
-                                    >
-                                      <stop
-                                        offset="0%"
-                                        stopColor="#fff"
-                                        stopOpacity=".95"
-                                      />
-                                      <stop
-                                        offset="50%"
-                                        stopColor="#fff"
-                                        stopOpacity=".6"
-                                      />
-                                      <stop
-                                        offset="100%"
-                                        stopColor="#fff"
-                                        stopOpacity="0"
-                                      />
-                                    </radialGradient>
-                                  </defs>
-                                  <circle
-                                    cx="50"
-                                    cy="50"
-                                    r="8"
-                                    fill={`url(#g${i})`}
-                                  />
-                                  {[
-                                    0, 30, 60, 90, 120, 150, 180, 210, 240, 270,
-                                    300, 330,
-                                  ].map((deg) => {
-                                    const rad = (deg * Math.PI) / 180;
-                                    const x2 = 50 + Math.cos(rad) * 65;
-                                    const y2 = 50 + Math.sin(rad) * 65;
-                                    const midX = 50 + Math.cos(rad) * 25;
-                                    const midY = 50 + Math.sin(rad) * 25;
-                                    const offX =
-                                      midX +
-                                      Math.cos(rad + Math.PI / 2) *
-                                        (Math.random() * 6 - 3);
-                                    const offY =
-                                      midY +
-                                      Math.sin(rad + Math.PI / 2) *
-                                        (Math.random() * 6 - 3);
-                                    return (
-                                      <path
-                                        key={deg}
-                                        d={`M50,50 L${offX},${offY} L${x2},${y2}`}
-                                        stroke="#fff"
-                                        strokeWidth=".4"
-                                        strokeOpacity=".75"
-                                        fill="none"
-                                        vectorEffect="non-scaling-stroke"
-                                      />
-                                    );
-                                  })}
-                                  {[
-                                    20, 50, 80, 110, 140, 170, 200, 230, 260,
-                                    290, 320, 350,
-                                  ].map((deg) => {
-                                    const rad = (deg * Math.PI) / 180;
-                                    const r1 = 18,
-                                      r2 = 38;
-                                    const x1 = 50 + Math.cos(rad) * r1;
-                                    const y1 = 50 + Math.sin(rad) * r1;
-                                    const x2 = 50 + Math.cos(rad + 0.4) * r2;
-                                    const y2 = 50 + Math.sin(rad + 0.4) * r2;
-                                    return (
-                                      <line
-                                        key={`s${deg}`}
-                                        x1={x1}
-                                        y1={y1}
-                                        x2={x2}
-                                        y2={y2}
-                                        stroke="#fff"
-                                        strokeWidth=".3"
-                                        strokeOpacity=".5"
-                                        vectorEffect="non-scaling-stroke"
-                                      />
-                                    );
-                                  })}
-                                </svg>
-                              )}
-
-                              {/* Flying Shards */}
-                              {isPunching &&
-                                [...Array(8)].map((_, j) => {
-                                  const angle = (j / 8) * Math.PI * 2;
-                                  const dist = 80 + Math.random() * 60;
-                                  const sx = Math.cos(angle) * dist;
-                                  const sy = Math.sin(angle) * dist;
-                                  const sr = (Math.random() - 0.5) * 720;
-                                  const size = 8 + Math.random() * 6;
-                                  return (
-                                    <div
-                                      key={`shard${j}`}
-                                      className="wshard"
-                                      style={{
-                                        left: "50%",
-                                        top: "50%",
-                                        borderLeft: `${size}px solid transparent`,
-                                        borderRight: `${size}px solid transparent`,
-                                        borderBottom: `${size * 1.4}px solid rgba(180,210,240,.7)`,
-                                        filter:
-                                          "drop-shadow(0 2px 4px rgba(0,0,0,.3))",
-                                        "--sx": `${sx}px`,
-                                        "--sy": `${sy}px`,
-                                        "--sr": `${sr}deg`,
-                                        animationDelay: `${j * 20}ms`,
-                                      }}
-                                    />
-                                  );
-                                })}
+                                <div className="whicon">⊕</div>
+                                <div className="whtag">Tap to reveal</div>
+                              </div>
                             </div>
                           );
                         })}
@@ -6732,39 +6620,101 @@ html{}
                     {/* BOARD — filtered or all */}
                     <div className="mtboard">
                       {(() => {
-                        const shown =
-                          selWeek === null
-                            ? DELIVERABLES
-                            : DELIVERABLES.filter((d) => d.w === selWeek);
+                        if (selWeek === null) {
+                          return (
+                            <>
+                              <div className="mtbhead">
+                                <div>
+                                  <div className="mtbl">Mobilization Timeline</div>
+                                  <div className="mtbh">
+                                    All weeks collapsed · Select any week above or below to expand deliverables
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="mtgrid" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                                {[3, 4, 5, 6, 7, 8, 9, 10].map((wk) => {
+                                  const items = DELIVERABLES.filter((d) => d.w === wk);
+                                  if (items.length === 0) {
+                                    return (
+                                      <div key={wk} className="mtdrop collapsed-week-row empty-week" style={{ opacity: 0.65, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 20px" }}>
+                                        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                                          <div className="mtdpin" style={{ background: "var(--ink4)", color: "#fff" }}>W{wk}</div>
+                                          <div style={{ fontFamily: "var(--F)", fontSize: 15, color: "var(--ink2)" }}>Week {wk}</div>
+                                        </div>
+                                        <div>
+                                          <span className="mtdfmt" style={{ background: "var(--bg3)", color: "var(--ink3)" }}>Integration Gate</span>
+                                        </div>
+                                      </div>
+                                    );
+                                  }
+                                  return (
+                                    <div 
+                                      key={wk} 
+                                      className="mtdrop collapsed-week-row" 
+                                      onClick={() => setSelWeek(wk)}
+                                      style={{ cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 20px" }}
+                                    >
+                                      <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                                        <div className="mtdpin" style={{ background: "var(--blue)", color: "#fff" }}>W{wk}</div>
+                                        <div style={{ fontFamily: "var(--F)", fontSize: 15, color: "var(--navy)", fontWeight: 550 }}>
+                                          Week {wk} Deliverables
+                                        </div>
+                                      </div>
+                                      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                                        <span className="mtdfmt" style={{ background: "rgba(26, 79, 150, 0.08)", color: "var(--blue)" }}>
+                                          {items.length} {items.length === 1 ? "deliverable" : "deliverables"}
+                                        </span>
+                                        <span style={{ color: "var(--blue)", fontSize: 11, fontWeight: 600 }}>Expand ➔</span>
+                                      </div>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </>
+                          );
+                        }
+
+                        const shown = DELIVERABLES.filter((d) => d.w === selWeek);
                         return (
                           <>
                             <div className="mtbhead">
                               <div>
                                 <div className="mtbl">
-                                  {selWeek === null
-                                    ? "All deliverables · across the mobilization"
-                                    : `Week ${selWeek} · what we ship`}
+                                  {`Week ${selWeek} · what we ship`}
                                 </div>
                                 <div className="mtbh">
-                                  {selWeek === null ? (
-                                    <span>
-                                      15 deliverables ·{" "}
-                                      <em>weeks 3 through 10</em>
-                                    </span>
-                                  ) : (
-                                    <span>
-                                      <em>{shown.length}</em>{" "}
-                                      {shown.length === 1
-                                        ? "deliverable"
-                                        : "deliverables"}{" "}
-                                      landing this week
-                                    </span>
-                                  )}
+                                  <span>
+                                    <em>{shown.length}</em>{" "}
+                                    {shown.length === 1
+                                      ? "deliverable"
+                                      : "deliverables"}{" "}
+                                    landing this week
+                                  </span>
                                 </div>
                               </div>
-                              <div className="mtbcount">
-                                {shown.length}
-                                <em>{shown.length === 1 ? "item" : "items"}</em>
+                              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                                <button 
+                                  onClick={() => setSelWeek(null)}
+                                  style={{
+                                    fontFamily: "var(--M)",
+                                    fontSize: "9px",
+                                    fontWeight: "600",
+                                    letterSpacing: ".08em",
+                                    textTransform: "uppercase",
+                                    background: "rgba(26, 79, 150, 0.08)",
+                                    color: "var(--blue)",
+                                    border: "none",
+                                    padding: "6px 12px",
+                                    borderRadius: "100px",
+                                    cursor: "pointer"
+                                  }}
+                                >
+                                  Collapse All Weeks
+                                </button>
+                                <div className="mtbcount">
+                                  {shown.length}
+                                  <em>{shown.length === 1 ? "item" : "items"}</em>
+                                </div>
                               </div>
                             </div>
                             {shown.length === 0 ? (
@@ -7860,65 +7810,69 @@ html{}
                     </p>
                   </div>
                 </div>
-                <div className="tephases rv" ref={addRef}>
-                  {TE_PHASES.map((p, i) => (
-                    <div
-                      key={i}
-                      className={`tephase${tePhase === i ? " act" : ""}`}
-                      onClick={() => setTePhase(i)}
-                    >
-                      <div
-                        className="picon"
-                        style={{ fontSize: tePhase === i ? "22px" : "22px" }}
-                      >
-                        {p.icon}
+                <div className="te-main-layout rv" ref={addRef}>
+                  {/* LEFT SIDE: Active details text */}
+                  <div className="tedet" style={{ opacity: 1 }}>
+                    <div className="tedet-top">
+                      <div className="tmeta">
+                        Phase {tePhase + 1} of 3 · {TE_PHASES[tePhase].title}
                       </div>
-                      <h4>{p.title}</h4>
-                      <p>{p.sub}</p>
+                      <h3>{TE_PHASES[tePhase].title}</h3>
+                      <p>{TE_PHASES[tePhase].desc}</p>
                     </div>
-                  ))}
-                </div>
-                <div className="tedet rv" ref={addRef} style={{ opacity: 1 }}>
-                  <div>
-                    <div className="tmeta">
-                      Phase {tePhase + 1} of 3 · {TE_PHASES[tePhase].title}
-                    </div>
-                    <h3>{TE_PHASES[tePhase].title}</h3>
-                    <p>{TE_PHASES[tePhase].desc}</p>
-                  </div>
-                  <div>
-                    <h4
-                      style={{
-                        fontFamily: "var(--M)",
-                        fontSize: 9.5,
-                        fontWeight: 500,
-                        letterSpacing: ".15em",
-                        textTransform: "uppercase",
-                        color: "var(--ink3)",
-                        marginBottom: 16,
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 7,
-                      }}
-                    >
-                      <span
+                    <div className="tedet-bottom">
+                      <h4
                         style={{
-                          width: 12,
-                          height: 1.5,
-                          background: "var(--ink3)",
-                          display: "inline-block",
+                          fontFamily: "var(--M)",
+                          fontSize: 9.5,
+                          fontWeight: 500,
+                          letterSpacing: ".15em",
+                          textTransform: "uppercase",
+                          color: "var(--ink3)",
+                          margin: "0 0 12px 0",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 7,
                         }}
-                      ></span>
-                      Key mechanics
-                    </h4>
-                    <div className="telist">
-                      {TE_PHASES[tePhase].items.map((it) => (
-                        <div key={it} className="teli">
-                          <div className="tec">✓</div>
-                          <span>{it}</span>
-                        </div>
-                      ))}
+                      >
+                        <span
+                          style={{
+                            width: 12,
+                            height: 1.5,
+                            background: "var(--ink3)",
+                            display: "inline-block",
+                          }}
+                        ></span>
+                        Key mechanics
+                      </h4>
+                      <div className="telist">
+                        {TE_PHASES[tePhase].items.map((it) => (
+                          <div key={it} className="teli">
+                            <div className="tec">✓</div>
+                            <span>{it}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
+                  </div>
+
+                  {/* RIGHT SIDE: Interactive options selection */}
+                  <div className="te-options-panel">
+                    {TE_PHASES.map((p, i) => (
+                      <div
+                        key={i}
+                        className={`tephase${tePhase === i ? " act" : ""}`}
+                        onClick={() => setTePhase(i)}
+                      >
+                        <div className="picon">
+                          {p.icon}
+                        </div>
+                        <div className="te-card-text">
+                          <h4>{p.title}</h4>
+                          <p>{p.sub}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
