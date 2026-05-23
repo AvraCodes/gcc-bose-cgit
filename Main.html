@@ -645,7 +645,7 @@ html{}
 
 .heroh{font-family:var(--F);font-size:clamp(38px,7vw,118px);font-weight:220;font-variation-settings:"opsz" 144,"SOFT" 60;line-height:.93;letter-spacing:-.04em;color:var(--navy);max-width:17ch;margin-bottom:clamp(22px,4vw,44px);}
 .heroh em{font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 100;color:var(--blue);}
-.rw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.12em;margin-bottom:-0.12em;}
+.rw{display:inline-block;overflow:hidden;vertical-align:top;padding:0.25em 0.5em 0.45em 0.25em;margin:-0.25em -0.5em -0.45em -0.25em;}
 .rw span{display:inline-block;transform:translateY(112%);transition:transform 950ms var(--eout);}
 .hv .rw span{transform:translateY(0);}
 .rw:nth-child(1) span{transition-delay:0ms}.rw:nth-child(2) span{transition-delay:65ms}.rw:nth-child(3) span{transition-delay:130ms}.rw:nth-child(4) span{transition-delay:195ms}.rw:nth-child(5) span{transition-delay:260ms}.rw:nth-child(6) span{transition-delay:325ms}
@@ -1465,13 +1465,13 @@ html{}
 .pvstage{background:var(--bg2);border:1.5px solid var(--l1);border-radius:22px;padding:clamp(28px,3.5vw,42px);position:relative;overflow:hidden;}
 .pvstage::before{content:'';position:absolute;top:-15%;left:-10%;width:45%;height:45%;background:radial-gradient(circle,rgba(26,79,150,.08),transparent 60%);pointer-events:none;}
 .pvtabs{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:28px;position:relative;z-index:1;}
-.pvtab{background:#fff;border:1.5px solid var(--l1);border-radius:12px;padding:18px 14px;cursor:pointer;transition:all 280ms;position:relative;text-align:center;}
+.pvtab{background:#fff;border:1.5px solid var(--l1);border-radius:12px;padding:14px 8px;cursor:pointer;transition:all 280ms;position:relative;text-align:center;overflow:hidden;}
 .pvtab:hover{transform:translateY(-3px);border-color:var(--bl);box-shadow:0 12px 26px rgba(26,79,150,.08);}
 .pvtab.act{border-color:var(--blue);background:linear-gradient(180deg,#fff 0%,var(--bs) 100%);box-shadow:0 14px 32px rgba(26,79,150,.15);transform:translateY(-3px);}
 .pvtab.act::after{content:'';position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);width:14px;height:14px;background:var(--blue);clip-path:polygon(50% 100%,0 0,100% 0);}
-.pvrole{font-family:var(--F);font-size:clamp(22px,2.4vw,32px);font-weight:300;color:var(--navy);letter-spacing:-.03em;line-height:1;margin-bottom:6px;}
+.pvrole{font-family:var(--F);font-size:clamp(16px,1.6vw,24px);font-weight:300;color:var(--navy);letter-spacing:-.03em;line-height:1;margin-bottom:5px;white-space:nowrap;}
 .pvtab.act .pvrole{color:var(--blue);}
-.pvlbl{font-family:var(--M);font-size:8.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);}
+.pvlbl{font-family:var(--M);font-size:7.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .pvtab.act .pvlbl{color:var(--blue);}
 
 .pvbody{background:#fff;border:1.5px solid var(--l1);border-radius:18px;padding:clamp(28px,3.2vw,42px);position:relative;z-index:1;animation:pvfade 500ms cubic-bezier(.16,1,.3,1);}
@@ -4320,28 +4320,28 @@ html{}
       ];
 
       const navItems = [
-        ["mandate", "Mandate"],
-        ["numbers", "Numbers"],
-        ["why", "Why India"],
-        ["blueprint", "Blueprint"],
-        ["model", "Model"],
-        ["moneymath", "Money Math"],
-        ["commercial", "Commercial · Tax · Risk"],
-        ["panel", "Panel View"],
+        ["mandate", "The Mandate"],
+        ["numbers", "By the Numbers"],
+        ["why", "Why India. Why Now."],
+        ["blueprint", "Our Blueprint"],
+        ["model", "Delivery Model"],
+        ["moneymath", "Financial Model"],
+        ["commercial", "Commercial & Tax"],
+        ["panel", "Executive View"],
         ["deepdive", "Deep Dives"],
-        ["aimult", "AI ×"],
+        ["aimult", "AI Architecture"],
         ["gcaas", "GCCaaS"],
-        ["versus", "Vs Others"],
-        ["cities", "Cities"],
-        ["citybalance", "Tune Mix"],
-        ["talent", "Talent"],
-        ["journey", "Journey"],
-        ["engine", "Engine"],
+        ["versus", "vs Alternatives"],
+        ["cities", "City Selection"],
+        ["citybalance", "City Mix"],
+        ["talent", "Talent Strategy"],
+        ["journey", "Execution Journey"],
+        ["engine", "Talent Engine"],
         ["tower", "Control Tower"],
-        ["transfer", "Transfer"],
-        ["proof", "Proof"],
-        ["trust", "Trust"],
-        ["tough", "Tough Qs"],
+        ["transfer", "Transfer Readiness"],
+        ["proof", "Proof Points"],
+        ["trust", "Why Us"],
+        ["tough", "Hard Questions"],
       ];
 
       return (
@@ -4355,12 +4355,12 @@ html{}
             </div>
             <nav className="mnav">
               {[
-                ["moneymath", "$"],
-                ["commercial", "Tax"],
-                ["panel", "Panel"],
-                ["deepdive", "8 Deep Dives"],
-                ["versus", "Vs"],
-                ["tough", "Tough Qs"],
+                ["moneymath", "Financials"],
+                ["commercial", "Commercial"],
+                ["panel", "Exec View"],
+                ["deepdive", "Deep Dives"],
+                ["versus", "vs Alternatives"],
+                ["tough", "Hard Questions"],
               ].map(([id, l]) => (
                 <a
                   key={id}
@@ -4385,19 +4385,7 @@ html{}
             </div>
           </header>
 
-          {/* ── SIDE NAV ── */}
-          <nav className="snav">
-            {navItems.map(([id, l], i) => (
-              <a
-                key={id}
-                className={sec === id ? "act" : ""}
-                onClick={() => scrollTo(id)}
-              >
-                <span className="sl">{l}</span>
-                {String(i + 1).padStart(2, "0")}
-              </a>
-            ))}
-          </nav>
+          {/* ── SIDE NAV REMOVED ── */}
 
           {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           01 · HERO
@@ -4721,8 +4709,8 @@ html{}
                   </h2>
                   <p className="slede">
                     Three architectural decisions hold the engagement
-                    together. Click the phase tabs, drag the cost slider, and
-                    pull the comparison bar to explore.
+                    together — the BOT structure, the open-book cost model,
+                    and the comparison against every alternative.
                   </p>
                 </div>
               </div>
@@ -4780,9 +4768,8 @@ html{}
                       Cost <em>+15%.</em> Open book.
                     </h3>
                     <p className="msum">
-                      What we see, you see. Drag the slider to build your
-                      monthly cost at any headcount. Audit rights included in
-                      contract.
+                      What we see, you see. Model your monthly cost at any
+                      headcount. Audit rights included in contract.
                     </p>
                   </div>
                   <div>
@@ -5010,12 +4997,11 @@ html{}
                 </div>
                 <div>
                   <h2 className="sh2">
-                    Drag the slider. <em>Watch the saving.</em>
+                    Every month of delay <em>has a cost.</em>
                   </h2>
                   <p className="slede">
-                    This is what every month of delay actually costs. Move the
-                    headcount slider to model the full 3-year cumulative
-                    impact at any scale Bose chooses.
+                    This is what delay actually costs. Model the full 3-year
+                    cumulative saving at any headcount scale Bose chooses.
                   </p>
                 </div>
               </div>
@@ -5885,7 +5871,7 @@ html{}
                     Most proposals leave the hard mechanics inside a 200-page
                     appendix. These eight capsules pull them forward — penalty
                     clauses, model choices, governance cadences, named
-                    clients, and the AI architecture itself. Click to expand.
+                    clients, and the AI architecture itself.
                   </p>
                 </div>
               </div>
@@ -6796,10 +6782,9 @@ html{}
                     Why 40 engineers <em>built like 200.</em>
                   </h2>
                   <p className="slede">
-                    Move both sliders. Watch how AI-native architecture
-                    transforms raw headcount into delivered scope. This is not
-                    theory — it is the EdTech captive we ran to transfer last
-                    year.
+                    AI-native architecture transforms raw headcount into
+                    delivered scope. This is not theory — it is the EdTech
+                    captive we ran to transfer last year.
                   </p>
                 </div>
               </div>
@@ -7468,10 +7453,10 @@ html{}
                     Hyderabad or Bengaluru? <em>Both. But how much?</em>
                   </h2>
                   <p className="slede">
-                    Drag the slider to shift FTE between the two cities. Watch
-                    the annual cost, attrition risk, and niche-talent fit move
-                    with you. This is the trade-off your steering committee
-                    will debate — see it live before they do.
+                    Shift FTE between the two cities and watch the annual
+                    cost, attrition risk, and niche-talent fit adjust in real
+                    time. This is the trade-off your steering committee will
+                    debate.
                   </p>
                 </div>
               </div>
@@ -8203,9 +8188,9 @@ html{}
                     Built to be <em>inherited.</em>
                   </h2>
                   <p className="slede">
-                    Drag the six dimension sliders to explore your Transfer
-                    Readiness score. This is what your steering committee sees
-                    quarterly from Month 12.
+                    Six dimensions scored quarterly from Month 12. This is
+                    what your steering committee sees — and what every red
+                    cell maps to an owner and a fix date.
                   </p>
                 </div>
               </div>
@@ -8220,7 +8205,7 @@ html{}
                 <div className="triwrap rv" ref={addRef}>
                   <div className="trilbl">◆ Transfer Readiness Index</div>
                   <div className="trit">
-                    <em>Six dimensions.</em> Drag the sliders below.
+                    <em>Six dimensions.</em> Scored quarterly from Month 12.
                   </div>
                   <svg viewBox="0 0 390 390">
                     <defs>
@@ -8702,9 +8687,8 @@ html{}
                   </h2>
                   <p className="slede">
                     Every proposal sounds confident on the front page. The
-                    harder test is what happens when you push. Click each card
-                    to flip from the objection to our answer — with the proof
-                    point beneath it.
+                    harder test is what happens when you push. Here are the
+                    six objections we hear most — and our answers.
                   </p>
                 </div>
               </div>
