@@ -1051,7 +1051,7 @@ html{}
 .wlbl{font-family:var(--M);font-size:9.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#6ab0f0;margin-bottom:8px;position:relative;z-index:1;}
 .wh{font-family:var(--F);font-size:clamp(20px,2.1vw,28px);font-weight:300;color:#fff;letter-spacing:-.025em;line-height:1.2;margin-bottom:8px;position:relative;z-index:1;}
 .wh em{font-style:italic;color:#6ab0f0;}
-.wsub{font-size:13px;color:rgba(255,255,255,.7);line-height:1.55;max-width:62ch;margin-bottom:14px;position:relative;z-index:1;}
+.wstage .wsub{font-size:13px;color:rgba(255,255,255,.7);line-height:1.55;max-width:62ch;margin-bottom:14px;position:relative;z-index:1;}
 .wbanner{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:rgba(106,176,240,.08);border:1px solid rgba(106,176,240,.25);border-radius:10px;margin-bottom:22px;position:relative;z-index:1;flex-wrap:wrap;gap:10px;}
 .wbtxt{font-family:var(--F);font-size:14px;font-weight:350;color:#fff;line-height:1.4;}
 .wbtxt em{font-style:italic;color:#6ab0f0;font-weight:400;}
@@ -5768,6 +5768,7 @@ html{}
                   ))}
                 </div>
 
+<<<<<<< HEAD
                 {(() => {
                   const p = PANEL.find((x) => x.id === panelView) || PANEL[0];
                   return (
@@ -6188,6 +6189,429 @@ html{}
                                       <div className="vd2qt">{v.t}</div>
                                       <div className="vd2qd">{v.d}</div>
                                       <div className="vd2qe">{v.e}</div>
+=======
+                <div className="dcwrap rv" ref={addRef}>
+                  {CAPSULES.map((cap) => (
+                    <div
+                      key={cap.id}
+                      className={`dcap${openCap === cap.id ? " op" : ""}`}
+                    >
+                      <div
+                        className="dchead"
+                        onClick={() =>
+                          setOpenCap(openCap === cap.id ? null : cap.id)
+                        }
+                      >
+                        <div className="dcnum">{cap.num}</div>
+                        <div className="dctext">
+                          <div className="dctag">{cap.tag}</div>
+                          <div
+                            className="dctitle"
+                            dangerouslySetInnerHTML={{ __html: cap.title }}
+                          />
+                        </div>
+                        <div className="dcbadge">{cap.badge}</div>
+                        <div className="dcarrow">
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            style={{ display: "block" }}
+                          >
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="dcbody">
+                        <div className="dcinner">
+                          {/* ═══ CAPSULE 01 · KPI PENALTY MATRIX ═══ */}
+                          {cap.id === "kpi" && (
+                            <div>
+                              <p
+                                style={{
+                                  fontSize: 13.5,
+                                  color: "var(--ink2)",
+                                  lineHeight: 1.65,
+                                  marginBottom: 22,
+                                  maxWidth: "72ch",
+                                }}
+                              >
+                                Our standard monthly management fee markup is
+                                15%. If we fail to meet these six explicit
+                                benchmarks, a{" "}
+                                <strong style={{ color: "var(--red)" }}>
+                                  malus penalty
+                                </strong>{" "}
+                                is applied directly to our markup fee for that
+                                billing cycle. This is not a credit on a future
+                                invoice. It is margin we forfeit immediately.
+                              </p>
+                              <div className="kpgrid">
+                                {KPI_PENALTY.map((k, i) => (
+                                  <div key={i} className="kpcell">
+                                    <div className="kplbl">
+                                      Pillar {String.fromCharCode(73 + i)} ·{" "}
+                                      {k.pillar}
+                                    </div>
+                                    <div className="kpkpi">{k.kpi}</div>
+                                    <div className="kpsla">
+                                      <strong>SLA · </strong>
+                                      {k.sla}
+                                    </div>
+                                    <div className="kppenalty">
+                                      <span className="kppv">{k.pv}</span>
+                                      <span className="kppl">{k.pl}</span>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                              <div
+                                style={{
+                                  marginTop: 22,
+                                  padding: "18px 22px",
+                                  background:
+                                    "linear-gradient(135deg,var(--navy),#1a3461)",
+                                  borderRadius: 12,
+                                  color: "#fff",
+                                  display: "grid",
+                                  gridTemplateColumns: "auto 1fr",
+                                  gap: 20,
+                                  alignItems: "center",
+                                  position: "relative",
+                                  overflow: "hidden",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    position: "absolute",
+                                    inset: 0,
+                                    background:
+                                      "radial-gradient(circle at 85% 50%,rgba(106,176,240,.22),transparent 60%)",
+                                    pointerEvents: "none",
+                                  }}
+                                />
+                                <div
+                                  style={{
+                                    fontFamily: "var(--F)",
+                                    fontSize: "clamp(36px,4vw,52px)",
+                                    fontWeight: 200,
+                                    color: "#6ab0f0",
+                                    letterSpacing: "-.04em",
+                                    lineHeight: 0.9,
+                                    position: "relative",
+                                    zIndex: 1,
+                                  }}
+                                >
+                                  17.5%
+                                </div>
+                                <div
+                                  style={{ position: "relative", zIndex: 1 }}
+                                >
+                                  <div
+                                    style={{
+                                      fontFamily: "var(--M)",
+                                      fontSize: 9.5,
+                                      fontWeight: 500,
+                                      letterSpacing: ".18em",
+                                      textTransform: "uppercase",
+                                      color: "#6ab0f0",
+                                      marginBottom: 5,
+                                    }}
+                                  >
+                                    Maximum margin at risk in a single quarter
+                                  </div>
+                                  <div
+                                    style={{
+                                      fontFamily: "var(--F)",
+                                      fontSize: "clamp(14px,1.5vw,17px)",
+                                      fontWeight: 300,
+                                      lineHeight: 1.5,
+                                      color: "rgba(255,255,255,.85)",
+                                    }}
+                                  >
+                                    If every KPI misses simultaneously, our
+                                    entire margin is forfeit.{" "}
+                                    <em
+                                      style={{
+                                        fontStyle: "italic",
+                                        color: "#6ab0f0",
+                                      }}
+                                    >
+                                      That's the alignment.
+                                    </em>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* ═══ CAPSULE 02 · BOT MODELS ═══ */}
+                          {cap.id === "bot" && (
+                            <div>
+                              <p
+                                style={{
+                                  fontSize: 13.5,
+                                  color: "var(--ink2)",
+                                  lineHeight: 1.65,
+                                  marginBottom: 22,
+                                  maxWidth: "72ch",
+                                }}
+                              >
+                                Two BOT flavors. Same destination — different
+                                routes. Sequential delays infrastructure
+                                investment until you trigger it. Parallel builds
+                                the permanent facility while operations ramp.
+                                The right choice depends on your risk appetite
+                                and capital posture.
+                              </p>
+                              <div className="bmtoggle">
+                                {BOT_MODELS.map((m) => (
+                                  <div
+                                    key={m.id}
+                                    className={`bmtab${botModel === m.id ? " act" : ""}`}
+                                    onClick={() => setBotModel(m.id)}
+                                  >
+                                    <div className="bmtn">{m.n}</div>
+                                    <div className="bmtt">{m.t}</div>
+                                  </div>
+                                ))}
+                              </div>
+                              {(() => {
+                                const m = BOT_MODELS.find(
+                                  (x) => x.id === botModel,
+                                );
+                                return (
+                                  <div className="bmbody">
+                                    <div className="bmrows">
+                                      {m.rows.map((r, i) => (
+                                        <div key={i} className="bmrow">
+                                          <div className="bmri">{r.i}</div>
+                                          <div
+                                            className="bmrt"
+                                            dangerouslySetInnerHTML={{
+                                              __html: r.t,
+                                            }}
+                                          />
+                                        </div>
+                                      ))}
+                                    </div>
+                                    <div className="bmstats">
+                                      {m.stats.map((s, i) => (
+                                        <div key={i} className="bmst">
+                                          <div className="bmstv">{s.v}</div>
+                                          <div className="bmstl">{s.l}</div>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+                                );
+                              })()}
+                            </div>
+                          )}
+
+                          {/* ═══ CAPSULE 03 · GOVERNANCE TIERS ═══ */}
+                          {cap.id === "gov" && (
+                            <div>
+                              <p
+                                style={{
+                                  fontSize: 13.5,
+                                  color: "var(--ink2)",
+                                  lineHeight: 1.65,
+                                  marginBottom: 22,
+                                  maxWidth: "72ch",
+                                }}
+                              >
+                                To avoid administrative burden on Bose's team,
+                                we establish a three-tiered governance cadence
+                                led by your on-site Bridge Leaders. Each tier
+                                has its own audience, data set, and decision
+                                authority. You are never blind. You are never
+                                overwhelmed.
+                              </p>
+                              <div className="gtgrid">
+                                {GOV_TIERS.map((t, i) => (
+                                  <div key={i} className="gtcard">
+                                    <div className="gttier">{t.tier}</div>
+                                    <div className="gtname">{t.name}</div>
+                                    <div className="gtfreq">{t.freq}</div>
+                                    <div className="gtsec">Audience</div>
+                                    <div className="gtaud">
+                                      {t.aud.map((a, j) => (
+                                        <div key={j} className="gtau">
+                                          {a}
+                                        </div>
+                                      ))}
+                                    </div>
+                                    <div className="gtsec">Core focus</div>
+                                    <div
+                                      style={{
+                                        fontSize: 12.5,
+                                        color: "var(--ink2)",
+                                        lineHeight: 1.55,
+                                        marginBottom: 8,
+                                      }}
+                                    >
+                                      {t.focus}
+                                    </div>
+                                    <div className="gtsec">Data shared</div>
+                                    <div
+                                      className="gtdata"
+                                      dangerouslySetInnerHTML={{
+                                        __html: t.data,
+                                      }}
+                                    />
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* ═══ CAPSULE 04 · VENDOR DISPOSITION ═══ */}
+                          {cap.id === "vd" && (
+                            <div>
+                              <p
+                                style={{
+                                  fontSize: 13.5,
+                                  color: "var(--ink2)",
+                                  lineHeight: 1.65,
+                                  marginBottom: 22,
+                                  maxWidth: "72ch",
+                                }}
+                              >
+                                Every Bose existing vendor lands in one of four
+                                quadrants. We evaluate Strategic Value ×
+                                Operational Performance to decide what moves
+                                into the GCC, what stays, what gets re-tendered,
+                                and what gets cut entirely.{" "}
+                                <strong>
+                                  Typical net savings via this rationalization:
+                                  28–35%.
+                                </strong>
+                              </p>
+                              <div className="vd2d">
+                                <div className="vd2yaxis">
+                                  Strategic Value to Enterprise →
+                                </div>
+                                <div>
+                                  <div className="vd2grid">
+                                    {VENDOR_DISP.map((v, i) => (
+                                      <div key={i} className={`vd2q ${v.c}`}>
+                                        <div className="vd2qa">{v.a}</div>
+                                        <div className="vd2qt">{v.t}</div>
+                                        <div className="vd2qd">{v.d}</div>
+                                        <div className="vd2qe">{v.e}</div>
+                                      </div>
+                                    ))}
+                                  </div>
+                                  <div className="vd2xaxis">
+                                    <span>← Low performance</span>
+                                    <span>
+                                      Operational Delivery Performance →
+                                    </span>
+                                    <span>High performance →</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="vd2sav">
+                                <div className="vd2sv">28–35%</div>
+                                <div className="vd2sl">
+                                  <div className="l">
+                                    Net operational savings via model shift
+                                  </div>
+                                  <p>
+                                    Transitioning from legacy vendor models
+                                    (25–40% opaque gross margins) to our Hosted
+                                    Cost-Plus 15% model. Volume consolidation +
+                                    pyramid optimization compound across the
+                                    contract term.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* ═══ CAPSULE 05 · CASE STUDIES ═══ */}
+                          {cap.id === "cs" && (
+                            <div>
+                              <p
+                                style={{
+                                  fontSize: 13.5,
+                                  color: "var(--ink2)",
+                                  lineHeight: 1.65,
+                                  marginBottom: 22,
+                                  maxWidth: "72ch",
+                                }}
+                              >
+                                Four prior engagements. Real names. Live
+                                references. Every executive quoted below has
+                                authorized Conglomerate to share their contact
+                                details with Bose Procurement on formal
+                                engagement.
+                              </p>
+                              <div className="cscarousel">
+                                {CASES_X.map((c, i) => (
+                                  <div key={i} className="cscar">
+                                    <div className="cshead">
+                                      <div>
+                                        <div className="csco">{c.co}</div>
+                                        <div className="cssec">{c.sec}</div>
+                                      </div>
+                                      <div className="cspill">{c.pill}</div>
+                                    </div>
+                                    <p className="csscope">{c.scope}</p>
+                                    <div className="csmetrics">
+                                      {c.m.map((m, j) => (
+                                        <div key={j}>
+                                          <div className="csmv">{m.v}</div>
+                                          <div className="csml">{m.l}</div>
+                                        </div>
+                                      ))}
+                                    </div>
+                                    <div className="csquote">
+                                      <p>{c.q}</p>
+                                    </div>
+                                    <div className="csref">
+                                      ↳ <strong>{c.ref}</strong>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* ═══ CAPSULE 06 · MATURITY ROADMAP ═══ */}
+                          {cap.id === "mr" && (
+                            <div>
+                              <p
+                                style={{
+                                  fontSize: 13.5,
+                                  color: "var(--ink2)",
+                                  lineHeight: 1.65,
+                                  marginBottom: 22,
+                                  maxWidth: "72ch",
+                                }}
+                              >
+                                The India GCC is not a 24-month build. It's a
+                                5-year capability journey. The 24-month operate
+                                window is just Stage 1 and 2. The compounding
+                                value sits in Stages 3, 4, and 5 — where the
+                                center stops being a cost arm and becomes an
+                                enterprise impact engine.
+                              </p>
+                              <div className="mrtrack">
+                                <div className="mrstops">
+                                  {MATURITY.map((s, i) => (
+                                    <div key={i} className="mrstop">
+                                      <div className="mrtime">{s.time}</div>
+                                      <div className="mrstage">{s.stage}</div>
+                                      <div className="mrkpi">{s.kpiL}</div>
+                                      <div className="mrkpiv">{s.kpiV}</div>
+>>>>>>> 92448e82f53fcce90b59571a47683c6232d0f6b7
                                     </div>
                                   ))}
                                 </div>
