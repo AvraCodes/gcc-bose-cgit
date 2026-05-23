@@ -1915,248 +1915,168 @@ html{}
 /* --- Alternative Trust Presentation Component --- */
 .trust-presenter-card {
   margin-top: 48px;
-  background: radial-gradient(circle at top left, #0d1e36 0%, #060b13 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
-  padding: clamp(28px, 4vw, 48px);
+  background: radial-gradient(circle at top left, #0d1f3c 0%, #040812 100%);
+  border: 1px solid rgba(106, 176, 240, 0.16);
+  border-radius: 28px;
+  padding: clamp(32px, 5vw, 56px);
   color: #fff;
-  box-shadow: var(--sh4), 0 0 40px rgba(26, 79, 150, 0.2);
+  box-shadow: var(--sh4), 0 15px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   position: relative;
   overflow: hidden;
   transition: transform 0.4s var(--eout), box-shadow 0.4s var(--eout), border-color 0.4s ease;
 }
 
-.trust-presenter-card::after {
-  content: '';
+.presenter-glow-mesh {
   position: absolute;
-  top: -150px;
-  right: -150px;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(106, 176, 240, 0.12) 0%, transparent 70%);
+  inset: 0;
+  background: radial-gradient(circle at 80% 90%, rgba(26, 79, 150, 0.15) 0%, transparent 60%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .trust-presenter-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(106, 176, 240, 0.4);
-  box-shadow: var(--sh4), 0 10px 50px rgba(26, 79, 150, 0.35);
+  transform: translateY(-8px);
+  border-color: rgba(106, 176, 240, 0.35);
+  box-shadow: var(--sh4), 0 20px 70px rgba(0, 0, 0, 0.6), 0 0 80px rgba(26, 79, 150, 0.3);
 }
 
 .presenter-header {
   margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.presenter-badge-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.presenter-badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #6ab0f0;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #6ab0f0;
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.25); }
 }
 
 .presenter-badge {
   display: inline-block;
   font-family: var(--M);
   font-size: 10px;
-  font-weight: 550;
+  font-weight: 600;
   color: #6ab0f0;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  background: rgba(106, 176, 240, 0.1);
+  letter-spacing: 0.2em;
+  background: rgba(106, 176, 240, 0.08);
   padding: 6px 14px;
   border-radius: 8px;
-  border: 1px solid rgba(106, 176, 240, 0.15);
-  margin-bottom: 16px;
+  border: 1px solid rgba(106, 176, 240, 0.2);
 }
 
 .presenter-heading {
   font-family: var(--F);
-  font-size: clamp(22px, 2.5vw, 36px);
+  font-size: clamp(22px, 2.8vw, 36px);
   font-weight: 300;
-  line-height: 1.35;
+  line-height: 1.25;
   color: #ffffff;
   letter-spacing: -0.02em;
-  margin: 0 0 16px 0;
+  margin: 0;
 }
 
 .presenter-heading em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: 350;
   color: #6ab0f0;
+  text-shadow: 0 0 15px rgba(106, 176, 240, 0.3);
 }
 
-.presenter-subheading {
-  font-family: var(--B);
-  font-size: clamp(14px, 1.2vw, 17px);
+.presenter-hero-quote-container {
+  position: relative;
+  margin-bottom: 24px;
+  border-left: 4px solid #1a4f96;
+  padding-left: 28px;
+  z-index: 2;
+}
+
+.presenter-hero-quote {
+  font-family: var(--F);
+  font-size: clamp(20px, 2.4vw, 30px);
+  line-height: 1.5;
   font-weight: 300;
+  font-style: italic;
+  color: #ffffff;
+  margin: 0;
+}
+
+.highlight-text-blue {
+  color: #6ab0f0;
+  font-weight: 450;
+  text-shadow: 0 0 15px rgba(106, 176, 240, 0.25);
+}
+
+.highlight-text-glow {
+  color: #fff;
+  font-weight: 450;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.45);
+}
+
+.presenter-body-details {
+  font-family: var(--B);
+  font-size: clamp(14px, 1.2vw, 16px);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.7);
-  max-width: 850px;
+  max-width: 82ch;
   margin-bottom: 36px;
-}
-
-/* Comparison Grid */
-.presenter-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 32px 0;
-  margin-bottom: 32px;
-}
-
-@media(max-width:768px) {
-  .presenter-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
-
-.presenter-col {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.presenter-col.commodity {
-  opacity: 0.65;
-  transition: opacity 0.3s ease;
-}
-
-.presenter-col.commodity:hover {
-  opacity: 0.9;
-}
-
-.presenter-col.dna {
-  background: rgba(26, 79, 150, 0.15);
-  border: 1px solid rgba(106, 176, 240, 0.25);
-  padding: 24px;
-  border-radius: 16px;
+  padding-left: 32px;
   position: relative;
+  z-index: 2;
 }
 
-.presenter-col.dna::before {
-  content: 'RECOMMENDED APPROACH';
-  position: absolute;
-  top: -10px;
-  right: 20px;
-  background: #1a4f96;
-  color: #fff;
-  font-family: var(--M);
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  padding: 4px 10px;
-  border-radius: 4px;
-  border: 1px solid rgba(255,255,255,0.15);
-}
-
-.col-label {
-  font-family: var(--M);
-  font-size: 9px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: #9c9590;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.presenter-col.dna .col-label {
-  color: #6ab0f0;
-}
-
-.col-title {
-  font-family: var(--F);
-  font-size: clamp(18px, 1.8vw, 22px);
-  color: #fff;
-  margin: 0;
-  font-weight: 400;
-}
-
-.col-desc {
-  font-size: 13.5px;
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.6;
-  margin: 0;
-}
-
-.presenter-col.dna .col-desc {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.bullet-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.bullet-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-.bullet-icon {
-  font-weight: bold;
-  flex-shrink: 0;
-  font-size: 14px;
-}
-
-.commodity .bullet-icon {
-  color: #e83030;
-}
-
-.dna .bullet-icon {
-  color: #6ab0f0;
-}
-
-/* Footer Quote Block */
 .presenter-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
   flex-wrap: wrap;
-}
-
-.presenter-quote-wrap {
-  flex: 1;
-  min-width: 280px;
-}
-
-.presenter-quote-text {
-  font-family: var(--F);
-  font-size: clamp(15px, 1.4vw, 18px);
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.9);
-  font-style: italic;
-  margin: 0;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .presenter-author-info {
   display: flex;
   align-items: center;
   gap: 16px;
-  flex-shrink: 0;
 }
 
 .presenter-avatar {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1a4f96 0%, #0d1f3c 100%);
-  border: 2px solid rgba(255,255,255,0.2);
+  background: linear-gradient(135deg, var(--blue) 0%, var(--navy) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-family: var(--F);
   font-weight: bold;
-  font-size: 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-size: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .presenter-meta h5 {
   font-family: var(--F);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: #fff;
   margin: 0 0 2px 0;
@@ -2164,12 +2084,46 @@ html{}
 
 .presenter-meta p {
   font-family: var(--M);
-  font-size: 8px;
+  font-size: 9px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.5);
   margin: 0;
 }
+
+/* Soundwave Animation */
+.soundwave-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 38px;
+  padding: 0 10px;
+}
+
+.soundwave-bar {
+  width: 3px;
+  background: linear-gradient(180deg, #6ab0f0, #1a4f96);
+  border-radius: 3px;
+  animation: pulse-wave 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-wave {
+  0% {
+    height: 8px;
+    opacity: 0.3;
+  }
+  100% {
+    height: 32px;
+    opacity: 1;
+  }
+}
+
+.soundwave-bar:nth-child(1) { animation-delay: 0.1s; }
+.soundwave-bar:nth-child(2) { animation-delay: 0.4s; }
+.soundwave-bar:nth-child(3) { animation-delay: 0.2s; }
+.soundwave-bar:nth-child(4) { animation-delay: 0.6s; }
+.soundwave-bar:nth-child(5) { animation-delay: 0.3s; }
+.soundwave-bar:nth-child(6) { animation-delay: 0.5s; }
 `;
 
 /* ═══ DATA ════════════════════════════════════════════════════════ */
@@ -4868,72 +4822,42 @@ function App() {
 
           {/* Alternative Presentation Card */}
           <div className="trust-presenter-card rv" ref={addRef}>
+            <div className="presenter-glow-mesh" />
+            
             <div className="presenter-header">
-              <span className="presenter-badge">Presenter's Hook</span>
               <h3 className="presenter-heading">
-                If engineering is in Bose's DNA, why do most GCC pitches treat your team like a <em>commodity transaction?</em>
+                Why hire for <em>DNA</em>, but buy by the <em>seat</em>?
               </h3>
-              <p className="presenter-subheading">
-                Traditional partners pitch seat-count, SLA credits, and billable hours. But if Innovation is your heart and engineering is your DNA, you aren't just buying capacity. You are building the global home for your next wave of innovators. Here is how we build that distinction:
+            </div>
+
+            <div className="presenter-hero-quote-container">
+              <blockquote className="presenter-hero-quote">
+                “While <span className="highlight-text-blue">Bose</span> dedicates itself to making better sound, you care for your people just as deeply, knowing that your <span className="highlight-text-glow">purpose can only be achieved together</span>. Innovation is at your heart; engineering is in your DNA.”
+              </blockquote>
+            </div>
+
+            <div className="presenter-body-details">
+              <p>
+                We know how easy or hard it is on every single hire. Having worked with Bose, we have come to know that it is your people, as much as your products, that play a defining role in the world. We don't see this as a project to deliver 800 seats — we see it as building the capability platform that fits the <strong>unique soul of Bose</strong>.
               </p>
             </div>
 
-            <div className="presenter-grid">
-              <div className="presenter-col commodity">
-                <div className="col-label">
-                  <span className="bullet-icon">✕</span> Standard BOT Pitch
-                </div>
-                <h4 className="col-title">The Commodity Approach</h4>
-                <p className="col-desc">
-                  Treats 800 hires as raw billing headcount. Uses standard agency recruitment, generic workspaces, and hands-off staffing protocols that dilute the Bose engineering culture.
-                </p>
-                <div className="bullet-list">
-                  <div className="bullet-item">
-                    <span className="bullet-icon">✕</span> Attrition treated as a math equation, not a structural threat to IP.
-                  </div>
-                  <div className="bullet-item">
-                    <span className="bullet-icon">✕</span> Generic real estate that looks like a call center, not an R&D lab.
-                  </div>
-                  <div className="bullet-item">
-                    <span className="bullet-icon">✕</span> Account-management layers that rotate every quarter, losing site continuity.
-                  </div>
-                </div>
-              </div>
-
-              <div className="presenter-col dna">
-                <div className="col-label">
-                  <span className="bullet-icon">◆</span> Bose Partnership DNA
-                </div>
-                <h4 className="col-title">The Capability Platform</h4>
-                <p className="col-desc">
-                  Cares for your people deeply, knowing your purpose is achieved together. Builds a dedicated acoustics/DSP workspace that feels like a natural extension of Bose.
-                </p>
-                <div className="bullet-list">
-                  <div className="bullet-item">
-                    <span className="bullet-icon">✓</span> Co-created strategic fit: custom badge permissions & co-branded email domains.
-                  </div>
-                  <div className="bullet-item">
-                    <span className="bullet-icon">✓</span> 100% clean transfer guarantee with open-book economics from Day 1.
-                  </div>
-                  <div className="bullet-item">
-                    <span className="bullet-icon">✓</span> VJ's direct founder sponsorship: permanently on your steering committee.
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div className="presenter-footer">
-              <div className="presenter-quote-wrap">
-                <p className="presenter-quote-text">
-                  "While Bose dedicates itself to making better sound, we care for your people just as deeply, knowing that your purpose can only be achieved together. Innovation is at your heart; engineering is in your DNA. We don't see this as a project to deliver 800 seats — we see it as building the capability platform that fits the unique soul of Bose."
-                </p>
-              </div>
               <div className="presenter-author-info">
                 <div className="presenter-avatar">VJ</div>
                 <div className="presenter-meta">
                   <h5>VJ</h5>
                   <p>Founder & CEO · Steering Sponsor</p>
                 </div>
+              </div>
+              
+              <div className="soundwave-container" title="Bose Acoustic DNA Visualizer">
+                <div className="soundwave-bar" />
+                <div className="soundwave-bar" />
+                <div className="soundwave-bar" />
+                <div className="soundwave-bar" />
+                <div className="soundwave-bar" />
+                <div className="soundwave-bar" />
               </div>
             </div>
           </div>
