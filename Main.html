@@ -2301,7 +2301,7 @@ html{}
         ask: "You signed off on a transformational mandate. The question for you is simpler than the rest of the panel: does this engagement compound enterprise value beyond the 24-month operate window, or just shift cost? <em>It compounds.</em>",
         kpis: [
           { v: "800", l: "FTE at steady state", e: "" },
-          { v: "$210", l: "3-yr cumulative saving", e: "M" },
+          { v: "$225", l: "3-yr cumulative saving", e: "M" },
           { v: "24", l: "Months to steady state", e: " mo" },
           { v: "100%", l: "BOT transfer to Bose", e: "" }
         ],
@@ -2477,30 +2477,29 @@ html{}
 
     /* RISK HEATMAP — enriched with prob × impact + owner + fix date */
     const RISKS = [
-      { cat: "Legal · Tax", t: "TP study not commissioned before first hire", sev: "h", prob: 70, imp: 90, owner: "Tax Director · Bose", fix: "Week 1", m: "Big 4 advisor engaged Week 1. TP study scope to Bose by Week 2. ICA drafted before first hire." },
-      { cat: "Legal · Tax", t: "PE exposure for Bose US parent on first GR&D hire", sev: "h", prob: 55, imp: 85, owner: "General Counsel · Bose", fix: "Week 2", m: "Independent contractor framing. Controlled US personnel exposure. PE risk evaporates at transfer." },
-      { cat: "Legal · IP", t: "IP assignment clause not signed before hire", sev: "h", prob: 50, imp: 88, owner: "General Counsel · Bose", fix: "Week 3", m: "Clause wording signed off by Bose GC Week 3. Board IP mandate met on Day 1, not retroactively." },
-      { cat: "Compliance", t: "DPDP Act 2023 framework not live before engineering hire", sev: "m", prob: 60, imp: 65, owner: "Privacy Counsel · Joint", fix: "Week 4", m: "DPO designated and data classification complete by Week 4. Cross-border data flow framework documented." },
-      { cat: "Talent", t: "Bengaluru audio DSP attrition spike (18–22%)", sev: "m", prob: 65, imp: 60, owner: "Amita Goyal · Talent", fix: "Quarterly", m: "Hyderabad anchors operational scale. Bengaluru limited to R&D. Quarterly comp refresh + 18-27% niche premium." },
-      { cat: "Talent", t: "India Site Leader hire takes longer than 10 weeks", sev: "m", prob: 55, imp: 62, owner: "Exec Search + Conglo SVP", fix: "Week 6", m: "Executive search firm engaged Week 1. ConglomerateIT SVP holds interim accountability until permanent hire is in seat." },
-      { cat: "Operations", t: "Grade A tech park availability within timeline", sev: "l", prob: 30, imp: 50, owner: "Real Estate Lead", fix: "Week 6", m: "LOI on 2-3 preferred parks in Phase 1 (RMZ, Bagmane, Prestige · HITEC City, Gachibowli). Flex workspace as contingency." },
-      { cat: "Operations", t: "GR&D lab build-out delay (anechoic, EMI/RF)", sev: "l", prob: 35, imp: 48, owner: "Engineering Ops", fix: "Phase 1", m: "CTTC Bengaluru commercial anechoic booked Phase 1. Keysight, R&S, Audio Precision rentals locked." },
-      { cat: "Commercial", t: "India TP Safe Harbour modified by CBDT", sev: "l", prob: 25, imp: 42, owner: "TP Specialist", fix: "Monitoring", m: "Cost+15% within current Safe Harbour. TP study documents ALP basis independent. Monitoring + Bose alert if rules change." },
-      { cat: "Commercial", t: "Gurgaon entity compliance surprises in diligence", sev: "l", prob: 30, imp: 45, owner: "Legal/Compliance Lead", fix: "Week 3", m: "Entity compliance review completed by Week 3. Issues escalated with remediation plan. Fresh entity option if material concerns." },
-      { cat: "Transfer", t: "Receiving entity not ready at Month 24", sev: "m", prob: 40, imp: 75, owner: "Transition Lead · Joint", fix: "Month 12+", m: "TRI scored quarterly from Month 12 across six dimensions. Receiving entity extended into Karnataka + Telangana pre-transfer." },
-      { cat: "Transfer", t: "Workforce voluntary acceptance below threshold", sev: "m", prob: 35, imp: 70, owner: "CHRO · Joint", fix: "Month 22", m: "Rebadging designed Month 24. Tenure preserved, PF UAN transferred, gratuity continuity. Voluntary acceptance designed at 100%." },
+      { cat: "Legal · Tax", t: "TP study not commissioned before first hire", sev: "h", prob: "High", imp: "High", owner: "Tax Director · Bose", fix: "Week 1", m: "Big 4 advisor engaged Week 1. TP study scope to Bose by Week 2. ICA drafted before first hire." },
+      { cat: "Legal · Tax", t: "PE exposure for Bose US parent on first GR&D hire", sev: "h", prob: "Medium", imp: "High", owner: "General Counsel · Bose", fix: "Week 2", m: "Independent contractor framing. Controlled US personnel exposure. PE risk evaporates at transfer." },
+      { cat: "Legal · IP", t: "IP assignment clause not signed before hire", sev: "h", prob: "Medium", imp: "High", owner: "General Counsel · Bose", fix: "Week 3", m: "Clause wording signed off by Bose GC Week 3. Board IP mandate met on Day 1, not retroactively." },
+      { cat: "Compliance", t: "DPDP Act 2023 framework not live before engineering hire", sev: "m", prob: "High", imp: "Medium", owner: "Privacy Counsel · Joint", fix: "Week 4", m: "DPO designated and data classification complete by Week 4. Cross-border data flow framework documented." },
+      { cat: "Talent", t: "Bengaluru audio DSP attrition spike (18–22%)", sev: "m", prob: "High", imp: "Medium", owner: "Amita Goyal · Talent", fix: "Quarterly", m: "Hyderabad anchors operational scale. Bengaluru limited to R&D. Quarterly comp refresh + 18-27% niche premium." },
+      { cat: "Talent", t: "India Site Leader hire takes longer than 10 weeks", sev: "m", prob: "Medium", imp: "Medium", owner: "Exec Search + Conglo SVP", fix: "Week 6", m: "Executive search firm engaged Week 1. ConglomerateIT SVP holds interim accountability until permanent hire is in seat." },
+      { cat: "Operations", t: "Grade A tech park availability within timeline", sev: "l", prob: "Low", imp: "Low", owner: "Real Estate Lead", fix: "Week 6", m: "LOI on 2-3 preferred parks in Phase 1 (RMZ, Bagmane, Prestige · HITEC City, Gachibowli). Flex workspace as contingency." },
+      { cat: "Operations", t: "GR&D lab build-out delay (anechoic, EMI/RF)", sev: "l", prob: "Low", imp: "Low", owner: "Engineering Ops", fix: "Phase 1", m: "CTTC Bengaluru commercial anechoic booked Phase 1. Keysight, R&S, Audio Precision rentals locked." },
+      { cat: "Commercial", t: "India TP Safe Harbour modified by CBDT", sev: "l", prob: "Low", imp: "Low", owner: "TP Specialist", fix: "Monitoring", m: "Cost+15% within current Safe Harbour. TP study documents ALP basis independent. Monitoring + Bose alert if rules change." },
+      { cat: "Commercial", t: "Gurgaon entity compliance surprises in diligence", sev: "l", prob: "Low", imp: "Low", owner: "Legal/Compliance Lead", fix: "Week 3", m: "Entity compliance review completed by Week 3. Issues escalated with remediation plan. Fresh entity option if material concerns." },
+      { cat: "Transfer", t: "Receiving entity not ready at Month 24", sev: "m", prob: "Medium", imp: "High", owner: "Transition Lead · Joint", fix: "Month 12+", m: "TRI scored quarterly from Month 12 across six dimensions. Receiving entity extended into Karnataka + Telangana pre-transfer." },
+      { cat: "Transfer", t: "Workforce voluntary acceptance below threshold", sev: "m", prob: "Low", imp: "Medium", owner: "CHRO · Joint", fix: "Month 22", m: "Rebadging designed Month 24. Tenure preserved, PF UAN transferred, gratuity continuity. Voluntary acceptance designed at 100%." },
     ];
 
     /* ═══ DEEP DIVE CAPSULES — 8 expandable sections ═══ */
 
     /* 1. KPI PENALTY MATRIX */
     const KPI_PENALTY = [
-      { pillar: "Setup & Infrastructure", kpi: "Workspace Readiness & Network Provisioning for air-gapped zones", sla: "100% operational setup within 30 days of signed contract (IT/GBS/R&D firewalls live)", pv: "-3.0%", pl: "If handover delayed past 10 business days" },
-      { pillar: "Talent Acquisition", kpi: "Time-to-Hire for core divisions from final JD validation", sla: "IT & GBS: 45 days · R&D: 60 days", pv: "-2.5%", pl: "If recruitment lags past 15 business days of SLA" },
-      { pillar: "Workforce Continuity", kpi: "Infant Attrition Rate (first 180 days)", sla: "5% annualized attrition across all divisions in incubation phase", pv: "-2.0%", pl: "If quarterly attrition spikes past 8%" },
-      { pillar: "Technical Security", kpi: "Network Circuit Uptime & firewall availability for client-dedicated ISP loops", sla: "99.95% Network Uptime (excluding pre-approved maintenance)", pv: "-3.0%", pl: "For any unapproved downtime exceeding 30 min" },
-      { pillar: "Financial Governance", kpi: "Open-Book Ledger Accuracy mapping payroll & utility pro-rates", sla: "100% itemized billing transparency with zero accounting variance", pv: "-5.0%", pl: "Immediate · for any unverified billing discrepancy" },
-      { pillar: "Facility Build (Model 2)", kpi: "Milestone Adherence for site drawings, HVAC fit-outs, legal permits", sla: "Completion and certification within 18-month roadmap", pv: "-2.5%", pl: "Per month of construction delay" },
+      { pillar: "Setup & Infrastructure", kpi: "Workspace Readiness & Network Provisioning for air-gapped zones", sla: "100% operational setup within 30 days (IT/GBS/R&D firewalls live) & 90-day setup time-to-market with 100% local law compliance", pv: "-XX%", pl: "If handover delayed past 10 business days" },
+      { pillar: "Talent Acquisition", kpi: "Time-to-Hire for core divisions from final JD validation", sla: "IT & GBS: 45 days · R&D: 60 days; aiming for 10-15% delivery/speed gains via pods and high retention of niche talent", pv: "-XX%", pl: "If recruitment lags past 15 business days of SLA" },
+      { pillar: "Workforce Continuity", kpi: "Infant Attrition Rate (first 180 days)", sla: "10% annualized attrition across all divisions in incubation phase (supporting global AI initiatives led from India)", pv: "-XX%", pl: "If quarterly attrition spikes past XX%" },
+      { pillar: "Technical Security", kpi: "Network Circuit Uptime & firewall availability for client-dedicated ISP loops", sla: "99.95% Network Uptime; supporting product development to accelerate GTM timelines by 1.5 to 2x", pv: "-XX%", pl: "For any unapproved downtime exceeding 30 min" },
+      { pillar: "Financial Governance", kpi: "Open-Book Ledger Accuracy mapping payroll & utility pro-rates", sla: "100% itemized billing transparency with zero accounting variance, delivering 30% to 50% enterprise cost efficiency", pv: "-XX%", pl: "Immediate · for any unverified billing discrepancy" },
     ];
 
     /* 2. BOT MODELS */
@@ -3734,7 +3733,7 @@ html{}
                         {/* ═══ CAPSULE 01 · KPI PENALTY MATRIX ═══ */}
                         {cap.id === "kpi" && (
                           <div>
-                            <p style={{ fontSize: 13.5, color: "var(--ink2)", lineHeight: 1.65, marginBottom: 22, maxWidth: "72ch" }}>Our standard monthly management fee markup is 15%. If we fail to meet these six explicit benchmarks, a <strong style={{ color: "var(--red)" }}>malus penalty</strong> is applied directly to our markup fee for that billing cycle. This is not a credit on a future invoice. It is margin we forfeit immediately.</p>
+                            <p style={{ fontSize: 13.5, color: "var(--ink2)", lineHeight: 1.65, marginBottom: 22, maxWidth: "72ch" }}>Our standard monthly management fee markup is 15%. If we fail to meet these five explicit benchmarks, a <strong style={{ color: "var(--red)" }}>malus penalty</strong> is applied directly to our markup fee for that billing cycle. This is not a credit on a future invoice. It is margin we forfeit immediately.</p>
                             <div className="kpgrid">
                               {KPI_PENALTY.map((k, i) => (
                                 <div key={i} className="kpcell">
@@ -3750,7 +3749,7 @@ html{}
                             </div>
                             <div style={{ marginTop: 22, padding: "18px 22px", background: "linear-gradient(135deg,var(--navy),#1a3461)", borderRadius: 12, color: "#fff", display: "grid", gridTemplateColumns: "auto 1fr", gap: 20, alignItems: "center", position: "relative", overflow: "hidden" }}>
                               <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 85% 50%,rgba(106,176,240,.22),transparent 60%)", pointerEvents: "none" }} />
-                              <div style={{ fontFamily: "var(--F)", fontSize: "clamp(36px,4vw,52px)", fontWeight: 200, color: "#6ab0f0", letterSpacing: "-.04em", lineHeight: .9, position: "relative", zIndex: 1 }}>17.5%</div>
+                              <div style={{ fontFamily: "var(--F)", fontSize: "clamp(36px,4vw,52px)", fontWeight: 200, color: "#6ab0f0", letterSpacing: "-.04em", lineHeight: .9, position: "relative", zIndex: 1 }}>XX%</div>
                               <div style={{ position: "relative", zIndex: 1 }}>
                                 <div style={{ fontFamily: "var(--M)", fontSize: 9.5, fontWeight: 500, letterSpacing: ".18em", textTransform: "uppercase", color: "#6ab0f0", marginBottom: 5 }}>Maximum margin at risk in a single quarter</div>
                                 <div style={{ fontFamily: "var(--F)", fontSize: "clamp(14px,1.5vw,17px)", fontWeight: 300, lineHeight: 1.5, color: "rgba(255,255,255,.85)" }}>If every KPI misses simultaneously, our entire margin is forfeit. <em style={{ fontStyle: "italic", color: "#6ab0f0" }}>That's the alignment.</em></div>
