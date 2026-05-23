@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bose GCC Proposal - Sections I, II, III</title>
+  <style>
+    :root {
+      --bg: #f3f5f8;
+      --card: #ffffff;
+      --line: #d8dee8;
+      --ink: #1a2433;
+      --muted: #586377;
+      --navy: #1b3158;
+      --blue: #245ba6;
+      --blue-soft: rgba(36, 91, 166, 0.08);
+      --red: #c82727;
+      --red-soft: rgba(200, 39, 39, 0.07);
+      --shadow: 0 12px 34px rgba(13, 16, 23, 0.08);
+      --mono: "JetBrains Mono", "Courier New", monospace;
+      --serif: "Fraunces", "Georgia", serif;
+      --body: "Inter Tight", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f8fafc 0%, var(--bg) 100%);
+      color: var(--ink);
+      font-family: var(--body);
+      line-height: 1.55;
+      padding: 32px 14px 52px;
+    }
+
+    .wrap {
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+
+    .head {
+      margin: 0 0 18px;
+      padding: 0 4px;
+    }
+
+    .kick {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+
+    .title {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 350;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+
+    .stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .head-row {
+      width: 100%;
+      border: 0;
+      background: #f1f4f8;
+      display: grid;
+      grid-template-columns: 72px 1fr 52px;
+      align-items: center;
+      gap: 18px;
+      padding: 24px 24px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .num {
+      font-family: var(--serif);
+      color: var(--blue);
+      font-size: clamp(46px, 4vw, 62px);
+      line-height: 0.9;
+      font-weight: 330;
+    }
+
+    .label {
+      font-family: var(--serif);
+      color: var(--navy);
+      font-size: clamp(28px, 2.8vw, 52px);
+      letter-spacing: -0.02em;
+      font-weight: 330;
+      line-height: 1.04;
+    }
+
+    .toggle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid #bfc8d8;
+      background: #ffffff;
+      color: #5a6579;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      line-height: 1;
+      transition: all 220ms ease;
+    }
+
+    .item.open .toggle {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+      transform: rotate(45deg);
+    }
+
+    .body {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 380ms ease, opacity 280ms ease;
+      background: #fbfcfe;
+    }
+
+    .item.open .body {
+      max-height: 900px;
+      opacity: 1;
+    }
+
+    .body-inner {
+      padding: 32px 34px 34px;
+      border-top: 1px dashed var(--line);
+    }
+
+    .copy {
+      margin: 0 0 20px;
+      font-size: clamp(20px, 1.8vw, 41px);
+      color: #1f2938;
+      line-height: 1.46;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .impact {
+      background: var(--red-soft);
+      border-left: 4px solid var(--red);
+      border-radius: 8px 14px 14px 8px;
+      padding: 24px 28px;
+    }
+
+    .impact h3 {
+      margin: 0 0 12px;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #2a2f3a;
+    }
+
+    .impact p {
+      margin: 0;
+      font-size: clamp(18px, 1.5vw, 30px);
+      color: #232b39;
+      line-height: 1.47;
+    }
+
+    .stat {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(36, 91, 166, 0.3);
+      background: var(--blue-soft);
+      font-family: var(--mono);
+      font-size: 21px;
+      letter-spacing: 0.06em;
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    .metrics {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 26px 28px;
+      background: #f9fafc;
+    }
+
+    .metrics h4 {
+      margin: 0 0 14px;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #3b4455;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 14px 0;
+      border-bottom: 1px dashed #cfd6e2;
+      font-size: clamp(16px, 1.35vw, 25px);
+      color: #252d3a;
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    td.k {
+      font-family: var(--mono);
+      font-size: clamp(15px, 1.25vw, 22px);
+      color: #4e5769;
+      width: 42%;
+      padding-right: 14px;
+    }
+
+    td.v {
+      text-align: right;
+      font-family: var(--mono);
+      color: #1f2a3d;
+      font-weight: 550;
+    }
+
+    @media (max-width: 1050px) {
+      .label { font-size: clamp(24px, 3vw, 42px); }
+      .copy { font-size: clamp(18px, 1.8vw, 30px); }
+      .impact p { font-size: clamp(16px, 1.6vw, 24px); }
+      td { font-size: clamp(14px, 1.45vw, 20px); }
+      td.k { font-size: clamp(12px, 1.25vw, 18px); }
+      .stat { font-size: clamp(12px, 1.15vw, 16px); }
+    }
+
+    @media (max-width: 820px) {
+      .head-row {
+        grid-template-columns: 56px 1fr 38px;
+        gap: 12px;
+        padding: 16px 14px;
+      }
+
+      .num { font-size: 44px; }
+      .label { font-size: 28px; }
+      .toggle { width: 36px; height: 36px; font-size: 20px; }
+      .body-inner { padding: 18px 16px 20px; }
+      .dashboard { grid-template-columns: 1fr; gap: 14px; }
+      .metrics { padding: 18px 16px; }
+      .impact { padding: 18px 16px; }
+      .copy { font-size: 15px; margin-bottom: 14px; }
+      td { font-size: 14px; }
+      td.k { font-size: 11px; }
+      .stat { font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="head">
+      <div class="kick">Why Act Now</div>
+      <h1 class="title">Sections I, II, III</h1>
+    </header>
+
+    <div class="stack">
+      <article class="item open" data-item>
+        <button class="head-row" type="button" aria-expanded="true">
+          <div class="num">I</div>
+          <div class="label">The talent ecosystem arrived</div>
+          <div class="toggle">+</div>
+        </button>
+        <div class="body">
+          <div class="body-inner">
+            <p class="copy">Bengaluru now has Harman International, Dolby, Qualcomm QCC, TI audio, and IISc signal processing alumni in one city. The audio DSP and wearable engineering talent Bose needs exists in depth - it did not 10 years ago.</p>
+            <div class="dashboard">
+              <div>
+                <div class="impact">
+                  <h3>Strategic Impact</h3>
+                  <p>Bose can secure premium signal processing and acoustic talent at scale by centering R&D in Bengaluru, capturing alumni from Dolby, Harman, and Qualcomm. This enables continuous innovation in audio DSP and wearable tech.</p>
+                </div>
+                <div class="stat">2,100+ GCCs - 2.3M professionals</div>
+              </div>
+              <div class="metrics">
+                <h4>Key Metrics & Parameters</h4>
+                <table>
+                  <tr><td class="k">Target Location</td><td class="v">Bengaluru</td></tr>
+                  <tr><td class="k">Talent Depth</td><td class="v">25,000+ Signal Processing Engineers</td></tr>
+                  <tr><td class="k">Key Competency</td><td class="v">Audio DSP / TinyML / Wearables</td></tr>
+                  <tr><td class="k">Talent Pipeline</td><td class="v">Dolby, Harman, Qualcomm alumni</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="item open" data-item>
+        <button class="head-row" type="button" aria-expanded="true">
+          <div class="num">II</div>
+          <div class="label">Cost arbitrage is structural - not tactical</div>
+          <div class="toggle">+</div>
+        </button>
+        <div class="body">
+          <div class="body-inner">
+            <p class="copy">India GR&D engineers cost 65-75% less fully loaded than US equivalents. At 800 people that is not a line item, it is a $60-88M annual saving that compounds. The longer Bose waits, the more is left on the table.</p>
+            <div class="dashboard">
+              <div>
+                <div class="impact">
+                  <h3>Strategic Impact</h3>
+                  <p>Fully loaded Indian engineering resources cost 65-75% less than US equivalents, creating a structural cost advantage. At 800 FTE scale, this yields $60-88M in annual savings that compounds.</p>
+                </div>
+                <div class="stat">$60-88M annual saving at 800 FTE</div>
+              </div>
+              <div class="metrics">
+                <h4>Key Metrics & Parameters</h4>
+                <table>
+                  <tr><td class="k">Target Location</td><td class="v">Hyderabad & Bengaluru</td></tr>
+                  <tr><td class="k">Annual Save Margin</td><td class="v">$60M - $88M (at 800 FTE steady state)</td></tr>
+                  <tr><td class="k">Cost Reduction vs US</td><td class="v">65% - 75% fully loaded</td></tr>
+                  <tr><td class="k">Payback Period</td><td class="v">&lt; 14 Months</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="item open" data-item>
+        <button class="head-row" type="button" aria-expanded="true">
+          <div class="num">III</div>
+          <div class="label">The entity is already there</div>
+          <div class="toggle">+</div>
+        </button>
+        <div class="body">
+          <div class="body-inner">
+            <p class="copy">Bose holds a 30-year-old India entity, incorporated 1995, Gurgaon. That removes the single biggest barrier to GCC entry: market access. Most firms spend 6 months on what Bose has already done.</p>
+            <div class="dashboard">
+              <div>
+                <div class="impact">
+                  <h3>Strategic Impact</h3>
+                  <p>Activating the existing 30-year-old Gurgaon WOS entity (incorporated in 1995) accelerates setup by 6+ months, completely bypassing the complex regulatory and compliance hurdles typical of new entry.</p>
+                </div>
+                <div class="stat">Bose India entity established 1995</div>
+              </div>
+              <div class="metrics">
+                <h4>Key Metrics & Parameters</h4>
+                <table>
+                  <tr><td class="k">Target Location</td><td class="v">Gurgaon (Registration) -&gt; TS/KA (Branch)</td></tr>
+                  <tr><td class="k">WOS Entity Name</td><td class="v">Bose Corporation India Private Limited</td></tr>
+                  <tr><td class="k">CIN</td><td class="v">U74899HR1995PTC075400</td></tr>
+                  <tr><td class="k">Incorporation Date</td><td class="v">1995-10-18</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('[data-item]').forEach((item) => {
+      const btn = item.querySelector('.head-row');
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
+  </script>
+</body>
+</html>
