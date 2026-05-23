@@ -338,6 +338,14 @@
       padding-bottom: 80px !important;
     }
 
+    #proof {
+      padding-bottom: 20px !important;
+    }
+
+    #trust {
+      padding-top: 20px !important;
+    }
+
     .hero {
       min-height: auto !important;
       padding-bottom: 40px !important;
@@ -637,7 +645,7 @@ html{}
 
 .heroh{font-family:var(--F);font-size:clamp(38px,7vw,118px);font-weight:220;font-variation-settings:"opsz" 144,"SOFT" 60;line-height:.93;letter-spacing:-.04em;color:var(--navy);max-width:17ch;margin-bottom:clamp(22px,4vw,44px);}
 .heroh em{font-style:italic;font-variation-settings:"opsz" 144,"SOFT" 100;color:var(--blue);}
-.rw{display:inline-block;overflow:hidden;vertical-align:top;}
+.rw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:0.12em;margin-bottom:-0.12em;}
 .rw span{display:inline-block;transform:translateY(112%);transition:transform 950ms var(--eout);}
 .hv .rw span{transform:translateY(0);}
 .rw:nth-child(1) span{transition-delay:0ms}.rw:nth-child(2) span{transition-delay:65ms}.rw:nth-child(3) span{transition-delay:130ms}.rw:nth-child(4) span{transition-delay:195ms}.rw:nth-child(5) span{transition-delay:260ms}.rw:nth-child(6) span{transition-delay:325ms}
@@ -2993,7 +3001,7 @@ html{}
         ask: "You signed off on a transformational mandate. The question for you is simpler than the rest of the panel: does this engagement compound enterprise value beyond the 24-month operate window, or just shift cost? <em>It compounds.</em>",
         kpis: [
           { v: "800", l: "FTE at steady state", e: "" },
-          { v: "$2", l: "3-yr cumulative saving", e: "M" },
+          { v: "$225", l: "3-yr cumulative saving", e: "M" },
           { v: "24", l: "Months to steady state", e: " mo" },
           { v: "100%", l: "BOT transfer to Bose", e: "" },
         ],
@@ -3317,8 +3325,8 @@ html{}
         cat: "Legal · Tax",
         t: "TP study not commissioned before first hire",
         sev: "h",
-        prob: 70,
-        imp: 90,
+        prob: "High",
+        imp: "High",
         owner: "Tax Director · Bose",
         fix: "Week 1",
         m: "Big 4 advisor engaged Week 1. TP study scope to Bose by Week 2. ICA drafted before first hire.",
@@ -3327,8 +3335,8 @@ html{}
         cat: "Legal · Tax",
         t: "PE exposure for Bose US parent on first GR&D hire",
         sev: "h",
-        prob: 55,
-        imp: 85,
+        prob: "Medium",
+        imp: "High",
         owner: "General Counsel · Bose",
         fix: "Week 2",
         m: "Independent contractor framing. Controlled US personnel exposure. PE risk evaporates at transfer.",
@@ -3337,8 +3345,8 @@ html{}
         cat: "Legal · IP",
         t: "IP assignment clause not signed before hire",
         sev: "h",
-        prob: 50,
-        imp: 88,
+        prob: "Medium",
+        imp: "High",
         owner: "General Counsel · Bose",
         fix: "Week 3",
         m: "Clause wording signed off by Bose GC Week 3. Board IP mandate met on Day 1, not retroactively.",
@@ -3347,8 +3355,8 @@ html{}
         cat: "Compliance",
         t: "DPDP Act 2023 framework not live before engineering hire",
         sev: "m",
-        prob: 60,
-        imp: 65,
+        prob: "Medium",
+        imp: "Medium",
         owner: "Privacy Counsel · Joint",
         fix: "Week 4",
         m: "DPO designated and data classification complete by Week 4. Cross-border data flow framework documented.",
@@ -3357,8 +3365,8 @@ html{}
         cat: "Talent",
         t: "Bengaluru audio DSP attrition spike (18–22%)",
         sev: "m",
-        prob: 65,
-        imp: 60,
+        prob: "Medium",
+        imp: "Medium",
         owner: "Amita Goyal · Talent",
         fix: "Quarterly",
         m: "Hyderabad anchors operational scale. Bengaluru limited to R&D. Quarterly comp refresh + 18-27% niche premium.",
@@ -3367,8 +3375,8 @@ html{}
         cat: "Talent",
         t: "India Site Leader hire takes longer than 10 weeks",
         sev: "m",
-        prob: 55,
-        imp: 62,
+        prob: "Medium",
+        imp: "Medium",
         owner: "Exec Search + Conglo SVP",
         fix: "Week 6",
         m: "Executive search firm engaged Week 1. ConglomerateIT SVP holds interim accountability until permanent hire is in seat.",
@@ -3377,8 +3385,8 @@ html{}
         cat: "Operations",
         t: "Grade A tech park availability within timeline",
         sev: "l",
-        prob: 30,
-        imp: 50,
+        prob: "Low",
+        imp: "Medium",
         owner: "Real Estate Lead",
         fix: "Week 6",
         m: "LOI on 2-3 preferred parks in Phase 1 (RMZ, Bagmane, Prestige · HITEC City, Gachibowli). Flex workspace as contingency.",
@@ -3387,8 +3395,8 @@ html{}
         cat: "Operations",
         t: "GR&D lab build-out delay (anechoic, EMI/RF)",
         sev: "l",
-        prob: 35,
-        imp: 48,
+        prob: "Low",
+        imp: "Medium",
         owner: "Engineering Ops",
         fix: "Phase 1",
         m: "CTTC Bengaluru commercial anechoic booked Phase 1. Keysight, R&S, Audio Precision rentals locked.",
@@ -3397,8 +3405,8 @@ html{}
         cat: "Commercial",
         t: "India TP Safe Harbour modified by CBDT",
         sev: "l",
-        prob: 25,
-        imp: 42,
+        prob: "Low",
+        imp: "Low",
         owner: "TP Specialist",
         fix: "Monitoring",
         m: "Cost+15% within current Safe Harbour. TP study documents ALP basis independent. Monitoring + Bose alert if rules change.",
@@ -3407,8 +3415,8 @@ html{}
         cat: "Commercial",
         t: "Gurgaon entity compliance surprises in diligence",
         sev: "l",
-        prob: 30,
-        imp: 45,
+        prob: "Low",
+        imp: "Low",
         owner: "Legal/Compliance Lead",
         fix: "Week 3",
         m: "Entity compliance review completed by Week 3. Issues escalated with remediation plan. Fresh entity option if material concerns.",
@@ -3417,8 +3425,8 @@ html{}
         cat: "Transfer",
         t: "Receiving entity not ready at Month 24",
         sev: "m",
-        prob: 40,
-        imp: 75,
+        prob: "Medium",
+        imp: "High",
         owner: "Transition Lead · Joint",
         fix: "Month 12+",
         m: "TRI scored quarterly from Month 12 across six dimensions. Receiving entity extended into Karnataka + Telangana pre-transfer.",
@@ -3427,8 +3435,8 @@ html{}
         cat: "Transfer",
         t: "Workforce voluntary acceptance below threshold",
         sev: "m",
-        prob: 35,
-        imp: 70,
+        prob: "Low",
+        imp: "High",
         owner: "CHRO · Joint",
         fix: "Month 22",
         m: "Rebadging designed Month 24. Tenure preserved, PF UAN transferred, gratuity continuity. Voluntary acceptance designed at 100%.",
@@ -3443,43 +3451,36 @@ html{}
         pillar: "Setup & Infrastructure",
         kpi: "Workspace Readiness & Network Provisioning for air-gapped zones",
         sla: "100% operational setup within 30 days of signed contract (IT/GBS/R&D firewalls live)",
-        pv: "-3.0%",
+        pv: "-XX.X%",
         pl: "If handover delayed past 10 business days",
       },
       {
         pillar: "Talent Acquisition",
         kpi: "Time-to-Hire for core divisions from final JD validation",
         sla: "IT & GBS: 45 days · R&D: 60 days",
-        pv: "-2.5%",
+        pv: "-XX.X%",
         pl: "If recruitment lags past 15 business days of SLA",
       },
       {
         pillar: "Workforce Continuity",
         kpi: "Infant Attrition Rate (first 180 days)",
-        sla: "5% annualized attrition across all divisions in incubation phase",
-        pv: "-2.0%",
-        pl: "If quarterly attrition spikes past 8%",
+        sla: "10% annualized attrition across all divisions in incubation phase",
+        pv: "-XX.X%",
+        pl: "If quarterly attrition spikes past XX%",
       },
       {
         pillar: "Technical Security",
         kpi: "Network Circuit Uptime & firewall availability for client-dedicated ISP loops",
         sla: "99.95% Network Uptime (excluding pre-approved maintenance)",
-        pv: "-3.0%",
+        pv: "-XX.X%",
         pl: "For any unapproved downtime exceeding 30 min",
       },
       {
         pillar: "Financial Governance",
         kpi: "Open-Book Ledger Accuracy mapping payroll & utility pro-rates",
         sla: "100% itemized billing transparency with zero accounting variance",
-        pv: "-5.0%",
+        pv: "-XX.X%",
         pl: "Immediate · for any unverified billing discrepancy",
-      },
-      {
-        pillar: "Facility Build (Model 2)",
-        kpi: "Milestone Adherence for site drawings, HVAC fit-outs, legal permits",
-        sla: "Completion and certification within 18-month roadmap",
-        pv: "-2.5%",
-        pl: "Per month of construction delay",
       },
     ];
 
@@ -3966,7 +3967,7 @@ html{}
         num: "01",
         tag: "The trust mechanic",
         badge: "Margin at risk",
-        title: "Six KPIs · <em>our own margin on the line.</em>",
+        title: "Five KPIs · <em>our own margin on the line.</em>",
       },
       {
         id: "bot",
@@ -5665,6 +5666,14 @@ html{}
                                   <div className="wcml">Fix date</div>
                                   <div className="wcmv">{r.fix}</div>
                                 </div>
+                                <div className="wcmb">
+                                  <div className="wcml">Probability</div>
+                                  <div className="wcmv">{r.prob}</div>
+                                </div>
+                                <div className="wcmb">
+                                  <div className="wcml">Impact</div>
+                                  <div className="wcmv">{r.imp}</div>
+                                </div>
                               </div>
                               <div className="wcmit">
                                 <strong>Mitigation</strong>
@@ -5933,7 +5942,7 @@ html{}
                               }}
                             >
                               Our standard monthly management fee markup is
-                              15%. If we fail to meet these six explicit
+                              15%. If we fail to meet these five explicit
                               benchmarks, a{" "}
                               <strong style={{ color: "var(--red)" }}>
                                 malus penalty
@@ -5998,7 +6007,7 @@ html{}
                                   zIndex: 1,
                                 }}
                               >
-                                17.5%
+                                XX%
                               </div>
                               <div
                                 style={{ position: "relative", zIndex: 1 }}
