@@ -682,9 +682,9 @@ html{}
 .ccd{font-size:11.5px;color:var(--ink3);line-height:1.45;}
 
 /* DRAG COMPARISON */
-.cmpwrap{background:linear-gradient(135deg, #0b1a30 0%, #0d1f3c 100%);border:1.5px solid rgba(255,255,255,0.12);border-radius:14px;padding:22px;margin-top:16px;color:#fff;}
-.cmph{font-family:var(--M);font-size:9.5px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--blue3);margin-bottom:16px;display:flex;align-items:center;gap:7px;}
-.cmph::before{content:'';width:13px;height:1.5px;background:var(--blue3);}
+.cmpwrap{background:var(--bg);border:1.5px solid var(--l1);border-radius:14px;padding:22px;margin-top:16px;}
+.cmph{font-family:var(--M);font-size:9.5px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);margin-bottom:16px;display:flex;align-items:center;gap:7px;}
+.cmph::before{content:'';width:13px;height:1.5px;background:var(--ink3);}
 .cmps{position:relative;height:54px;border-radius:8px;overflow:hidden;cursor:ew-resize;user-select:none;-webkit-user-select:none;touch-action:pan-y;}
 .cmpA{position:absolute;top:0;bottom:0;left:0;display:flex;align-items:center;padding-left:18px;background:linear-gradient(90deg,rgba(192,28,28,.1),rgba(192,28,28,.05));border-right:2px solid var(--red);}
 .cmpB{position:absolute;top:0;bottom:0;right:0;left:0;display:flex;align-items:center;justify-content:flex-end;padding-right:18px;background:linear-gradient(90deg,rgba(26,79,150,.05),rgba(26,79,150,.1));}
@@ -693,7 +693,7 @@ html{}
 .cmpA .cv{font-family:var(--F);font-size:22px;font-weight:400;color:var(--red);letter-spacing:-.025em;white-space:nowrap;margin-top:1px;}
 .cmpB .cv{font-family:var(--F);font-size:22px;font-weight:400;color:var(--blue);letter-spacing:-.025em;white-space:nowrap;margin-top:1px;}
 .cmph2{width:34px;height:34px;background:#fff;border:1.5px solid var(--l2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:ew-resize;box-shadow:var(--sh2);position:absolute;top:50%;transform:translate(-50%,-50%);z-index:10;font-size:13px;color:var(--ink3);}
-.cmpleg{display:flex;justify-content:space-between;margin-top:10px;font-family:var(--M);font-size:9px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:.08em;}
+.cmpleg{display:flex;justify-content:space-between;margin-top:10px;font-family:var(--M);font-size:9px;font-weight:500;color:var(--ink3);letter-spacing:.08em;}
 
 /* CITY MINI */
 .cmini{display:grid;grid-template-columns:1fr 1px 1fr;gap:clamp(18px,3.5vw,44px);}
@@ -2625,10 +2625,6 @@ function App() {
       <header className={`hdr${sy>40?" sc":""}`}>
         <div className="brand" onClick={() => scrollTo("mandate")}>
           <Logo size={42}/>
-          <div className="btext">
-            <strong>Conglomerate <em>IT</em></strong>
-            <small>GCC Advisory · India · 2026</small>
-          </div>
         </div>
         <nav className="mnav">
           {[["moneymath","$"],["commercial","Tax"],["panel","Panel"],["deepdive","8 Deep Dives"],["versus","Vs"],["tough","Tough Qs"]].map(([id,l]) => (
@@ -4692,7 +4688,6 @@ function App() {
           <div>
             <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:14}}>
               <Logo size={36}/>
-              <div className="fbt"><strong>Conglomerate <em>IT</em></strong></div>
             </div>
             <p className="fsub">GCC Advisory & Technology Delivery. A capability designed for you to own, governed jointly, measured quarterly, and auditable on demand. Founded 2014 · Hyderabad · McKinney TX.</p>
           </div>
