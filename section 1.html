@@ -3744,10 +3744,50 @@ html{}
     ];
 
     const CT_QUADS = [
-      { id: "d", cls: "d", icon: "📊", title: "Delivery Telemetry", short: "Real-time throughput, sprint velocity, SLA compliance, and defect tracking across all three functions.", detail: "Unified ITSM service catalog. Automated ticket triage. Sprint burndown and capacity utilization. SLA breach prediction 72hrs ahead.", kpis: [{ n: "SLA Compliance", v: "≥99.2%" }, { n: "Sprint Velocity", v: "+12% QoQ" }, { n: "Ticket MTTR", v: "< 4 hrs" }, { n: "AI Coverage", v: "68% tickets" }] },
-      { id: "f", cls: "f", icon: "📈", title: "Financial Transparency", short: "Open-book unit costs, monthly invoice reconciliation, and real-time showback/chargeback options.", detail: "Line-item payroll, facility, and vendor cost visibility. Finance Controller sign-off before every billing cycle. India TP Safe Harbour documentation maintained live.", kpis: [{ n: "Invoice Accuracy", v: "100%" }, { n: "Margin", v: "15% flat" }, { n: "Cost Trend", v: "↓ 8% YoY" }, { n: "Audit Ready", v: "Always" }] },
-      { id: "p", cls: "p", icon: "👥", title: "People Analytics", short: "Attrition prediction, headcount velocity, capability mix, and skills gap tracking across both cities.", detail: "Monthly attrition model. Internal mobility tracking. Skills premium activation triggers. Career path progression mapped quarterly against Bose leveling framework.", kpis: [{ n: "Attrition", v: "< 12%" }, { n: "Offer Accept", v: "> 88%" }, { n: "Academy Certs", v: "320+ mo" }, { n: "Niche Fill", v: "< 45 days" }] },
-      { id: "r", cls: "r", icon: "🛡️", title: "Risk & Compliance", short: "Security posture, SOC 2 status, DLP compliance, audit readiness, and IP protection monitoring.", detail: "Daily security dashboard. SOC 2 Type II maintained. DLP controls on all audio/DSP IP. Quarterly compliance review with Bose CISO. Audit readiness always-on.", kpis: [{ n: "Security", v: "SOC 2 T2" }, { n: "DLP Coverage", v: "100%" }, { n: "Compliance", v: "✓ Live" }, { n: "Audit Ready", v: "Always" }] },
+      {
+        id: "d",
+        cls: "d",
+        icon: (
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#1a4f96" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
+        ),
+        title: "Delivery Telemetry",
+        short: "Real-time throughput, sprint velocity, SLA compliance, and defect tracking across all three functions.",
+        detail: "Unified ITSM service catalog. Automated ticket triage. Sprint burndown and capacity utilization. SLA breach prediction 72hrs ahead.",
+        kpis: [{ n: "SLA Compliance", v: "≥99.2%" }, { n: "Sprint Velocity", v: "+12% QoQ" }, { n: "Ticket MTTR", v: "< 4 hrs" }, { n: "AI Coverage", v: "68% tickets" }]
+      },
+      {
+        id: "f",
+        cls: "f",
+        icon: (
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2a7a3a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></svg>
+        ),
+        title: "Financial Transparency",
+        short: "Open-book unit costs, monthly invoice reconciliation, and real-time showback/chargeback options.",
+        detail: "Line-item payroll, facility, and vendor cost visibility. Finance Controller sign-off before every billing cycle. India TP Safe Harbour documentation maintained live.",
+        kpis: [{ n: "Invoice Accuracy", v: "100%" }, { n: "Margin", v: "15% flat" }, { n: "Cost Trend", v: "↓ 8% YoY" }, { n: "Audit Ready", v: "Always" }]
+      },
+      {
+        id: "p",
+        cls: "p",
+        icon: (
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#9d7c2a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+        ),
+        title: "People Analytics",
+        short: "Attrition prediction, headcount velocity, capability mix, and skills gap tracking across both cities.",
+        detail: "Monthly attrition model. Internal mobility tracking. Skills premium activation triggers. Career path progression mapped quarterly against Bose leveling framework.",
+        kpis: [{ n: "Attrition", v: "< 12%" }, { n: "Offer Accept", v: "> 88%" }, { n: "Academy Certs", v: "320+ mo" }, { n: "Niche Fill", v: "< 45 days" }]
+      },
+      {
+        id: "r",
+        cls: "r",
+        icon: (
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#c01c1c" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+        ),
+        title: "Risk & Compliance",
+        short: "Security posture, SOC 2 status, DLP compliance, audit readiness, and IP protection monitoring.",
+        detail: "Daily security dashboard. SOC 2 Type II maintained. DLP controls on all audio/DSP IP. Quarterly compliance review with Bose CISO. Audit readiness always-on.",
+        kpis: [{ n: "Security", v: "SOC 2 T2" }, { n: "DLP Coverage", v: "100%" }, { n: "Compliance", v: "✓ Live" }, { n: "Audit Ready", v: "Always" }]
+      }
     ];
 
     const CASES = [
