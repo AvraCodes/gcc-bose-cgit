@@ -566,7 +566,7 @@
     /* ═══ LOGO ═══════════════════════════════════════════════════════ */
     const Logo = ({ size = 44 }) => (
       <img
-        src="./logo.png"
+        src="logo.png"
         style={{
           height: size,
           width: "auto",
@@ -902,34 +902,34 @@ html{}
 .bdv{font-size:12.5px;color:var(--ink);line-height:1.5;}
 
 /* COST */
-.cctrl{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;margin-bottom:22px;padding:22px 28px;background:rgba(255, 255, 255, 0.45);backdrop-filter:blur(12px);border:1px solid var(--l1);border-radius:16px;}
-.cclbl{font-family:var(--M);font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);white-space:nowrap;}
+.cctrl{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;margin-bottom:22px;padding:22px 28px;background:rgba(11, 26, 48, 0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.15);border-radius:16px;color:#fff;}
+.cclbl{font-family:var(--M);font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);white-space:nowrap;}
 .sw{position:relative;height:20px;display:flex;align-items:center;flex:1;}
-.sfill{display:none;}
-.sw input[type=range]{width:100%;-webkit-appearance:none;height:3px;background:var(--s1);outline:none;border-radius:2px;position:relative;z-index:2;cursor:pointer;}
-.sw input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;background:var(--blue);border-radius:50%;cursor:grab;border:4px solid #fff;box-shadow:0 0 0 1.5px var(--blue),0 3px 12px rgba(26,79,150,.35);transition:transform 0.15s ease;}
+.sfill{position:absolute;left:0;top:50%;transform:translateY(-50%);height:3px;background:linear-gradient(90deg,var(--blue),var(--blue2));pointer-events:none;z-index:1;border-radius:2px;}
+.sw input[type=range]{width:100%;-webkit-appearance:none;height:3px;background:rgba(255,255,255,0.15);outline:none;border-radius:2px;position:relative;z-index:2;cursor:pointer;}
+.sw input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:var(--blue);border-radius:50%;cursor:grab;border:3px solid #fff;box-shadow:0 0 0 1.5px var(--blue),0 3px 12px rgba(26,79,150,.35);transition:transform 0.15s ease;}
 .sw input[type=range]::-webkit-slider-thumb:active{transform:scale(1.15);cursor:grabbing;}
-.sw input[type=range]::-moz-range-thumb{width:22px;height:22px;background:var(--blue);border-radius:50%;border:4px solid #fff;cursor:grab;box-shadow:0 0 0 1.5px var(--blue),0 3px 12px rgba(26,79,150,.35);}
-.ccval{font-family:var(--F);font-size:clamp(32px,3vw,44px);font-weight:400;color:var(--blue);letter-spacing:-.02em;min-width:80px;text-align:right;line-height:1;}
+.sw input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--blue);border-radius:50%;border:3px solid #fff;cursor:grab;box-shadow:0 0 0 1.5px var(--blue),0 3px 12px rgba(26,79,150,.35);}
+.ccval{font-family:var(--F);font-size:clamp(32px,3vw,44px);font-weight:400;color:#fff;letter-spacing:-.02em;min-width:80px;text-align:right;line-height:1;}
 .cviz{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:stretch;}
-.cstk{background:#fff;border:1px solid var(--l1);border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;}
-.cstt{font-family:var(--M);font-size:9.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);margin-bottom:20px;display:flex;align-items:center;gap:7px;}
+.cstk{background:linear-gradient(135deg, #0b1a30 0%, #0d1f3c 100%);border:1px solid rgba(255, 255, 255, 0.12);border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;box-shadow: 0 12px 40px rgba(0,0,0,0.2);}
+.cstt{font-family:var(--M);font-size:9.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--blue3);margin-bottom:20px;display:flex;align-items:center;gap:7px;}
 .cstt::before{display:none;}
-.cr{display:grid;grid-template-columns:150px 1fr 70px;align-items:center;gap:16px;padding:12px 0;border-bottom:1px dashed var(--l1);}
+.cr{display:grid;grid-template-columns:150px 1fr 70px;align-items:center;gap:16px;padding:12px 0;border-bottom:1px dashed rgba(255,255,255,0.12);}
 .cr:last-of-type{border-bottom:none;}
-.cr.mg{color:var(--blue);border-top:1.5px solid var(--blue);border-bottom:1.5px solid var(--blue);margin-top:6px;padding:16px 0;}
-.cn{font-size:12.5px;color:var(--ink2);font-family:var(--B);line-height:1.4;}
-.cr.mg .cn{color:var(--blue);font-weight:550;}
-.cb{height:6px;background:#e5e5e5;border-radius:3px;overflow:visible !important;position:relative;}
+.cr.mg{color:var(--blue3);border-top:1.5px solid rgba(255,255,255,0.2);border-bottom:1.5px solid rgba(255,255,255,0.2);margin-top:6px;padding:16px 0;}
+.cn{font-size:12.5px;color:rgba(255,255,255,0.95);font-family:var(--B);line-height:1.4;}
+.cr.mg .cn{color:var(--blue3);font-weight:550;}
+.cb{height:6px;background:rgba(255,255,255,0.12);border-radius:3px;overflow:visible !important;position:relative;}
 .cbf{height:100%;background:linear-gradient(90deg,var(--blue3),var(--blue2));transition:width 400ms var(--eout);border-radius:3px;position:relative;}
 .cbf::after{content:'';position:absolute;right:-4px;top:50%;transform:translateY(-50%);width:9px;height:9px;background:var(--blue2);border:2px solid #fff;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,0.15);pointer-events:none;}
-.cr.mg .cbf{background:linear-gradient(90deg,var(--blue),var(--blue2));}
-.cr.mg .cbf::after{background:var(--blue) !important;}
-.ca{font-family:var(--B);font-size:13px;font-weight:600;text-align:right;color:var(--navy);font-variant-numeric:tabular-nums;}
-.cr.mg .ca{color:var(--blue);}
-.ctot{display:flex;justify-content:space-between;align-items:center;padding-top:20px;margin-top:12px;border-top:none;}
-.ctlbl{font-family:var(--M);font-size:9.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);}
-.ctval{font-family:var(--F);font-size:clamp(32px,3vw,44px);font-weight:400;color:var(--blue);letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
+.cr.mg .cbf{background:linear-gradient(90deg,var(--blue3),var(--blue2));}
+.cr.mg .cbf::after{background:var(--blue3) !important;}
+.ca{font-family:var(--B);font-size:13px;font-weight:600;text-align:right;color:#fff;font-variant-numeric:tabular-nums;}
+.cr.mg .ca{color:var(--blue3);}
+.ctot{display:flex;justify-content:space-between;align-items:center;padding-top:20px;margin-top:12px;border-top:1.5px solid rgba(255,255,255,0.15);}
+.ctlbl{font-family:var(--M);font-size:9.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.75);}
+.ctval{font-family:var(--F);font-size:clamp(32px,3vw,44px);font-weight:400;color:#fff;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
 .ccomp{display:flex;flex-direction:column;gap:12px;height:100%;}
 .ccard{padding:20px 24px;background:#fff;border:1px solid var(--l1);border-radius:12px;cursor:pointer;position:relative;transition:all 250ms var(--ease);display:flex;flex-direction:column;justify-content:center;flex:1;}
 .ccard:hover{transform:translateY(-2px);box-shadow:var(--sh2);border-color:var(--l2);}
@@ -5243,7 +5243,7 @@ html{}
                 </div>
                 <div>
                   <h2 className="sh2">The blueprint, on <em>one page.</em></h2>
-                  <p className="slede">Click each card to flip it and reveal the audited proof points, then explore the Blueprint Cockpit beneath.</p>
+                  <p className="slede">Six strategic pillars framing the India GCC mandate. Drill down to inspect verified governance, transition, and operating indices.</p>
                 </div>
               </div>
 
@@ -5330,7 +5330,7 @@ html{}
                         >
                           ⛶ Zoom
                         </button>
-                        <div className="ftip">Click to reveal proof</div>
+                        <div className="ftip">Strategic fit validation</div>
                       </div>
                       <div className="fb">
                         <div>
@@ -6007,7 +6007,7 @@ html{}
                     <div className="cctrl">
                       <span className="cclbl">ENGINEERS IN SEAT</span>
                       <div className="sw">
-                        <div className="sfill" style={{ width: ((n - 50) / 750 * 100) + "%" }} />
+                        <div className="sfill" style={{ width: `calc(10px + ${((n - 50) / 750)} * (100% - 20px))` }} />
                         <input type="range" min={50} max={800} step={10} value={n} onChange={e => setHc(+e.target.value)} />
                       </div>
                       <span className="ccval">{n}</span>
@@ -6271,7 +6271,7 @@ html{}
                                 <span className="lever-val-highlight">{n} FTE</span>
                               </div>
                               <div className="sw" style={{ marginTop: 6 }} onClick={e => e.stopPropagation()}>
-                                <div className="sfill" style={{ width: ((n - 50) / 750 * 100) + "%" }} />
+                                <div className="sfill" style={{ width: `calc(10px + ${((n - 50) / 750)} * (100% - 20px))` }} />
                                 <input type="range" min={50} max={800} step={10} value={n} onChange={e => setHc(+e.target.value)} />
                               </div>
                             </div>
@@ -6306,7 +6306,7 @@ html{}
                                 <span className="lever-val-highlight">{hydAlloc}%</span>
                               </div>
                               <div className="sw" style={{ marginTop: 6 }} onClick={e => e.stopPropagation()}>
-                                <div className="sfill" style={{ width: hydAlloc + "%" }} />
+                                <div className="sfill" style={{ width: `calc(10px + ${(hydAlloc/100)} * (100% - 20px))` }} />
                                 <input type="range" min={0} max={100} value={hydAlloc} onChange={e => setHydAlloc(+e.target.value)} />
                               </div>
                             </div>
@@ -6341,7 +6341,7 @@ html{}
                                 <span className="lever-val-highlight">{vendorMargin}%</span>
                               </div>
                               <div className="sw" style={{ marginTop: 6 }} onClick={e => e.stopPropagation()}>
-                                <div className="sfill" style={{ width: ((vendorMargin - 15) / 30 * 100) + "%" }} />
+                                <div className="sfill" style={{ width: `calc(10px + ${((vendorMargin - 15) / 30)} * (100% - 20px))` }} />
                                 <input type="range" min={15} max={45} value={vendorMargin} onChange={e => setVendorMargin(+e.target.value)} />
                               </div>
                             </div>
@@ -6376,7 +6376,7 @@ html{}
                                 <span className="lever-val-highlight">{pyramidRatio}%</span>
                               </div>
                               <div className="sw" style={{ marginTop: 6 }} onClick={e => e.stopPropagation()}>
-                                <div className="sfill" style={{ width: ((pyramidRatio - 30) / 40 * 100) + "%" }} />
+                                <div className="sfill" style={{ width: `calc(10px + ${((pyramidRatio - 30) / 40)} * (100% - 20px))` }} />
                                 <input type="range" min={30} max={70} value={pyramidRatio} onChange={e => setPyramidRatio(+e.target.value)} />
                               </div>
                             </div>
@@ -6906,7 +6906,7 @@ html{}
                 </div>
                 <div>
                   <h2 className="sh2">The talent <em>engine.</em></h2>
-                  <p className="slede">Three phases. Click each to reveal the operational detail beneath the headline. Hire → Build → Retain is not a sequence — it runs in parallel after Month 6.</p>
+                  <p className="slede">A three-stage parallelized execution methodology designed for rapid scale. Select a phase to explore targeted milestones across hiring, infrastructure build, and core retention systems.</p>
                 </div>
               </div>
               <div className="tephases rv" ref={addRef}>
@@ -7132,7 +7132,7 @@ html{}
                 </div>
                 <div>
                   <h2 className="sh2">The operating <em>engine.</em></h2>
-                  <p className="slede">Governance is the difference between a centre that works and one that drifts. Hover the tiers and click the stakeholders to reveal decision boundaries.</p>
+                  <p className="slede">A robust tier-based corporate governance architecture defining clear escalation paths and decision boundaries across stakeholders.</p>
                 </div>
               </div>
               <div className="egrid">
@@ -7183,7 +7183,7 @@ html{}
                 </div>
                 <div>
                   <h2 className="sh2">You are never <em>blind.</em></h2>
-                  <p className="slede">Four quadrants of operational intelligence. Click each to reveal the KPIs, tooling, and cadence that govern it. Real-time. Auditable. Yours.</p>
+                  <p className="slede">Integrated operational intelligence dashboard monitoring key performance indicators, engineering tooling, and governance cadences.</p>
                 </div>
               </div>
               <div className="ctgrid rvs" ref={addRef}>
