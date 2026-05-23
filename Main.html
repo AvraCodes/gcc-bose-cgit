@@ -6636,13 +6636,13 @@ html{}
                                   const items = DELIVERABLES.filter((d) => d.w === wk);
                                   if (items.length === 0) {
                                     return (
-                                      <div key={wk} className="mtdrop collapsed-week-row empty-week" style={{ opacity: 0.65, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 20px" }}>
+                                      <div key={wk} className="mtdrop collapsed-week-row empty-week" style={{ opacity: 0.55, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 20px" }}>
                                         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-                                          <div className="mtdpin" style={{ background: "var(--ink4)", color: "#fff" }}>W{wk}</div>
-                                          <div style={{ fontFamily: "var(--F)", fontSize: 15, color: "var(--ink2)" }}>Week {wk}</div>
+                                          <div className="mtdpin" style={{ background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.45)", boxShadow: "none" }}>W{wk}</div>
+                                          <div style={{ fontFamily: "var(--F)", fontSize: 15, color: "rgba(255, 255, 255, 0.45)" }}>Week {wk}</div>
                                         </div>
                                         <div>
-                                          <span className="mtdfmt" style={{ background: "var(--bg3)", color: "var(--ink3)" }}>Integration Gate</span>
+                                          <span className="mtdfmt" style={{ background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.4)" }}>Integration Gate</span>
                                         </div>
                                       </div>
                                     );
@@ -6655,16 +6655,16 @@ html{}
                                       style={{ cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 20px" }}
                                     >
                                       <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-                                        <div className="mtdpin" style={{ background: "var(--blue)", color: "#fff" }}>W{wk}</div>
-                                        <div style={{ fontFamily: "var(--F)", fontSize: 15, color: "var(--navy)", fontWeight: 550 }}>
+                                        <div className="mtdpin">W{wk}</div>
+                                        <div style={{ fontFamily: "var(--F)", fontSize: 15, color: "#fff", fontWeight: 550 }}>
                                           Week {wk} Deliverables
                                         </div>
                                       </div>
                                       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                                        <span className="mtdfmt" style={{ background: "rgba(26, 79, 150, 0.08)", color: "var(--blue)" }}>
+                                        <span className="mtdfmt" style={{ background: "rgba(106, 176, 240, 0.15)", color: "#6ab0f0" }}>
                                           {items.length} {items.length === 1 ? "deliverable" : "deliverables"}
                                         </span>
-                                        <span style={{ color: "var(--blue)", fontSize: 11, fontWeight: 600 }}>Expand ➔</span>
+                                        <span style={{ color: "#6ab0f0", fontSize: 11, fontWeight: 600 }}>Expand ➔</span>
                                       </div>
                                     </div>
                                   );
