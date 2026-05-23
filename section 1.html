@@ -394,7 +394,7 @@
       margin-top: 32px;
     }
 
-    @media(max-width:900px){
+    @media(max-width:900px) {
       .trust-cols {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -453,7 +453,7 @@
       position: absolute;
       top: -40px;
       left: -20px;
-      color: rgba(26,79,150,0.06);
+      color: rgba(26, 79, 150, 0.06);
       z-index: -1;
       font-weight: 900;
     }
@@ -478,7 +478,7 @@
       font-family: var(--F);
       font-weight: bold;
       font-size: 20px;
-      border: 2px solid rgba(255,255,255,0.8);
+      border: 2px solid rgba(255, 255, 255, 0.8);
       box-shadow: var(--sh2);
     }
 
@@ -3312,46 +3312,46 @@ html{}
         "Technology & Global Operations"
       ],
       leadership: [
-        { 
-          role: "CEO & Primary Contact", 
-          name: "VJ", 
+        {
+          role: "CEO & Primary Contact",
+          name: "VJ",
           email: "vj@conglomerateit.com",
           desc: "Founder and Chief Executive Officer overseeing global delivery. Drives boutique speed and absolute strategic alignment."
         },
-        { 
-          role: "Strategy & Operations (Contracts)", 
-          name: "Anuradha Warnakulasooriya", 
+        {
+          role: "Strategy & Operations (Contracts)",
+          name: "Anuradha Warnakulasooriya",
           email: "Anuradha@ConglomerateIT.com",
           altEmail: "Contracts@ConglomerateIT.com",
           desc: "Manages global master service agreements, Safe Harbour financial alignment, and hosted operational contracts."
         },
-        { 
-          role: "GCC Practice Director: India", 
-          name: "Bapu Jee BS", 
+        {
+          role: "GCC Practice Director: India",
+          name: "Bapu Jee BS",
           email: "bapu.jee@conglomerateit.com",
           desc: "GCC Practice Leader in India. Expert in local talent pipelines and rapid entity stand-up (90-day blueprint execution)."
         },
-        { 
-          role: "GCC Advisory Board: India", 
-          name: "Dr. Chakravarthy", 
+        {
+          role: "GCC Advisory Board: India",
+          name: "Dr. Chakravarthy",
           email: "dr.chakravarthy@conglomerateit.com",
           desc: "Senior Advisor and Strategist guiding Indian regulatory compliance, local infrastructure selection, and governance setups."
         },
-        { 
-          role: "GCC Advisory Board: USA", 
-          name: "S Kumar", 
+        {
+          role: "GCC Advisory Board: USA",
+          name: "S Kumar",
           email: "s.kumar@conglomerateit.com",
           desc: "GCC Practice Leader in the USA. Ensures seamless onshore-offshore operational alignment and corporate mandate translation."
         },
-        { 
-          role: "Academia & Industry Advisor", 
-          name: "Dr. Rajanikanth Aluvalu", 
+        {
+          role: "Academia & Industry Advisor",
+          name: "Dr. Rajanikanth Aluvalu",
           email: "dr.rajanikanth@conglomerateit.com",
           desc: "Leading university liaison in India. Shapes specialized curriculum pipelines in TinyML, RTOS, and embedded audio tech."
         },
-        { 
-          role: "Employer Branding Lead", 
-          name: "Sumit Saxena", 
+        {
+          role: "Employer Branding Lead",
+          name: "Sumit Saxena",
           email: "sumit.saxena@conglomerateit.com",
           desc: "Digital Director and Employer Branding Lead. Ex-Publicis expert building highly attractive talent brand campaigns for BOSE."
         }
@@ -3848,7 +3848,7 @@ html{}
       const [pyramidRatio, setPyramidRatio] = useState(50);
       const [activeWave, setActiveWave] = useState(0);
       const [shadowWeeks, setShadowWeeks] = useState(3);
-      
+
       const [citiesSubTab, setCitiesSubTab] = useState("map");
       const [cityWeights, setCityWeights] = useState({
         talentPool: 10,
@@ -3861,7 +3861,7 @@ html{}
       const [gcaasSubTab, setGcaasSubTab] = useState("pillars");
 
 
-      
+
       /* bindZoom helper for click-to-zoom */
       const bindZoom = (payload) => ({
         onClick: (e) => { e.stopPropagation(); setZoomCard(payload); setIsZoomPinned(true); },
@@ -4346,140 +4346,140 @@ html{}
                         </div>
                       )}
                       <div className="briefing-dashboard-grid">
-                      {/* Card 1: Proposed BOT Model */}
-                      <div
-                        className="briefing-card mission"
-                        {...bindZoom({
-                          tag: "Mandate Model",
-                          title: "Proposed <em>Build-Operate-Transfer</em> Model",
-                          content: "We recommend a Build-Operate-Transfer (BOT) model on a Cost + ~15% commercial structure with open-book governance. The entire 800-person capability is incubated under our entity across a dual-city footprint (Hyderabad & Bengaluru) and rebadged to Bose's existing Indian entity at the 24-month mark, preserving tenure, benefits, and statutory continuity.",
-                          bullets: [
-                            "Build-Operate-Transfer (BOT): Total asset ownership transitions fully to BOSE in 24 months.",
-                            "Cost + 15% Markup structure: 100% open-book financial transparency with Safe Harbour alignment.",
-                            "Dual-City Footprint: Co-located in Hyderabad and Bengaluru for optimal talent diversification.",
-                            "Statutory Continuity: Full preservation of employee tenure, benefits, and local statutory rights during transfer.",
-                            "Incubated Capability: Pre-packaged legal entity support ('GCC-in-a-Box') to go live within 90 days."
-                          ],
-                          stats: [
-                            ["24 mo", "Operate window"],
-                            ["15%", "Strict flat markup"],
-                            ["800", "Total FTE capacity"]
-                          ],
-                          footer: "Source Document Ref: Executive Summary & Proposed Mandate (Pages 2-3)"
-                        })}
-                      >
-                        <div className="briefing-card-hdr">
-                          <div>
-                            <div className="briefing-card-meta">Mission Brief · Proposed Model</div>
-                            <h4 className="briefing-card-title">Build-Operate-Transfer (BOT)</h4>
+                        {/* Card 1: Proposed BOT Model */}
+                        <div
+                          className="briefing-card mission"
+                          {...bindZoom({
+                            tag: "Mandate Model",
+                            title: "Proposed <em>Build-Operate-Transfer</em> Model",
+                            content: "We recommend a Build-Operate-Transfer (BOT) model on a Cost + ~15% commercial structure with open-book governance. The entire 800-person capability is incubated under our entity across a dual-city footprint (Hyderabad & Bengaluru) and rebadged to Bose's existing Indian entity at the 24-month mark, preserving tenure, benefits, and statutory continuity.",
+                            bullets: [
+                              "Build-Operate-Transfer (BOT): Total asset ownership transitions fully to BOSE in 24 months.",
+                              "Cost + 15% Markup structure: 100% open-book financial transparency with Safe Harbour alignment.",
+                              "Dual-City Footprint: Co-located in Hyderabad and Bengaluru for optimal talent diversification.",
+                              "Statutory Continuity: Full preservation of employee tenure, benefits, and local statutory rights during transfer.",
+                              "Incubated Capability: Pre-packaged legal entity support ('GCC-in-a-Box') to go live within 90 days."
+                            ],
+                            stats: [
+                              ["24 mo", "Operate window"],
+                              ["15%", "Strict flat markup"],
+                              ["800", "Total FTE capacity"]
+                            ],
+                            footer: "Source Document Ref: Executive Summary & Proposed Mandate (Pages 2-3)"
+                          })}
+                        >
+                          <div className="briefing-card-hdr">
+                            <div>
+                              <div className="briefing-card-meta">Mission Brief · Proposed Model</div>
+                              <h4 className="briefing-card-title">Build-Operate-Transfer (BOT)</h4>
+                            </div>
                           </div>
-                        </div>
-                        <div className="briefing-card-body">
-                          <div className="mini-bot-timeline" onClick={(e) => e.stopPropagation()}>
-                            {[
-                              { p: "build", num: "I", label: "Build (0-6m)", pct: 15 },
-                              { p: "operate", num: "II", label: "Operate (6-24m)", pct: 60 },
-                              { p: "transfer", num: "III", label: "Transfer (24m)", pct: 100 }
-                            ].map((node) => (
-                              <div key={node.p} className="mini-bot-node-container">
-                                <div
-                                  className={`mini-bot-node${botSubPhase === node.p ? " active" : ""}`}
-                                  onClick={() => setBotSubPhase(node.p)}
-                                  title={node.label}
-                                >
-                                  {node.num}
+                          <div className="briefing-card-body">
+                            <div className="mini-bot-timeline" onClick={(e) => e.stopPropagation()}>
+                              {[
+                                { p: "build", num: "I", label: "Build (0-6m)", pct: 15 },
+                                { p: "operate", num: "II", label: "Operate (6-24m)", pct: 60 },
+                                { p: "transfer", num: "III", label: "Transfer (24m)", pct: 100 }
+                              ].map((node) => (
+                                <div key={node.p} className="mini-bot-node-container">
+                                  <div
+                                    className={`mini-bot-node${botSubPhase === node.p ? " active" : ""}`}
+                                    onClick={() => setBotSubPhase(node.p)}
+                                    title={node.label}
+                                  >
+                                    {node.num}
+                                  </div>
+                                  <span className="mini-bot-node-lbl" style={{ fontWeight: botSubPhase === node.p ? "600" : "400" }}>
+                                    {node.p}
+                                  </span>
                                 </div>
-                                <span className="mini-bot-node-lbl" style={{ fontWeight: botSubPhase === node.p ? "600" : "400" }}>
-                                  {node.p}
-                                </span>
+                              ))}
+                              <div className="mini-bot-timeline-fill" style={{ width: botSubPhase === "build" ? "15%" : botSubPhase === "operate" ? "60%" : "100%" }} />
+                            </div>
+
+                            <div className="micro-gauge-row">
+                              <span className="micro-gauge-lbl">BOT Window</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill" style={{ width: "66%" }} />
                               </div>
-                            ))}
-                            <div className="mini-bot-timeline-fill" style={{ width: botSubPhase === "build" ? "15%" : botSubPhase === "operate" ? "60%" : "100%" }} />
-                          </div>
-
-                          <div className="micro-gauge-row">
-                            <span className="micro-gauge-lbl">BOT Window</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill" style={{ width: "66%" }} />
+                              <span className="micro-gauge-val">24 Mo</span>
                             </div>
-                            <span className="micro-gauge-val">24 Mo</span>
-                          </div>
 
-                          <div className="micro-gauge-row">
-                            <span className="micro-gauge-lbl">Markup Fee</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill gold" style={{ width: "15%" }} />
-                            </div>
-                            <span className="micro-gauge-val">Cost+15%</span>
-                          </div>
-                        </div>
-                        <div className="hud-callout-footer">Click to inspect legal entity transition timeline</div>
-                      </div>
-
-                      {/* Card 2: Boutique Differentiation */}
-                      <div
-                        className="briefing-card mission"
-                        {...bindZoom({
-                          tag: "Boutique Differentiation",
-                          title: "Boutique Strategy: <em>Velocity and Precision</em>",
-                          content: "We shift the model from a rigid 'Capacity' partner to a 'Velocity and Precision' boutique partner. We offer right-sized accountability with direct founder-level executive sponsorship, eliminating account-layer drift. Operational maturity is measured transparently and scored quarterly via our Transfer Readiness Index (TRI).",
-                          bullets: [
-                            "Boutique Velocity: High-touch execution with zero administrative lag or corporate layers.",
-                            "Founder Sponsorship: Direct CEO & COO involvement in quarterly steering committee audits.",
-                            "Transfer Readiness Index (TRI): Quantitative maturity score tracking operational readiness quarterly.",
-                            "Dedicated Delivery: We treat BOSE as a top-three client, not a top-three-hundred account.",
-                            "Zero account drift: Transition from contract to delivery with the exact same engineering leaders."
-                          ],
-                          stats: [
-                            ["100%", "Founder sponsor"],
-                            ["TRI", "Quarterly audit score"],
-                            ["0", "Account layer drift"]
-                          ],
-                          footer: "Source Document Ref: Partner Differentiation & Value Rationale (Pages 8-9)"
-                        })}
-                      >
-                        <div className="briefing-card-hdr">
-                          <div>
-                            <div className="briefing-card-meta">Mission Brief · Differentiation</div>
-                            <h4 className="briefing-card-title">Velocity &amp; Precision</h4>
-                          </div>
-                        </div>
-                        <div className="briefing-card-body">
-                          <div className="radial-meters-grid">
-                            <div className="radial-meter-box">
-                              <Ring score={100} size={44} stroke={4} color="var(--blue)" animate={false} />
-                              <div className="radial-meter-txt">
-                                <span className="radial-meter-val">100%</span>
-                                <span className="radial-meter-lbl">Sponsor Access</span>
+                            <div className="micro-gauge-row">
+                              <span className="micro-gauge-lbl">Markup Fee</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill gold" style={{ width: "15%" }} />
                               </div>
+                              <span className="micro-gauge-val">Cost+15%</span>
                             </div>
-                            <div className="radial-meter-box">
-                              <Ring score={92} size={44} stroke={4} color="var(--blue2)" animate={false} />
-                              <div className="radial-meter-txt">
-                                <span className="radial-meter-val">Qrtly</span>
-                                <span className="radial-meter-lbl">TRI Audits</span>
+                          </div>
+                          <div className="hud-callout-footer">Click to inspect legal entity transition timeline</div>
+                        </div>
+
+                        {/* Card 2: Boutique Differentiation */}
+                        <div
+                          className="briefing-card mission"
+                          {...bindZoom({
+                            tag: "Boutique Differentiation",
+                            title: "Boutique Strategy: <em>Velocity and Precision</em>",
+                            content: "We shift the model from a rigid 'Capacity' partner to a 'Velocity and Precision' boutique partner. We offer right-sized accountability with direct founder-level executive sponsorship, eliminating account-layer drift. Operational maturity is measured transparently and scored quarterly via our Transfer Readiness Index (TRI).",
+                            bullets: [
+                              "Boutique Velocity: High-touch execution with zero administrative lag or corporate layers.",
+                              "Founder Sponsorship: Direct CEO & COO involvement in quarterly steering committee audits.",
+                              "Transfer Readiness Index (TRI): Quantitative maturity score tracking operational readiness quarterly.",
+                              "Dedicated Delivery: We treat BOSE as a top-three client, not a top-three-hundred account.",
+                              "Zero account drift: Transition from contract to delivery with the exact same engineering leaders."
+                            ],
+                            stats: [
+                              ["100%", "Founder sponsor"],
+                              ["TRI", "Quarterly audit score"],
+                              ["0", "Account layer drift"]
+                            ],
+                            footer: "Source Document Ref: Partner Differentiation & Value Rationale (Pages 8-9)"
+                          })}
+                        >
+                          <div className="briefing-card-hdr">
+                            <div>
+                              <div className="briefing-card-meta">Mission Brief · Differentiation</div>
+                              <h4 className="briefing-card-title">Velocity &amp; Precision</h4>
+                            </div>
+                          </div>
+                          <div className="briefing-card-body">
+                            <div className="radial-meters-grid">
+                              <div className="radial-meter-box">
+                                <Ring score={100} size={44} stroke={4} color="var(--blue)" animate={false} />
+                                <div className="radial-meter-txt">
+                                  <span className="radial-meter-val">100%</span>
+                                  <span className="radial-meter-lbl">Sponsor Access</span>
+                                </div>
+                              </div>
+                              <div className="radial-meter-box">
+                                <Ring score={92} size={44} stroke={4} color="var(--blue2)" animate={false} />
+                                <div className="radial-meter-txt">
+                                  <span className="radial-meter-val">Qrtly</span>
+                                  <span className="radial-meter-lbl">TRI Audits</span>
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                          <div className="micro-gauge-row">
-                            <span className="micro-gauge-lbl">Account Drift</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill" style={{ width: "0%" }} />
+                            <div className="micro-gauge-row">
+                              <span className="micro-gauge-lbl">Account Drift</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill" style={{ width: "0%" }} />
+                              </div>
+                              <span className="micro-gauge-val">0%</span>
                             </div>
-                            <span className="micro-gauge-val">0%</span>
-                          </div>
 
-                          <div className="micro-gauge-row">
-                            <span className="micro-gauge-lbl">Client Focus</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill" style={{ width: "100%" }} />
+                            <div className="micro-gauge-row">
+                              <span className="micro-gauge-lbl">Client Focus</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill" style={{ width: "100%" }} />
+                              </div>
+                              <span className="micro-gauge-val">Top-3</span>
                             </div>
-                            <span className="micro-gauge-val">Top-3</span>
                           </div>
+                          <div className="hud-callout-footer">Click to zoom direct founder metrics dashboard</div>
                         </div>
-                        <div className="hud-callout-footer">Click to zoom direct founder metrics dashboard</div>
-                      </div>
                       </div>
                     </div>
                   )}
@@ -4494,126 +4494,126 @@ html{}
                         </div>
                       )}
                       <div className="briefing-dashboard-grid">
-                      {/* Card 3: Supplier Corporate Profile */}
-                      <div
-                        className="briefing-card who"
-                        {...bindZoom({
-                          tag: "Supplier Profile",
-                          title: "Supplier Profile: <em>Conglomerate IT</em>",
-                          content: "ConglomerateIT is a premier, founder-led engineering boutique private firm established in 2014. We support global technology enterprises in establishing high-performing capabilities and captive nodes in India with 10 years of audited BOT delivery experience.",
-                          bullets: [
-                            "Legal Entity: Conglomerate IT Private Limited, established in Bengaluru.",
-                            "Scale: 290+ certified technology professionals and specialized recruiters.",
-                            "Offices: 2 delivery nodes in India (Bengaluru & Hyderabad), 1 global node in Austin, TX.",
-                            "Financing: Founder-led private firm, zero external debt or VC governance overhead.",
-                            "Track Record: 10 years of continuous delivery in engineering BOT."
-                          ],
-                          stats: [
-                            ["2014", "Established"],
-                            ["290+", "Professionals"],
-                            ["3", "Global Nodes"]
-                          ],
-                          footer: "Source Document Ref: Supplier Profile (Pages 1-2)"
-                        })}
-                      >
-                        <div className="briefing-card-hdr">
-                          <div>
-                            <div className="briefing-card-meta">Who We Are · Corporate Profile</div>
-                            <h4 className="briefing-card-title">Conglomerate IT</h4>
-                          </div>
-                        </div>
-                        <div className="briefing-card-body">
-                          <div className="radial-meters-grid">
-                            <div className="radial-meter-box">
-                              <div className="radial-meter-txt">
-                                <span className="radial-meter-val" style={{ color: "var(--blue)" }}>2014</span>
-                                <span className="radial-meter-lbl">Founded Year</span>
-                              </div>
-                            </div>
-                            <div className="radial-meter-box">
-                              <div className="radial-meter-txt">
-                                <span className="radial-meter-val" style={{ color: "var(--blue)" }}>290+</span>
-                                <span className="radial-meter-lbl">Cert. Staff</span>
-                              </div>
+                        {/* Card 3: Supplier Corporate Profile */}
+                        <div
+                          className="briefing-card who"
+                          {...bindZoom({
+                            tag: "Supplier Profile",
+                            title: "Supplier Profile: <em>Conglomerate IT</em>",
+                            content: "ConglomerateIT is a premier, founder-led engineering boutique private firm established in 2014. We support global technology enterprises in establishing high-performing capabilities and captive nodes in India with 10 years of audited BOT delivery experience.",
+                            bullets: [
+                              "Legal Entity: Conglomerate IT Private Limited, established in Bengaluru.",
+                              "Scale: 290+ certified technology professionals and specialized recruiters.",
+                              "Offices: 2 delivery nodes in India (Bengaluru & Hyderabad), 1 global node in Austin, TX.",
+                              "Financing: Founder-led private firm, zero external debt or VC governance overhead.",
+                              "Track Record: 10 years of continuous delivery in engineering BOT."
+                            ],
+                            stats: [
+                              ["2014", "Established"],
+                              ["290+", "Professionals"],
+                              ["3", "Global Nodes"]
+                            ],
+                            footer: "Source Document Ref: Supplier Profile (Pages 1-2)"
+                          })}
+                        >
+                          <div className="briefing-card-hdr">
+                            <div>
+                              <div className="briefing-card-meta">Who We Are · Corporate Profile</div>
+                              <h4 className="briefing-card-title">Conglomerate IT</h4>
                             </div>
                           </div>
-
-                          <div className="micro-gauge-row">
-                            <span className="micro-gauge-lbl">Debt Load</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill" style={{ width: "0%" }} />
-                            </div>
-                            <span className="micro-gauge-val">0% (Debt Free)</span>
-                          </div>
-
-                          <div className="micro-gauge-row">
-                            <span className="micro-gauge-lbl">Operating Nodes</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill" style={{ width: "100%" }} />
-                            </div>
-                            <span className="micro-gauge-val">3 Nodes</span>
-                          </div>
-                        </div>
-                        <div className="hud-callout-footer">Click to view audited financial &amp; node records</div>
-                      </div>
-
-                      {/* Card 4: Executive Leadership Spine */}
-                      <div
-                        className="briefing-card who"
-                        {...bindZoom({
-                          tag: "Executive Leadership Spine",
-                          title: "Executive Leadership Spine",
-                          content: "Our core executive spine guarantees direct, hands-on, founder-level attention to the Bose GCC initiative. This ensures rapid entity stand-up, zero bureaucracy, and absolute strategic alignment under the Build-Operate-Transfer construct.",
-                          bullets: [
-                            "VJ: Founder & CEO, guiding strategic roadmap and Bose escalation path.",
-                            "Anuradha Warnakulasooriya: COO, managing day-to-day operations and service delivery.",
-                            "Bapu Jee BS: India Practice Leader & Partner, leading regional execution.",
-                            "Dr. Rajanikanth Aluvalu & Dr. Chakravarthy: Technology & Engineering leaders.",
-                            "Support Spine: S Kumar (Strategic Delivery), Dr. Aluvalu (Academics & Talent), Sumit Saxena (Ops)."
-                          ],
-                          stats: [
-                            ["5+", "Senior Bridge Leaders"],
-                            ["100%", "Founder Attention"],
-                            ["Direct", "Escalation Path"]
-                          ],
-                          footer: "Source Document Ref: Executive Leadership Spine & Profiles (Page 4)"
-                        })}
-                      >
-                        <div className="briefing-card-hdr">
-                          <div>
-                            <div className="briefing-card-meta">Who We Are · Executive Spine</div>
-                            <h4 className="briefing-card-title">Leadership Core</h4>
-                          </div>
-                        </div>
-                        <div className="briefing-card-body">
-                          <div className="leader-avatar-grid">
-                            {[
-                              { name: "VJ", role: "CEO & Founder", initials: "VJ", color: "linear-gradient(135deg, #1a4f96, #0c4a8f)" },
-                              { name: "Anuradha W", role: "COO", initials: "AW", color: "linear-gradient(135deg, #1e3a5f, #0d2840)" },
-                              { name: "Bapu Jee BS", role: "India Partner", initials: "BJ", color: "linear-gradient(135deg, #2563a8, #1a4f96)" },
-                              { name: "Dr. Chakravarthy", role: "Tech Director", initials: "DC", color: "linear-gradient(135deg, #c01c1c, #a01818)" },
-                              { name: "Dr. Aluvalu", role: "Talent Director", initials: "DA", color: "linear-gradient(135deg, #2d6a4f, #1b5235)" },
-                            ].map((leader, i) => (
-                              <div key={i} className="leader-avatar-item">
-                                <div className="leader-avatar-circle" style={{ background: leader.color }}>
-                                  {leader.initials}
+                          <div className="briefing-card-body">
+                            <div className="radial-meters-grid">
+                              <div className="radial-meter-box">
+                                <div className="radial-meter-txt">
+                                  <span className="radial-meter-val" style={{ color: "var(--blue)" }}>2014</span>
+                                  <span className="radial-meter-lbl">Founded Year</span>
                                 </div>
-                                <span className="leader-name">{leader.name}</span>
-                                <span className="leader-role">{leader.role}</span>
                               </div>
-                            ))}
-                          </div>
-                          <div className="micro-gauge-row" style={{ marginTop: "10px" }}>
-                            <span className="micro-gauge-lbl">Bridge Leaders</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill" style={{ width: "80%" }} />
+                              <div className="radial-meter-box">
+                                <div className="radial-meter-txt">
+                                  <span className="radial-meter-val" style={{ color: "var(--blue)" }}>290+</span>
+                                  <span className="radial-meter-lbl">Cert. Staff</span>
+                                </div>
+                              </div>
                             </div>
-                            <span className="micro-gauge-val">5+ Direct</span>
+
+                            <div className="micro-gauge-row">
+                              <span className="micro-gauge-lbl">Debt Load</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill" style={{ width: "0%" }} />
+                              </div>
+                              <span className="micro-gauge-val">0% (Debt Free)</span>
+                            </div>
+
+                            <div className="micro-gauge-row">
+                              <span className="micro-gauge-lbl">Operating Nodes</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill" style={{ width: "100%" }} />
+                              </div>
+                              <span className="micro-gauge-val">3 Nodes</span>
+                            </div>
                           </div>
+                          <div className="hud-callout-footer">Click to view audited financial &amp; node records</div>
                         </div>
 
-                        <div className="hud-callout-footer">Click to zoom full leadership bios &amp; governance</div>
-                      </div>
+                        {/* Card 4: Executive Leadership Spine */}
+                        <div
+                          className="briefing-card who"
+                          {...bindZoom({
+                            tag: "Executive Leadership Spine",
+                            title: "Executive Leadership Spine",
+                            content: "Our core executive spine guarantees direct, hands-on, founder-level attention to the Bose GCC initiative. This ensures rapid entity stand-up, zero bureaucracy, and absolute strategic alignment under the Build-Operate-Transfer construct.",
+                            bullets: [
+                              "VJ: Founder & CEO, guiding strategic roadmap and Bose escalation path.",
+                              "Anuradha Warnakulasooriya: COO, managing day-to-day operations and service delivery.",
+                              "Bapu Jee BS: India Practice Leader & Partner, leading regional execution.",
+                              "Dr. Rajanikanth Aluvalu & Dr. Chakravarthy: Technology & Engineering leaders.",
+                              "Support Spine: S Kumar (Strategic Delivery), Dr. Aluvalu (Academics & Talent), Sumit Saxena (Ops)."
+                            ],
+                            stats: [
+                              ["5+", "Senior Bridge Leaders"],
+                              ["100%", "Founder Attention"],
+                              ["Direct", "Escalation Path"]
+                            ],
+                            footer: "Source Document Ref: Executive Leadership Spine & Profiles (Page 4)"
+                          })}
+                        >
+                          <div className="briefing-card-hdr">
+                            <div>
+                              <div className="briefing-card-meta">Who We Are · Executive Spine</div>
+                              <h4 className="briefing-card-title">Leadership Core</h4>
+                            </div>
+                          </div>
+                          <div className="briefing-card-body">
+                            <div className="leader-avatar-grid">
+                              {[
+                                { name: "VJ", role: "CEO & Founder", initials: "VJ", color: "linear-gradient(135deg, #1a4f96, #0c4a8f)" },
+                                { name: "Anuradha W", role: "COO", initials: "AW", color: "linear-gradient(135deg, #1e3a5f, #0d2840)" },
+                                { name: "Bapu Jee BS", role: "India Partner", initials: "BJ", color: "linear-gradient(135deg, #2563a8, #1a4f96)" },
+                                { name: "Dr. Chakravarthy", role: "Tech Director", initials: "DC", color: "linear-gradient(135deg, #c01c1c, #a01818)" },
+                                { name: "Dr. Aluvalu", role: "Talent Director", initials: "DA", color: "linear-gradient(135deg, #2d6a4f, #1b5235)" },
+                              ].map((leader, i) => (
+                                <div key={i} className="leader-avatar-item">
+                                  <div className="leader-avatar-circle" style={{ background: leader.color }}>
+                                    {leader.initials}
+                                  </div>
+                                  <span className="leader-name">{leader.name}</span>
+                                  <span className="leader-role">{leader.role}</span>
+                                </div>
+                              ))}
+                            </div>
+                            <div className="micro-gauge-row" style={{ marginTop: "10px" }}>
+                              <span className="micro-gauge-lbl">Bridge Leaders</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill" style={{ width: "80%" }} />
+                              </div>
+                              <span className="micro-gauge-val">5+ Direct</span>
+                            </div>
+                          </div>
+
+                          <div className="hud-callout-footer">Click to zoom full leadership bios &amp; governance</div>
+                        </div>
                       </div>
                     </div>
                   )}
@@ -4628,111 +4628,111 @@ html{}
                         </div>
                       )}
                       <div className="briefing-dashboard-grid">
-                      {/* Card 5: GR&D Capability Fit */}
-                      <div
-                        className="briefing-card capability"
-                        {...bindZoom({
-                          tag: "Capability Fit RFI",
-                          title: "RFI Service Scope Match: <em>GR&D Engineering</em>",
-                          content: "ConglomerateIT has performed a comprehensive capability audit against the BOSE RFI requirements. We confirm 100% operational readiness and deep expertise to deliver all requested services in the GR&D Engineering function under our co-branded Build-Operate-Transfer construct.",
-                          bullets: [
-                            "Wireless Connectivity: BLE, BT firmware engineering, Wi-Fi stacks, and RF calibration testing.",
-                            "RTOS & TinyML: Low-footprint embedded programming, micro-controller algorithms, edge computation.",
-                            "Acoustic Engineering: DSP programming, audio filter design, acoustic testing laboratory setups.",
-                            "Hiring Pipeline: Established relationships with top 10 engineering schools in Bengaluru and Hyderabad.",
-                            "Transition Speed: 90 days average to establish high-performing GR&D cohorts."
-                          ],
-                          stats: [
-                            ["100%", "RFI Scope Fit"],
-                            ["✓ Confirmed", "Scope Match"],
-                            ["90 days", "Talent Stand-up"]
-                          ],
-                          footer: "Source Document Ref: Service Lines Relevant to this RFI (Page 5)"
-                        })}
-                      >
-                        <div className="briefing-card-hdr">
-                          <div>
-                            <div className="briefing-card-meta">Capability Fit · GR&amp;D Engineering</div>
-                            <h4 className="briefing-card-title">Acoustic &amp; Wireless R&amp;D</h4>
-                          </div>
-                        </div>
-                        <div className="briefing-card-body">
-                          <div className="micro-gauge-row">
-                            <span className="micro-gauge-lbl">BLE / BT Stacks</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill" style={{ width: "100%" }} />
+                        {/* Card 5: GR&D Capability Fit */}
+                        <div
+                          className="briefing-card capability"
+                          {...bindZoom({
+                            tag: "Capability Fit RFI",
+                            title: "RFI Service Scope Match: <em>GR&D Engineering</em>",
+                            content: "ConglomerateIT has performed a comprehensive capability audit against the BOSE RFI requirements. We confirm 100% operational readiness and deep expertise to deliver all requested services in the GR&D Engineering function under our co-branded Build-Operate-Transfer construct.",
+                            bullets: [
+                              "Wireless Connectivity: BLE, BT firmware engineering, Wi-Fi stacks, and RF calibration testing.",
+                              "RTOS & TinyML: Low-footprint embedded programming, micro-controller algorithms, edge computation.",
+                              "Acoustic Engineering: DSP programming, audio filter design, acoustic testing laboratory setups.",
+                              "Hiring Pipeline: Established relationships with top 10 engineering schools in Bengaluru and Hyderabad.",
+                              "Transition Speed: 90 days average to establish high-performing GR&D cohorts."
+                            ],
+                            stats: [
+                              ["100%", "RFI Scope Fit"],
+                              ["✓ Confirmed", "Scope Match"],
+                              ["90 days", "Talent Stand-up"]
+                            ],
+                            footer: "Source Document Ref: Service Lines Relevant to this RFI (Page 5)"
+                          })}
+                        >
+                          <div className="briefing-card-hdr">
+                            <div>
+                              <div className="briefing-card-meta">Capability Fit · GR&amp;D Engineering</div>
+                              <h4 className="briefing-card-title">Acoustic &amp; Wireless R&amp;D</h4>
                             </div>
-                            <span className="micro-gauge-val">100%</span>
                           </div>
-
-                          <div className="micro-gauge-row">
-                            <span className="micro-gauge-lbl">RTOS &amp; TinyML</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill" style={{ width: "100%" }} />
+                          <div className="briefing-card-body">
+                            <div className="micro-gauge-row">
+                              <span className="micro-gauge-lbl">BLE / BT Stacks</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill" style={{ width: "100%" }} />
+                              </div>
+                              <span className="micro-gauge-val">100%</span>
                             </div>
-                            <span className="micro-gauge-val">100%</span>
-                          </div>
 
-                          <div className="micro-gauge-row">
-                            <span className="micro-gauge-lbl">Audio DSP Paths</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill" style={{ width: "100%" }} />
+                            <div className="micro-gauge-row">
+                              <span className="micro-gauge-lbl">RTOS &amp; TinyML</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill" style={{ width: "100%" }} />
+                              </div>
+                              <span className="micro-gauge-val">100%</span>
                             </div>
-                            <span className="micro-gauge-val">100%</span>
-                          </div>
-                        </div>
-                        <div className="hud-callout-footer">Click to view academic talent pipelines &amp; labs</div>
-                      </div>
 
-                      {/* Card 6: IT & GBS Capability Fit */}
-                      <div
-                        className="briefing-card capability"
-                        {...bindZoom({
-                          tag: "Capability Fit RFI",
-                          title: "RFI Service Scope Match: <em>IT & GBS Services</em>",
-                          content: "ConglomerateIT confirms 100% operational readiness and deep expertise to deliver all requested services in the IT & GBS functions under our co-branded Build-Operate-Transfer construct.",
-                          bullets: [
-                            "Information Technology: Cloud (AWS/Azure), DevOps automation, cybersecurity monitoring, database administration.",
-                            "Global Business Services: Order Management, Master Data Management (MDM), billing administration.",
-                            "Financial Operations: Ariba PO processing, vendor reconciliation, Blackline tool integration, travel expense audits.",
-                            "Role Coverage: Audited salary benchmarks across 120+ IT and GBS role families.",
-                            "Scaling Pipeline: Access to active databases of over 250,000 certified professionals in India."
-                          ],
-                          stats: [
-                            ["100%", "Functional Match"],
-                            ["120+", "Role Families"],
-                            ["250K+", "Talent Database"]
-                          ],
-                          footer: "Source Document Ref: Service Lines Relevant to this RFI (Page 5)"
-                        })}
-                      >
-                        <div className="briefing-card-hdr">
-                          <div>
-                            <div className="briefing-card-meta">Capability Fit · IT &amp; GBS Functions</div>
-                            <h4 className="briefing-card-title">Enterprise Infrastructure</h4>
-                          </div>
-                        </div>
-                        <div className="briefing-card-body">
-                          <div className="visual-check-row">
-                            <div className="visual-check-icon">✓</div>
-                            <div className="visual-check-txt"><strong>Cloud &amp; DevOps:</strong> AWS, Azure, CI/CD automated deployment pipelines.</div>
-                          </div>
-
-                          <div className="visual-check-row">
-                            <div className="visual-check-icon">✓</div>
-                            <div className="visual-check-txt"><strong>GBS &amp; FinOps:</strong> Ariba PO, Blackline ledger audit reconciliation.</div>
-                          </div>
-
-                          <div className="micro-gauge-row" style={{ marginTop: "4px" }}>
-                            <span className="micro-gauge-lbl">Candidate Pool</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill" style={{ width: "90%" }} />
+                            <div className="micro-gauge-row">
+                              <span className="micro-gauge-lbl">Audio DSP Paths</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill" style={{ width: "100%" }} />
+                              </div>
+                              <span className="micro-gauge-val">100%</span>
                             </div>
-                            <span className="micro-gauge-val">250k+</span>
                           </div>
+                          <div className="hud-callout-footer">Click to view academic talent pipelines &amp; labs</div>
                         </div>
-                        <div className="hud-callout-footer">Click to inspect 120+ functional role salary structures</div>
-                      </div>
+
+                        {/* Card 6: IT & GBS Capability Fit */}
+                        <div
+                          className="briefing-card capability"
+                          {...bindZoom({
+                            tag: "Capability Fit RFI",
+                            title: "RFI Service Scope Match: <em>IT & GBS Services</em>",
+                            content: "ConglomerateIT confirms 100% operational readiness and deep expertise to deliver all requested services in the IT & GBS functions under our co-branded Build-Operate-Transfer construct.",
+                            bullets: [
+                              "Information Technology: Cloud (AWS/Azure), DevOps automation, cybersecurity monitoring, database administration.",
+                              "Global Business Services: Order Management, Master Data Management (MDM), billing administration.",
+                              "Financial Operations: Ariba PO processing, vendor reconciliation, Blackline tool integration, travel expense audits.",
+                              "Role Coverage: Audited salary benchmarks across 120+ IT and GBS role families.",
+                              "Scaling Pipeline: Access to active databases of over 250,000 certified professionals in India."
+                            ],
+                            stats: [
+                              ["100%", "Functional Match"],
+                              ["120+", "Role Families"],
+                              ["250K+", "Talent Database"]
+                            ],
+                            footer: "Source Document Ref: Service Lines Relevant to this RFI (Page 5)"
+                          })}
+                        >
+                          <div className="briefing-card-hdr">
+                            <div>
+                              <div className="briefing-card-meta">Capability Fit · IT &amp; GBS Functions</div>
+                              <h4 className="briefing-card-title">Enterprise Infrastructure</h4>
+                            </div>
+                          </div>
+                          <div className="briefing-card-body">
+                            <div className="visual-check-row">
+                              <div className="visual-check-icon">✓</div>
+                              <div className="visual-check-txt"><strong>Cloud &amp; DevOps:</strong> AWS, Azure, CI/CD automated deployment pipelines.</div>
+                            </div>
+
+                            <div className="visual-check-row">
+                              <div className="visual-check-icon">✓</div>
+                              <div className="visual-check-txt"><strong>GBS &amp; FinOps:</strong> Ariba PO, Blackline ledger audit reconciliation.</div>
+                            </div>
+
+                            <div className="micro-gauge-row" style={{ marginTop: "4px" }}>
+                              <span className="micro-gauge-lbl">Candidate Pool</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill" style={{ width: "90%" }} />
+                              </div>
+                              <span className="micro-gauge-val">250k+</span>
+                            </div>
+                          </div>
+                          <div className="hud-callout-footer">Click to inspect 120+ functional role salary structures</div>
+                        </div>
                       </div>
                     </div>
                   )}
@@ -4747,128 +4747,128 @@ html{}
                         </div>
                       )}
                       <div className="briefing-dashboard-grid">
-                      {/* Card 7: EdTech Case Study */}
-                      <div
-                        className="briefing-card experience"
-                        {...bindZoom({
-                          tag: "Comparable Proof Case Study",
-                          title: "BOT-to-Captive: <em>Global EdTech Leader</em>",
-                          content: "We successfully designed, built, and transferred a high-capacity global delivery captive for a U.S.-based EdTech enterprise. The program scaled rapidly across software engineering, content operations, and student support.",
-                          bullets: [
-                            "Peak Headcount: Scaled up to 250+ FTEs concurrently within 12 months.",
-                            "Timeline to Transfer: Handed over fully to the client's legal entity at month 18.",
-                            "Service Continuity: Achieved a flawless 98.6% service continuity rating during the rebadging phase.",
-                            "Financial Value: Delivered 38% annual operating run-rate savings compared to onshore US baselines.",
-                            "Scope: 100% open-book cost audibility maintained throughout the BOT incubation period."
-                          ],
-                          stats: [
-                            ["250+", "Peak FTEs"],
-                            ["18 mo", "Setup-to-Transfer"],
-                            ["38%", "Annual Savings"]
-                          ],
-                          footer: "Source Document Ref: Case Studies & Experience (Page 6)"
-                        })}
-                      >
-                        <div className="briefing-card-hdr">
-                          <div>
-                            <div className="briefing-card-meta">Relevant Experience · Case Study</div>
-                            <h4 className="briefing-card-title">Global EdTech Node</h4>
-                          </div>
-                        </div>
-                        <div className="briefing-card-body">
-                          <div className="micro-gauge-row">
-                            <span className="micro-gauge-lbl">Scale Reached</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill red" style={{ width: "83%" }} />
+                        {/* Card 7: EdTech Case Study */}
+                        <div
+                          className="briefing-card experience"
+                          {...bindZoom({
+                            tag: "Comparable Proof Case Study",
+                            title: "BOT-to-Captive: <em>Global EdTech Leader</em>",
+                            content: "We successfully designed, built, and transferred a high-capacity global delivery captive for a U.S.-based EdTech enterprise. The program scaled rapidly across software engineering, content operations, and student support.",
+                            bullets: [
+                              "Peak Headcount: Scaled up to 250+ FTEs concurrently within 12 months.",
+                              "Timeline to Transfer: Handed over fully to the client's legal entity at month 18.",
+                              "Service Continuity: Achieved a flawless 98.6% service continuity rating during the rebadging phase.",
+                              "Financial Value: Delivered 38% annual operating run-rate savings compared to onshore US baselines.",
+                              "Scope: 100% open-book cost audibility maintained throughout the BOT incubation period."
+                            ],
+                            stats: [
+                              ["250+", "Peak FTEs"],
+                              ["18 mo", "Setup-to-Transfer"],
+                              ["38%", "Annual Savings"]
+                            ],
+                            footer: "Source Document Ref: Case Studies & Experience (Page 6)"
+                          })}
+                        >
+                          <div className="briefing-card-hdr">
+                            <div>
+                              <div className="briefing-card-meta">Relevant Experience · Case Study</div>
+                              <h4 className="briefing-card-title">Global EdTech Node</h4>
                             </div>
-                            <span className="micro-gauge-val">250 FTE</span>
                           </div>
-
-                          <div className="micro-gauge-row">
-                            <span className="micro-gauge-lbl">BOT Transfer</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill red" style={{ width: "50%" }} />
+                          <div className="briefing-card-body">
+                            <div className="micro-gauge-row">
+                              <span className="micro-gauge-lbl">Scale Reached</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill red" style={{ width: "83%" }} />
+                              </div>
+                              <span className="micro-gauge-val">250 FTE</span>
                             </div>
-                            <span className="micro-gauge-val">18 Mo</span>
-                          </div>
 
-                          <div className="radial-meters-grid" style={{ marginTop: "4px" }}>
-                            <div className="radial-meter-box" style={{ background: "rgba(192,28,28,0.02)", borderColor: "var(--rl)" }}>
-                              <Ring score={98} size={32} stroke={3} color="var(--red)" animate={false} />
-                              <div className="radial-meter-txt">
-                                <span className="radial-meter-val" style={{ fontSize: "14px" }}>98.6%</span>
-                                <span className="radial-meter-lbl">Uptime SLA</span>
+                            <div className="micro-gauge-row">
+                              <span className="micro-gauge-lbl">BOT Transfer</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill red" style={{ width: "50%" }} />
+                              </div>
+                              <span className="micro-gauge-val">18 Mo</span>
+                            </div>
+
+                            <div className="radial-meters-grid" style={{ marginTop: "4px" }}>
+                              <div className="radial-meter-box" style={{ background: "rgba(192,28,28,0.02)", borderColor: "var(--rl)" }}>
+                                <Ring score={98} size={32} stroke={3} color="var(--red)" animate={false} />
+                                <div className="radial-meter-txt">
+                                  <span className="radial-meter-val" style={{ fontSize: "14px" }}>98.6%</span>
+                                  <span className="radial-meter-lbl">Uptime SLA</span>
+                                </div>
+                              </div>
+                              <div className="radial-meter-box" style={{ background: "rgba(192,28,28,0.02)", borderColor: "var(--rl)" }}>
+                                <div className="radial-meter-txt">
+                                  <span className="radial-meter-val" style={{ color: "var(--red)", fontSize: "14px" }}>38%</span>
+                                  <span className="radial-meter-lbl">Run-Rate Saved</span>
+                                </div>
                               </div>
                             </div>
-                            <div className="radial-meter-box" style={{ background: "rgba(192,28,28,0.02)", borderColor: "var(--rl)" }}>
-                              <div className="radial-meter-txt">
-                                <span className="radial-meter-val" style={{ color: "var(--red)", fontSize: "14px" }}>38%</span>
-                                <span className="radial-meter-lbl">Run-Rate Saved</span>
+                          </div>
+                          <div className="hud-callout-footer">Click to inspect transition audits &amp; rebadge logs</div>
+                        </div>
+
+                        {/* Card 8: Entertainment Case Study */}
+                        <div
+                          className="briefing-card experience"
+                          {...bindZoom({
+                            tag: "Comparable Proof Case Study",
+                            title: "Engineering CoE: <em>Global Entertainment Major</em>",
+                            content: "We built a specialized digital engineering and streaming media Center of Excellence (CoE) in India, delivering next-generation core transcoding, metadata ingestion, and CDN monitoring.",
+                            bullets: [
+                              "Headcount Scale: Ramp up of 180+ highly specialized engineering and video streaming developers.",
+                              "Ramp Duration: Handed over to client captive entity within 12 months of pilot launch.",
+                              "Uptime SLA: Achieved and maintained a rigorous 99.9% operational systems availability SLA.",
+                              "Strategic Tech: Leveraged advanced AI/ML models for automated real-time video transcoding and tagging.",
+                              "Attrition: Held voluntary staff attrition below 6.5% annually over the operating window."
+                            ],
+                            stats: [
+                              ["180+", "Tech FTEs"],
+                              ["12 mo", "Incubation to BOT"],
+                              ["99.9%", "SLA Uptime"]
+                            ],
+                            footer: "Source Document Ref: Case Studies & Experience (Page 6)"
+                          })}
+                        >
+                          <div className="briefing-card-hdr">
+                            <div>
+                              <div className="briefing-card-meta">Relevant Experience · CoE Setup</div>
+                              <h4 className="briefing-card-title">Streaming Media CoE</h4>
+                            </div>
+                          </div>
+                          <div className="briefing-card-body">
+                            <div className="micro-gauge-row">
+                              <span className="micro-gauge-lbl">Team Scale</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill red" style={{ width: "60%" }} />
+                              </div>
+                              <span className="micro-gauge-val">180 FTE</span>
+                            </div>
+
+                            <div className="micro-gauge-row">
+                              <span className="micro-gauge-lbl">Transfer Speed</span>
+                              <div className="micro-gauge-bar">
+                                <div className="micro-gauge-fill red" style={{ width: "33%" }} />
+                              </div>
+                              <span className="micro-gauge-val">12 Mo</span>
+                            </div>
+
+                            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "4px" }}>
+                              <div className="pulse-uptime-badge">
+                                <span className="pulse-dot" />
+                                99.9% Core SLA Uptime
+                              </div>
+                              <div style={{ textAlign: "right" }}>
+                                <span style={{ fontSize: "14px", fontFamily: "var(--F)", color: "var(--red)", fontWeight: "bold" }}>&lt; 6.5%</span>
+                                <span className="radial-meter-lbl" style={{ display: "block" }}>Staff Attrition</span>
                               </div>
                             </div>
                           </div>
+                          <div className="hud-callout-footer">Click to view CoE tech stacks &amp; transcoding profiles</div>
                         </div>
-                        <div className="hud-callout-footer">Click to inspect transition audits &amp; rebadge logs</div>
-                      </div>
-
-                      {/* Card 8: Entertainment Case Study */}
-                      <div
-                        className="briefing-card experience"
-                        {...bindZoom({
-                          tag: "Comparable Proof Case Study",
-                          title: "Engineering CoE: <em>Global Entertainment Major</em>",
-                          content: "We built a specialized digital engineering and streaming media Center of Excellence (CoE) in India, delivering next-generation core transcoding, metadata ingestion, and CDN monitoring.",
-                          bullets: [
-                            "Headcount Scale: Ramp up of 180+ highly specialized engineering and video streaming developers.",
-                            "Ramp Duration: Handed over to client captive entity within 12 months of pilot launch.",
-                            "Uptime SLA: Achieved and maintained a rigorous 99.9% operational systems availability SLA.",
-                            "Strategic Tech: Leveraged advanced AI/ML models for automated real-time video transcoding and tagging.",
-                            "Attrition: Held voluntary staff attrition below 6.5% annually over the operating window."
-                          ],
-                          stats: [
-                            ["180+", "Tech FTEs"],
-                            ["12 mo", "Incubation to BOT"],
-                            ["99.9%", "SLA Uptime"]
-                          ],
-                          footer: "Source Document Ref: Case Studies & Experience (Page 6)"
-                        })}
-                      >
-                        <div className="briefing-card-hdr">
-                          <div>
-                            <div className="briefing-card-meta">Relevant Experience · CoE Setup</div>
-                            <h4 className="briefing-card-title">Streaming Media CoE</h4>
-                          </div>
-                        </div>
-                        <div className="briefing-card-body">
-                          <div className="micro-gauge-row">
-                            <span className="micro-gauge-lbl">Team Scale</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill red" style={{ width: "60%" }} />
-                            </div>
-                            <span className="micro-gauge-val">180 FTE</span>
-                          </div>
-
-                          <div className="micro-gauge-row">
-                            <span className="micro-gauge-lbl">Transfer Speed</span>
-                            <div className="micro-gauge-bar">
-                              <div className="micro-gauge-fill red" style={{ width: "33%" }} />
-                            </div>
-                            <span className="micro-gauge-val">12 Mo</span>
-                          </div>
-
-                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "4px" }}>
-                            <div className="pulse-uptime-badge">
-                              <span className="pulse-dot" />
-                              99.9% Core SLA Uptime
-                            </div>
-                            <div style={{ textAlign: "right" }}>
-                              <span style={{ fontSize: "14px", fontFamily: "var(--F)", color: "var(--red)", fontWeight: "bold" }}>&lt; 6.5%</span>
-                              <span className="radial-meter-lbl" style={{ display: "block" }}>Staff Attrition</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="hud-callout-footer">Click to view CoE tech stacks &amp; transcoding profiles</div>
-                      </div>
                       </div>
                     </div>
                   )}
@@ -4914,322 +4914,322 @@ html{}
                   ))}
                 </div>
 
-                  {whySubTab === "shifts" && (
-                    <div className="hub-shifts animate">
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-                        <div style={{ fontFamily: "var(--M)", fontSize: 10, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--ink3)" }}>
-                          {openShifts.length} of 5 Shifts Expanded
-                        </div>
-                        <div style={{ display: "flex", gap: 10 }}>
-                          <button 
-                            onClick={() => setOpenShifts([0, 1, 2, 3, 4])}
-                            style={{
-                              padding: "6px 14px",
-                              fontFamily: "var(--M)",
-                              fontSize: 10,
-                              fontWeight: 500,
-                              letterSpacing: ".08em",
-                              textTransform: "uppercase",
-                              background: "var(--bs)",
-                              border: "1px solid var(--bl)",
-                              borderRadius: "100px",
-                              color: "var(--blue)",
-                              cursor: "pointer",
-                              transition: "all 200ms",
-                            }}
-                            onMouseOver={(e) => { e.currentTarget.style.background = "var(--blue)"; e.currentTarget.style.color = "#fff"; }}
-                            onMouseOut={(e) => { e.currentTarget.style.background = "var(--bs)"; e.currentTarget.style.color = "var(--blue)"; }}
-                          >
-                            Expand All
-                          </button>
-                          <button 
-                            onClick={() => setOpenShifts([])}
-                            style={{
-                              padding: "6px 14px",
-                              fontFamily: "var(--M)",
-                              fontSize: 10,
-                              fontWeight: 500,
-                              letterSpacing: ".08em",
-                              textTransform: "uppercase",
-                              background: "var(--rs)",
-                              border: "1px solid var(--rl)",
-                              borderRadius: "100px",
-                              color: "var(--red)",
-                              cursor: "pointer",
-                              transition: "all 200ms",
-                            }}
-                            onMouseOver={(e) => { e.currentTarget.style.background = "var(--red)"; e.currentTarget.style.color = "#fff"; }}
-                            onMouseOut={(e) => { e.currentTarget.style.background = "var(--rs)"; e.currentTarget.style.color = "var(--red)"; }}
-                          >
-                            Collapse All
-                          </button>
-                        </div>
+                {whySubTab === "shifts" && (
+                  <div className="hub-shifts animate">
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+                      <div style={{ fontFamily: "var(--M)", fontSize: 10, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--ink3)" }}>
+                        {openShifts.length} of 5 Shifts Expanded
                       </div>
-                      <div className="wi-grid">
-                        {WHY.map((shift, idx) => {
-                          const isOpen = openShifts.includes(idx);
-                          const details = SHIFT_DETAILS[idx];
-                          return (
-                            <div key={idx} className={`wi-item${isOpen ? " open" : ""}`}>
-                              <div className="wi-head" onClick={() => {
-                                if (isOpen) {
-                                  setOpenShifts(openShifts.filter(i => i !== idx));
-                                } else {
-                                  setOpenShifts([...openShifts, idx]);
-                                }
-                              }}>
-                                <div className="wi-num">{shift.n}</div>
-                                <div className="wi-title">{shift.t}</div>
-                                <div className="wi-toggle">{isOpen ? "−" : "+"}</div>
-                              </div>
-                              <div className={`wi-body${isOpen ? " open" : ""}`} style={{ maxHeight: isOpen ? "800px" : "0", transition: "all 500ms var(--ease)", opacity: isOpen ? 1 : 0 }}>
-                                <div className="wi-body-inner">
-                                  <p style={{ fontSize: "14.5px", lineHeight: "1.65", color: "var(--ink2)", marginBottom: 14 }}>{shift.body}</p>
-                                  <button 
-                                    className="wi-zoom-btn"
-                                    {...bindZoom({
-                                      tag: `Why Now · Strategic Shift ${shift.n}`,
-                                      title: `Shift ${shift.n}: <em>${shift.t}</em>`,
-                                      content: `<p><strong>Strategic Context:</strong></p><p>${shift.body}</p><p><strong>Strategic Impact & Rationale:</strong></p><p>${details.impact}</p>`,
-                                      stats: [
-                                        [shift.stat.split(" at ")[0].split(" · ")[0], "Key Metric"],
-                                        ["Bose Priority", "Impact Horizon"],
-                                        ["High Conviction", "Confidence"]
-                                      ],
-                                      bullets: details.metrics.map(m => `${m.k}: ${m.v}`),
-                                      footer: `Bose GCC Proposal · Why Act Now · Shift ${shift.n} · Section K`
-                                    })}
-                                  >
-                                    ⛶ Boardroom Zoom
-                                  </button>
-                                  <div className="wi-dashboard">
-                                    <div className="wi-left-col">
-                                      <div className="wi-impact-box">
-                                        <h5>Strategic Impact</h5>
-                                        <p>{details.impact}</p>
-                                      </div>
-                                      <div>
-                                        <span className="wi-stat">{shift.stat}</span>
-                                      </div>
+                      <div style={{ display: "flex", gap: 10 }}>
+                        <button
+                          onClick={() => setOpenShifts([0, 1, 2, 3, 4])}
+                          style={{
+                            padding: "6px 14px",
+                            fontFamily: "var(--M)",
+                            fontSize: 10,
+                            fontWeight: 500,
+                            letterSpacing: ".08em",
+                            textTransform: "uppercase",
+                            background: "var(--bs)",
+                            border: "1px solid var(--bl)",
+                            borderRadius: "100px",
+                            color: "var(--blue)",
+                            cursor: "pointer",
+                            transition: "all 200ms",
+                          }}
+                          onMouseOver={(e) => { e.currentTarget.style.background = "var(--blue)"; e.currentTarget.style.color = "#fff"; }}
+                          onMouseOut={(e) => { e.currentTarget.style.background = "var(--bs)"; e.currentTarget.style.color = "var(--blue)"; }}
+                        >
+                          Expand All
+                        </button>
+                        <button
+                          onClick={() => setOpenShifts([])}
+                          style={{
+                            padding: "6px 14px",
+                            fontFamily: "var(--M)",
+                            fontSize: 10,
+                            fontWeight: 500,
+                            letterSpacing: ".08em",
+                            textTransform: "uppercase",
+                            background: "var(--rs)",
+                            border: "1px solid var(--rl)",
+                            borderRadius: "100px",
+                            color: "var(--red)",
+                            cursor: "pointer",
+                            transition: "all 200ms",
+                          }}
+                          onMouseOver={(e) => { e.currentTarget.style.background = "var(--red)"; e.currentTarget.style.color = "#fff"; }}
+                          onMouseOut={(e) => { e.currentTarget.style.background = "var(--rs)"; e.currentTarget.style.color = "var(--red)"; }}
+                        >
+                          Collapse All
+                        </button>
+                      </div>
+                    </div>
+                    <div className="wi-grid">
+                      {WHY.map((shift, idx) => {
+                        const isOpen = openShifts.includes(idx);
+                        const details = SHIFT_DETAILS[idx];
+                        return (
+                          <div key={idx} className={`wi-item${isOpen ? " open" : ""}`}>
+                            <div className="wi-head" onClick={() => {
+                              if (isOpen) {
+                                setOpenShifts(openShifts.filter(i => i !== idx));
+                              } else {
+                                setOpenShifts([...openShifts, idx]);
+                              }
+                            }}>
+                              <div className="wi-num">{shift.n}</div>
+                              <div className="wi-title">{shift.t}</div>
+                              <div className="wi-toggle">{isOpen ? "−" : "+"}</div>
+                            </div>
+                            <div className={`wi-body${isOpen ? " open" : ""}`} style={{ maxHeight: isOpen ? "800px" : "0", transition: "all 500ms var(--ease)", opacity: isOpen ? 1 : 0 }}>
+                              <div className="wi-body-inner">
+                                <p style={{ fontSize: "14.5px", lineHeight: "1.65", color: "var(--ink2)", marginBottom: 14 }}>{shift.body}</p>
+                                <button
+                                  className="wi-zoom-btn"
+                                  {...bindZoom({
+                                    tag: `Why Now · Strategic Shift ${shift.n}`,
+                                    title: `Shift ${shift.n}: <em>${shift.t}</em>`,
+                                    content: `<p><strong>Strategic Context:</strong></p><p>${shift.body}</p><p><strong>Strategic Impact & Rationale:</strong></p><p>${details.impact}</p>`,
+                                    stats: [
+                                      [shift.stat.split(" at ")[0].split(" · ")[0], "Key Metric"],
+                                      ["Bose Priority", "Impact Horizon"],
+                                      ["High Conviction", "Confidence"]
+                                    ],
+                                    bullets: details.metrics.map(m => `${m.k}: ${m.v}`),
+                                    footer: `Bose GCC Proposal · Why Act Now · Shift ${shift.n} · Section K`
+                                  })}
+                                >
+                                  ⛶ Boardroom Zoom
+                                </button>
+                                <div className="wi-dashboard">
+                                  <div className="wi-left-col">
+                                    <div className="wi-impact-box">
+                                      <h5>Strategic Impact</h5>
+                                      <p>{details.impact}</p>
                                     </div>
-                                    <div className="wi-right-col">
-                                      <div style={{ fontFamily: "var(--M)", fontSize: 10, textTransform: "uppercase", color: "var(--ink3)", letterSpacing: ".1em", marginBottom: 10 }}>Key Metrics & Parameters</div>
-                                      <table className="wi-metrics-table">
-                                        <tbody>
-                                          {details.metrics.map((m, mIdx) => (
-                                            <tr key={mIdx}>
-                                              <td className="k">{m.k}</td>
-                                              <td className="v">{m.v}</td>
-                                            </tr>
-                                          ))}
-                                        </tbody>
-                                      </table>
+                                    <div>
+                                      <span className="wi-stat">{shift.stat}</span>
                                     </div>
+                                  </div>
+                                  <div className="wi-right-col">
+                                    <div style={{ fontFamily: "var(--M)", fontSize: 10, textTransform: "uppercase", color: "var(--ink3)", letterSpacing: ".1em", marginBottom: 10 }}>Key Metrics & Parameters</div>
+                                    <table className="wi-metrics-table">
+                                      <tbody>
+                                        {details.metrics.map((m, mIdx) => (
+                                          <tr key={mIdx}>
+                                            <td className="k">{m.k}</td>
+                                            <td className="v">{m.v}</td>
+                                          </tr>
+                                        ))}
+                                      </tbody>
+                                    </table>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-
-                  {whySubTab === "now" && (
-                    <div className="hub-now animate">
-                      <div className="pillars-grid">
-                        {WHY_ACT_NOW.map((item, idx) => (
-                          <div
-                            key={idx}
-                            className="pillar-stat-card"
-                            style={{ ['--card-color']: ["var(--blue)", "var(--navy)", "#2563a8", "var(--red)"][idx] }}
-                            {...bindZoom({
-                              tag: "Why Act Now · Strategic Pillar",
-                              title: `Value Driver: <em>${item.title}</em>`,
-                              content: `<p><strong>Strategic Mandate:</strong></p><p>${item.desc}</p><p>Establishing the India GCC under our co-branded Hosted BOT model unlocks immediate access to this value driver, bypassing traditional market constraints and driving operational velocity.</p>`,
-                              stats: [
-                                [idx === 0 ? "2.3M" : idx === 1 ? "86%" : idx === 2 ? "2024-29" : "Global", idx === 0 ? "Professionals" : idx === 1 ? "Active AI Charters" : idx === 2 ? "GCC Policy Framework" : "Resilience Focus"],
-                                ["Strategic", "Impact Type"],
-                                ["Immediate", "Implementation Horizon"]
-                              ],
-                              bullets: idx === 0 ? [
-                                "Access to the world's deepest software engineering and GBS talent pool",
-                                "Specialized academic bridges for audio DSP, TinyML, and RTOS",
-                                "Rapid cohort hiring cycles (50 to 200 FTE scale-up sprints)",
-                                "Pre-vetted local talent pipeline ready for deployment"
-                              ] : idx === 1 ? [
-                                "Transition from simple execution to autonomous service ownership",
-                                "Engineers drive global product engineering, AI/ML, and DevOps",
-                                "Standardized transfer readiness metrics (TRI scored quarterly)",
-                                "Establishes a centralized Center of Excellence (CoE) in India"
-                              ] : idx === 2 ? [
-                                "Leverages Telangana & Karnataka state-backed GCC incentives",
-                                "Fully compliant with India Transfer Pricing Safe Harbour standards",
-                                "Zero-rated export of services under IGST regulations",
-                                "Streamlined branch office and corporate registrations"
-                              ] : [
-                                "Mitigates single-region operational concentration risk",
-                                "Establishes 24/7 continuous global business operations",
-                                "Dual-site redundancy across Hyderabad and Bengaluru",
-                                "Ring-fenced cleanroom intellectual property protection"
-                              ],
-                              footer: "Bose GCC Proposal · Why Act Now · Section L"
-                            })}
-                          >
-                            <div className="pillar-stat-block" style={{ color: ["var(--blue)","var(--navy)","#2563a8","var(--red)"][idx] }}>
-                              <span className="pillar-stat-num">{["2.3M","86%","15%","40%"][idx]}</span>
-                              <span className="pillar-stat-unit">{["Professionals","AI Charters","Subsidy","Risk Cut"][idx]}</span>
-                            </div>
-                            <div className="pillar-text-block">
-                              <h4>{item.title}</h4>
-                              <p>{["India's 2.3M certified tech pool — deepest in the world for GCC talent.","86% of India GCCs now run autonomous AI & global engineering charters.","Up to 15% government subsidies on cloud infra & zero-rated service exports.","Dual-city model cuts concentration risk by 40% with 99.99% continuity."][idx]}</p>
-                            </div>
                           </div>
-                        ))}
-                      </div>
+                        );
+                      })}
                     </div>
-                  )}
+                  </div>
+                )}
 
-                  {whySubTab === "matrix" && (
-                    <div className="hub-matrix animate">
-                      <p className="brief-intro" style={{ marginBottom: 24 }}>
-                        Conglomerate's sourcing framework, grounded in 40+ captive engagements:
-                      </p>
-                      <div className="cap-matrix">
-                        <div className="cap-opts">
-                          {CAPTIVE_DECISIONS.map((item, idx) => (
-                            <button key={idx} className={`cap-opt-btn${activeCapOpt === idx ? " act" : ""}`} onClick={() => setActiveCapOpt(idx)}>
-                              <h4>{item.option}</h4>
-                              <span>Operational Scope</span>
-                            </button>
-                          ))}
-                        </div>
-                        <div 
-                          className="cap-pane"
+                {whySubTab === "now" && (
+                  <div className="hub-now animate">
+                    <div className="pillars-grid">
+                      {WHY_ACT_NOW.map((item, idx) => (
+                        <div
+                          key={idx}
+                          className="pillar-stat-card"
+                          style={{ ['--card-color']: ["var(--blue)", "var(--navy)", "#2563a8", "var(--red)"][idx] }}
                           {...bindZoom({
-                            tag: `Captive Decision · ${CAPTIVE_DECISIONS[activeCapOpt].option}`,
-                            title: `Sourcing Strategy: <em>${CAPTIVE_DECISIONS[activeCapOpt].option}</em>`,
-                            content: `<p><strong>Strategic Mandate & Operational Scope:</strong></p><p>${CAPTIVE_DECISIONS[activeCapOpt].roles}</p><p>We recommend a structured sourcing matrix where core intellectual property and high-volume operations are built in a hosted captive model, ensuring full control, maximum cost arbitrage, and long-term asset security.</p>`,
+                            tag: "Why Act Now · Strategic Pillar",
+                            title: `Value Driver: <em>${item.title}</em>`,
+                            content: `<p><strong>Strategic Mandate:</strong></p><p>${item.desc}</p><p>Establishing the India GCC under our co-branded Hosted BOT model unlocks immediate access to this value driver, bypassing traditional market constraints and driving operational velocity.</p>`,
                             stats: [
-                              [CAPTIVE_DECISIONS[activeCapOpt].option.includes("India") ? "Highest" : "Selective", "Strategic Suitability"],
-                              [CAPTIVE_DECISIONS[activeCapOpt].option.includes("U.S.") ? "100%" : CAPTIVE_DECISIONS[activeCapOpt].option.includes("India") ? "100%" : "Low", "Bose Control"],
-                              [CAPTIVE_DECISIONS[activeCapOpt].option.includes("India") ? "65-75%" : "0%", "Arbitrage Potential"]
+                              [idx === 0 ? "2.3M" : idx === 1 ? "86%" : idx === 2 ? "2024-29" : "Global", idx === 0 ? "Professionals" : idx === 1 ? "Active AI Charters" : idx === 2 ? "GCC Policy Framework" : "Resilience Focus"],
+                              ["Strategic", "Impact Type"],
+                              ["Immediate", "Implementation Horizon"]
                             ],
-                            bullets: CAPTIVE_DECISIONS[activeCapOpt].option.includes("U.S.") ? [
-                              "Keep roles requiring onshore real-time collaboration or physical proximity to corporate HQ",
-                              "Retain highly specialized institutional knowledge not yet standardized or documented",
-                              "Ensure senior stakeholder management remains closely aligned with domestic business units",
-                              "Establish clear transition timelines before moving standard components offshore"
-                            ] : CAPTIVE_DECISIONS[activeCapOpt].option.includes("India") ? [
-                              "Scale standardized, high-volume IT and GBS processes in Hyderabad and Bengaluru",
-                              "Dramatically reduce operational cost per seat (65-75% loaded savings)",
-                              "Maintain strict Open-Book Cost+15% management markup transparency",
-                              "Ensure 100% Bose IP ownership and data protection inside ring-fenced workspaces"
+                            bullets: idx === 0 ? [
+                              "Access to the world's deepest software engineering and GBS talent pool",
+                              "Specialized academic bridges for audio DSP, TinyML, and RTOS",
+                              "Rapid cohort hiring cycles (50 to 200 FTE scale-up sprints)",
+                              "Pre-vetted local talent pipeline ready for deployment"
+                            ] : idx === 1 ? [
+                              "Transition from simple execution to autonomous service ownership",
+                              "Engineers drive global product engineering, AI/ML, and DevOps",
+                              "Standardized transfer readiness metrics (TRI scored quarterly)",
+                              "Establishes a centralized Center of Excellence (CoE) in India"
+                            ] : idx === 2 ? [
+                              "Leverages Telangana & Karnataka state-backed GCC incentives",
+                              "Fully compliant with India Transfer Pricing Safe Harbour standards",
+                              "Zero-rated export of services under IGST regulations",
+                              "Streamlined branch office and corporate registrations"
                             ] : [
-                              "Minimize reliance on traditional outsourcing vendors to prevent margin dilution",
-                              "Ensure third-party outsourcing is used exclusively for non-core, temporary business tasks",
-                              "Establish stringent service level agreements (SLAs) for any external vendor engagements",
-                              "Acknowledge the high risk of knowledge loss and low long-term asset continuity"
+                              "Mitigates single-region operational concentration risk",
+                              "Establishes 24/7 continuous global business operations",
+                              "Dual-site redundancy across Hyderabad and Bengaluru",
+                              "Ring-fenced cleanroom intellectual property protection"
                             ],
-                            footer: "Bose GCC Proposal · Sourcing Recommendation Matrix · Section M"
+                            footer: "Bose GCC Proposal · Why Act Now · Section L"
                           })}
                         >
-                          <span className="cap-pane-title">Strategic Recommendation (Click to Expand)</span>
-                          <p className="cap-pane-body">{CAPTIVE_DECISIONS[activeCapOpt].roles}</p>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {whySubTab === "decisions" && (
-                    <div className="hub-decisions animate">
-                      <p className="brief-intro" style={{ marginBottom: 24 }}>
-                        Taken together, these five decisions do more than shape the initial launch model; they define the long-term value, quality, and resilience of BOSE’s India GCC.
-                      </p>
-                      <div className="steps-flow">
-                        {CRITICAL_DECISIONS.map((item, idx) => (
-                          <div 
-                            key={idx} 
-                            className="step-item"
-                            {...bindZoom({
-                              tag: `Strategic Architecture · Step ${item.step}`,
-                              title: `Critical Decision: <em>${item.name}</em>`,
-                              content: `<p><strong>Strategic Decision Focus:</strong></p><p>${item.desc}</p><p>This step defines the strategic foundation of the Bose India GCC. By aligning early on purpose, ownership models, location choice, operational structure, and risk posture, we guarantee a highly resilient, fully optimized capture of the offshore market.</p>`,
-                              stats: [
-                                [`Step ${item.step}`, "Decision Sequence"],
-                                ["Strategic", "Impact Class"],
-                                ["Audited", "Audit Alignment"]
-                              ],
-                              bullets: idx === 0 ? [
-                                "Define quantitative and qualitative KPIs for GBS, IT, and R&D functions",
-                                "Establish clear three-tier governance system (daily, monthly, quarterly) early",
-                                "Lock down SLA templates and operational reporting rules pre-mobilization",
-                                "Anchor corporate vision with dedicated sponsor and Site Lead roles"
-                              ] : idx === 1 ? [
-                                "Decide between Traditional Outsourcing, DIY Captive, and Hosted BOT models",
-                                "Bypasses the speed-vs-control conflict by launching under co-branded BOT",
-                                "100% legal asset and workforce buyout option at net book value in Month 24",
-                                "Immediate physical and IP ring-fencing ensures maximum security"
-                              ] : idx === 2 ? [
-                                "Algorithmically choose between Hyderabad and Bengaluru (40-factor model)",
-                                "Distributes operational risk: 480 FTE scale in Hyd, 320 FTE niche R&D in Blr",
-                                "Minimizes talent poaching and volatile attrition via dual-city model",
-                                "Builds academic pipelines with local engineering and DSP departments"
-                              ] : idx === 3 ? [
-                                "Establish standard operational procedures (SOPs) in Bose-owned repos from Day 1",
-                                "Leverage industrialized talent engine (Hire -> Build -> Retain playbooks)",
-                                "Implement continuous capability training (IT, GBS, AI, Audio DSP academies)",
-                                "Drive developer velocity using custom AI-native developer tools"
-                              ] : [
-                                "Transitions from initial mobilization risk to long-term operational resilience",
-                                "Regular compliance reviews aligning with SOC 2 Type II and DLP policies",
-                                "Strict adherence to India Transfer Pricing and Safe Harbour regulations",
-                                "IGST zero-rated tax planning across KA and TS branches"
-                              ],
-                              footer: "Bose GCC Proposal · Critical Sourcing Architecture · Section N"
-                            })}
-                          >
-                            <span className="step-num">{item.step} · Step</span>
-                            <h4 className="step-title">{item.name}</h4>
-                            <p className="step-desc">{item.desc}</p>
+                          <div className="pillar-stat-block" style={{ color: ["var(--blue)", "var(--navy)", "#2563a8", "var(--red)"][idx] }}>
+                            <span className="pillar-stat-num">{["2.3M", "86%", "15%", "40%"][idx]}</span>
+                            <span className="pillar-stat-unit">{["Professionals", "AI Charters", "Subsidy", "Risk Cut"][idx]}</span>
                           </div>
+                          <div className="pillar-text-block">
+                            <h4>{item.title}</h4>
+                            <p>{["India's 2.3M certified tech pool — deepest in the world for GCC talent.", "86% of India GCCs now run autonomous AI & global engineering charters.", "Up to 15% government subsidies on cloud infra & zero-rated service exports.", "Dual-city model cuts concentration risk by 40% with 99.99% continuity."][idx]}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {whySubTab === "matrix" && (
+                  <div className="hub-matrix animate">
+                    <p className="brief-intro" style={{ marginBottom: 24 }}>
+                      Conglomerate's sourcing framework, grounded in 40+ captive engagements:
+                    </p>
+                    <div className="cap-matrix">
+                      <div className="cap-opts">
+                        {CAPTIVE_DECISIONS.map((item, idx) => (
+                          <button key={idx} className={`cap-opt-btn${activeCapOpt === idx ? " act" : ""}`} onClick={() => setActiveCapOpt(idx)}>
+                            <h4>{item.option}</h4>
+                            <span>Operational Scope</span>
+                          </button>
                         ))}
                       </div>
-                    </div>
-                  )}
-
-                  {whySubTab === "comparison" && (
-                    <div className="hub-comparison animate">
-                      <p className="brief-intro" style={{ marginBottom: 20 }}>
-                        Our Hosted BOT model eliminates the speed vs. control trade-off, creating an audit-proof, ring-fenced captive asset.
-                      </p>
-                      <div className="comparison-container">
-                        <table className="comparison-table">
-                          <thead>
-                            <tr>
-                              <th>Evaluation Metric</th>
-                              <th>Traditional Outsourcing</th>
-                              <th>Pure DIY GCC (In-House)</th>
-                              <th>Hosted BOT (Our GCCaaS)</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {STRATEGIC_RATIONALE_TABLE.map((row, idx) => (
-                              <tr key={idx}>
-                                <td className="m">{row.metric}</td>
-                                <td className="o">{row.outs}</td>
-                                <td className="c">{row.captive}</td>
-                                <td className="b">{row.bot}</td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
+                      <div
+                        className="cap-pane"
+                        {...bindZoom({
+                          tag: `Captive Decision · ${CAPTIVE_DECISIONS[activeCapOpt].option}`,
+                          title: `Sourcing Strategy: <em>${CAPTIVE_DECISIONS[activeCapOpt].option}</em>`,
+                          content: `<p><strong>Strategic Mandate & Operational Scope:</strong></p><p>${CAPTIVE_DECISIONS[activeCapOpt].roles}</p><p>We recommend a structured sourcing matrix where core intellectual property and high-volume operations are built in a hosted captive model, ensuring full control, maximum cost arbitrage, and long-term asset security.</p>`,
+                          stats: [
+                            [CAPTIVE_DECISIONS[activeCapOpt].option.includes("India") ? "Highest" : "Selective", "Strategic Suitability"],
+                            [CAPTIVE_DECISIONS[activeCapOpt].option.includes("U.S.") ? "100%" : CAPTIVE_DECISIONS[activeCapOpt].option.includes("India") ? "100%" : "Low", "Bose Control"],
+                            [CAPTIVE_DECISIONS[activeCapOpt].option.includes("India") ? "65-75%" : "0%", "Arbitrage Potential"]
+                          ],
+                          bullets: CAPTIVE_DECISIONS[activeCapOpt].option.includes("U.S.") ? [
+                            "Keep roles requiring onshore real-time collaboration or physical proximity to corporate HQ",
+                            "Retain highly specialized institutional knowledge not yet standardized or documented",
+                            "Ensure senior stakeholder management remains closely aligned with domestic business units",
+                            "Establish clear transition timelines before moving standard components offshore"
+                          ] : CAPTIVE_DECISIONS[activeCapOpt].option.includes("India") ? [
+                            "Scale standardized, high-volume IT and GBS processes in Hyderabad and Bengaluru",
+                            "Dramatically reduce operational cost per seat (65-75% loaded savings)",
+                            "Maintain strict Open-Book Cost+15% management markup transparency",
+                            "Ensure 100% Bose IP ownership and data protection inside ring-fenced workspaces"
+                          ] : [
+                            "Minimize reliance on traditional outsourcing vendors to prevent margin dilution",
+                            "Ensure third-party outsourcing is used exclusively for non-core, temporary business tasks",
+                            "Establish stringent service level agreements (SLAs) for any external vendor engagements",
+                            "Acknowledge the high risk of knowledge loss and low long-term asset continuity"
+                          ],
+                          footer: "Bose GCC Proposal · Sourcing Recommendation Matrix · Section M"
+                        })}
+                      >
+                        <span className="cap-pane-title">Strategic Recommendation (Click to Expand)</span>
+                        <p className="cap-pane-body">{CAPTIVE_DECISIONS[activeCapOpt].roles}</p>
                       </div>
                     </div>
-                  )}
-                </div>
+                  </div>
+                )}
+
+                {whySubTab === "decisions" && (
+                  <div className="hub-decisions animate">
+                    <p className="brief-intro" style={{ marginBottom: 24 }}>
+                      Taken together, these five decisions do more than shape the initial launch model; they define the long-term value, quality, and resilience of BOSE’s India GCC.
+                    </p>
+                    <div className="steps-flow">
+                      {CRITICAL_DECISIONS.map((item, idx) => (
+                        <div
+                          key={idx}
+                          className="step-item"
+                          {...bindZoom({
+                            tag: `Strategic Architecture · Step ${item.step}`,
+                            title: `Critical Decision: <em>${item.name}</em>`,
+                            content: `<p><strong>Strategic Decision Focus:</strong></p><p>${item.desc}</p><p>This step defines the strategic foundation of the Bose India GCC. By aligning early on purpose, ownership models, location choice, operational structure, and risk posture, we guarantee a highly resilient, fully optimized capture of the offshore market.</p>`,
+                            stats: [
+                              [`Step ${item.step}`, "Decision Sequence"],
+                              ["Strategic", "Impact Class"],
+                              ["Audited", "Audit Alignment"]
+                            ],
+                            bullets: idx === 0 ? [
+                              "Define quantitative and qualitative KPIs for GBS, IT, and R&D functions",
+                              "Establish clear three-tier governance system (daily, monthly, quarterly) early",
+                              "Lock down SLA templates and operational reporting rules pre-mobilization",
+                              "Anchor corporate vision with dedicated sponsor and Site Lead roles"
+                            ] : idx === 1 ? [
+                              "Decide between Traditional Outsourcing, DIY Captive, and Hosted BOT models",
+                              "Bypasses the speed-vs-control conflict by launching under co-branded BOT",
+                              "100% legal asset and workforce buyout option at net book value in Month 24",
+                              "Immediate physical and IP ring-fencing ensures maximum security"
+                            ] : idx === 2 ? [
+                              "Algorithmically choose between Hyderabad and Bengaluru (40-factor model)",
+                              "Distributes operational risk: 480 FTE scale in Hyd, 320 FTE niche R&D in Blr",
+                              "Minimizes talent poaching and volatile attrition via dual-city model",
+                              "Builds academic pipelines with local engineering and DSP departments"
+                            ] : idx === 3 ? [
+                              "Establish standard operational procedures (SOPs) in Bose-owned repos from Day 1",
+                              "Leverage industrialized talent engine (Hire -> Build -> Retain playbooks)",
+                              "Implement continuous capability training (IT, GBS, AI, Audio DSP academies)",
+                              "Drive developer velocity using custom AI-native developer tools"
+                            ] : [
+                              "Transitions from initial mobilization risk to long-term operational resilience",
+                              "Regular compliance reviews aligning with SOC 2 Type II and DLP policies",
+                              "Strict adherence to India Transfer Pricing and Safe Harbour regulations",
+                              "IGST zero-rated tax planning across KA and TS branches"
+                            ],
+                            footer: "Bose GCC Proposal · Critical Sourcing Architecture · Section N"
+                          })}
+                        >
+                          <span className="step-num">{item.step} · Step</span>
+                          <h4 className="step-title">{item.name}</h4>
+                          <p className="step-desc">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {whySubTab === "comparison" && (
+                  <div className="hub-comparison animate">
+                    <p className="brief-intro" style={{ marginBottom: 20 }}>
+                      Our Hosted BOT model eliminates the speed vs. control trade-off, creating an audit-proof, ring-fenced captive asset.
+                    </p>
+                    <div className="comparison-container">
+                      <table className="comparison-table">
+                        <thead>
+                          <tr>
+                            <th>Evaluation Metric</th>
+                            <th>Traditional Outsourcing</th>
+                            <th>Pure DIY GCC (In-House)</th>
+                            <th>Hosted BOT (Our GCCaaS)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {STRATEGIC_RATIONALE_TABLE.map((row, idx) => (
+                            <tr key={idx}>
+                              <td className="m">{row.metric}</td>
+                              <td className="o">{row.outs}</td>
+                              <td className="c">{row.captive}</td>
+                              <td className="b">{row.bot}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
               </div>
-            </section>
+            </div>
+          </section>
 
           {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           03 · BLUEPRINT
@@ -5253,7 +5253,7 @@ html{}
                   {Object.values(flipped).filter(Boolean).length} of 6 Cards Flipped
                 </div>
                 <div style={{ display: "flex", gap: 10 }}>
-                  <button 
+                  <button
                     onClick={() => setFlipped({ "01": true, "02": true, "03": true, "04": true, "05": true, "06": true })}
                     style={{
                       padding: "6px 14px",
@@ -5274,7 +5274,7 @@ html{}
                   >
                     Flip All
                   </button>
-                  <button 
+                  <button
                     onClick={() => setFlipped({})}
                     style={{
                       padding: "6px 14px",
@@ -5308,25 +5308,25 @@ html{}
                           <div className="fln">{c.name}</div>
                         </div>
                         <h3 dangerouslySetInnerHTML={{ __html: c.front }} />
-                        <button 
+                        <button
                           className="fcard-zoom-btn"
                           {...bindZoom({
-                              tag: `Blueprint Dimension · ${c.name}`,
-                              title: `Dimension ${c.n} — <em>${c.name}</em>`,
-                              content: `<p><strong>Strategic Mandate:</strong></p><p>${c.front}</p><p>This dimension outlines the strategic commitment under our Hosted-to-Captive BOT model, guaranteeing a seamless transition of operations, culture, and assets.</p>`,
-                              stats: [
-                                [c.stat, c.kpi],
-                                ["100%", "Safe Harbour"],
-                                ["90-120d", "Operational Setup"]
-                              ],
-                              bullets: [
-                                `Directly aligns with RFI page numbers and compliance guidelines`,
-                                `Pre-structured legal and transfer framework from day one`,
-                                `Direct visibility and founder-level accountability`,
-                                `Ensures zero-friction operational handovers`
-                              ],
-                              footer: `Bose GCC Proposal · Dimension ${c.n} · RFI Reference: Section C`
-                            })}
+                            tag: `Blueprint Dimension · ${c.name}`,
+                            title: `Dimension ${c.n} — <em>${c.name}</em>`,
+                            content: `<p><strong>Strategic Mandate:</strong></p><p>${c.front}</p><p>This dimension outlines the strategic commitment under our Hosted-to-Captive BOT model, guaranteeing a seamless transition of operations, culture, and assets.</p>`,
+                            stats: [
+                              [c.stat, c.kpi],
+                              ["100%", "Safe Harbour"],
+                              ["90-120d", "Operational Setup"]
+                            ],
+                            bullets: [
+                              `Directly aligns with RFI page numbers and compliance guidelines`,
+                              `Pre-structured legal and transfer framework from day one`,
+                              `Direct visibility and founder-level accountability`,
+                              `Ensures zero-friction operational handovers`
+                            ],
+                            footer: `Bose GCC Proposal · Dimension ${c.n} · RFI Reference: Section C`
+                          })}
                         >
                           ⛶ Zoom
                         </button>
@@ -5339,25 +5339,25 @@ html{}
                           <h4>{c.name} · proof point</h4>
                         </div>
                         <p>{c.proof}</p>
-                        <button 
+                        <button
                           className="fcard-zoom-btn"
                           {...bindZoom({
-                              tag: `Blueprint Proof Point · ${c.name}`,
-                              title: `Proof Point ${c.n} — <em>${c.name} KPI</em>`,
-                              content: `<p><strong>Empirical Performance Evidence:</strong></p><p>${c.proof}</p><p>All metrics and proof points are verified, audited, and backed by prior successful captive transitions in similar high-stakes environments.</p>`,
-                              stats: [
-                                [c.stat, c.kpi],
-                                ["Verified", "Audit Trail"],
-                                ["Zero", "Transfer Premium"]
-                              ],
-                              bullets: [
-                                `Validated against real-world BOT case studies`,
-                                `Audited by third-party compliance and tax teams`,
-                                `Tenure and statutory continuity guaranteed`,
-                                `Underpinned by our custom SLA framework`
-                              ],
-                              footer: `Bose GCC Proposal · Dimension ${c.n} · RFI Reference: Section D`
-                            })}
+                            tag: `Blueprint Proof Point · ${c.name}`,
+                            title: `Proof Point ${c.n} — <em>${c.name} KPI</em>`,
+                            content: `<p><strong>Empirical Performance Evidence:</strong></p><p>${c.proof}</p><p>All metrics and proof points are verified, audited, and backed by prior successful captive transitions in similar high-stakes environments.</p>`,
+                            stats: [
+                              [c.stat, c.kpi],
+                              ["Verified", "Audit Trail"],
+                              ["Zero", "Transfer Premium"]
+                            ],
+                            bullets: [
+                              `Validated against real-world BOT case studies`,
+                              `Audited by third-party compliance and tax teams`,
+                              `Tenure and statutory continuity guaranteed`,
+                              `Underpinned by our custom SLA framework`
+                            ],
+                            footer: `Bose GCC Proposal · Dimension ${c.n} · RFI Reference: Section D`
+                          })}
                         >
                           ⛶ Zoom
                         </button>
@@ -5409,25 +5409,25 @@ html{}
                               </div>
                             </div>
                             <span className="legend-val">320 FTE (40%)</span>
-                            <button 
+                            <button
                               className="legend-zoom-btn"
                               {...bindZoom({
-                                  tag: "Functional Split · R&D Engineering",
-                                  title: "R&D Engineering Hub — <em>Bengaluru</em>",
-                                  content: "<p><strong>Hub Mandate:</strong> Dedicated to deep technology innovation, signal processing, and device firmware. Bengaluru's premier engineering talent depth supports core audio development, TinyML research, and real-time operating system stack engineering.</p>",
-                                  stats: [
-                                    ["320 FTE", "Target Allocation"],
-                                    ["40%", "Total Headcount Share"],
-                                    ["Deep Tech", "Ecosystem Focus"]
-                                  ],
-                                  bullets: [
-                                    "Deep engineering depth: Audio DSP, TinyML, RTOS, and BT/WiFi stacking",
-                                    "Algorithmically selected to manage cost-per-hire and local poaching volatility",
-                                    "Close academic integration with IISc signal processing and DSP departments",
-                                    "Serves as primary disaster recovery and active business continuity site"
-                                  ],
-                                  footer: "Bose GCC Proposal · Functional Blueprint · Section J"
-                                })}
+                                tag: "Functional Split · R&D Engineering",
+                                title: "R&D Engineering Hub — <em>Bengaluru</em>",
+                                content: "<p><strong>Hub Mandate:</strong> Dedicated to deep technology innovation, signal processing, and device firmware. Bengaluru's premier engineering talent depth supports core audio development, TinyML research, and real-time operating system stack engineering.</p>",
+                                stats: [
+                                  ["320 FTE", "Target Allocation"],
+                                  ["40%", "Total Headcount Share"],
+                                  ["Deep Tech", "Ecosystem Focus"]
+                                ],
+                                bullets: [
+                                  "Deep engineering depth: Audio DSP, TinyML, RTOS, and BT/WiFi stacking",
+                                  "Algorithmically selected to manage cost-per-hire and local poaching volatility",
+                                  "Close academic integration with IISc signal processing and DSP departments",
+                                  "Serves as primary disaster recovery and active business continuity site"
+                                ],
+                                footer: "Bose GCC Proposal · Functional Blueprint · Section J"
+                              })}
                             >
                               ⛶
                             </button>
@@ -5441,25 +5441,25 @@ html{}
                               </div>
                             </div>
                             <span className="legend-val">320 FTE (40%)</span>
-                            <button 
+                            <button
                               className="legend-zoom-btn"
                               {...bindZoom({
-                                  tag: "Functional Split · Information Technology",
-                                  title: "Information Technology Hub — <em>Hyderabad</em>",
-                                  content: "<p><strong>Hub Mandate:</strong> Anchors enterprise IT operations, cloud platforms, SecOps, data products, and business applications. Hyderabad offers stable, highly scalable tech depth with competitive lease structures.</p>",
-                                  stats: [
-                                    ["320 FTE", "Target Allocation"],
-                                    ["40%", "Total Headcount Share"],
-                                    ["Scale", "Ecosystem Focus"]
-                                  ],
-                                  bullets: [
-                                    "Key technology paths: Salesforce, SAP, DevOps, Cybersecurity, and QA",
-                                    "Physical and logical cleanroom IP environments fully ring-fenced",
-                                    "Continuous security operations center (SOC) and backup failover active",
-                                    "Highly cost-competitive real estate across HITEC City and Gachibowli"
-                                  ],
-                                  footer: "Bose GCC Proposal · Functional Blueprint · Section J"
-                                })}
+                                tag: "Functional Split · Information Technology",
+                                title: "Information Technology Hub — <em>Hyderabad</em>",
+                                content: "<p><strong>Hub Mandate:</strong> Anchors enterprise IT operations, cloud platforms, SecOps, data products, and business applications. Hyderabad offers stable, highly scalable tech depth with competitive lease structures.</p>",
+                                stats: [
+                                  ["320 FTE", "Target Allocation"],
+                                  ["40%", "Total Headcount Share"],
+                                  ["Scale", "Ecosystem Focus"]
+                                ],
+                                bullets: [
+                                  "Key technology paths: Salesforce, SAP, DevOps, Cybersecurity, and QA",
+                                  "Physical and logical cleanroom IP environments fully ring-fenced",
+                                  "Continuous security operations center (SOC) and backup failover active",
+                                  "Highly cost-competitive real estate across HITEC City and Gachibowli"
+                                ],
+                                footer: "Bose GCC Proposal · Functional Blueprint · Section J"
+                              })}
                             >
                               ⛶
                             </button>
@@ -5473,25 +5473,25 @@ html{}
                               </div>
                             </div>
                             <span className="legend-val">160 FTE (20%)</span>
-                            <button 
+                            <button
                               className="legend-zoom-btn"
                               {...bindZoom({
-                                  tag: "Functional Split · Global Business Services",
-                                  title: "Global Business Services (GBS) — <em>Hyderabad</em>",
-                                  content: "<p><strong>Hub Mandate:</strong> Anchors shared business support operations, program management office (PMO), master data management, and financial operations. Drives standard global compliance and process automation.</p>",
-                                  stats: [
-                                    ["160 FTE", "Target Allocation"],
-                                    ["20%", "Total Headcount Share"],
-                                    ["Process Control", "Ecosystem Focus"]
-                                  ],
-                                  bullets: [
-                                    "Core business domains: Order management, master data management, and finance ops",
-                                    "Unified service catalog and automated ticket routing frameworks",
-                                    "Establishes a centralized center of excellence (CoE) for PMO support",
-                                    "Ensures absolute regulatory compliance and monthly invoice showback"
-                                  ],
-                                  footer: "Bose GCC Proposal · Functional Blueprint · Section J"
-                                })}
+                                tag: "Functional Split · Global Business Services",
+                                title: "Global Business Services (GBS) — <em>Hyderabad</em>",
+                                content: "<p><strong>Hub Mandate:</strong> Anchors shared business support operations, program management office (PMO), master data management, and financial operations. Drives standard global compliance and process automation.</p>",
+                                stats: [
+                                  ["160 FTE", "Target Allocation"],
+                                  ["20%", "Total Headcount Share"],
+                                  ["Process Control", "Ecosystem Focus"]
+                                ],
+                                bullets: [
+                                  "Core business domains: Order management, master data management, and finance ops",
+                                  "Unified service catalog and automated ticket routing frameworks",
+                                  "Establishes a centralized center of excellence (CoE) for PMO support",
+                                  "Ensures absolute regulatory compliance and monthly invoice showback"
+                                ],
+                                footer: "Bose GCC Proposal · Functional Blueprint · Section J"
+                              })}
                             >
                               ⛶
                             </button>
@@ -5507,13 +5507,13 @@ html{}
                         <div className="timeline-scrubber-ctrl">
                           <label style={{ userSelect: "none" }}>Scrub Scale-Up Term:</label>
                           <div className="timeline-slider-wrapper" style={{ position: "relative", flexGrow: 1, display: "flex", alignItems: "center" }}>
-                            <input 
-                              type="range" 
-                              min="1" 
-                              max="36" 
-                              value={scaleMonth} 
-                              className="timeline-slider-input" 
-                              onChange={(e) => setScaleMonth(parseInt(e.target.value))} 
+                            <input
+                              type="range"
+                              min="1"
+                              max="36"
+                              value={scaleMonth}
+                              className="timeline-slider-input"
+                              onChange={(e) => setScaleMonth(parseInt(e.target.value))}
                               style={{ width: "100%", margin: 0 }}
                             />
                             <div className="timeline-slider-ticks" style={{ position: "absolute", left: 0, right: 0, top: "20px", display: "flex", justifyContent: "space-between", pointerEvents: "none" }}>
@@ -5522,37 +5522,37 @@ html{}
                                 // Precision centering accounting for thumb width of 20px
                                 const leftOffset = `calc(${pct}% + ${10 - (pct * 20) / 100}px)`;
                                 return (
-                                  <div 
-                                    key={tick} 
-                                    className={`timeline-tick${scaleMonth === tick ? " active" : ""}`} 
-                                    style={{ 
-                                      position: "absolute", 
-                                      left: leftOffset, 
-                                      transform: "translateX(-50%)", 
-                                      display: "flex", 
-                                      flexDirection: "column", 
-                                      alignItems: "center" 
+                                  <div
+                                    key={tick}
+                                    className={`timeline-tick${scaleMonth === tick ? " active" : ""}`}
+                                    style={{
+                                      position: "absolute",
+                                      left: leftOffset,
+                                      transform: "translateX(-50%)",
+                                      display: "flex",
+                                      flexDirection: "column",
+                                      alignItems: "center"
                                     }}
                                   >
-                                    <span 
-                                      className="tick-dot" 
-                                      style={{ 
-                                        width: "6px", 
-                                        height: "6px", 
-                                        borderRadius: "50%", 
-                                        background: scaleMonth >= tick ? "var(--blue)" : "var(--s2)", 
+                                    <span
+                                      className="tick-dot"
+                                      style={{
+                                        width: "6px",
+                                        height: "6px",
+                                        borderRadius: "50%",
+                                        background: scaleMonth >= tick ? "var(--blue)" : "var(--s2)",
                                         border: "1.5px solid #fff",
                                         boxShadow: "0 1px 3px rgba(0,0,0,0.15)",
-                                        transition: "all 0.2s ease" 
-                                      }} 
+                                        transition: "all 0.2s ease"
+                                      }}
                                     />
-                                    <span 
-                                      className="tick-lbl" 
-                                      style={{ 
-                                        fontFamily: "var(--M)", 
-                                        fontSize: "8.5px", 
-                                        fontWeight: scaleMonth === tick ? "600" : "400", 
-                                        color: scaleMonth >= tick ? "var(--blue)" : "var(--ink3)", 
+                                    <span
+                                      className="tick-lbl"
+                                      style={{
+                                        fontFamily: "var(--M)",
+                                        fontSize: "8.5px",
+                                        fontWeight: scaleMonth === tick ? "600" : "400",
+                                        color: scaleMonth >= tick ? "var(--blue)" : "var(--ink3)",
                                         marginTop: "4px",
                                         whiteSpace: "nowrap",
                                         transition: "all 0.2s ease"
@@ -5586,17 +5586,17 @@ html{}
                               <button
                                 className="timeline-zoom-btn"
                                 {...bindZoom({
-                                    tag: `Execution Timeline · Phase 0${activeIndex + 1}`,
-                                    title: `Phase 0${activeIndex + 1}: <em>${jp.n} (${jp.mo})</em>`,
-                                    content: `<p><strong>Phase Mandate:</strong> ${jp.desc}</p>`,
-                                    stats: [
-                                      [jp.hc, "Headcount Target"],
-                                      [jp.mo, "Timeline Window"],
-                                      ["BOT Incubation", "Operating Model"]
-                                    ],
-                                    bullets: jp.ms.map(m => `Milestone: ${m}`),
-                                    footer: "Bose GCC Proposal · Incubation & Handover Timeline"
-                                  })}
+                                  tag: `Execution Timeline · Phase 0${activeIndex + 1}`,
+                                  title: `Phase 0${activeIndex + 1}: <em>${jp.n} (${jp.mo})</em>`,
+                                  content: `<p><strong>Phase Mandate:</strong> ${jp.desc}</p>`,
+                                  stats: [
+                                    [jp.hc, "Headcount Target"],
+                                    [jp.mo, "Timeline Window"],
+                                    ["BOT Incubation", "Operating Model"]
+                                  ],
+                                  bullets: jp.ms.map(m => `Milestone: ${m}`),
+                                  footer: "Bose GCC Proposal · Incubation & Handover Timeline"
+                                })}
                               >
                                 ⛶
                               </button>
@@ -5612,8 +5612,8 @@ html{}
                                   {jp.ms.map((milestone, midx) => {
                                     const isDone = !!completedMilestones[milestone];
                                     return (
-                                      <div 
-                                        key={midx} 
+                                      <div
+                                        key={midx}
                                         className={`timeline-ms-item${isDone ? " done" : ""}`}
                                         onClick={() => setCompletedMilestones(prev => ({ ...prev, [milestone]: !prev[milestone] }))}
                                         style={{ cursor: "pointer", userSelect: "none" }}
@@ -5639,7 +5639,7 @@ html{}
                           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
                             <h4 style={{ fontFamily: "var(--F)", fontSize: 15, color: "var(--navy)", margin: 0, fontWeight: 450 }}>Joint Operating Governance</h4>
                             <div style={{ display: "flex", gap: 8 }}>
-                              <button 
+                              <button
                                 onClick={() => setOpenGovs([0, 1, 2, 3, 4])}
                                 style={{
                                   padding: "4px 10px",
@@ -5660,7 +5660,7 @@ html{}
                               >
                                 Expand All
                               </button>
-                              <button 
+                              <button
                                 onClick={() => setOpenGovs([])}
                                 style={{
                                   padding: "4px 10px",
@@ -5687,8 +5687,8 @@ html{}
                             {GOVERNANCE_SYSTEMS.map((item, idx) => {
                               const isOpen = openGovs.includes(idx);
                               return (
-                                <div 
-                                  key={idx} 
+                                <div
+                                  key={idx}
                                   className={`gov-card${isOpen ? " open" : ""}`}
                                   onClick={() => {
                                     if (isOpen) {
@@ -5706,7 +5706,7 @@ html{}
                                     </div>
                                   </div>
                                   <p>{item.purpose}</p>
-                                  
+
                                   {isOpen && (
                                     <div className="gov-card-details">
                                       <div className="gov-detail-section">
@@ -5724,22 +5724,22 @@ html{}
                                       <button
                                         className="gov-zoom-btn"
                                         {...bindZoom({
-                                            tag: `Governance Cadence · ${item.cadence}`,
-                                            title: `${item.cadence} Governance Cadence`,
-                                            content: `<p><strong>Frequency:</strong> ${item.freq}</p><p><strong>Purpose:</strong> ${item.purpose}</p><p><strong>Operational Context:</strong> ${item.extended.details}</p>`,
-                                            stats: [
-                                              [item.freq, "Cadence Frequency"],
-                                              [item.extended.owner.split(" · ")[0] || "Joint", "Primary Ownership"],
-                                              ["Standard", "Compliance Tier"]
-                                            ],
-                                            bullets: [
-                                              `Deliverables: ${item.extended.deliverables}`,
-                                              `Ownership alignment: ${item.extended.owner}`,
-                                              "Maintains clear escalation paths and execution speed",
-                                              "Ensures full audit rights and transparent operational tracking"
-                                            ],
-                                            footer: "Bose GCC Proposal · Joint Governance Framework"
-                                          })}
+                                          tag: `Governance Cadence · ${item.cadence}`,
+                                          title: `${item.cadence} Governance Cadence`,
+                                          content: `<p><strong>Frequency:</strong> ${item.freq}</p><p><strong>Purpose:</strong> ${item.purpose}</p><p><strong>Operational Context:</strong> ${item.extended.details}</p>`,
+                                          stats: [
+                                            [item.freq, "Cadence Frequency"],
+                                            [item.extended.owner.split(" · ")[0] || "Joint", "Primary Ownership"],
+                                            ["Standard", "Compliance Tier"]
+                                          ],
+                                          bullets: [
+                                            `Deliverables: ${item.extended.deliverables}`,
+                                            `Ownership alignment: ${item.extended.owner}`,
+                                            "Maintains clear escalation paths and execution speed",
+                                            "Ensures full audit rights and transparent operational tracking"
+                                          ],
+                                          footer: "Bose GCC Proposal · Joint Governance Framework"
+                                        })}
                                       >
                                         ⛶
                                       </button>
@@ -5754,7 +5754,7 @@ html{}
                           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                             <span style={{ fontFamily: "var(--M)", fontSize: 9, textTransform: "uppercase", letterSpacing: 0.12, color: "var(--blue)", fontWeight: "bold" }}>The Triple Guarantee</span>
                             <div style={{ display: "flex", gap: 8 }}>
-                              <button 
+                              <button
                                 onClick={() => setOpenGuarantees([0, 1, 2])}
                                 style={{
                                   padding: "4px 10px",
@@ -5775,7 +5775,7 @@ html{}
                               >
                                 Expand All
                               </button>
-                              <button 
+                              <button
                                 onClick={() => setOpenGuarantees([])}
                                 style={{
                                   padding: "4px 10px",
@@ -5801,8 +5801,8 @@ html{}
                           {THE_GUARANTEES.map((item, idx) => {
                             const isOpen = openGuarantees.includes(idx);
                             return (
-                              <div 
-                                key={idx} 
+                              <div
+                                key={idx}
                                 className={`guarantee-card${isOpen ? " open" : ""}`}
                                 onClick={() => {
                                   if (isOpen) {
@@ -5817,7 +5817,7 @@ html{}
                                   <span style={{ fontSize: 13, color: isOpen ? "var(--red)" : "var(--blue)" }}>{isOpen ? "−" : "+"}</span>
                                 </h4>
                                 <p>{item.desc}</p>
-                                
+
                                 {isOpen && (
                                   <div className="guarantee-details">
                                     <div className="gov-detail-section">
@@ -5831,22 +5831,22 @@ html{}
                                     <button
                                       className="gov-zoom-btn"
                                       {...bindZoom({
-                                          tag: `Operational Guarantees · ${item.title}`,
-                                          title: `Triple Guarantee — <em>${item.title}</em>`,
-                                          content: `<p><strong>Core Guarantee:</strong> ${item.desc}</p><p><strong>Strategic Security Details:</strong> ${item.extended.details}</p>`,
-                                          stats: [
-                                            ["Audited", "Compliance Level"],
-                                            ["Contractual", "Enforcement"],
-                                            ["Day 1", "Active Timeline"]
-                                          ],
-                                          bullets: [
-                                            `Scope: ${item.extended.scope}`,
-                                            "Part of the foundational BOT contract framework",
-                                            "Underpinned by open-book commercials and Safe Harbour pricing models",
-                                            "Establishes absolute IP protection and physical security ring-fencing"
-                                          ],
-                                          footer: "Bose GCC Proposal · Operational & Strategic Guarantees"
-                                        })}
+                                        tag: `Operational Guarantees · ${item.title}`,
+                                        title: `Triple Guarantee — <em>${item.title}</em>`,
+                                        content: `<p><strong>Core Guarantee:</strong> ${item.desc}</p><p><strong>Strategic Security Details:</strong> ${item.extended.details}</p>`,
+                                        stats: [
+                                          ["Audited", "Compliance Level"],
+                                          ["Contractual", "Enforcement"],
+                                          ["Day 1", "Active Timeline"]
+                                        ],
+                                        bullets: [
+                                          `Scope: ${item.extended.scope}`,
+                                          "Part of the foundational BOT contract framework",
+                                          "Underpinned by open-book commercials and Safe Harbour pricing models",
+                                          "Establishes absolute IP protection and physical security ring-fencing"
+                                        ],
+                                        footer: "Bose GCC Proposal · Operational & Strategic Guarantees"
+                                      })}
                                     >
                                       ⛶
                                     </button>
@@ -5958,7 +5958,7 @@ html{}
           {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
           04 · THE MODEL
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-           <section className="sec alt" id="model" ref={el => setSecRef("model", el)}>
+          <section className="sec alt" id="model" ref={el => setSecRef("model", el)}>
             <div className="wrap">
               <div className="shead rv" ref={addRef}>
                 <div>
@@ -6014,19 +6014,19 @@ html{}
                     </div>
 
                     <div className="subtabs-container">
-                      <button 
+                      <button
                         className={`subtab-btn${costSubTab === "monthly" ? " active" : ""}`}
                         onClick={() => setCostSubTab("monthly")}
                       >
                         Monthly Cost Build
                       </button>
-                      <button 
+                      <button
                         className={`subtab-btn${costSubTab === "annual" ? " active" : ""}`}
                         onClick={() => setCostSubTab("annual")}
                       >
                         Annual Arbitrage & Savings
                       </button>
-                      <button 
+                      <button
                         className={`subtab-btn${costSubTab === "levers" ? " active" : ""}`}
                         onClick={() => setCostSubTab("levers")}
                       >
@@ -6047,7 +6047,7 @@ html{}
                               </div>
                             ))}
                             <div className="cr mg">
-                              <span className="cn">Management fee ·<br/>15%</span>
+                              <span className="cn">Management fee ·<br />15%</span>
                               <div className="cb"><div className="cbf" style={{ width: Math.round(mgn / T * 100) + "%" }} /></div>
                               <span className="ca">{fmt(mgn)}</span>
                             </div>
@@ -6113,8 +6113,8 @@ html{}
                                 }
                               };
                               return (
-                                <div 
-                                  key={nm} 
+                                <div
+                                  key={nm}
                                   className={`ccard${w ? " win" : ""}`}
                                   style={{ cursor: "pointer" }}
                                   {...bindZoom(getZoomPayload())}
@@ -6153,22 +6153,22 @@ html{}
                             <span className="val">{fmt(in_tot)}<span style={{ fontSize: 11, color: "var(--ink3)", textTransform: "none" }}>/yr</span></span>
                           </div>
                           <div className="arb-stat-card saving-highlight" style={{ cursor: "pointer" }} {...bindZoom({
-                              tag: "Financial Arbitrage",
-                              title: "Corporate Cost Arbitrage & <em>Annualized Savings</em>",
-                              content: `<p><strong>Strategic Summary:</strong> Operating a hosted BOT capability center delivers structural labor arbitrage and scale savings. By leveraging India's premier audio DSP, engineering, and digital talent pool across Bangalore and Hyderabad, Bose achieves substantial fully loaded savings compounding over the term.</p>`,
-                              stats: [
-                                [fmt(us_tot), "US Onshore Baseline"],
-                                [fmt(in_tot), "Bose India GCC Cost"],
-                                [fmt(savings_tot), "Net Annual Savings"]
-                              ],
-                              bullets: [
-                                "US baseline fully loaded cost models range from $70k to $180k per year depending on functional track.",
-                                "India fully loaded cost includes salary, PF, ESIC, insurance, technology overhead, premium facilities, and 15% management markup.",
-                                "Cost savings range from ~63-68% depending on the functional engineering track.",
-                                "Contractual Open-Book structure guarantees auditable line-item actual costs, fully aligned with India Transfer Pricing Safe Harbour."
-                              ],
-                              footer: "Bose GCC Proposal · Financial Arbitrage & Savings Analysis"
-                            })}>
+                            tag: "Financial Arbitrage",
+                            title: "Corporate Cost Arbitrage & <em>Annualized Savings</em>",
+                            content: `<p><strong>Strategic Summary:</strong> Operating a hosted BOT capability center delivers structural labor arbitrage and scale savings. By leveraging India's premier audio DSP, engineering, and digital talent pool across Bangalore and Hyderabad, Bose achieves substantial fully loaded savings compounding over the term.</p>`,
+                            stats: [
+                              [fmt(us_tot), "US Onshore Baseline"],
+                              [fmt(in_tot), "Bose India GCC Cost"],
+                              [fmt(savings_tot), "Net Annual Savings"]
+                            ],
+                            bullets: [
+                              "US baseline fully loaded cost models range from $70k to $180k per year depending on functional track.",
+                              "India fully loaded cost includes salary, PF, ESIC, insurance, technology overhead, premium facilities, and 15% management markup.",
+                              "Cost savings range from ~63-68% depending on the functional engineering track.",
+                              "Contractual Open-Book structure guarantees auditable line-item actual costs, fully aligned with India Transfer Pricing Safe Harbour."
+                            ],
+                            footer: "Bose GCC Proposal · Financial Arbitrage & Savings Analysis"
+                          })}>
                             <span className="lbl">Net Annual Savings ⛶</span>
                             <span className="val" style={{ color: "var(--blue)" }}>{fmt(savings_tot)}<span style={{ fontSize: 11, color: "var(--blue)", textTransform: "none" }}>/yr</span></span>
                           </div>
@@ -6243,7 +6243,7 @@ html{}
                           <span className="skick" style={{ fontSize: "10px", letterSpacing: "0.1em" }}>Value Creation Engine</span>
                           <span style={{ fontSize: "12px", fontFamily: "var(--M)", color: "var(--ink3)" }}>4-Lever Commercial Optimization</span>
                         </div>
-                        
+
                         <div className="levers-grid">
                           {/* LEVER 1 */}
                           <div className="lever-card" style={{ cursor: "pointer" }} {...bindZoom({
@@ -6478,22 +6478,22 @@ html{}
                         <button
                           className="pillar-zoom-btn"
                           {...bindZoom({
-                              tag: `GCCaaS Strategic Pillar · ${p.n}`,
-                              title: `Strategic Pillar ${p.n}: <em>${p.t}</em>`,
-                              content: `<p><strong>Strategic Focus:</strong> ${p.short}</p><p><strong>Execution Details:</strong> ${p.detail}</p>`,
-                              stats: [
-                                ["100%", "Strategic Alignment"],
-                                ["Built-In", "Compliance"],
-                                ["BOT Platform", "Delivery Model"]
-                              ],
-                              bullets: [
-                                "Specifically engineered to mitigate client execution risk",
-                                "Fully integrated with our multi-city operational footprint (Bengaluru + Hyderabad)",
-                                "Underpinned by open-book costing and Safe Harbour compliance",
-                                "Designed to ensure seamless captive transfer with zero operational disruption"
-                              ],
-                              footer: "Bose GCC Proposal · GCCaaS Strategic Pillars"
-                            })}
+                            tag: `GCCaaS Strategic Pillar · ${p.n}`,
+                            title: `Strategic Pillar ${p.n}: <em>${p.t}</em>`,
+                            content: `<p><strong>Strategic Focus:</strong> ${p.short}</p><p><strong>Execution Details:</strong> ${p.detail}</p>`,
+                            stats: [
+                              ["100%", "Strategic Alignment"],
+                              ["Built-In", "Compliance"],
+                              ["BOT Platform", "Delivery Model"]
+                            ],
+                            bullets: [
+                              "Specifically engineered to mitigate client execution risk",
+                              "Fully integrated with our multi-city operational footprint (Bengaluru + Hyderabad)",
+                              "Underpinned by open-book costing and Safe Harbour compliance",
+                              "Designed to ensure seamless captive transfer with zero operational disruption"
+                            ],
+                            footer: "Bose GCC Proposal · GCCaaS Strategic Pillars"
+                          })}
                         >
                           ⛶
                         </button>
@@ -6509,12 +6509,12 @@ html{}
                     <div className="comp-card-top">
                       <h3>USD vs INR Compliance Modeler</h3>
                       <p>Option A (direct contracting in USD) bypasses traditional outsourcing markup tax friction. Slide the headcount scrubber (currently at {n} FTEs) to see how it scales.</p>
-                      
+
                       <div className="comp-modeler-bar">
                         <span className="lbl">Model Headcount:</span>
                         <span className="val">{n} FTEs</span>
                       </div>
-                      
+
                       {[
                         { l: "Avoided GST Cash Lock-up (1.4% average savings)", v: n * 42800 * 0.014, d: "Zero-rated export of services eliminates local invoice cash float." },
                         { l: "Avoided TDS / WHT Float Friction (0.4% baseline)", v: n * 42800 * 0.004, d: "Zero withholding on payments direct from US parent." },
@@ -6528,7 +6528,7 @@ html{}
                         </div>
                       ))}
                     </div>
-                    
+
                     <div className="comp-saving-summary">
                       <div className="left">
                         <h4>Estimated Annual Saving</h4>
@@ -6539,11 +6539,11 @@ html{}
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="pe-checklist-card">
                     <h3>PE & Tax Risk Safeguards</h3>
                     <p className="intro">Under the US-India Tax Treaty (Article 5), paying in USD is fully compliant. We maintain strict operational ring-fences to prevent Permanent Establishment (PE) exposure.</p>
-                    
+
                     <div className="pe-checklist-items">
                       {[
                         {
@@ -6626,16 +6626,16 @@ html{}
                       <rect width="600" height="700" fill="url(#p2)" />
                       {/* Geographically Accurate outline of India */}
                       <path d="M4040 10225 c-14 -8 -40 -14 -58 -15 -64 0 -119 -22 -173 -66 -57 -47 -124 -77 -199 -89 -25 -4 -89 -29 -142 -56 l-97 -49 -17 -56 c-9 -33 -30 -71 -49 -92 -31 -34 -35 -36 -121 -42 -71 -5 -104 -13 -158 -38 -83 -39 -130 -40 -211 -7 -33 14 -91 30 -130 36 -38 6 -86 19 -106 29 -46 24 -69 26 -152 16 -65 -8 -68 -10 -82 -43 -21 -50 -19 -76 10 -103 16 -15 25 -35 25 -54 0 -17 7 -40 15 -50 22 -30 18 -58 -12 -82 -27 -21 -27 -24 -16 -65 10 -38 9 -50 -8 -88 -10 -24 -19 -51 -19 -60 0 -9 28 -44 63 -77 101 -97 102 -98 156 -95 54 2 47 11 67 -89 5 -26 12 -32 57 -44 29 -8 69 -17 90 -21 43 -7 49 -28 18 -66 -15 -19 -30 -24 -84 -27 -62 -4 -67 -6 -95 -42 -17 -20 -45 -43 -63 -50 l-32 -13 5 -123 c5 -137 -1 -162 -49 -196 -17 -13 -61 -60 -97 -106 -50 -63 -66 -90 -66 -115 0 -57 -9 -71 -56 -91 -58 -24 -107 -86 -205 -257 -77 -134 -85 -141 -164 -154 -64 -11 -92 -30 -110 -78 -10 -27 -34 -58 -60 -80 -54 -45 -101 -127 -110 -190 -4 -26 -12 -50 -17 -53 -5 -3 -30 2 -54 11 -31 12 -58 15 -87 11 -23 -4 -83 -9 -134 -12 l-92 -6 -3 49 c-3 47 -4 48 -38 51 -54 4 -102 -41 -136 -128 -25 -64 -34 -75 -96 -121 -37 -28 -68 -57 -68 -63 0 -7 -9 -21 -21 -32 -12 -10 -30 -31 -40 -46 -25 -35 -12 -72 33 -91 18 -8 44 -26 58 -41 21 -23 30 -26 61 -21 31 5 39 3 52 -16 17 -24 14 -65 -9 -111 -24 -47 -17 -87 27 -160 l41 -68 54 0 c53 0 54 0 54 -30 0 -16 11 -64 25 -107 14 -43 25 -94 25 -114 0 -28 6 -39 25 -49 22 -12 24 -18 19 -49 -3 -20 -15 -44 -26 -54 -17 -14 -19 -22 -11 -39 7 -16 5 -30 -6 -50 -14 -24 -23 -28 -58 -28 -36 0 -44 4 -48 23 -6 22 -7 22 -100 13 -78 -8 -96 -13 -101 -28 -9 -28 -70 -24 -118 10 -41 28 -41 28 -281 35 l-50 2 -3 -46 c-3 -43 -5 -47 -34 -53 -17 -3 -49 -6 -73 -6 -46 0 -82 -27 -72 -55 8 -20 122 -20 157 0 32 18 40 18 40 1 0 -8 -17 -20 -37 -27 -21 -6 -44 -16 -50 -22 -24 -18 -14 -76 27 -157 35 -69 44 -80 66 -80 15 0 48 -16 73 -35 56 -40 109 -54 211 -53 69 1 78 3 107 31 28 26 37 29 77 25 25 -3 49 -1 55 5 7 7 12 5 17 -7 10 -27 -46 -107 -104 -147 -38 -27 -65 -38 -106 -42 -31 -3 -66 -13 -78 -21 -35 -25 -95 -20 -130 9 -16 14 -35 25 -42 25 -18 0 -36 -21 -36 -42 0 -25 74 -143 125 -198 22 -25 57 -70 78 -100 20 -30 95 -123 166 -206 116 -135 134 -152 168 -157 26 -5 45 -2 62 9 17 12 37 15 73 11 41 -5 61 -1 126 27 42 19 87 37 99 40 12 4 31 18 42 32 13 16 29 24 51 24 38 0 69 32 70 73 0 19 12 38 40 63 47 43 51 76 20 147 l-21 46 27 63 c24 59 38 77 57 78 4 0 7 -6 7 -12 0 -28 17 -40 37 -30 11 6 25 7 33 2 11 -7 7 -15 -19 -39 -28 -26 -32 -36 -26 -59 3 -15 7 -43 9 -62 1 -19 8 -46 15 -59 11 -20 19 -23 49 -18 21 3 45 8 56 13 14 5 17 3 14 -7 -5 -14 -26 -23 -80 -34 -21 -4 -34 -18 -53 -55 -31 -62 -32 -87 -1 -101 21 -10 25 -20 31 -83 3 -39 13 -82 22 -94 18 -29 11 -62 -22 -114 -14 -20 -29 -56 -35 -80 -21 -93 -3 -256 34 -296 18 -20 17 -22 -9 -57 -27 -34 -27 -36 -10 -55 10 -11 31 -20 47 -20 25 0 28 -4 28 -31 0 -16 -9 -47 -19 -67 -39 -76 -41 -97 -15 -136 20 -29 23 -40 14 -56 -9 -17 -7 -28 9 -54 15 -24 21 -50 21 -95 0 -54 4 -68 35 -113 35 -50 40 -76 15 -70 -7 1 -9 -4 -6 -15 19 -62 27 -127 36 -272 l10 -164 75 -115 c59 -90 75 -122 75 -151 0 -28 9 -48 40 -85 22 -26 40 -59 40 -71 0 -15 11 -32 30 -45 38 -27 86 -128 95 -200 4 -30 18 -74 31 -97 18 -31 24 -57 24 -100 0 -32 5 -76 10 -98 6 -22 15 -74 20 -115 7 -49 22 -99 44 -145 19 -38 41 -95 50 -125 11 -37 48 -101 116 -199 55 -79 100 -148 100 -154 0 -5 15 -44 34 -87 19 -42 37 -99 41 -126 10 -74 25 -114 62 -169 20 -30 33 -62 33 -81 0 -25 12 -42 59 -87 70 -67 104 -142 56 -124 -8 4 -15 18 -15 32 0 20 -5 25 -25 25 -25 0 -33 -14 -15 -25 6 -3 10 -35 10 -71 0 -57 4 -71 31 -110 17 -25 42 -73 56 -107 31 -77 123 -175 207 -220 33 -18 68 -45 80 -64 27 -42 49 -41 97 2 22 19 49 35 61 35 13 0 43 23 80 61 53 56 58 65 58 107 0 34 8 60 32 99 36 59 58 71 161 83 41 5 76 15 87 25 21 19 72 15 122 -11 43 -22 68 -18 68 11 0 21 -8 27 -66 45 -36 11 -72 20 -80 20 -16 0 -34 31 -34 58 0 10 15 39 33 63 44 57 107 171 107 192 0 13 10 16 53 16 28 -1 59 0 67 0 8 1 27 -1 42 -5 24 -5 29 -2 44 30 15 31 16 44 6 98 -9 44 -9 89 -3 147 8 77 7 88 -13 125 -27 52 -29 193 -4 241 9 17 19 48 23 69 5 26 15 41 32 49 26 12 61 73 99 174 19 50 24 83 24 153 0 88 0 89 -34 117 -18 15 -39 38 -45 51 -15 28 -7 114 16 187 19 58 18 121 -2 170 -18 41 -19 137 -4 203 6 26 27 83 46 128 39 87 60 106 136 119 l39 6 -7 75 c-5 50 -4 74 3 74 20 0 42 -44 42 -85 0 -46 14 -65 45 -65 28 0 46 21 84 96 44 86 46 88 146 79 l85 -7 64 52 c64 50 116 104 116 120 0 4 -13 13 -30 20 -20 8 -30 19 -30 34 0 34 56 104 90 111 16 3 39 14 52 24 13 10 57 35 98 55 113 56 136 75 189 151 53 76 137 153 189 174 22 9 50 39 87 92 31 43 74 92 98 111 53 41 54 42 62 96 4 27 20 61 42 90 31 41 43 49 92 60 62 14 95 37 73 51 -7 4 -24 6 -38 3 -19 -3 -24 0 -24 15 0 48 80 74 118 40 24 -22 54 -21 100 2 20 10 53 22 72 26 77 16 119 49 194 148 25 34 36 59 36 83 0 28 6 38 30 52 37 21 38 45 4 77 l-27 25 13 92 c10 79 17 100 46 139 35 48 59 59 131 59 47 0 148 62 169 103 10 17 20 74 24 132 8 89 13 108 39 150 16 26 39 54 49 61 18 12 20 11 24 -10 6 -27 -5 -50 -38 -86 -30 -32 -45 -156 -24 -195 8 -16 11 -43 7 -79 -6 -62 8 -83 31 -48 8 12 25 22 38 22 18 0 23 6 26 31 4 39 29 59 52 40 11 -9 16 -30 16 -62 0 -52 19 -67 39 -31 7 12 22 17 53 17 36 0 43 3 46 21 2 16 -5 23 -30 30 -27 8 -34 15 -36 42 -3 28 0 32 21 32 23 0 24 3 20 53 -2 28 -9 74 -14 101 -5 27 -7 76 -3 108 l7 58 -32 0 c-34 0 -35 2 -32 71 2 40 0 46 -23 57 -15 6 -26 20 -26 31 0 10 -12 45 -27 77 -24 52 -25 62 -15 101 7 24 12 72 12 106 l0 63 -55 27 c-31 15 -68 27 -84 27 -48 0 -81 71 -46 100 8 7 15 23 15 36 0 20 5 24 29 24 34 0 48 15 53 55 l3 30 66 -3 c50 -2 69 1 79 13 11 13 9 20 -14 44 -15 15 -30 41 -35 57 -6 25 -13 29 -49 32 -29 2 -43 8 -47 21 -11 36 -53 71 -84 71 -40 0 -45 12 -21 52 11 18 20 41 20 50 0 9 18 29 40 45 42 30 51 63 29 105 -6 11 -8 22 -5 25 10 10 92 -27 116 -52 28 -30 70 -34 70 -6 0 35 46 14 66 -31 21 -46 67 -88 97 -88 11 0 31 10 44 22 14 13 27 18 33 12 5 -5 21 -65 35 -134 24 -118 28 -127 62 -156 30 -27 49 -33 122 -44 87 -12 420 -9 513 5 43 6 51 4 108 -35 l61 -41 -29 -34 c-22 -24 -31 -48 -36 -88 -7 -51 -11 -59 -74 -119 -37 -35 -85 -72 -107 -82 -46 -21 -92 -72 -105 -115 -6 -23 -3 -36 16 -65 20 -29 24 -47 24 -106 0 -86 12 -115 40 -100 11 6 20 20 20 30 0 31 18 24 25 -10 7 -32 30 -39 66 -20 16 9 19 22 19 77 0 64 1 67 40 104 26 25 40 47 40 64 0 23 3 25 50 25 61 0 65 -5 86 -142 9 -57 31 -143 49 -193 18 -49 40 -116 49 -148 10 -35 24 -60 34 -64 9 -4 34 -17 56 -31 44 -27 62 -19 47 20 -8 21 -5 32 14 58 22 30 23 34 9 72 -8 24 -14 78 -14 130 0 78 3 92 20 106 11 10 24 38 29 65 5 26 17 57 27 68 21 23 26 120 10 173 -8 27 -7 29 14 23 13 -3 36 1 53 9 28 15 30 14 56 -10 23 -22 31 -24 56 -17 68 20 67 19 60 80 -6 52 -3 61 35 136 23 44 58 97 77 119 33 36 35 42 30 89 -5 35 -14 59 -32 77 -40 41 -33 69 27 110 29 19 60 49 69 65 26 44 40 148 33 245 -6 106 6 137 53 132 26 -3 36 3 58 32 15 20 36 36 47 36 13 0 24 11 31 29 6 17 21 32 33 35 12 3 46 32 75 63 53 57 55 58 91 49 31 -8 41 -6 58 9 19 17 25 18 53 6 46 -19 94 -25 101 -12 4 6 -13 33 -38 59 -26 27 -46 56 -46 64 0 9 21 33 48 54 75 60 81 71 79 141 -1 59 -3 63 -27 68 -15 3 -42 5 -61 4 -19 -1 -52 7 -76 19 -53 27 -85 28 -108 2 -10 -11 -26 -20 -37 -20 -15 0 -18 8 -18 57 0 50 4 61 31 89 l30 31 -38 32 c-25 21 -46 31 -60 28 -13 -2 -29 3 -40 15 -18 20 -11 34 21 40 37 6 26 23 -29 46 -76 31 -104 28 -158 -13 -29 -22 -57 -35 -76 -35 -23 0 -31 -5 -31 -18 0 -11 -8 -26 -17 -35 -25 -21 -118 -5 -153 28 -45 42 -76 41 -98 -2 -7 -12 -32 -29 -56 -38 -34 -13 -45 -23 -50 -45 -4 -22 -12 -29 -32 -32 -20 -2 -30 -11 -38 -33 -23 -62 -35 -75 -72 -75 -70 0 -154 -52 -154 -96 0 -45 -20 -69 -70 -87 -27 -10 -60 -30 -73 -45 -14 -15 -38 -42 -53 -59 -25 -28 -39 -34 -104 -44 -49 -7 -82 -18 -96 -31 -19 -17 -29 -18 -65 -11 -38 7 -44 12 -47 36 -3 21 -11 29 -41 37 -21 6 -44 17 -51 25 -15 18 -36 19 -47 2 -4 -7 -20 -20 -35 -29 -23 -15 -28 -15 -38 -3 -16 19 -60 19 -96 0 -27 -14 -29 -13 -33 3 -4 22 -31 52 -46 52 -7 0 -20 9 -29 19 -30 33 -79 35 -132 7 -26 -14 -69 -30 -96 -37 -44 -12 -52 -19 -78 -65 -19 -33 -30 -66 -30 -90 0 -36 -5 -43 -67 -91 -86 -66 -96 -61 -92 51 2 58 -1 87 -11 104 -17 26 -55 29 -86 8 -11 -8 -43 -16 -69 -18 l-49 -3 -13 -65 c-7 -36 -20 -102 -29 -148 l-15 -83 25 -30 c31 -36 33 -75 6 -109 -12 -16 -20 -41 -20 -67 0 -42 0 -42 -26 -31 -20 9 -27 9 -34 -2 -5 -8 -30 -13 -68 -14 -33 -1 -67 -7 -75 -15 -20 -16 -57 -6 -75 20 -16 23 -58 25 -66 4 -7 -20 -23 -19 -92 9 -71 28 -217 51 -273 41 -39 -6 -40 -6 -49 27 -10 40 -40 48 -88 22 -33 -18 -34 -18 -58 5 -18 17 -32 22 -49 17 -18 -4 -31 2 -53 25 -86 91 -237 189 -291 189 -7 0 -27 -10 -44 -22 -26 -19 -33 -21 -62 -10 -45 16 -56 15 -101 -9 l-38 -20 -54 25 c-30 14 -70 26 -89 26 -26 0 -38 7 -55 31 -21 28 -26 30 -77 28 -53 -3 -57 -1 -110 45 -49 44 -57 47 -79 37 -42 -19 -60 -13 -120 37 -45 38 -60 58 -68 91 -10 39 -15 44 -71 66 -33 14 -73 34 -89 46 -23 17 -37 20 -76 16 -40 -5 -50 -2 -67 16 -10 12 -35 34 -54 49 l-34 28 28 21 c28 21 28 23 21 98 -6 73 -5 78 20 108 14 17 26 40 26 52 0 14 12 26 37 38 24 12 44 31 54 53 10 19 29 46 43 59 54 51 28 84 -123 156 l-62 29 2 41 c3 51 -5 65 -38 65 -15 0 -37 10 -50 22 -16 15 -42 24 -86 29 -53 6 -66 12 -91 41 -15 18 -35 49 -43 68 -31 71 -65 88 -104 49 -27 -27 -33 -20 -20 29 9 30 8 47 -3 73 -8 19 -17 53 -21 77 -5 28 -13 46 -25 50 -25 10 -68 74 -75 115 -5 23 -1 45 9 65 30 57 66 59 95 5 6 -13 30 -32 53 -44 l41 -21 71 50 c72 51 89 79 70 120 -4 10 -12 35 -18 56 -10 37 -15 41 -59 52 -56 14 -87 38 -87 67 0 12 -10 32 -22 45 -19 19 -23 34 -22 79 2 49 5 57 35 83 25 20 49 29 87 33 30 3 56 8 58 10 3 2 11 37 18 76 16 81 36 111 76 111 30 0 80 34 80 55 0 7 16 44 35 81 19 37 35 81 35 98 0 17 9 45 20 61 26 39 26 75 1 75 -10 0 -38 -7 -61 -15 -23 -8 -44 -15 -45 -15 -1 0 -8 13 -15 29 -8 21 -21 32 -43 37 -43 9 -67 32 -67 64 0 15 -6 33 -14 39 -23 19 -79 23 -106 6z" transform="translate(144.9356, 152.1367) scale(0.033216)" stroke="rgba(13,16,26,.18)" strokeWidth="1.5" fill="url(#ig3)" />
-                      
+
                       {/* Considered Alternatives - Geographically Precise */}
                       <g opacity=".35">
                         <circle cx="270" cy="180" r="2.5" fill="#9c9590" /><text x="280" y="184" fill="#9c9590" fontFamily="JetBrains Mono" fontSize="9">Delhi</text>
                         <circle cx="225" cy="365" r="2.5" fill="#9c9590" /><text x="173" y="369" fill="#9c9590" fontFamily="JetBrains Mono" fontSize="9">Mumbai</text>
                       </g>
-                      
+
                       {/* Inter-city connection path */}
                       <line x1="280" y1="440" x2="275" y2="500" stroke="#1a4f96" strokeWidth="1" strokeDasharray="4 5" opacity=".3" />
-                      
+
                       {/* Hyderabad */}
                       <g style={{ cursor: "pointer" }} onClick={(e) => { e.stopPropagation(); setActiveCity("hyderabad"); setActiveShapeCard("it"); }} filter="url(#gf)">
                         {activeCity === "hyderabad" && (
@@ -6654,7 +6654,7 @@ html{}
                         <circle cx="280" cy="440" r={activeCity === "hyderabad" ? 8 : 5.5} fill="#1a4f96" stroke="#c01c1c" strokeWidth={activeCity === "hyderabad" ? 2 : 0} />
                         <text x="293" y="443" fill={activeCity === "hyderabad" ? "#1a4f96" : "#706b62"} fontFamily="JetBrains Mono" fontSize="10" fontWeight={activeCity === "hyderabad" ? "600" : "500"} letterSpacing="1.3">Hyderabad · 480</text>
                       </g>
-                      
+
                       {/* Bengaluru */}
                       <g style={{ cursor: "pointer" }} onClick={(e) => { e.stopPropagation(); setActiveCity("bengaluru"); setActiveShapeCard("rd"); }} filter="url(#gf)">
                         {activeCity === "bengaluru" && (
@@ -6722,17 +6722,17 @@ html{}
                         <button
                           className="city-zoom-btn"
                           {...bindZoom({
-                              tag: `Geographic Conviction · ${city.name}`,
-                              title: `Geographic Hub — <em>${city.name}</em>`,
-                              content: `<p><strong>Hub Role & Mandate:</strong> ${city.desc}</p><p><strong>Ecosystem & Talent Gravity:</strong> ${city.eco}</p>`,
-                              stats: [
-                                [`${city.score} / 100`, "Suitability Score"],
-                                [city.name === "Hyderabad" ? "480 FTE" : city.name === "Bengaluru" ? "320 FTE" : "—", "Allocation"],
-                                [city.role, "Hub Priority"]
-                              ],
-                              bullets: city.alloc.map(a => `${a.l}: ${a.v} FTE — ${a.s}`),
-                              footer: "Bose GCC Proposal · Geographic Conviction Profiles · Section K"
-                            })}
+                            tag: `Geographic Conviction · ${city.name}`,
+                            title: `Geographic Hub — <em>${city.name}</em>`,
+                            content: `<p><strong>Hub Role & Mandate:</strong> ${city.desc}</p><p><strong>Ecosystem & Talent Gravity:</strong> ${city.eco}</p>`,
+                            stats: [
+                              [`${city.score} / 100`, "Suitability Score"],
+                              [city.name === "Hyderabad" ? "480 FTE" : city.name === "Bengaluru" ? "320 FTE" : "—", "Allocation"],
+                              [city.role, "Hub Priority"]
+                            ],
+                            bullets: city.alloc.map(a => `${a.l}: ${a.v} FTE — ${a.s}`),
+                            footer: "Bose GCC Proposal · Geographic Conviction Profiles · Section K"
+                          })}
                         >
                           ⛶
                         </button>
@@ -6835,7 +6835,7 @@ html{}
                                 <div className="matrix-city-score-lbl">Weighted Score</div>
                               </div>
                             </div>
-                            
+
                             <div className="matrix-bars-container">
                               {[
                                 { id: "talentPool", l: "Talent Pool" },
@@ -6862,24 +6862,24 @@ html{}
                                 </div>
                               ))}
                             </div>
-                            
+
                             <div className="matrix-desc-text">
                               <span>{c.desc}</span>
                               <button
                                 className="matrix-zoom-btn"
                                 title="Expand boardroom Zoom presentation"
                                 {...bindZoom({
-                                    tag: `Geographic Conviction · ${c.name}`,
-                                    title: `Geographic Hub — <em>${c.name}</em>`,
-                                    content: `<p><strong>Hub Role & Mandate:</strong> ${cityDetail ? cityDetail.desc : c.desc}</p><p><strong>Ecosystem & Talent Gravity:</strong> ${cityDetail ? cityDetail.eco : "Premium corporate and startup ecosystem backing."}</p>`,
-                                    stats: [
-                                      [`${c.finalScore}%`, "Weighted Suitability"],
-                                      [c.id === "hyderabad" ? "480 FTE" : c.id === "bengaluru" ? "320 FTE" : "—", "Allocation"],
-                                      [cityDetail ? cityDetail.role : c.badge, "Hub Priority"]
-                                    ],
-                                    bullets: cityDetail ? cityDetail.alloc.map(a => `${a.l}: ${a.v} FTE — ${a.s}`) : ["Considered backup / strategic failover location"],
-                                    footer: "Bose GCC Proposal · Geographic Conviction Profiles · Section K"
-                                  })}
+                                  tag: `Geographic Conviction · ${c.name}`,
+                                  title: `Geographic Hub — <em>${c.name}</em>`,
+                                  content: `<p><strong>Hub Role & Mandate:</strong> ${cityDetail ? cityDetail.desc : c.desc}</p><p><strong>Ecosystem & Talent Gravity:</strong> ${cityDetail ? cityDetail.eco : "Premium corporate and startup ecosystem backing."}</p>`,
+                                  stats: [
+                                    [`${c.finalScore}%`, "Weighted Suitability"],
+                                    [c.id === "hyderabad" ? "480 FTE" : c.id === "bengaluru" ? "320 FTE" : "—", "Allocation"],
+                                    [cityDetail ? cityDetail.role : c.badge, "Hub Priority"]
+                                  ],
+                                  bullets: cityDetail ? cityDetail.alloc.map(a => `${a.l}: ${a.v} FTE — ${a.s}`) : ["Considered backup / strategic failover location"],
+                                  footer: "Bose GCC Proposal · Geographic Conviction Profiles · Section K"
+                                })}
                               >
                                 ⛶
                               </button>
@@ -6923,17 +6923,17 @@ html{}
                   <button
                     className="talent-zoom-btn"
                     {...bindZoom({
-                        tag: `Talent Engine · Phase 0${tePhase + 1}`,
-                        title: `Talent Engine: <em>${TE_PHASES[tePhase].title} (${TE_PHASES[tePhase].sub})</em>`,
-                        content: `<p><strong>Strategic Mandate:</strong> ${TE_PHASES[tePhase].desc}</p>`,
-                        stats: [
-                          [`Phase ${tePhase + 1}`, "Engine Phase"],
-                          [tePhase === 0 ? "Hire" : tePhase === 1 ? "Build" : "Retain", "Core Focus"],
-                          ["Day 1", "Incubation Ready"]
-                        ],
-                        bullets: TE_PHASES[tePhase].items.map(it => `Key Mechanic: ${it}`),
-                        footer: "Bose GCC Proposal · Human Capital & Talent Engine"
-                      })}
+                      tag: `Talent Engine · Phase 0${tePhase + 1}`,
+                      title: `Talent Engine: <em>${TE_PHASES[tePhase].title} (${TE_PHASES[tePhase].sub})</em>`,
+                      content: `<p><strong>Strategic Mandate:</strong> ${TE_PHASES[tePhase].desc}</p>`,
+                      stats: [
+                        [`Phase ${tePhase + 1}`, "Engine Phase"],
+                        [tePhase === 0 ? "Hire" : tePhase === 1 ? "Build" : "Retain", "Core Focus"],
+                        ["Day 1", "Incubation Ready"]
+                      ],
+                      bullets: TE_PHASES[tePhase].items.map(it => `Key Mechanic: ${it}`),
+                      footer: "Bose GCC Proposal · Human Capital & Talent Engine"
+                    })}
                   >
                     ⛶
                   </button>
@@ -6970,13 +6970,13 @@ html{}
               </div>
 
               <div className="subtabs-container rv" ref={addRef} style={{ marginBottom: 32 }}>
-                <button 
+                <button
                   className={`subtab-btn${journeySubTab === "incubation" ? " active" : ""}`}
                   onClick={() => setJourneySubTab("incubation")}
                 >
                   Incubation & Execution Map (24 Mo)
                 </button>
-                <button 
+                <button
                   className={`subtab-btn${journeySubTab === "maturity" ? " active" : ""}`}
                   onClick={() => setJourneySubTab("maturity")}
                 >
@@ -7013,17 +7013,17 @@ html{}
                       <button
                         className="timeline-zoom-btn"
                         {...bindZoom({
-                            tag: `Execution Timeline · Phase 0${activeJ + 1}`,
-                            title: `Phase 0${activeJ + 1}: <em>${jp.n} (${jp.mo})</em>`,
-                            content: `<p><strong>Phase Mandate:</strong> ${jp.desc}</p>`,
-                            stats: [
-                              [jp.hc, "Headcount Target"],
-                              [jp.mo, "Timeline Window"],
-                              ["BOT Incubation", "Operating Model"]
-                            ],
-                            bullets: jp.ms.map(m => `Milestone: ${m}`),
-                            footer: "Bose GCC Proposal · Incubation & Handover Timeline"
-                          })}
+                          tag: `Execution Timeline · Phase 0${activeJ + 1}`,
+                          title: `Phase 0${activeJ + 1}: <em>${jp.n} (${jp.mo})</em>`,
+                          content: `<p><strong>Phase Mandate:</strong> ${jp.desc}</p>`,
+                          stats: [
+                            [jp.hc, "Headcount Target"],
+                            [jp.mo, "Timeline Window"],
+                            ["BOT Incubation", "Operating Model"]
+                          ],
+                          bullets: jp.ms.map(m => `Milestone: ${m}`),
+                          footer: "Bose GCC Proposal · Incubation & Handover Timeline"
+                        })}
                       >
                         ⛶
                       </button>
@@ -7050,8 +7050,8 @@ html{}
                   <div className="mat-scrubber">
                     <div className="mat-scrubber-progress" style={{ width: (activeMaturityStage * 25) + "%" }} />
                     {MATURITY_STAGES.map((stage, idx) => (
-                      <div 
-                        key={stage.id} 
+                      <div
+                        key={stage.id}
                         className={`mat-step-node${activeMaturityStage === idx ? " active" : ""}`}
                         style={{ left: (idx * 25) + "%" }}
                         onClick={() => setActiveMaturityStage(idx)}
@@ -7067,28 +7067,28 @@ html{}
                       className="timeline-zoom-btn"
                       style={{ top: 20, right: 20 }}
                       {...bindZoom({
-                          tag: `Maturity Phase · 0${activeMaturityStage + 1}`,
-                          title: `Stage 0${activeMaturityStage + 1}: <em>${stage.n} (${stage.mo})</em>`,
-                          content: `<p><strong>Core Objective:</strong> ${stage.obj}</p><p style="margin-top: 12px;"><strong>Technical R&D Scope:</strong> ${stage.tech}</p>`,
-                          stats: [
-                            [stage.mo, "Timeline Scope"],
-                            [`${stage.pct}%`, "Strategic Progress"],
-                            ["India Captive", "Operating Stage"]
-                          ],
-                          bullets: stage.metrics,
-                          footer: "Bose GCC Proposal · Capability & Innovation Maturity Model"
-                        })}
+                        tag: `Maturity Phase · 0${activeMaturityStage + 1}`,
+                        title: `Stage 0${activeMaturityStage + 1}: <em>${stage.n} (${stage.mo})</em>`,
+                        content: `<p><strong>Core Objective:</strong> ${stage.obj}</p><p style="margin-top: 12px;"><strong>Technical R&D Scope:</strong> ${stage.tech}</p>`,
+                        stats: [
+                          [stage.mo, "Timeline Scope"],
+                          [`${stage.pct}%`, "Strategic Progress"],
+                          ["India Captive", "Operating Stage"]
+                        ],
+                        bullets: stage.metrics,
+                        footer: "Bose GCC Proposal · Capability & Innovation Maturity Model"
+                      })}
                     >
                       ⛶
                     </button>
-                    
+
                     <div className="mat-detail-left">
                       <div className="mat-metric-box">
                         <h4>Stage 0{activeMaturityStage + 1} · Objective</h4>
                         <p style={{ fontSize: "14px", fontFamily: "var(--F)", color: "var(--navy)", margin: "4px 0 12px 0", lineHeight: "1.3" }}>
                           {MATURITY_STAGES[activeMaturityStage].obj}
                         </p>
-                        
+
                         <h4>Key Quantitative Milestones & Metrics</h4>
                         <div style={{ marginTop: "8px" }}>
                           {MATURITY_STAGES[activeMaturityStage].metrics.map((metric, mIdx) => (
@@ -7292,7 +7292,7 @@ html{}
                   </div>
                   <div className="wave-tabs">
                     {WAVES_DATA.map((w, idx) => (
-                      <button 
+                      <button
                         key={w.id}
                         className={`wave-tab-btn${activeWave === idx ? " active" : ""}`}
                         onClick={() => setActiveWave(idx)}
@@ -7365,7 +7365,7 @@ html{}
                     <div className="risk-indicator-box">
                       <div className="risk-metric">
                         <span>SLA Risk Rating</span>
-                        <span className="val" style={{ 
+                        <span className="val" style={{
                           color: shadowWeeks <= 2 ? "#d9383a" : shadowWeeks >= 5 ? "var(--sage)" : "var(--blue)",
                           fontWeight: "bold"
                         }}>
@@ -7418,7 +7418,7 @@ html{}
                     <div className="cmeta">{c.meta}</div>
                     <p className="cout">{c.out}</p>
                     <div className="cstat">{c.stats.map(([v, l]) => <div key={l}><span className="csv">{v}</span><span className="csl">{l}</span></div>)}</div>
-                    <div className="cexp" onClick={(e)=>e.stopPropagation()}>
+                    <div className="cexp" onClick={(e) => e.stopPropagation()}>
                       <div className="cexplist">
                         {c.exp.map(e => <div key={e} className="cexpit">{e}</div>)}
                       </div>
@@ -7553,7 +7553,7 @@ html{}
                       <p>Our track record with prior Build-Operate-Transfer models confirms 100% clean strategic alignment and zero tenure disruption at handoff.</p>
                     </div>
                   </div>
-                  
+
                   <div className="trust-pillar-item">
                     <div className="trust-pillar-icon red">◆</div>
                     <div className="trust-pillar-content">
@@ -7607,7 +7607,7 @@ html{}
             </div>
           </footer>
           {(prevSec || sy > 400) && (
-            <button 
+            <button
               className={`floating-nav-btn${!prevSec ? " top-btn" : ""}`}
               onClick={() => {
                 if (prevSec) {
@@ -7619,21 +7619,20 @@ html{}
                 }
               }}
             >
-              {prevSec ? `← Back to ${
-                prevSec === 'mandate' ? 'Briefing' : 
-                prevSec === 'why' ? 'Why India' : 
-                prevSec === 'blueprint' ? 'Blueprint' : 
-                prevSec === 'model' ? 'Model' : 
-                prevSec === 'gcaas' ? 'GCCaaS' : 
-                prevSec === 'cities' ? 'Cities' : 
-                prevSec === 'talent' ? 'Talent' : 
-                prevSec === 'journey' ? 'Journey' : 
-                prevSec === 'engine' ? 'Engine' : 
-                prevSec === 'tower' ? 'Control Tower' : 
-                prevSec === 'transfer' ? 'Transfer' : 
-                prevSec === 'proof' ? 'Proof' : 
-                'Previous'
-              }` : "↑ Back to Top"}
+              {prevSec ? `← Back to ${prevSec === 'mandate' ? 'Briefing' :
+                  prevSec === 'why' ? 'Why India' :
+                    prevSec === 'blueprint' ? 'Blueprint' :
+                      prevSec === 'model' ? 'Model' :
+                        prevSec === 'gcaas' ? 'GCCaaS' :
+                          prevSec === 'cities' ? 'Cities' :
+                            prevSec === 'talent' ? 'Talent' :
+                              prevSec === 'journey' ? 'Journey' :
+                                prevSec === 'engine' ? 'Engine' :
+                                  prevSec === 'tower' ? 'Control Tower' :
+                                    prevSec === 'transfer' ? 'Transfer' :
+                                      prevSec === 'proof' ? 'Proof' :
+                                        'Previous'
+                }` : "↑ Back to Top"}
             </button>
           )}
 
@@ -7646,8 +7645,8 @@ html{}
                   {zoomCard.tag && <div className="zoom-tag">{zoomCard.tag}</div>}
                   <h2 className="zoom-title" dangerouslySetInnerHTML={{ __html: zoomCard.title }}></h2>
                   {zoomCard.content && (
-                    <div 
-                      className="zoom-desc" 
+                    <div
+                      className="zoom-desc"
                       dangerouslySetInnerHTML={{ __html: zoomCard.content }}
                     />
                   )}
