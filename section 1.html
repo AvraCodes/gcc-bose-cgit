@@ -899,7 +899,8 @@ html{}
 .jchk{flex-shrink:0;width:15px;height:15px;border:1.5px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7.5px;color:var(--blue);background:var(--bs);margin-top:1px;}
 .tcmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:0;}
 .tcb{background:var(--bg2);border:1.5px solid var(--l1);border-radius:12px;padding:20px 24px;}
-.tcb.ours{border-color:var(--blue);background:var(--bs);}
+.tcb.ours{border-color:var(--blue);background:linear-gradient(135deg,var(--bs),rgba(26,79,150,0.06));box-shadow:0 12px 36px rgba(26,79,150,0.08), 0 0 20px rgba(106, 176, 240, 0.28);transition:all 350ms;}
+.tcb.ours:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(26,79,150,0.12), 0 0 28px rgba(106, 176, 240, 0.45);border-color:var(--blue);}
 .tclbl{font-family:var(--M);font-size:9.5px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px;}
 .tcb.ours .tclbl{color:var(--blue);}
 .tcv{font-family:var(--F);font-size:clamp(20px,1.9vw,28px);margin-bottom:12px;font-weight:350;letter-spacing:-.025em;color:var(--navy);}
@@ -1517,7 +1518,8 @@ html{}
 .ctrgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;}
 .ctrcard{background:#fff;border:1.5px solid var(--l1);border-radius:16px;padding:clamp(22px,2.6vw,30px);position:relative;overflow:hidden;transition:all 350ms;}
 .ctrcard:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.06);}
-.ctrcard.opt{border-color:var(--blue);background:linear-gradient(135deg,#fff,var(--bs));}
+.ctrcard.opt{border-color:var(--blue);background:linear-gradient(135deg,#fff,var(--bs));box-shadow:0 12px 36px rgba(26,79,150,0.08), 0 0 20px rgba(106, 176, 240, 0.28);transition:all 350ms;}
+.ctrcard.opt:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(26,79,150,0.12), 0 0 28px rgba(106, 176, 240, 0.45);border-color:var(--blue);}
 .ctrcard.opt::before{content:'★ Recommended';position:absolute;top:14px;right:14px;font-family:var(--M);font-size:8.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--blue);padding:5px 11px;border-radius:100px;}
 .ctrl{font-family:var(--M);font-size:9px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;}
 .ctrcard.opt .ctrl{color:var(--blue);}
@@ -3943,6 +3945,13 @@ html{}
         f: "PPT + Excel",
         l: "Transition Lead",
         m: "Transition",
+      },
+      {
+        d: "A capability you inherit. Not a service you rent.",
+        w: 9,
+        f: "Framework",
+        l: "Program Lead",
+        m: "Planning & Process",
       },
       {
         d: "Launch readiness assessment",
@@ -6568,7 +6577,7 @@ html{}
                     The 10-week mobilization · what lands when
                   </div>
                   <h2 className="mth">
-                    Fifteen deliverables.{" "}
+                    Sixteen deliverables.{" "}
                     <em>Eight weeks. One control board.</em>
                   </h2>
                   <p className="mtsub">
@@ -6742,7 +6751,7 @@ html{}
                   {/* SUMMARY ROW */}
                   <div className="mtsum">
                     <div className="mtsumc">
-                      <div className="mtsumv">15</div>
+                      <div className="mtsumv">16</div>
                       <div className="mtsuml">Total deliverables</div>
                     </div>
                     <div className="mtsumc">
