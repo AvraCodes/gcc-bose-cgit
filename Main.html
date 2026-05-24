@@ -4050,7 +4050,7 @@ html{}
       const [numsOn, setNumsOn] = useState(false);
       const [mmHc, setMmHc] = useState(600);
       const [aiHc, setAiHc] = useState(200);
-      const [aiPct, setAiPct] = useState(60);
+      const [aiPct, setAiPct] = useState(75);
       const [cityAlloc, setCityAlloc] = useState(60);
       const [panelView, setPanelView] = useState("ceo");
       const [openCap, setOpenCap] = useState(null);
@@ -4225,8 +4225,9 @@ html{}
       /* AI multiplier */
       const aiMult = +(1 + (aiPct / 100) * 4).toFixed(2); // up to 5x at 100% adoption
       const aiTraditional = aiHc;
-      const aiEffective = Math.round(aiHc * aiMult);
-      const aiBoseEq = Math.round(800 * aiMult);
+      const aiEffective =
+        aiHc >= 160 ? 800 : Math.round(aiHc * aiMult);
+      const aiBoseEq = Math.round(800 / aiMult);
 
       /* city balancer — 800 FTE between Hyderabad and Bengaluru */
       const CB_TOTAL = 800;
@@ -6770,6 +6771,30 @@ html{}
             ref={(el) => setSecRef("aimult", el)}
           >
             <div className="wrap">
+              {/* RECOMMENDED BADGE */}
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  background: "#fff",
+                  border: "1px solid rgba(26, 79, 150, 0.16)",
+                  borderRadius: 99,
+                  padding: "5px 12px 5px 8px",
+                  boxShadow: "0 4px 16px rgba(26, 79, 150, 0.06)",
+                  marginBottom: 24,
+                  fontFamily: "var(--M)",
+                  fontSize: 10.5,
+                  fontWeight: 650,
+                  color: "var(--blue)",
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                }}
+              >
+                <Logo size={20} style={{ display: "block" }} />
+                <span>Recommended Option · Provided by ConglomerateIT</span>
+              </div>
+
               <div className="shead rv" ref={addRef}>
                 <div>
                   <div className="snum">06.7 · The multiplier</div>
@@ -6806,7 +6831,18 @@ html{}
                         max={800}
                         step={5}
                         value={aiHc}
-                        onChange={(e) => setAiHc(+e.target.value)}
+                        onChange={(e) => {
+                          const newHc = +e.target.value;
+                          setAiHc(newHc);
+                          if (newHc >= 160) {
+                            const calculatedPct = Math.round(
+                              ((800 / newHc) - 1) / 4 * 100
+                            );
+                            setAiPct(Math.max(0, Math.min(100, calculatedPct)));
+                          } else {
+                            setAiPct(100);
+                          }
+                        }}
                       />
                     </div>
                     <div className="amrange" style={{ padding: "0 2px" }}>
@@ -6833,7 +6869,12 @@ html{}
                         max={100}
                         step={5}
                         value={aiPct}
-                        onChange={(e) => setAiPct(+e.target.value)}
+                        onChange={(e) => {
+                          const newPct = +e.target.value;
+                          setAiPct(newPct);
+                          const newMult = 1 + (newPct / 100) * 4;
+                          setAiHc(Math.round(800 / newMult));
+                        }}
                       />
                     </div>
                     <div className="amrange" style={{ padding: "0 2px" }}>
@@ -6881,9 +6922,9 @@ html{}
                     <div className="amproofx">
                       <div className="pn">{aiBoseEq.toLocaleString()}</div>
                       <div className="pll">
-                        Effective engineer-
+                        AI-native headcount
                         <br />
-                        equivalent at Bose
+                        needed for Bose
                         <br />
                         800 FTE target
                       </div>
