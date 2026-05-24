@@ -1031,6 +1031,217 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
   .pgLabels { flex-wrap: wrap; gap: 4px; }
   .lcGrid { grid-template-columns: 1fr; }
 }
+
+/* ── Vendor Consolidation & Rebid Strategy ── */
+.vcStage {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+  background: var(--bg);
+  border: 1px solid var(--l1);
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 36px;
+  box-shadow: var(--sh2);
+  min-height: 520px;
+}
+.vcSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-right: 1px solid var(--l1);
+  padding-right: 20px;
+}
+.vcTabButton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: all 0.3s var(--ease);
+}
+.vcTabButton:hover {
+  background: var(--bg2);
+  transform: translateX(4px);
+}
+.vcTabButton.act {
+  background: var(--bs);
+  border-color: var(--bl);
+}
+.vcTabIconTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.vcTabIcon {
+  width: 18px;
+  height: 18px;
+  stroke: var(--ink3);
+  transition: stroke 0.3s;
+}
+.vcTabButton.act .vcTabIcon {
+  stroke: var(--blue);
+}
+.vcTabTitle {
+  font-family: var(--B);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink2);
+}
+.vcTabButton.act .vcTabTitle {
+  color: var(--blue);
+}
+.vcTabSub {
+  font-family: var(--M);
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink4);
+}
+.vcContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: vcFadeIn 0.4s var(--eout);
+}
+@keyframes vcFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.vcHeader {
+  margin-bottom: 24px;
+}
+.vcHeader h3 {
+  font-family: var(--F);
+  font-size: 26px;
+  font-weight: 350;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.vcHeader p {
+  font-family: var(--B);
+  font-size: 14.5px;
+  color: var(--ink3);
+  line-height: 1.5;
+}
+.vcGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.vcCard {
+  background: var(--bg2);
+  border: 1px solid var(--l1);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s var(--ease);
+}
+.vcCard:hover {
+  background: var(--bg);
+  border-color: var(--blue);
+  box-shadow: var(--sh2);
+  transform: translateY(-2px);
+}
+.vcCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.vcCardBadge {
+  font-family: var(--M);
+  font-size: 9px;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.vcCardBadge.insource { background: var(--bs); color: var(--blue); border: 1px solid var(--bl); }
+.vcCardBadge.retain { background: rgba(42,122,58,.08); color: var(--sage); border: 1px solid rgba(42,122,58,.2); }
+.vcCardBadge.rebid { background: var(--gs); color: var(--gold); border: 1px solid rgba(157,124,42,.2); }
+.vcCardBadge.exit { background: var(--rs); color: var(--red); border: 1px solid var(--rl); }
+.vcCardTitle {
+  font-family: var(--B);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.vcCardText {
+  font-family: var(--B);
+  font-size: 12.5px;
+  color: var(--ink2);
+  line-height: 1.5;
+}
+.vcFooter {
+  background: var(--bg2);
+  border-left: 3px solid var(--blue);
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-top: auto;
+}
+.vcFooterTitle {
+  font-family: var(--M);
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--blue);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.vcFooterText {
+  font-family: var(--B);
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--ink2);
+  line-height: 1.5;
+}
+.vcSourceBadge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 10px;
+  font-family: var(--M);
+  font-size: 8.5px;
+  text-transform: uppercase;
+  color: var(--ink4);
+  letter-spacing: 0.05em;
+  background: var(--bg3);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+@media (max-width: 900px) {
+  .vcStage {
+    grid-template-columns: 1fr;
+  }
+  .vcSidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--l1);
+    padding-right: 0;
+    padding-bottom: 20px;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .vcTabButton {
+    flex-shrink: 0;
+    width: auto;
+  }
+}
+@media (max-width: 600px) {
+  .vcGrid {
+    grid-template-columns: 1fr;
+  }
+  .vcSidebar {
+    flex-wrap: wrap;
+  }
+}
 </style>
 </head>
 
@@ -2981,6 +3192,217 @@ html{}
 .soundwave-bar:nth-child(4) { animation-delay: 0.6s; }
 .soundwave-bar:nth-child(5) { animation-delay: 0.3s; }
 .soundwave-bar:nth-child(6) { animation-delay: 0.5s; }
+
+/* ── Vendor Consolidation & Rebid Strategy ── */
+.vcStage {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+  background: var(--bg);
+  border: 1px solid var(--l1);
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 36px;
+  box-shadow: var(--sh2);
+  min-height: 520px;
+}
+.vcSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-right: 1px solid var(--l1);
+  padding-right: 20px;
+}
+.vcTabButton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: all 0.3s var(--ease);
+}
+.vcTabButton:hover {
+  background: var(--bg2);
+  transform: translateX(4px);
+}
+.vcTabButton.act {
+  background: var(--bs);
+  border-color: var(--bl);
+}
+.vcTabIconTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.vcTabIcon {
+  width: 18px;
+  height: 18px;
+  stroke: var(--ink3);
+  transition: stroke 0.3s;
+}
+.vcTabButton.act .vcTabIcon {
+  stroke: var(--blue);
+}
+.vcTabTitle {
+  font-family: var(--B);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink2);
+}
+.vcTabButton.act .vcTabTitle {
+  color: var(--blue);
+}
+.vcTabSub {
+  font-family: var(--M);
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink4);
+}
+.vcContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: vcFadeIn 0.4s var(--eout);
+}
+@keyframes vcFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.vcHeader {
+  margin-bottom: 24px;
+}
+.vcHeader h3 {
+  font-family: var(--F);
+  font-size: 26px;
+  font-weight: 350;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.vcHeader p {
+  font-family: var(--B);
+  font-size: 14.5px;
+  color: var(--ink3);
+  line-height: 1.5;
+}
+.vcGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.vcCard {
+  background: var(--bg2);
+  border: 1px solid var(--l1);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s var(--ease);
+}
+.vcCard:hover {
+  background: var(--bg);
+  border-color: var(--blue);
+  box-shadow: var(--sh2);
+  transform: translateY(-2px);
+}
+.vcCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.vcCardBadge {
+  font-family: var(--M);
+  font-size: 9px;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.vcCardBadge.insource { background: var(--bs); color: var(--blue); border: 1px solid var(--bl); }
+.vcCardBadge.retain { background: rgba(42,122,58,.08); color: var(--sage); border: 1px solid rgba(42,122,58,.2); }
+.vcCardBadge.rebid { background: var(--gs); color: var(--gold); border: 1px solid rgba(157,124,42,.2); }
+.vcCardBadge.exit { background: var(--rs); color: var(--red); border: 1px solid var(--rl); }
+.vcCardTitle {
+  font-family: var(--B);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.vcCardText {
+  font-family: var(--B);
+  font-size: 12.5px;
+  color: var(--ink2);
+  line-height: 1.5;
+}
+.vcFooter {
+  background: var(--bg2);
+  border-left: 3px solid var(--blue);
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-top: auto;
+}
+.vcFooterTitle {
+  font-family: var(--M);
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--blue);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.vcFooterText {
+  font-family: var(--B);
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--ink2);
+  line-height: 1.5;
+}
+.vcSourceBadge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 10px;
+  font-family: var(--M);
+  font-size: 8.5px;
+  text-transform: uppercase;
+  color: var(--ink4);
+  letter-spacing: 0.05em;
+  background: var(--bg3);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+@media (max-width: 900px) {
+  .vcStage {
+    grid-template-columns: 1fr;
+  }
+  .vcSidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--l1);
+    padding-right: 0;
+    padding-bottom: 20px;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .vcTabButton {
+    flex-shrink: 0;
+    width: auto;
+  }
+}
+@media (max-width: 600px) {
+  .vcGrid {
+    grid-template-columns: 1fr;
+  }
+  .vcSidebar {
+    flex-wrap: wrap;
+  }
+}
 `;
 
 /* ═══ DATA ════════════════════════════════════════════════════════ */
@@ -4937,6 +5359,7 @@ function App() {
   const [openCase, setOpenCase] = useState(null);
   const [flipQ, setFlipQ] = useState({});
   const [vsActive, setVsActive] = useState("us");
+  const [vcTab, setVcTab] = useState("matrix");
   const [numsOn, setNumsOn] = useState(false);
   const [mmHc, setMmHc] = useState(600);
   const [aiHc, setAiHc] = useState(200);
@@ -5169,7 +5592,7 @@ function App() {
   const city = CITIES[activeCity];
   const bd = BOT[botPhase];
   const rLabels = ["Leadership", "Process", "Infra", "People", "Govern", "Commerc"];
-  const navItems = [["mandate", "The Mandate"], ["numbers", "By the Numbers"], ["why", "Why India. Why Now."], ["blueprint", "Our Blueprint"], ["model", "Delivery Model"], ["moneymath", "Financial Model"], ["commercial", "Commercial & Tax"], ["commercialresp", "Commercial Detail"], ["panel", "Executive View"], ["deepdive", "Deep Dives"], ["aimult", "AI Architecture"], ["gcaas", "GCCaaS"], ["versus", "vs Alternatives"], ["cities", "City Selection"], ["citybalance", "City Mix"], ["talent", "Talent Strategy"], ["salarybands", "Salary Bands"], ["journey", "Execution Journey"], ["engine", "Talent Engine"], ["tower", "Control Tower"], ["transfer", "Transfer Readiness"], ["portugal", "Portugal GBS"], ["partnerdisclosure", "Partner Vetting"], ["proof", "Proof Points"], ["trust", "Why Us"], ["legalcompliance", "Legal Framework"], ["tough", "Hard Questions"]];
+  const navItems = [["mandate", "The Mandate"], ["numbers", "By the Numbers"], ["why", "Why India. Why Now."], ["blueprint", "Our Blueprint"], ["model", "Delivery Model"], ["moneymath", "Financial Model"], ["commercial", "Commercial & Tax"], ["commercialresp", "Commercial Detail"], ["panel", "Executive View"], ["deepdive", "Deep Dives"], ["aimult", "AI Architecture"], ["gcaas", "GCCaaS"], ["versus", "vs Alternatives"], ["cities", "City Selection"], ["citybalance", "City Mix"], ["talent", "Talent Strategy"], ["salarybands", "Salary Bands"], ["journey", "Execution Journey"], ["engine", "Talent Engine"], ["tower", "Control Tower"], ["transfer", "Transfer Readiness"], ["portugal", "Portugal GBS"], ["partnerdisclosure", "Partner Vetting"], ["vendorconsolidation", "Vendor Consolidation"], ["proof", "Proof Points"], ["trust", "Why Us"], ["legalcompliance", "Legal Framework"], ["tough", "Hard Questions"]];
   return /*#__PURE__*/React.createElement("div", {
     id: "app"
   }, /*#__PURE__*/React.createElement("div", {
@@ -8513,6 +8936,177 @@ function App() {
     className: "maStrip rv",
     ref: addRef
   }, /*#__PURE__*/React.createElement("div", { className: "maTitle" }, "M&A \xB7 Ownership \xB7 Continuity"), /*#__PURE__*/React.createElement("div", { className: "maGrid" }, /*#__PURE__*/React.createElement("div", { className: "maCell" }, /*#__PURE__*/React.createElement("div", { className: "maK" }, "Recent M&A / org changes"), /*#__PURE__*/React.createElement("div", { className: "maV" }, /*#__PURE__*/React.createElement("strong", null, MA_DISCLOSURE.events))), /*#__PURE__*/React.createElement("div", { className: "maCell" }, /*#__PURE__*/React.createElement("div", { className: "maK" }, "Ownership structure"), /*#__PURE__*/React.createElement("div", { className: "maV" }, MA_DISCLOSURE.ownership)), /*#__PURE__*/React.createElement("div", { className: "maCell" }, /*#__PURE__*/React.createElement("div", { className: "maK" }, "Leadership continuity"), /*#__PURE__*/React.createElement("div", { className: "maV" }, MA_DISCLOSURE.continuity)))))), /*#__PURE__*/React.createElement("section", {
+    className: "sec alt",
+    id: "vendorconsolidation",
+    ref: el => setSecRef("vendorconsolidation", el)
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "shead rv",
+    ref: addRef
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "snum"
+  }, "13.3 \xB7 Vendor consolidation"), /*#__PURE__*/React.createElement("div", {
+    className: "skick"
+  }, "Consolidation \xB7 Rebid \xB7 Incumbent transition")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", {
+    className: "sh2"
+  }, "A framework for the ", /*#__PURE__*/React.createElement("em", null, "incumbent transition.")), /*#__PURE__*/React.createElement("p", {
+    className: "slede"
+  }, "Bose's strategy for evaluating, rebidding, and transitioning current IT & GBS service providers to maximize cost-efficiency and delivery quality."))), /*#__PURE__*/React.createElement("div", {
+    className: "vcStage rv",
+    ref: addRef
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "vcSidebar"
+  }, [
+    { id: "matrix", t: "Sourcing Rationalization", s: "Two-Axis Matrix" },
+    { id: "structure", t: "Optimal Delivery Structure", s: "Sourcing Models" },
+    { id: "transition", t: "Exit Risk & Transition", s: "KT & Notice Mgmt" },
+    { id: "safeguards", t: "RFP Protections & Levers", s: "Open-Book Levers" }
+  ].map(tab => /*#__PURE__*/React.createElement("button", {
+    key: tab.id,
+    className: "vcTabButton" + (vcTab === tab.id ? " act" : ""),
+    onMouseEnter: () => setVcTab(tab.id)
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "vcTabIconTitle"
+  }, /*#__PURE__*/React.createElement("svg", {
+    className: "vcTabIcon",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, tab.id === "matrix" ? /*#__PURE__*/React.createElement("rect", { x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" }) :
+     tab.id === "structure" ? /*#__PURE__*/React.createElement("path", { d: "M17 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" }) :
+     tab.id === "transition" ? /*#__PURE__*/React.createElement("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }) :
+     /*#__PURE__*/React.createElement("circle", { cx: "11", cy: "11", r: "8" })), /*#__PURE__*/React.createElement("span", {
+    className: "vcTabTitle"
+  }, tab.t)), /*#__PURE__*/React.createElement("span", {
+    className: "vcTabSub"
+  }, tab.s)))), 
+  vcTab === "matrix" && /*#__PURE__*/React.createElement("div", {
+    className: "vcContent"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "vcHeader"
+  }, /*#__PURE__*/React.createElement("h3", null, "Two-Axis Evaluation Matrix"), /*#__PURE__*/React.createElement("p", null, "Workloads are systematically categorized by mapping Strategic Value to the Enterprise (IP, core roadmap, data) against current Operational Delivery Performance.")), /*#__PURE__*/React.createElement("div", {
+    className: "vcGrid"
+  }, [
+    { c: "insource", t: "Insource (Move to GCC)", text: "High-performing workloads containing core intellectual property, enterprise data architecture, and strategic product roadmaps. (Audio DSP, wearable systems, SAP BTP core)." },
+    { c: "retain", t: "Retain with Strategic Partners", text: "High-performing vendors managing legacy applications or highly specialized domain-specific workflows that are cost-prohibitive to hire internally." },
+    { c: "rebid", t: "Competitively Rebid", text: "Commodity workloads (manual testing, L1 support) managed by low-to-mid performing vendors, consolidated to drive volume discounts." },
+    { c: "exit", t: "Exit / Eliminate", text: "Fragmented, low-volume, or poorly performing vendors managing redundant tools or legacy tech stacks slated for deprecation." }
+  ].map(item => /*#__PURE__*/React.createElement("div", {
+    key: item.t,
+    className: "vcCard"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "vcCardHeader"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "vcCardBadge " + item.c
+  }, item.c), /*#__PURE__*/React.createElement("h4", {
+    className: "vcCardTitle"
+  }, item.t)), /*#__PURE__*/React.createElement("p", {
+    className: "vcCardText"
+  }, item.text)))), /*#__PURE__*/React.createElement("div", {
+    className: "vcFooter"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "vcFooterTitle"
+  }, "Universal Operational Truth"), /*#__PURE__*/React.createElement("div", {
+    className: "vcFooterText"
+  }, "\u201CIncumbent service evaluation cannot rely solely on service level agreements; SLAs often mask operational friction and talent deficiencies. A vendor disposition framework must align workload retention with strategic IP control.\u201D")), /*#__PURE__*/React.createElement("div", {
+    className: "vcSourceBadge"
+  }, "Source: RFI Response (docx), Section 4.10 / Section 12.1 (Vendor Disposition Framework)")),
+  vcTab === "structure" && /*#__PURE__*/React.createElement("div", {
+    className: "vcContent"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "vcHeader"
+  }, /*#__PURE__*/React.createElement("h3", null, "Sourcing Model Analysis"), /*#__PURE__*/React.createElement("p", null, "Evaluating direct replacements, multi-vendor structures, and outsourced models against Build-Operate-Transfer (BOT).")), /*#__PURE__*/React.createElement("div", {
+    className: "vcGrid"
+  }, [
+    { c: "exit", t: "Direct Replacement", text: "Very high risk of Day-1 operational disruption and loss of legacy domain knowledge. Severe impact on wearability engineering ramp timelines." },
+    { c: "rebid", t: "Multi-Vendor Model", text: "Creates high coordination overhead, fragmented responsibility, and conflicting incentives among vendors, hindering IP protection." },
+    { c: "exit", t: "Outsourced Tower Model", text: "Locks Bose into high markup margins (25-40%), opaque billing, and vendor cultural dilution with no route to strategic autonomy." },
+    { c: "retain", t: "Build-Operate-Transfer (Recommended)", text: "Low capital risk, fast launch (14-day temporary office, 90-day go-live), 28%-35% savings via transparent Cost-Plus 15%, and a structured transfer timeline." }
+  ].map(item => /*#__PURE__*/React.createElement("div", {
+    key: item.t,
+    className: "vcCard"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "vcCardHeader"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "vcCardBadge " + item.c
+  }, item.c === "retain" ? "Recommended" : "Sub-Optimal"), /*#__PURE__*/React.createElement("h4", {
+    className: "vcCardTitle"
+  }, item.t)), /*#__PURE__*/React.createElement("p", {
+    className: "vcCardText"
+  }, item.text)))), /*#__PURE__*/React.createElement("div", {
+    className: "vcFooter"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "vcFooterTitle"
+      }, "Universal Sourcing Truth"), /*#__PURE__*/React.createElement("div", {
+        className: "vcFooterText"
+      }, "\u201CA delivery model that does not contractually guarantee the transfer of assets and talent at book value is not a partnership; it is a customer retention strategy.\u201D")), /*#__PURE__*/React.createElement("div", {
+        className: "vcSourceBadge"
+      }, "Source: RFI Response (docx), Section 1 & Section 15.2 (Hosted BOT / GCC-as-a-Service model)")),
+      vcTab === "transition" && /*#__PURE__*/React.createElement("div", {
+        className: "vcContent"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "vcHeader"
+      }, /*#__PURE__*/React.createElement("h3", null, "Exit Risk & Transition Planning"), /*#__PURE__*/React.createElement("p", null, "Managing remote transitions, knowledge retention, and incumbent notice management systematically.")), /*#__PURE__*/React.createElement("div", {
+        className: "vcGrid"
+      }, [
+        { c: "insource", t: "Contract Audit (Weeks 1-4)", text: "ConglomerateIT reviews incumbent contracts for notice requirements, IP transfer clauses, and exit penalty exposure early on." },
+        { c: "retain", t: "Notice Management", text: "Formal notice is issued to incumbents ONLY after the India GCC model readiness is fully verified, ensuring no service gaps occur." },
+        { c: "insource", t: "Virtual KT Over Distance", text: "If legacy work sits in a different city (e.g., Chennai/Mumbai), the GCC team shadows them via recorded sessions, code walkthroughs, and pair-programming." },
+        { c: "retain", t: "Parallel Run Period (4-6 Weeks)", text: "For critical IT operations and GBS roles, a parallel-run period before the incumbent exits ensures zero disruption to Bose operations." }
+      ].map(item => /*#__PURE__*/React.createElement("div", {
+        key: item.t,
+        className: "vcCard"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "vcCardHeader"
+      }, /*#__PURE__*/React.createElement("h4", {
+        className: "vcCardTitle"
+      }, item.t)), /*#__PURE__*/React.createElement("p", {
+        className: "vcCardText"
+      }, item.text)))), /*#__PURE__*/React.createElement("div", {
+        className: "vcFooter"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "vcFooterTitle"
+      }, "Universal Transition Truth"), /*#__PURE__*/React.createElement("div", {
+        className: "vcFooterText"
+      }, "\u201CAn incumbent vendor's willingness to transfer knowledge decreases the moment they receive termination notice. Structured transition planning must secure KT runbooks and shadow periods before the official exit clock starts ticking.\u201D")), /*#__PURE__*/React.createElement("div", {
+        className: "vcSourceBadge"
+      }, "Source: RFI Response (docx), Section 4.11 / Section 10.3 (Incumbent Vendor Transition)")),
+      vcTab === "safeguards" && /*#__PURE__*/React.createElement("div", {
+        className: "vcContent"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "vcHeader"
+      }, /*#__PURE__*/React.createElement("h3", null, "RFP Protections & Commercial Levers"), /*#__PURE__*/React.createElement("p", null, "Contractual safeguards recommended for future RFPs and core commercial optimization levers to capture maximum value.")), /*#__PURE__*/React.createElement("div", {
+        className: "vcGrid"
+      }, [
+        { c: "insource", t: "Audited Talent Attrition", text: "Demand annual voluntary attrition rates audited specifically for the target city over the past 24 months, not vendor-wide averages." },
+        { c: "insource", t: "Open-Book Auditability", text: "Force vendors to split billing into direct salary costs, facility hosting costs, and gross margins to eliminate hidden markups." },
+        { c: "retain", t: "Volume Consolidation", text: "Aggregating fragmented workloads from small vendors into a single pool to unlock tiered rate discounts and reduce management overhead." },
+        { c: "retain", t: "Direct Margin Elimination", text: "Shifting from legacy markups to transparent Cost + 15% (e.g., ConglomerateIT's model) typically yields net operational savings of 28% to 35%." }
+      ].map(item => /*#__PURE__*/React.createElement("div", {
+        key: item.t,
+        className: "vcCard"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "vcCardHeader"
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "vcCardBadge " + item.c
+      }, item.c === "insource" ? "RFP Protection" : "Savings Lever"), /*#__PURE__*/React.createElement("h4", {
+        className: "vcCardTitle"
+      }, item.t)), /*#__PURE__*/React.createElement("p", {
+        className: "vcCardText"
+      }, item.text)))), /*#__PURE__*/React.createElement("div", {
+        className: "vcFooter"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "vcFooterTitle"
+      }, "Universal Commercial Truth"), /*#__PURE__*/React.createElement("div", {
+        className: "vcFooterText"
+      }, "\u201COpen-book commercial auditability is the only antidote to hidden vendor markups; when billing is a single line-item, you are paying for their profit margin, not your talent.\u201D")), /*#__PURE__*/React.createElement("div", {
+        className: "vcSourceBadge"
+      }, "Source: RFI Response (docx), Section 12.2 (Rate Benchmarking) & Section 12.6 (Follow-On Selection)"))
+      ))), /*#__PURE__*/React.createElement("section", {
     className: "sec alt",
     id: "proof",
     ref: el => setSecRef("proof", el)
