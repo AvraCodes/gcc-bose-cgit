@@ -6451,8 +6451,7 @@ html{}
       /* AI multiplier */
       const aiMult = +(1 + aiPct / 100 * 4).toFixed(2); // up to 5x at 100% adoption
       const aiTraditional = aiHc;
-      const aiEffective =
-        aiHc >= 160 ? 800 : Math.round(aiHc * aiMult);
+      const aiEffective = Math.round(aiHc / aiMult);
       const aiBoseEq = Math.round(800 / aiMult);
 
       /* city balancer — 800 FTE between Hyderabad and Bengaluru */
@@ -8589,16 +8588,7 @@ html{}
         max: 800,
         step: 5,
         value: aiHc,
-        onChange: e => {
-          const newHc = +e.target.value;
-          setAiHc(newHc);
-          if (newHc >= 160) {
-            const calculatedPct = Math.round((800 / newHc - 1) / 4 * 100);
-            setAiPct(Math.max(0, Math.min(100, calculatedPct)));
-          } else {
-            setAiPct(100);
-          }
-        }
+        onChange: e => setAiHc(+e.target.value)
       })), /*#__PURE__*/React.createElement("div", {
         className: "amrange",
         style: {
@@ -8631,12 +8621,7 @@ html{}
         max: 100,
         step: 5,
         value: aiPct,
-        onChange: e => {
-          const newPct = +e.target.value;
-          setAiPct(newPct);
-          const newMult = 1 + newPct / 100 * 4;
-          setAiHc(Math.round(800 / newMult));
-        }
+        onChange: e => setAiPct(+e.target.value)
       })), /*#__PURE__*/React.createElement("div", {
         className: "amrange",
         style: {
@@ -8662,7 +8647,7 @@ html{}
       }, /*#__PURE__*/React.createElement("div", {
         className: "ambarf",
         style: {
-          width: aiTraditional / aiEffective * 100 + "%"
+          width: aiTraditional / 800 * 100 + "%"
         }
       })), /*#__PURE__*/React.createElement("div", {
         className: "amrv"
@@ -8675,7 +8660,7 @@ html{}
       }, /*#__PURE__*/React.createElement("div", {
         className: "ambarf",
         style: {
-          width: "100%"
+          width: aiEffective / 800 * 100 + "%"
         }
       })), /*#__PURE__*/React.createElement("div", {
         className: "amrv"
@@ -8689,7 +8674,7 @@ html{}
         className: "amrml"
       }, "Your effective multiplier"), /*#__PURE__*/React.createElement("div", {
         className: "amrmv"
-      }, "At ", aiPct, "% AI adoption, your ", aiHc, " engineers deliver the scope of", " ", /*#__PURE__*/React.createElement("em", null, aiEffective, " traditional engineers."))), /*#__PURE__*/React.createElement("div", {
+      }, "At ", aiPct, "% AI adoption, your ", aiEffective, " engineers deliver the scope of", " ", /*#__PURE__*/React.createElement("em", null, aiHc, " traditional engineers."))), /*#__PURE__*/React.createElement("div", {
         className: "amproofx"
       }, /*#__PURE__*/React.createElement("div", {
         className: "pn"
