@@ -3684,9 +3684,9 @@ html{}
 .cbslzlbl{position:absolute;top:0;left:50%;transform:translateX(-50%);font-family:var(--M);font-size:8.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);white-space:nowrap;}
 .cbslzlbl::after{content:'↓';display:block;text-align:center;color:var(--blue);font-size:9px;margin-top:1px;}
 .cbslwrap{position:absolute;top:18px;left:0;right:0;height:12px;}
-.cbslbar{position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,79,150,.18) 0%,var(--s1) 50%,rgba(192,28,28,.15) 100%);border-radius:6px;}
+.cbslbar{position:absolute;inset:0;background:linear-gradient(90deg, rgba(26, 79, 150, 0.12) 0%, rgba(26, 79, 150, 0.12) 50%, rgba(192, 28, 28, 0.1) 50%, rgba(192, 28, 28, 0.1) 100%);border-radius:6px;border:1px solid var(--l1);}
 .cbslfill{position:absolute;top:0;bottom:0;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:6px;transition:width 200ms;}
-.cbslthumb{position:absolute;top:50%;width:24px;height:24px;background:#fff;border:3px solid var(--blue);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 4px 14px rgba(26,79,150,.3),0 0 0 6px rgba(26,79,150,.1);transition:left 200ms,border-color 300ms;z-index:3;cursor:ew-resize;}
+.cbslthumb{position:absolute;top:50%;width:24px;height:24px;background:#fff;border:3px solid var(--blue);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 4px 14px rgba(26,79,150,.3),0 0 0 6px rgba(26,79,150,.1);transition:border-color 300ms;z-index:3;cursor:ew-resize;}
 .cbslthumb.right{border-color:var(--red);box-shadow:0 4px 14px rgba(192,28,28,.3),0 0 0 6px rgba(192,28,28,.1);}
 .cbsl input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;-webkit-appearance:none;z-index:4;}
 .cbsl input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;}
@@ -6283,7 +6283,7 @@ html{}
       const [numsOn, setNumsOn] = useState(false);
       const [mmHc, setMmHc] = useState(600);
       const [aiHc, setAiHc] = useState(200);
-      const [aiPct, setAiPct] = useState(60);
+      const [aiPct, setAiPct] = useState(75);
       const [cityAlloc, setCityAlloc] = useState(60);
       const [panelView, setPanelView] = useState("ceo");
       const [openCap, setOpenCap] = useState(null);
@@ -6451,8 +6451,9 @@ html{}
       /* AI multiplier */
       const aiMult = +(1 + aiPct / 100 * 4).toFixed(2); // up to 5x at 100% adoption
       const aiTraditional = aiHc;
-      const aiEffective = Math.round(aiHc * aiMult);
-      const aiBoseEq = Math.round(800 * aiMult);
+      const aiEffective =
+        aiHc >= 160 ? 800 : Math.round(aiHc * aiMult);
+      const aiBoseEq = Math.round(800 / aiMult);
 
       /* city balancer — 800 FTE between Hyderabad and Bengaluru */
       const CB_TOTAL = 800;
@@ -8530,6 +8531,29 @@ html{}
       }, /*#__PURE__*/React.createElement("div", {
         className: "wrap"
       }, /*#__PURE__*/React.createElement("div", {
+        style: {
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 8,
+          background: "#fff",
+          border: "1px solid rgba(26, 79, 150, 0.16)",
+          borderRadius: 99,
+          padding: "5px 12px 5px 8px",
+          boxShadow: "0 4px 16px rgba(26, 79, 150, 0.06)",
+          marginBottom: 24,
+          fontFamily: "var(--M)",
+          fontSize: 10.5,
+          fontWeight: 650,
+          color: "var(--blue)",
+          letterSpacing: "0.05em",
+          textTransform: "uppercase"
+        }
+      }, /*#__PURE__*/React.createElement(Logo, {
+        size: 20,
+        style: {
+          display: "block"
+        }
+      }), /*#__PURE__*/React.createElement("span", null, "Recommended Option \xB7 Provided by ConglomerateIT")), /*#__PURE__*/React.createElement("div", {
         className: "shead rv",
         ref: addRef
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
@@ -8565,7 +8589,16 @@ html{}
         max: 800,
         step: 5,
         value: aiHc,
-        onChange: e => setAiHc(+e.target.value)
+        onChange: e => {
+          const newHc = +e.target.value;
+          setAiHc(newHc);
+          if (newHc >= 160) {
+            const calculatedPct = Math.round((800 / newHc - 1) / 4 * 100);
+            setAiPct(Math.max(0, Math.min(100, calculatedPct)));
+          } else {
+            setAiPct(100);
+          }
+        }
       })), /*#__PURE__*/React.createElement("div", {
         className: "amrange",
         style: {
@@ -8598,7 +8631,12 @@ html{}
         max: 100,
         step: 5,
         value: aiPct,
-        onChange: e => setAiPct(+e.target.value)
+        onChange: e => {
+          const newPct = +e.target.value;
+          setAiPct(newPct);
+          const newMult = 1 + newPct / 100 * 4;
+          setAiHc(Math.round(800 / newMult));
+        }
       })), /*#__PURE__*/React.createElement("div", {
         className: "amrange",
         style: {
@@ -8624,7 +8662,7 @@ html{}
       }, /*#__PURE__*/React.createElement("div", {
         className: "ambarf",
         style: {
-          width: aiTraditional / 4000 * 100 + "%"
+          width: aiTraditional / aiEffective * 100 + "%"
         }
       })), /*#__PURE__*/React.createElement("div", {
         className: "amrv"
@@ -8637,7 +8675,7 @@ html{}
       }, /*#__PURE__*/React.createElement("div", {
         className: "ambarf",
         style: {
-          width: aiEffective / 4000 * 100 + "%"
+          width: "100%"
         }
       })), /*#__PURE__*/React.createElement("div", {
         className: "amrv"
@@ -8657,7 +8695,7 @@ html{}
         className: "pn"
       }, aiBoseEq.toLocaleString()), /*#__PURE__*/React.createElement("div", {
         className: "pll"
-      }, "Effective engineer-", /*#__PURE__*/React.createElement("br", null), "equivalent at Bose", /*#__PURE__*/React.createElement("br", null), "800 FTE target")))), /*#__PURE__*/React.createElement("div", {
+      }, "AI-native headcount", /*#__PURE__*/React.createElement("br", null), "needed for Bose", /*#__PURE__*/React.createElement("br", null), "800 FTE target")))), /*#__PURE__*/React.createElement("div", {
         style: {
           marginTop: 22,
           display: "grid",
@@ -8721,7 +8759,7 @@ html{}
       }, PILLARS.map((p, i) => /*#__PURE__*/React.createElement("div", {
         key: i,
         className: `pillar${activePillar === i ? " act" : ""}`,
-        onMouseEnter: () => setActivePillar(i), onMouseLeave: () => setActivePillar(null)
+        onClick: () => setActivePillar(activePillar === i ? null : i)
       }, /*#__PURE__*/React.createElement("div", {
         className: "pnum"
       }, p.n), /*#__PURE__*/React.createElement("div", {
