@@ -3472,7 +3472,7 @@ html{}
 .jfill{position:absolute;top:0;left:0;bottom:0;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:2px;transition:width 480ms var(--eout);}
 .jtk{position:absolute;top:50%;transform:translate(-50%,-50%);width:15px;height:15px;border-radius:50%;background:var(--bg);border:2px solid var(--s2);cursor:pointer;transition:all 220ms;z-index:2;-webkit-tap-highlight-color:transparent;}
 .jtk.act{border-color:var(--blue);background:var(--blue);box-shadow:0 0 0 4px rgba(26,79,150,.15),0 0 12px var(--blue);}
-.jtk.pass{border-color:var(--ink3);background:var(--ink3);}
+.jtk.pass{border-color:var(--blue);background:var(--blue);}
 .jtk:hover{border-color:var(--blue);}
 .jlabs{display:flex;justify-content:space-between;position:absolute;bottom:0;left:0;right:0;}
 .jlab{font-family:var(--M);font-size:8.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);cursor:pointer;transition:color 200ms;text-align:center;flex:1;}
@@ -5422,7 +5422,85 @@ html{}
           }],
           body: "Karnataka GCC Policy 2024-29 \u2014 India's first dedicated GCC policy (19 Nov 2024). Targets +500 GCCs \u2192 1,000 by 2029, 350k jobs, $50B output. R&D grants up to \u20B9500M, rental reimbursement up to 50%, EPF support, 5-yr electricity-duty exemption, 45-day approvals, three innovation districts (Bengaluru, Mysuru, Belagavi)."
         },
-        score: 71
+        score: 71.6
+      },
+      chennai: {
+        name: "Chennai",
+        role: "The Transaction Anchor (Not Selected)",
+        desc: "Scored 48/60 (80%), which actually outperforms Bengaluru's score. However, it was not selected. Chennai is a transactional powerhouse—ideal for stable, process-heavy back-office and service operations, but narrower in talent depth and weaker for the deep-tech R&D innovation/audio capabilities Bose requires.",
+        alloc: [{
+          l: "Suitability Score",
+          v: "48 / 60",
+          s: "80% rating"
+        }, {
+          l: "Talent Pool Depth",
+          v: "7 / 10",
+          s: "Transactional focus"
+        }],
+        eco: "Massive transactional/GBS GCC presence, heavy banking (World Bank, StanChart, Citi) and automotive hubs. Lower real estate and operating cost, strong talent retention, but highly skewed towards traditional services rather than R&D.",
+        state: {
+          tag: "Tamil Nadu \xB7 Chennai",
+          title: "Tamil Nadu",
+          cap: "Transactional powerhouse \u2014 strong retention, low R&D synergy",
+          stats: [{
+            l: "Operational GCCs",
+            v: "240+",
+            s: "Tamil Nadu"
+          }, {
+            l: "Talent Pool Depth",
+            v: "7 / 10",
+            s: "Onerous transactional focus"
+          }, {
+            l: "Office Stock",
+            v: "88M sq ft",
+            s: "9% of India"
+          }, {
+            l: "GCC suitability",
+            v: "48/60 score",
+            s: "80% total rating"
+          }],
+          body: "Chennai scored 48/60 (80%), which is higher than Bengaluru's 43/60 (71.6%). But Chennai was not selected because it is stronger for stable, process-heavy transactional operations, not for the full Bose GCC ambition. Its talent depth is narrower for this mandate, and it is weaker as an innovation / R&D / deep-tech location where Bose needs wearable R&D engineering and AI/ML capability (where Bengaluru clearly outperforms). The proposal recommends a dual-city model: Hyderabad (operational sweet spot for IT + GBS) and Bengaluru (R&D / BCP anchor)."
+        },
+        score: 80
+      },
+      pune: {
+        name: "Pune",
+        role: "The Engineering Hub (Not Selected)",
+        desc: "Scored 45/60 (75%). Pune is positioned as a strong product engineering and manufacturing hub, but lacks the multi-functional talent depth and massive business ecosystem scale needed for an integrated, large-scale IT + GBS + R&D setup like Bose's.",
+        alloc: [{
+          l: "Suitability Score",
+          v: "45 / 60",
+          s: "75% rating"
+        }, {
+          l: "Talent Pool Depth",
+          v: "7 / 10",
+          s: "Engineering focus"
+        }],
+        eco: "Strong automotive engineering (Tata, Mercedes) and industrial tech GCC depth. Close proximity to Mumbai, highly skilled niche mechanical and embedded talent, but suffers from smaller ecosystem maturity for GCC scale compared to Hyderabad/Bengaluru.",
+        state: {
+          tag: "Maharashtra \xB7 Pune",
+          title: "Maharashtra",
+          cap: "Niche engineering hub \u2014 limited GBS & multi-function scale",
+          stats: [{
+            l: "Operational GCCs",
+            v: "150+",
+            s: "Maharashtra"
+          }, {
+            l: "Talent Pool Depth",
+            v: "7 / 10",
+            s: "Niche engineering focus"
+          }, {
+            l: "Office Stock",
+            v: "62M sq ft",
+            s: "6% of India"
+          }, {
+            l: "GCC suitability",
+            v: "45/60 score",
+            s: "75% total rating"
+          }],
+          body: "Pune scored 45/60 (75%) in our scoring model. It is a fantastic engineering hub, especially for mechanical, manufacturing, and automotive software teams. However, it was not selected because of lower talent depth for a full multi-function GCC setup (IT + GBS + R&D) and smaller business ecosystem maturity for GCC scale compared to Hyderabad's lower attrition HITEC City district. The recommendation favors a city that can support broader scale, multi-functional synergy, and predictability."
+        },
+        score: 75
       }
     };
     const TE_PHASES = [{
@@ -8528,13 +8606,13 @@ html{}
         }
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cl"
-      }, "Traditional"), /*#__PURE__*/React.createElement("div", {
+      }, "Traditional SI (Opaque)"), /*#__PURE__*/React.createElement("div", {
         className: "cv"
-      }, Math.round(25 + 12 * (100 - cmpX) / 100), "\u2013", Math.round(30 + 10 * (100 - cmpX) / 100), "%"))), /*#__PURE__*/React.createElement("div", {
+      }, Math.round(25 + 10 * (cmpX / 100)), "\u2013", Math.round(30 + 10 * (cmpX / 100)), "%"))), /*#__PURE__*/React.createElement("div", {
         className: "cmpB"
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cl"
-      }, "Open Book"), /*#__PURE__*/React.createElement("div", {
+      }, "Partner Open-Book"), /*#__PURE__*/React.createElement("div", {
         className: "cv"
       }, "15% flat"))), /*#__PURE__*/React.createElement("div", {
         className: "cmph2",
@@ -8547,11 +8625,12 @@ html{}
         style: {
           color: "var(--red)"
         }
-      }, "\u2190 Drag: traditional cost"), /*#__PURE__*/React.createElement("span", {
+      }, "\u2190 Slide to view Traditional SI markup: 25%\u201340% opaque rates"), /*#__PURE__*/React.createElement("span", {
         style: {
-          color: "var(--blue)"
+          color: "var(--blue)",
+          fontWeight: "600"
         }
-      }, "open book \u2192"))))), /*#__PURE__*/React.createElement("div", {
+      }, "Open-Book Partner: 15% flat & audited markup \u2192"))))), /*#__PURE__*/React.createElement("div", {
         className: "mpanel rv",
         ref: addRef
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
@@ -9768,18 +9847,19 @@ html{}
         y: XMAP.hyd[1] + 4,
         textAnchor: "start"
       }, "Hyderabad")), /*#__PURE__*/React.createElement("g", {
-        className: "xs-citydot"
-      }, /*#__PURE__*/React.createElement("circle", {
+        className: "xs-citydot",
+        onClick: () => setActiveCity("chennai")
+      }, activeCity === "chennai" ? /*#__PURE__*/React.createElement("circle", {
         className: "xs-pulse",
         cx: XMAP.chn[0],
         cy: XMAP.chn[1],
         r: "6",
-        fill: "#111"
-      }), /*#__PURE__*/React.createElement("circle", {
+        fill: "#0f766e"
+      }) : null, /*#__PURE__*/React.createElement("circle", {
         cx: XMAP.chn[0],
         cy: XMAP.chn[1],
-        r: 5,
-        fill: "#111",
+        r: activeCity === "chennai" ? 7 : 5,
+        fill: activeCity === "chennai" ? "#0f766e" : "#555",
         stroke: "#fff",
         strokeWidth: "2"
       }), /*#__PURE__*/React.createElement("text", {
@@ -9788,18 +9868,19 @@ html{}
         y: XMAP.chn[1] + 4,
         textAnchor: "start"
       }, "Chennai")), /*#__PURE__*/React.createElement("g", {
-        className: "xs-citydot"
-      }, /*#__PURE__*/React.createElement("circle", {
+        className: "xs-citydot",
+        onClick: () => setActiveCity("pune")
+      }, activeCity === "pune" ? /*#__PURE__*/React.createElement("circle", {
         className: "xs-pulse",
         cx: XMAP.pun[0],
         cy: XMAP.pun[1],
         r: "6",
-        fill: "#111"
-      }), /*#__PURE__*/React.createElement("circle", {
+        fill: "#6d28d9"
+      }) : null, /*#__PURE__*/React.createElement("circle", {
         cx: XMAP.pun[0],
         cy: XMAP.pun[1],
-        r: 5,
-        fill: "#111",
+        r: activeCity === "pune" ? 7 : 5,
+        fill: activeCity === "pune" ? "#6d28d9" : "#555",
         stroke: "#fff",
         strokeWidth: "2"
       }), /*#__PURE__*/React.createElement("text", {
@@ -9813,7 +9894,7 @@ html{}
         className: "cpanel"
       }, /*#__PURE__*/React.createElement("div", {
         className: "ctabs"
-      }, ["hyderabad", "bengaluru"].map(c => /*#__PURE__*/React.createElement("div", {
+      }, ["hyderabad", "bengaluru", "chennai", "pune"].map(c => /*#__PURE__*/React.createElement("div", {
         key: c,
         className: `ctab${activeCity === c ? " act" : ""}`,
         onClick: () => setActiveCity(c)
