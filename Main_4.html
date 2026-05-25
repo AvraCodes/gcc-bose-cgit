@@ -3352,6 +3352,25 @@ html{}
 .ccm{font-family:var(--F);font-size:clamp(17px,1.6vw,22px);font-weight:400;margin-bottom:4px;letter-spacing:-.02em;}
 .ccd{font-size:11.5px;color:var(--ink3);line-height:1.45;}
 
+/* COST MONITOR VISUALIZER */
+.cost-monitor{margin-bottom:20px;background:rgba(13,20,35,0.96);border:1.5px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(10,18,32,0.5);}
+.cost-monitor-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.cost-monitor-title{font-family:var(--M);font-size:9.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#8f9fb2;display:flex;align-items:center;gap:8px;}
+.cost-monitor-pulse{width:7px;height:7px;background-color:#c01c1c;border-radius:50%;display:inline-block;animation:monitorPulse 1.8s infinite;}
+@keyframes monitorPulse{
+  0%{transform:scale(0.95);opacity:0.6;box-shadow:0 0 0 0 rgba(192,28,28,0.75);}
+  50%{transform:scale(1.15);opacity:1;box-shadow:0 0 0 6px rgba(192,28,28,0);}
+  100%{transform:scale(0.95);opacity:0.6;box-shadow:0 0 0 0 rgba(192,28,28,0);}
+}
+.cost-monitor-badge{font-family:var(--M);font-size:8px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;background:rgba(255,255,255,0.08);border-radius:4px;color:#fff;border:1px solid rgba(255,255,255,0.05);}
+.cost-monitor-chart{width:100%;height:105px;display:block;overflow:visible;}
+.cost-monitor-readout{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:12px;}
+.cost-readout-col{display:flex;flex-direction:column;}
+.cost-readout-label{font-family:var(--M);font-size:8px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#70829d;margin-bottom:4px;}
+.cost-readout-val{font-family:var(--F);font-size:22px;font-weight:400;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
+.cost-readout-val.traditional{color:#c01c1c;text-shadow:0 0 10px rgba(192,28,28,0.25);}
+.cost-readout-val.openbook{color:var(--blue2);text-shadow:0 0 10px rgba(106,176,240,0.25);}
+
 /* DRAG COMPARISON */
 .cmpwrap{background:var(--bg);border:1.5px solid var(--l1);border-radius:14px;padding:22px;margin-top:16px;}
 .cmph{font-family:var(--M);font-size:9.5px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);margin-bottom:16px;display:flex;align-items:center;gap:7px;}
@@ -8002,6 +8021,23 @@ html{}
       const cmpRef = useRef(null);
       const isDrag = useRef(false);
       const jtrackRef = useRef(null);
+      const lastInteraction = useRef(Date.now());
+
+      /* Auto-animation loop for comparison slider */
+      useEffect(() => {
+        let frame;
+        const tick = () => {
+          if (!isDrag.current && Date.now() - lastInteraction.current > 4000) {
+            const phase = (Date.now() / 2400) % (Math.PI * 2);
+            // Smoothly oscillate cmpX between 18% and 82% to automatically showcase traditional margin volatility
+            const newX = 50 + Math.sin(phase) * 32;
+            setCmpX(newX);
+          }
+          frame = requestAnimationFrame(tick);
+        };
+        frame = requestAnimationFrame(tick);
+        return () => cancelAnimationFrame(frame);
+      }, []);
 
       /* CSS injection */
       useEffect(() => {
@@ -8094,8 +8130,10 @@ html{}
       /* comparison drag */
       const startCmpDrag = useCallback(e => {
         isDrag.current = true;
+        lastInteraction.current = Date.now();
         const move = ev => {
           if (!isDrag.current) return;
+          lastInteraction.current = Date.now();
           const rect = cmpRef.current?.getBoundingClientRect();
           if (!rect) return;
           const clientX = ev.touches ? ev.touches[0].clientX : ev.clientX;
@@ -8594,7 +8632,152 @@ html{}
         className: "cmpwrap"
       }, /*#__PURE__*/React.createElement("div", {
         className: "cmph"
-      }, "Drag to compare: Traditional vs Open-Book"), /*#__PURE__*/React.createElement("div", {
+      }, "Cost Volatility Monitor: Traditional SI vs. Open-Book"), /*#__PURE__*/React.createElement("div", {
+        className: "cost-monitor"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "cost-monitor-header"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "cost-monitor-title"
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "cost-monitor-pulse"
+      }), "Live Margin Volatility Simulator"), /*#__PURE__*/React.createElement("div", {
+        className: "cost-monitor-badge"
+      }, !isDrag.current && Date.now() - lastInteraction.current > 4000 ? "● Auto Simulation Active" : "✔ Manual Inspection Mode")), /*#__PURE__*/React.createElement("svg", {
+        className: "cost-monitor-chart",
+        viewBox: "0 0 500 100"
+      }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+        id: "redGrad",
+        x1: "0",
+        y1: "0",
+        x2: "0",
+        y2: "1"
+      }, /*#__PURE__*/React.createElement("stop", {
+        offset: "0%",
+        stopColor: "rgba(192,28,28,0.3)"
+      }), /*#__PURE__*/React.createElement("stop", {
+        offset: "100%",
+        stopColor: "rgba(192,28,28,0.0)"
+      })), /*#__PURE__*/React.createElement("linearGradient", {
+        id: "blueGrad",
+        x1: "0",
+        y1: "0",
+        x2: "0",
+        y2: "1"
+      }, /*#__PURE__*/React.createElement("stop", {
+        offset: "0%",
+        stopColor: "rgba(26,79,150,0.15)"
+      }), /*#__PURE__*/React.createElement("stop", {
+        offset: "100%",
+        stopColor: "rgba(26,79,150,0.0)"
+      }))), [10, 20, 30, 40].map(pct => {
+        const y = 100 - pct / 50 * 80;
+        return /*#__PURE__*/React.createElement("g", {
+          key: pct
+        }, /*#__PURE__*/React.createElement("line", {
+          x1: "0",
+          y1: y,
+          x2: "500",
+          y2: y,
+          stroke: "rgba(255,255,255,0.06)",
+          strokeDasharray: "4 4"
+        }), /*#__PURE__*/React.createElement("text", {
+          x: "5",
+          y: y - 3,
+          fill: "rgba(255,255,255,0.25)",
+          fontSize: "6.5",
+          fontFamily: "var(--M)"
+        }, pct + "%"));
+      }), /*#__PURE__*/React.createElement("line", {
+        x1: cmpX / 100 * 500,
+        y1: "10",
+        x2: cmpX / 100 * 500,
+        y2: "90",
+        stroke: "rgba(255,255,255,0.15)",
+        strokeWidth: "1"
+      }), (() => {
+        const pts = [];
+        for (let i = 0; i <= 20; i++) {
+          const x = i / 20 * 500;
+          const wavePhase = cmpX / 8 + i * 0.4;
+          const markup = 32.5 + Math.sin(wavePhase) * 7.5;
+          pts.push({
+            x,
+            y: 100 - markup / 50 * 80
+          });
+        }
+        const d = "M " + pts.map(p => `${p.x} ${p.y}`).join(" L ");
+        const dArea = d + ` L 500 100 L 0 100 Z`;
+        const activeTradMarkup = 32.5 + Math.sin(cmpX / 8 + (cmpX / 100 * 20) * 0.4) * 7.5;
+        const activeTradY = 100 - activeTradMarkup / 50 * 80;
+        return /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+          d: dArea,
+          fill: "url(#redGrad)"
+        }), /*#__PURE__*/React.createElement("path", {
+          d: d,
+          fill: "none",
+          stroke: "#c01c1c",
+          strokeWidth: "2"
+        }), /*#__PURE__*/React.createElement("circle", {
+          cx: cmpX / 100 * 500,
+          cy: activeTradY,
+          r: "4",
+          fill: "#c01c1c"
+        }), /*#__PURE__*/React.createElement("circle", {
+          cx: cmpX / 100 * 500,
+          cy: activeTradY,
+          r: "7",
+          fill: "none",
+          stroke: "#c01c1c",
+          strokeWidth: "1.5",
+          className: "xs-pulse"
+        }));
+      })(), /*#__PURE__*/React.createElement("rect", {
+        x: "0",
+        y: "76",
+        width: "500",
+        height: "24",
+        fill: "url(#blueGrad)",
+        opacity: "0.5"
+      }), /*#__PURE__*/React.createElement("line", {
+        x1: "0",
+        y1: "76",
+        x2: "500",
+        y2: "76",
+        stroke: "var(--blue2)",
+        strokeWidth: "2.5"
+      }), /*#__PURE__*/React.createElement("circle", {
+        cx: cmpX / 100 * 500,
+        cy: "76",
+        r: "4",
+        fill: "var(--blue2)"
+      })), /*#__PURE__*/React.createElement("div", {
+        className: "cost-monitor-readout"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "cost-readout-col"
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "cost-readout-label"
+      }, "Traditional SI Opaque Markup"), /*#__PURE__*/React.createElement("span", {
+        className: "cost-readout-val traditional"
+      }, Math.round(32.5 + Math.sin(cmpX / 8 + (cmpX / 100 * 20) * 0.4) * 7.5) + "%", /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontSize: 11,
+          opacity: 0.65,
+          marginLeft: 6
+        }
+      }, "(Fluctuates 25%–40%)"))), /*#__PURE__*/React.createElement("div", {
+        className: "cost-readout-col"
+      }, /*#__PURE__*/React.createElement("span", {
+        className: "cost-readout-label"
+      }, "Partner Open-Book Capped Markup"), /*#__PURE__*/React.createElement("span", {
+        className: "cost-readout-val openbook"
+      }, "15.0%", /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontSize: 11,
+          opacity: 0.8,
+          marginLeft: 6,
+          fontWeight: 600
+        }
+      }, "(Capped & Immutable)"))))), /*#__PURE__*/React.createElement("div", {
         className: "cmps",
         ref: cmpRef,
         onMouseDown: startCmpDrag,
@@ -8606,15 +8789,15 @@ html{}
         }
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cl"
-      }, "Traditional SI (Opaque)"), /*#__PURE__*/React.createElement("div", {
+      }, "Traditional SI Volatility Range"), /*#__PURE__*/React.createElement("div", {
         className: "cv"
-      }, Math.round(25 + 10 * (cmpX / 100)), "\u2013", Math.round(30 + 10 * (cmpX / 100)), "%"))), /*#__PURE__*/React.createElement("div", {
+      }, "25% \u2013 40%"))), /*#__PURE__*/React.createElement("div", {
         className: "cmpB"
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cl"
       }, "Partner Open-Book"), /*#__PURE__*/React.createElement("div", {
         className: "cv"
-      }, "15% flat"))), /*#__PURE__*/React.createElement("div", {
+      }, "15% Flat"))), /*#__PURE__*/React.createElement("div", {
         className: "cmph2",
         style: {
           left: cmpX + "%"
@@ -8625,12 +8808,12 @@ html{}
         style: {
           color: "var(--red)"
         }
-      }, "\u2190 Slide to view Traditional SI markup: 25%\u201340% opaque rates"), /*#__PURE__*/React.createElement("span", {
+      }, "\u2190 Drag to scan Traditional SI pricing markup volatility: 25%\u201340% opaque"), /*#__PURE__*/React.createElement("span", {
         style: {
           color: "var(--blue)",
           fontWeight: "600"
         }
-      }, "Open-Book Partner: 15% flat & audited markup \u2192"))))), /*#__PURE__*/React.createElement("div", {
+      }, "Partner Open-Book model: contractually flat 15.0% \u2192"))))), /*#__PURE__*/React.createElement("div", {
         className: "mpanel rv",
         ref: addRef
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {

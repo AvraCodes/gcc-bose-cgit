@@ -3472,7 +3472,7 @@ html{}
 .jfill{position:absolute;top:0;left:0;bottom:0;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:2px;transition:width 480ms var(--eout);}
 .jtk{position:absolute;top:50%;transform:translate(-50%,-50%);width:15px;height:15px;border-radius:50%;background:var(--bg);border:2px solid var(--s2);cursor:pointer;transition:all 220ms;z-index:2;-webkit-tap-highlight-color:transparent;}
 .jtk.act{border-color:var(--blue);background:var(--blue);box-shadow:0 0 0 4px rgba(26,79,150,.15),0 0 12px var(--blue);}
-.jtk.pass{border-color:var(--ink3);background:var(--ink3);}
+.jtk.pass{border-color:var(--blue);background:var(--blue);}
 .jtk:hover{border-color:var(--blue);}
 .jlabs{display:flex;justify-content:space-between;position:absolute;bottom:0;left:0;right:0;}
 .jlab{font-family:var(--M);font-size:8.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);cursor:pointer;transition:color 200ms;text-align:center;flex:1;}
@@ -5422,7 +5422,85 @@ html{}
           }],
           body: "Karnataka GCC Policy 2024-29 \u2014 India's first dedicated GCC policy (19 Nov 2024). Targets +500 GCCs \u2192 1,000 by 2029, 350k jobs, $50B output. R&D grants up to \u20B9500M, rental reimbursement up to 50%, EPF support, 5-yr electricity-duty exemption, 45-day approvals, three innovation districts (Bengaluru, Mysuru, Belagavi)."
         },
-        score: 71
+        score: 71.6
+      },
+      chennai: {
+        name: "Chennai",
+        role: "The Transaction Anchor (Not Selected)",
+        desc: "Scored 48/60 (80%), which actually outperforms Bengaluru's score. However, it was not selected. Chennai is a transactional powerhouse—ideal for stable, process-heavy back-office and service operations, but narrower in talent depth and weaker for the deep-tech R&D innovation/audio capabilities Bose requires.",
+        alloc: [{
+          l: "Suitability Score",
+          v: "48 / 60",
+          s: "80% rating"
+        }, {
+          l: "Talent Pool Depth",
+          v: "7 / 10",
+          s: "Transactional focus"
+        }],
+        eco: "Massive transactional/GBS GCC presence, heavy banking (World Bank, StanChart, Citi) and automotive hubs. Lower real estate and operating cost, strong talent retention, but highly skewed towards traditional services rather than R&D.",
+        state: {
+          tag: "Tamil Nadu \xB7 Chennai",
+          title: "Tamil Nadu",
+          cap: "Transactional powerhouse \u2014 strong retention, low R&D synergy",
+          stats: [{
+            l: "Operational GCCs",
+            v: "240+",
+            s: "Tamil Nadu"
+          }, {
+            l: "Talent Pool Depth",
+            v: "7 / 10",
+            s: "Onerous transactional focus"
+          }, {
+            l: "Office Stock",
+            v: "88M sq ft",
+            s: "9% of India"
+          }, {
+            l: "GCC suitability",
+            v: "48/60 score",
+            s: "80% total rating"
+          }],
+          body: "Chennai scored 48/60 (80%), which is higher than Bengaluru's 43/60 (71.6%). But Chennai was not selected because it is stronger for stable, process-heavy transactional operations, not for the full Bose GCC ambition. Its talent depth is narrower for this mandate, and it is weaker as an innovation / R&D / deep-tech location where Bose needs wearable R&D engineering and AI/ML capability (where Bengaluru clearly outperforms). The proposal recommends a dual-city model: Hyderabad (operational sweet spot for IT + GBS) and Bengaluru (R&D / BCP anchor)."
+        },
+        score: 80
+      },
+      pune: {
+        name: "Pune",
+        role: "The Engineering Hub (Not Selected)",
+        desc: "Scored 45/60 (75%). Pune is positioned as a strong product engineering and manufacturing hub, but lacks the multi-functional talent depth and massive business ecosystem scale needed for an integrated, large-scale IT + GBS + R&D setup like Bose's.",
+        alloc: [{
+          l: "Suitability Score",
+          v: "45 / 60",
+          s: "75% rating"
+        }, {
+          l: "Talent Pool Depth",
+          v: "7 / 10",
+          s: "Engineering focus"
+        }],
+        eco: "Strong automotive engineering (Tata, Mercedes) and industrial tech GCC depth. Close proximity to Mumbai, highly skilled niche mechanical and embedded talent, but suffers from smaller ecosystem maturity for GCC scale compared to Hyderabad/Bengaluru.",
+        state: {
+          tag: "Maharashtra \xB7 Pune",
+          title: "Maharashtra",
+          cap: "Niche engineering hub \u2014 limited GBS & multi-function scale",
+          stats: [{
+            l: "Operational GCCs",
+            v: "150+",
+            s: "Maharashtra"
+          }, {
+            l: "Talent Pool Depth",
+            v: "7 / 10",
+            s: "Niche engineering focus"
+          }, {
+            l: "Office Stock",
+            v: "62M sq ft",
+            s: "6% of India"
+          }, {
+            l: "GCC suitability",
+            v: "45/60 score",
+            s: "75% total rating"
+          }],
+          body: "Pune scored 45/60 (75%) in our scoring model. It is a fantastic engineering hub, especially for mechanical, manufacturing, and automotive software teams. However, it was not selected because of lower talent depth for a full multi-function GCC setup (IT + GBS + R&D) and smaller business ecosystem maturity for GCC scale compared to Hyderabad's lower attrition HITEC City district. The recommendation favors a city that can support broader scale, multi-functional synergy, and predictability."
+        },
+        score: 75
       }
     };
     const TE_PHASES = [{
@@ -7392,6 +7470,480 @@ html{}
       return h(React.Fragment, null, secGBS, secIT, secRND);
     }
 
+    /* ═══ INDIA IN MOTION · interactive number engine (added) ═══════════ */
+    const LEDGER_TRAJ = [
+      { key: "rev",   tab: "Market revenue", unit: "US$ bn",        s: 64.6,   e: 110,    y0: "FY24", y1: "2030",
+        fmt: v => "$" + v.toFixed(1), suf: "bn", badge: "~10% CAGR", up: true,
+        ctx: "India\u2019s GCC sector by annual revenue \u2014 on track to roughly double this decade.",
+        src: "Nasscom-Zinnov \u00b7 EY \u00b7 FICCI-ANAROCK" },
+      { key: "cnt",   tab: "GCC centres",    unit: "centres",       s: 1700,   e: 2550,   y0: "FY24", y1: "2030",
+        fmt: v => Math.round(v).toLocaleString(), suf: "", badge: "+850 centres", up: true,
+        ctx: "Active global capability centres operating in India \u2014 the deepest such ecosystem on earth.",
+        src: "Nasscom-Zinnov \u00b7 Zinnov 2026" },
+      { key: "ppl",   tab: "Headcount",      unit: "professionals", s: 1.9,    e: 3.5,    y0: "2024", y1: "2030",
+        fmt: v => v.toFixed(1) + "M", suf: "", badge: "+1.6M people", up: true,
+        ctx: "The GCC workforce \u2014 1.4M of today\u2019s centres already carry an ER&D footprint.",
+        src: "Nasscom \u00b7 EY" },
+      { key: "fte",   tab: "Cost / FTE",     unit: "US$ / yr",      s: 29100,  e: 37760,  y0: "2024", y1: "2030",
+        fmt: v => "$" + Math.round(v).toLocaleString(), suf: "", badge: "still ~65% under US", up: false,
+        ctx: "Even as fully-loaded cost per engineer climbs, the gap to a US seat holds near 65\u201370%.",
+        src: "EY \u00b7 US$110bn-by-2030 outlook" }
+    ];
+
+    const KARNATAKA = [
+      { id: "rd",   l: "R&D infrastructure grant",      d: "Up to 40% / \u20b950 Cr ceiling", cr: 50,    note: "one-time" },
+      { id: "epf",  l: "EPF reimbursement",             d: "\u20b93,000 / FTE / mo \u00b7 24 mo", cr: 28.8,  note: "illustrative @ 400 FTE" },
+      { id: "lab",  l: "Innovation lab / CoE funding",  d: "\u20b95 Cr / project \u00b7 max 2/yr", cr: 10,  note: "2 projects" },
+      { id: "rent", l: "Rental reimbursement",          d: "50% reimbursed \u00b7 cap \u20b92 Cr", cr: 2,   note: "capped" },
+      { id: "join", l: "Joint research w/ academia",    d: "50% of budget \u00b7 up to \u20b91 Cr", cr: 1,  note: "two institutions" },
+      { id: "net",  l: "Internet / telecom",            d: "25% \u00b7 3 yrs \u00b7 \u20b912 L / yr",  cr: 0.36, note: "3-yr run" }
+    ];
+
+    function IndiaLedger({ addRef }) {
+      const h = React.createElement;
+      const [traj, setTraj] = useState("rev");
+      const [run, setRun] = useState(0);          // 0..1 animation progress
+      const [live, setLive] = useState(false);    // in-view trigger
+      const [picked, setPicked] = useState({});    // karnataka selections
+      const rootRef = useRef(null);
+      const t = LEDGER_TRAJ.find(x => x.key === traj);
+
+      /* inject scoped CSS once */
+      useEffect(() => {
+        if (document.getElementById("il-css")) return;
+        const el = document.createElement("style");
+        el.id = "il-css";
+        el.textContent = IL_CSS;
+        document.head.appendChild(el);
+      }, []);
+
+      /* reveal on scroll */
+      useEffect(() => {
+        const node = rootRef.current;
+        if (!node) return;
+        const obs = new IntersectionObserver(e => e.forEach(x => {
+          if (x.isIntersecting) { setLive(true); obs.disconnect(); }
+        }), { threshold: 0.2 });
+        obs.observe(node);
+        return () => obs.disconnect();
+      }, []);
+
+      /* count-up, re-fires on tab change once live */
+      useEffect(() => {
+        if (!live) return;
+        let raf, start;
+        const dur = 1300;
+        const step = now => {
+          if (!start) start = now;
+          const p = Math.min((now - start) / dur, 1);
+          setRun(1 - Math.pow(1 - p, 3));
+          if (p < 1) raf = requestAnimationFrame(step);
+        };
+        setRun(0);
+        raf = requestAnimationFrame(step);
+        return () => cancelAnimationFrame(raf);
+      }, [live, traj]);
+
+      const cur = t.s + (t.e - t.s) * run;
+      const hiVal = Math.max(t.s, t.e);
+      const h0 = 22 + (t.s / hiVal) * 78;          // start bar height %
+      const h1 = 22 + (t.e / hiVal) * 78;          // end bar height %
+      const endFill = 22 + (cur / hiVal) * 78;     // animated end bar
+
+      /* arbitrage ladder */
+      const usCost = 100, indiaCost = 32;           // ~68% saving, framed ~65%
+      const ladderRun = run;                        // reuse progress for sweep
+
+      /* karnataka running total */
+      const total = KARNATAKA.reduce((a, k) => a + (picked[k.id] ? k.cr : 0), 0);
+      const totalMax = KARNATAKA.reduce((a, k) => a + k.cr, 0);
+
+      return h("section", { className: "sec il-sec", id: "indialedger", ref: rootRef },
+        h("div", { className: "wrap" },
+
+          /* header */
+          h("div", { className: "shead rv", ref: addRef },
+            h("div", null,
+              h("div", { className: "snum" }, "02 \u00b7 \u2733"),
+              h("div", { className: "skick" }, "India, in motion")),
+            h("div", null,
+              h("h2", { className: "sh2" }, "The market isn\u2019t a backdrop. ", h("em", null, "It\u2019s a tailwind.")),
+              h("p", { className: "slede" }, "Four trajectories, one decade. Tap a metric to watch it move \u2014 every endpoint is sourced."))),
+
+          /* TRAJECTORY SWITCHER */
+          h("div", { className: "il-traj rv", ref: addRef },
+            h("div", { className: "il-tabs" },
+              LEDGER_TRAJ.map(x => h("button", {
+                key: x.key,
+                className: "il-tab" + (x.key === traj ? " on" : ""),
+                onClick: () => setTraj(x.key)
+              }, x.tab))),
+
+            h("div", { className: "il-stage" },
+              /* counter + context */
+              h("div", { className: "il-read" },
+                h("div", { className: "il-now" },
+                  h("span", { className: "il-bignum" }, t.fmt(cur)),
+                  h("span", { className: "il-badge" }, t.badge)),
+                h("p", { className: "il-ctx" }, t.ctx),
+                h("div", { className: "il-src" }, "\u21b3 ", t.src)),
+
+              /* twin bars */
+              h("div", { className: "il-bars" },
+                h("div", { className: "il-bar" },
+                  h("div", { className: "il-fill start", style: { height: (live ? h0 : 0) + "%" } },
+                    h("span", { className: "il-tip" }, t.fmt(t.s))),
+                  h("div", { className: "il-yr" }, t.y0)),
+                h("div", { className: "il-arrow" }, t.up ? "\u2197" : "\u2197"),
+                h("div", { className: "il-bar" },
+                  h("div", { className: "il-fill end", style: { height: (live ? endFill : 0) + "%" } },
+                    h("span", { className: "il-tip" }, t.fmt(t.e))),
+                  h("div", { className: "il-yr" }, t.y1))))),
+
+          /* ARBITRAGE LADDER */
+          h("div", { className: "il-arb rv", ref: addRef },
+            h("div", { className: "il-arb-head" },
+              h("h3", null, "What a US seat costs ", h("em", null, "here.")),
+              h("p", null, "Every dollar of fully-loaded US engineering cost \u2014 rebuilt in India, margin included.")),
+            h("div", { className: "il-track" },
+              h("div", { className: "il-seg us", style: { width: (live ? "100%" : "0%") } },
+                h("span", { className: "il-seg-l" }, "US baseline"),
+                h("span", { className: "il-seg-v" }, "$1.00")),
+              h("div", { className: "il-seg ind", style: { width: (live ? indiaCost + "%" : "0%") } },
+                h("span", { className: "il-seg-l" }, "India, fully loaded"),
+                h("span", { className: "il-seg-v" }, "$0.32"))),
+            h("div", { className: "il-arb-foot" },
+              h("span", null, h("b", null, "~65%"), " saved vs US"),
+              h("span", null, h("b", null, "40\u201350%"), " operational arbitrage"),
+              h("span", null, h("b", null, "~70%"), " labour arbitrage"),
+              h("span", { className: "muted" }, "\u21b3 Marsh \u00b7 Inductus \u00b7 EY"))),
+
+          /* KARNATAKA INCENTIVE STACKER */
+          h("div", { className: "il-kar rv", ref: addRef },
+            h("div", { className: "il-kar-head" },
+              h("div", null,
+                h("h3", null, "Stack the ", h("em", null, "Karnataka offset.")),
+                h("p", null, "Tap each incentive under the GCC Policy 2024\u201329 to build the headline ceiling.")),
+              h("div", { className: "il-kar-total" },
+                h("div", { className: "il-kar-tnum" }, "\u20b9", total.toFixed(2), h("span", null, " Cr")),
+                h("div", { className: "il-kar-tbar" },
+                  h("div", { className: "il-kar-tfill", style: { width: (total / totalMax * 100) + "%" } })),
+                h("div", { className: "il-kar-tlbl" }, "of \u20b9", totalMax.toFixed(2), " Cr ceiling"))),
+            h("div", { className: "il-chips" },
+              KARNATAKA.map(k => h("button", {
+                key: k.id,
+                className: "il-chip" + (picked[k.id] ? " on" : ""),
+                onClick: () => setPicked(p => ({ ...p, [k.id]: !p[k.id] }))
+              },
+                h("div", { className: "il-chip-top" },
+                  h("span", { className: "il-chip-l" }, k.l),
+                  h("span", { className: "il-chip-cr" }, "+\u20b9", k.cr, " Cr")),
+                h("div", { className: "il-chip-d" }, k.d),
+                h("div", { className: "il-chip-n" }, k.note)))),
+            h("p", { className: "il-kar-note" },
+              "Illustrative ceiling for a ~400-FTE Bengaluru build over 2 years. Realised benefit is subject to per-line caps and approvals \u2014 source: Karnataka GCC Policy 2024\u201329 (Cushman & Wakefield, Mondaq)."))
+        )
+      );
+    }
+
+    const IL_CSS = `
+.il-sec{padding-top:60px;padding-bottom:60px;background:var(--bg);}
+.il-traj{margin-top:38px;border:1px solid var(--l1);border-radius:22px;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);box-shadow:var(--sh2);overflow:hidden;}
+.il-tabs{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--l1);}
+.il-tab{flex:1;min-width:120px;padding:16px 14px;font-family:var(--M);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);background:transparent;border:none;border-right:1px solid var(--l1);cursor:pointer;transition:all 220ms var(--eout);position:relative;}
+.il-tab:last-child{border-right:none;}
+.il-tab:hover{color:var(--blue);background:var(--bs);}
+.il-tab.on{color:var(--blue);background:var(--bg);}
+.il-tab.on::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue2));}
+.il-stage{display:grid;grid-template-columns:1.4fr .9fr;gap:32px;padding:clamp(24px,4vw,48px);align-items:center;}
+.il-read{min-width:0;}
+.il-now{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;}
+.il-bignum{font-family:var(--F);font-variation-settings:"opsz" 144,"SOFT" 40;font-size:clamp(44px,8vw,92px);font-weight:300;line-height:.95;letter-spacing:-.04em;color:var(--navy);font-variant-numeric:tabular-nums;}
+.il-badge{font-family:var(--M);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:var(--bs);border:1px solid var(--bl);padding:6px 12px;border-radius:100px;white-space:nowrap;}
+.il-ctx{margin-top:18px;font-size:clamp(15px,1.6vw,18px);line-height:1.55;color:var(--ink2);max-width:46ch;}
+.il-src{margin-top:14px;font-family:var(--M);font-size:10px;letter-spacing:.08em;color:var(--ink4);}
+.il-bars{display:flex;align-items:flex-end;justify-content:center;gap:18px;height:clamp(220px,30vw,300px);}
+.il-bar{display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end;}
+.il-fill{width:clamp(52px,8vw,84px);border-radius:12px 12px 4px 4px;position:relative;transition:height 1300ms var(--eout);display:flex;align-items:flex-start;justify-content:center;min-height:8px;}
+.il-fill.start{background:repeating-linear-gradient(45deg,var(--s1),var(--s1) 6px,var(--bg3) 6px,var(--bg3) 12px);border:1px solid var(--l2);}
+.il-fill.end{background:linear-gradient(180deg,var(--blue2),var(--blue));box-shadow:0 10px 30px rgba(26,79,150,.28);}
+.il-tip{font-family:var(--M);font-size:10.5px;font-weight:600;letter-spacing:.04em;margin-top:-22px;color:var(--navy);white-space:nowrap;}
+.il-fill.end .il-tip{color:var(--blue);}
+.il-yr{margin-top:12px;font-family:var(--M);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);}
+.il-arrow{align-self:center;font-size:24px;color:var(--blue3);margin-bottom:40px;}
+
+.il-arb{margin-top:34px;padding:clamp(24px,4vw,40px);border:1px solid var(--l1);border-radius:22px;background:var(--navy);color:#fff;box-shadow:var(--sh3);}
+.il-arb-head h3{font-family:var(--F);font-weight:340;font-size:clamp(22px,3vw,34px);letter-spacing:-.02em;line-height:1.05;}
+.il-arb-head h3 em{color:var(--blue3);font-style:italic;}
+.il-arb-head p{margin-top:8px;font-size:14px;color:rgba(255,255,255,.62);max-width:52ch;}
+.il-track{margin-top:26px;display:flex;flex-direction:column;gap:12px;}
+.il-seg{height:54px;border-radius:12px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;transition:width 1200ms var(--eout);overflow:hidden;white-space:nowrap;}
+.il-seg.us{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);}
+.il-seg.ind{background:linear-gradient(90deg,var(--blue),var(--blue2));box-shadow:0 8px 24px rgba(42,111,200,.4);}
+.il-seg-l{font-family:var(--M);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85);}
+.il-seg-v{font-family:var(--F);font-size:22px;font-weight:340;color:#fff;}
+.il-arb-foot{margin-top:22px;display:flex;flex-wrap:wrap;gap:22px;font-size:13px;color:rgba(255,255,255,.7);}
+.il-arb-foot b{color:var(--blue3);font-family:var(--F);font-size:18px;font-weight:400;margin-right:4px;}
+.il-arb-foot .muted{font-family:var(--M);font-size:10px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-left:auto;align-self:center;}
+
+.il-kar{margin-top:34px;}
+.il-kar-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:22px;}
+.il-kar-head h3{font-family:var(--F);font-weight:340;font-size:clamp(22px,3vw,34px);letter-spacing:-.02em;line-height:1.05;color:var(--navy);}
+.il-kar-head h3 em{color:var(--blue);font-style:italic;}
+.il-kar-head p{margin-top:8px;font-size:14px;color:var(--ink3);max-width:46ch;}
+.il-kar-total{min-width:220px;text-align:right;}
+.il-kar-tnum{font-family:var(--F);font-size:clamp(34px,5vw,52px);font-weight:300;letter-spacing:-.03em;color:var(--blue);line-height:1;font-variant-numeric:tabular-nums;}
+.il-kar-tnum span{font-size:.42em;color:var(--ink3);}
+.il-kar-tbar{margin-top:10px;height:6px;border-radius:3px;background:var(--s1);overflow:hidden;}
+.il-kar-tfill{height:100%;background:linear-gradient(90deg,var(--blue),var(--blue2));transition:width 420ms var(--eout);}
+.il-kar-tlbl{margin-top:7px;font-family:var(--M);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);}
+.il-chips{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.il-chip{text-align:left;padding:16px 18px;border-radius:16px;border:1px solid var(--l2);background:var(--bg);cursor:pointer;transition:all 240ms var(--eout);position:relative;overflow:hidden;}
+.il-chip::before{content:'';position:absolute;inset:0;background:var(--bs);opacity:0;transition:opacity 240ms;}
+.il-chip:hover{transform:translateY(-2px);box-shadow:var(--sh2);border-color:var(--bl);}
+.il-chip.on{border-color:var(--blue);background:var(--bg);box-shadow:0 8px 24px rgba(26,79,150,.16);}
+.il-chip.on::before{opacity:1;}
+.il-chip>*{position:relative;}
+.il-chip-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+.il-chip-l{font-family:var(--B);font-weight:600;font-size:14px;color:var(--navy);line-height:1.25;}
+.il-chip-cr{font-family:var(--M);font-size:11px;font-weight:700;color:var(--ink4);white-space:nowrap;transition:color 200ms;}
+.il-chip.on .il-chip-cr{color:var(--blue);}
+.il-chip-d{margin-top:8px;font-size:12.5px;color:var(--ink3);line-height:1.4;}
+.il-chip-n{margin-top:8px;font-family:var(--M);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);}
+.il-kar-note{margin-top:18px;font-family:var(--M);font-size:10.5px;line-height:1.6;color:var(--ink4);max-width:80ch;}
+
+@media(max-width:900px){
+  .il-stage{grid-template-columns:1fr;gap:28px;}
+  .il-bars{order:-1;height:200px;}
+  .il-chips{grid-template-columns:1fr;}
+  .il-kar-total{text-align:left;}
+  .il-arb-foot .muted{margin-left:0;}
+}
+`;
+
+    /* ═══ DEEP ROOTS, DEEPER TECH · added section ══════════════════════ */
+    const DT_DEPTH = [
+      { v: "1,440", suf: " / 1,700", l: "GCCs carry an ER&D footprint", s: "Most of India\u2019s centres already do real engineering." },
+      { v: "695K", suf: "", l: "ER&D professionals in India", s: "A standing pool, not a promise." },
+      { v: "1.3\u00d7", suf: "", l: "ER&D setup vs overall GCC rate", s: "The high-value layer is growing fastest." },
+      { v: "20%", suf: "", l: "of the world\u2019s chip-design workforce", s: "~125,000 engineers \u00b7 80\u2013100 design centres." },
+      { v: "400+", suf: "", l: "ER&D centres in Bengaluru alone", s: "Bosch, TI, NVIDIA, GE, Samsung, Boeing." },
+      { v: "$36.4", suf: "bn", l: "ER&D GCC revenue today", s: "The fastest-compounding slice of the market." }
+    ];
+
+    const DT_ANCHORS = [
+      "Harman", "Sony", "GoPro", "Garmin", "Logitech", "Dyson",
+      "Bosch", "Texas Instruments", "Qualcomm", "AMD", "NVIDIA", "Samsung", "Apple"
+    ];
+
+    const DT_LAB = [
+      { y: "Year 1", k: "Nil-CapEx", capex: "\u20b90", lead: "Immediate",
+        head: "Partner & fee-for-service",
+        body: "MoUs with IISc CeNSE (MEMS / Laser-Doppler), SID and CPDM (EMI/EMC pre-compliance); Nasscom CoE-IoT for prototyping. Bill compliance through STQC, Tata Advanced Systems, UL India and EMIS Global. Apply for the Karnataka R&D infrastructure grant.",
+        tags: ["IISc CeNSE", "SID / CPDM", "Nasscom CoE-IoT", "STQC", "TASL", "UL India"] },
+      { y: "Year 2", k: "Low-CapEx leased", capex: "\u20b92\u20134 Cr", lead: "6\u201310 mo",
+        head: "Leased wet lab",
+        body: "Fit out 5,000\u20138,000 sq ft in an Embassy / RMZ park: mid hemi-anechoic chamber plus an electronics and prototyping bench. Secure DSIR R&D recognition for weighted tax deductions.",
+        tags: ["Hemi-anechoic", "Electronics bench", "Prototyping", "DSIR recognition"] },
+      { y: "Year 3+", k: "Build dedicated", capex: "\u20b910\u201325 Cr", lead: "12\u201318 mo",
+        head: "Full anechoic + EMC",
+        body: "Commission a dedicated 15,000\u201320,000 sq ft facility: a full-anechoic acoustic chamber (80\u2013100 Hz cut-off, room-in-room, vibration-isolated) and a full EMC compliance lab.",
+        tags: ["Full anechoic", "EMC compliance", "Room-in-room", "Vibration-isolated"] }
+    ];
+
+    const DT_PREM = [
+      { v: "+30\u201350%", l: "GenAI / LLM engineer premium" },
+      { v: "1.5\u20131.7\u00d7", l: "AI / cloud / security skills multiplier" },
+      { v: "\u20b930\u201340K", l: "Signing bonus for AI talent" },
+      { v: "12\u201320%", l: "GCC pay over IT-services baseline" },
+      { v: "10.4% vs 9.1%", l: "2026 increment \u00b7 GCC vs India Inc (EY)" }
+    ];
+
+    function DeepTech({ addRef }) {
+      const h = React.createElement;
+      const [phase, setPhase] = useState(0);
+      const [live, setLive] = useState(false);
+      const rootRef = useRef(null);
+
+      useEffect(() => {
+        if (document.getElementById("dt-css")) return;
+        const el = document.createElement("style");
+        el.id = "dt-css";
+        el.textContent = DT_CSS;
+        document.head.appendChild(el);
+      }, []);
+
+      useEffect(() => {
+        const node = rootRef.current;
+        if (!node) return;
+        const obs = new IntersectionObserver(e => e.forEach(x => {
+          if (x.isIntersecting) { setLive(true); obs.disconnect(); }
+        }), { threshold: 0.15 });
+        obs.observe(node);
+        return () => obs.disconnect();
+      }, []);
+
+      const lp = DT_LAB[phase];
+
+      return h("section", { className: "sec alt dt-sec", id: "deeptech", ref: rootRef },
+        h("div", { className: "wrap" },
+
+          h("div", { className: "shead rv", ref: addRef },
+            h("div", null,
+              h("div", { className: "snum" }, "03 \u00b7 \u2733"),
+              h("div", { className: "skick" }, "Deep roots, deeper tech")),
+            h("div", null,
+              h("h2", { className: "sh2" }, "We\u2019re not starting cold. ", h("em", null, "You already landed.")),
+              h("p", { className: "slede" }, "Bose Professional opened its first R&D centre outside Massachusetts last September. Bengaluru deepens that footprint \u2014 it doesn\u2019t duplicate it."))),
+
+          /* MANGALURU ANCHOR */
+          h("div", { className: "dt-anchor rv", ref: addRef },
+            h("div", { className: "dt-anchor-l" },
+              h("div", { className: "dt-flag" }, "Already on the ground"),
+              h("h3", null, "Vertex Treo \u00b7 Kadri, ", h("em", null, "Mangaluru")),
+              h("p", null, "Opened September 2025 \u2014 the first dedicated Bose Professional R&D centre outside the Massachusetts HQ, scaling toward ~100 FTE in software engineering under Karnataka\u2019s \u201cBeyond Bengaluru\u201d initiative."),
+              h("div", { className: "dt-anchor-stats" },
+                h("div", null, h("b", null, "Sept 2025"), h("span", null, "Centre opened")),
+                h("div", null, h("b", null, "~100 FTE"), h("span", null, "Software engineering")),
+                h("div", null, h("b", null, "1st"), h("span", null, "R&D outside Mass. HQ")))),
+            h("div", { className: "dt-anchor-r" },
+              h("div", { className: "dt-bridge" },
+                h("div", { className: "dt-node mang" }, h("b", null, "Mangaluru"), h("span", null, "Software R&D \u00b7 live")),
+                h("div", { className: "dt-link" }, "complemented by"),
+                h("div", { className: "dt-node blr" }, h("b", null, "Bengaluru"), h("span", null, "Acoustic / DSP / AI + IT / GBS scale"))),
+              h("p", { className: "dt-bridge-note" }, "Mangaluru keeps the software pod. Bengaluru adds the deep-tech hardware, AI and services layers the product roadmap actually differentiates on."))),
+
+          /* DEPTH STATS */
+          h("div", { className: "dt-grid rv", ref: addRef },
+            DT_DEPTH.map((d, i) => h("div", { key: i, className: "dt-cell" },
+              h("div", { className: "dt-cv" }, d.v, d.suf ? h("span", { className: "dt-cu" }, d.suf) : null),
+              h("div", { className: "dt-cl" }, d.l),
+              h("p", { className: "dt-cs" }, d.s)))),
+
+          /* ANCHOR ROSTER */
+          h("div", { className: "dt-roster rv", ref: addRef },
+            h("div", { className: "dt-roster-lbl" }, "Audio & electronics talent already pooled in India \u2014 the bench you hire from"),
+            h("div", { className: "dt-chips-row" },
+              DT_ANCHORS.map((a, i) => h("span", { key: i, className: "dt-anchor-chip" }, a))),
+            h("div", { className: "dt-amd" }, h("b", null, "AMD"), " is mid-build on a ", h("b", null, "$400M"), " India expansion \u2014 ~", h("b", null, "3,000"), " new engineering roles by 2028.")),
+
+          /* LAB CAPEX LADDER */
+          h("div", { className: "dt-lab rv", ref: addRef },
+            h("div", { className: "dt-lab-head" },
+              h("h3", null, "The lab, ", h("em", null, "phased.")),
+              h("p", null, "Zero capital risk on day one. Build the hard infrastructure only once the work demands it.")),
+            h("div", { className: "dt-steps" },
+              DT_LAB.map((l, i) => h("button", {
+                key: i,
+                className: "dt-step" + (i === phase ? " on" : ""),
+                onClick: () => setPhase(i)
+              },
+                h("span", { className: "dt-step-y" }, l.y),
+                h("span", { className: "dt-step-k" }, l.k),
+                h("span", { className: "dt-step-c" }, l.capex)))),
+            h("div", { className: "dt-lab-body" },
+              h("div", { className: "dt-lab-meta" },
+                h("div", null, h("span", null, "CapEx"), h("b", null, lp.capex)),
+                h("div", null, h("span", null, "Lead time"), h("b", null, lp.lead)),
+                h("div", null, h("span", null, "Stage"), h("b", null, lp.head))),
+              h("p", { className: "dt-lab-txt" }, lp.body),
+              h("div", { className: "dt-lab-tags" },
+                lp.tags.map((tg, i) => h("span", { key: i }, tg))))),
+
+          /* AI PREMIUMS */
+          h("div", { className: "dt-prem rv", ref: addRef },
+            h("div", { className: "dt-prem-lbl" }, "What the scarce skills cost \u2014 and why open-book pricing matters here"),
+            h("div", { className: "dt-prem-row" },
+              DT_PREM.map((p, i) => h("div", { key: i, className: "dt-prem-cell" },
+                h("div", { className: "dt-prem-v" }, p.v),
+                h("div", { className: "dt-prem-l" }, p.l)))))
+        )
+      );
+    }
+
+    const DT_CSS = `
+.dt-sec{padding-top:60px;padding-bottom:60px;}
+
+.dt-anchor{margin-top:38px;display:grid;grid-template-columns:1.05fr .95fr;gap:0;border:1px solid var(--l1);border-radius:22px;overflow:hidden;box-shadow:var(--sh3);}
+.dt-anchor-l{background:var(--navy);color:#fff;padding:clamp(26px,3.5vw,44px);}
+.dt-flag{display:inline-block;font-family:var(--M);font-size:9.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue3);border:1px solid rgba(106,176,240,.4);border-radius:100px;padding:5px 12px;margin-bottom:18px;}
+.dt-anchor-l h3{font-family:var(--F);font-weight:330;font-size:clamp(24px,3.4vw,40px);letter-spacing:-.025em;line-height:1.04;}
+.dt-anchor-l h3 em{color:var(--blue3);font-style:italic;}
+.dt-anchor-l>p{margin-top:14px;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.72);max-width:46ch;}
+.dt-anchor-stats{margin-top:26px;display:flex;gap:30px;flex-wrap:wrap;}
+.dt-anchor-stats div{display:flex;flex-direction:column;gap:3px;}
+.dt-anchor-stats b{font-family:var(--F);font-size:24px;font-weight:360;color:#fff;letter-spacing:-.02em;}
+.dt-anchor-stats span{font-family:var(--M);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);}
+.dt-anchor-r{background:var(--bg2);padding:clamp(26px,3.5vw,44px);display:flex;flex-direction:column;justify-content:center;}
+.dt-bridge{display:flex;flex-direction:column;gap:10px;}
+.dt-node{border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:4px;border:1px solid var(--l2);background:var(--bg);}
+.dt-node b{font-family:var(--F);font-size:19px;font-weight:400;color:var(--navy);letter-spacing:-.01em;}
+.dt-node span{font-family:var(--M);font-size:10px;letter-spacing:.06em;color:var(--ink3);text-transform:uppercase;}
+.dt-node.blr{border-color:var(--bl);background:var(--bs);}
+.dt-node.blr b{color:var(--blue);}
+.dt-link{align-self:center;font-family:var(--M);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink4);position:relative;padding:2px 0;}
+.dt-bridge-note{margin-top:18px;font-size:13px;line-height:1.55;color:var(--ink3);}
+
+.dt-grid{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--l1);border:1px solid var(--l1);border-radius:18px;overflow:hidden;}
+.dt-cell{background:var(--bg);padding:26px 22px;transition:background 200ms;}
+.dt-cell:hover{background:var(--bg2);}
+.dt-cv{font-family:var(--F);font-weight:300;font-size:clamp(32px,4.4vw,52px);letter-spacing:-.035em;color:var(--navy);line-height:1;}
+.dt-cu{font-size:.42em;color:var(--ink3);margin-left:2px;}
+.dt-cl{margin-top:12px;font-family:var(--B);font-weight:600;font-size:13.5px;color:var(--ink);line-height:1.3;}
+.dt-cs{margin-top:6px;font-size:12.5px;color:var(--ink3);line-height:1.45;}
+
+.dt-roster{margin-top:28px;padding:26px clamp(20px,3vw,34px);border:1px dashed var(--l3);border-radius:18px;background:var(--bg);}
+.dt-roster-lbl{font-family:var(--M);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:16px;}
+.dt-chips-row{display:flex;flex-wrap:wrap;gap:9px;}
+.dt-anchor-chip{font-family:var(--B);font-size:13px;font-weight:600;color:var(--navy);background:var(--bg2);border:1px solid var(--l2);border-radius:100px;padding:7px 15px;transition:all 200ms var(--eout);cursor:default;}
+.dt-anchor-chip:hover{background:var(--bs);border-color:var(--bl);color:var(--blue);transform:translateY(-2px);}
+.dt-amd{margin-top:18px;font-size:13.5px;color:var(--ink2);line-height:1.5;}
+.dt-amd b{color:var(--blue);font-weight:700;}
+
+.dt-lab{margin-top:34px;}
+.dt-lab-head h3{font-family:var(--F);font-weight:340;font-size:clamp(22px,3vw,34px);letter-spacing:-.02em;color:var(--navy);line-height:1.05;}
+.dt-lab-head h3 em{color:var(--blue);font-style:italic;}
+.dt-lab-head p{margin-top:8px;font-size:14px;color:var(--ink3);max-width:54ch;}
+.dt-steps{margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.dt-step{text-align:left;padding:18px 20px;border-radius:16px;border:1px solid var(--l2);background:var(--bg);cursor:pointer;transition:all 240ms var(--eout);display:flex;flex-direction:column;gap:5px;position:relative;}
+.dt-step:hover{transform:translateY(-2px);box-shadow:var(--sh2);}
+.dt-step.on{border-color:var(--blue);background:var(--navy);box-shadow:0 12px 32px rgba(13,31,60,.25);}
+.dt-step-y{font-family:var(--M);font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);}
+.dt-step.on .dt-step-y{color:var(--blue3);}
+.dt-step-k{font-family:var(--F);font-size:20px;font-weight:360;color:var(--navy);letter-spacing:-.01em;}
+.dt-step.on .dt-step-k{color:#fff;}
+.dt-step-c{font-family:var(--M);font-size:12px;font-weight:600;color:var(--blue);}
+.dt-step.on .dt-step-c{color:var(--blue3);}
+.dt-lab-body{margin-top:14px;border:1px solid var(--l1);border-radius:18px;background:var(--bg2);padding:clamp(22px,3vw,32px);}
+.dt-lab-meta{display:flex;gap:36px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid var(--l1);margin-bottom:18px;}
+.dt-lab-meta div{display:flex;flex-direction:column;gap:4px;}
+.dt-lab-meta span{font-family:var(--M);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink4);}
+.dt-lab-meta b{font-family:var(--F);font-size:20px;font-weight:380;color:var(--navy);letter-spacing:-.01em;}
+.dt-lab-txt{font-size:14.5px;line-height:1.6;color:var(--ink2);max-width:72ch;}
+.dt-lab-tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.dt-lab-tags span{font-family:var(--M);font-size:10px;font-weight:500;letter-spacing:.06em;color:var(--blue);background:var(--bs);border:1px solid var(--bl);border-radius:8px;padding:6px 11px;}
+
+.dt-prem{margin-top:34px;}
+.dt-prem-lbl{font-family:var(--M);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:14px;}
+.dt-prem-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+.dt-prem-cell{padding:20px 18px;border-radius:16px;border:1px solid var(--l1);background:var(--bg);transition:all 220ms var(--eout);}
+.dt-prem-cell:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--bl);}
+.dt-prem-v{font-family:var(--F);font-weight:330;font-size:clamp(20px,2.4vw,28px);letter-spacing:-.02em;color:var(--blue);line-height:1;}
+.dt-prem-l{margin-top:10px;font-size:12px;color:var(--ink3);line-height:1.4;}
+
+@media(max-width:900px){
+  .dt-anchor{grid-template-columns:1fr;}
+  .dt-grid{grid-template-columns:1fr 1fr;}
+  .dt-steps{grid-template-columns:1fr;}
+  .dt-lab-meta{gap:24px;}
+  .dt-prem-row{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:540px){
+  .dt-grid{grid-template-columns:1fr;}
+  .dt-prem-row{grid-template-columns:1fr;}
+}
+`;
+
     function App() {
       const [sy, setSy] = useState(0);
       const [spct, setSpct] = useState(0);
@@ -7653,7 +8205,7 @@ html{}
       const city = CITIES[activeCity];
       const bd = BOT[botPhase];
       const rLabels = ["Leadership", "Process", "Infra", "People", "Govern", "Commerc"];
-      const navItems = [["mandate", "The Mandate"], ["numbers", "By the Numbers"], ["why", "Why India. Why Now."], ["blueprint", "Our Blueprint"], ["model", "Delivery Model"], ["moneymath", "Financial Model"], ["commercial", "Commercial & Tax"], ["commercialresp", "Commercial Detail"], ["panel", "Executive View"], ["deepdive", "Deep Dives"], ["aimult", "AI Architecture"], ["gcaas", "GCCaaS"], ["versus", "vs Alternatives"], ["cities", "City Selection"], ["citybalance", "City Mix"], ["talent", "Talent Strategy"], ["salarybands", "Salary Bands"], ["journey", "Execution Journey"], ["engine", "Talent Engine"], ["tower", "Control Tower"], ["transfer", "Transfer Readiness"], ["portugal", "Portugal GBS"], ["partnerdisclosure", "Partner Vetting"], ["vendorconsolidation", "Vendor Consolidation"], ["proof", "Proof Points"], ["trust", "Why Us"], ["legalcompliance", "Legal Framework"], ["tough", "Hard Questions"], ["gbsmarket", "GBS"], ["itmarket", "IT"], ["rnd", "R&D / GR&D"], ["statemap", "State Map & Stats"]];
+      const navItems = [["mandate", "The Mandate"], ["numbers", "By the Numbers"], ["indialedger", "India in Motion"], ["deeptech", "Deep Roots"], ["why", "Why India. Why Now."], ["blueprint", "Our Blueprint"], ["model", "Delivery Model"], ["moneymath", "Financial Model"], ["commercial", "Commercial & Tax"], ["commercialresp", "Commercial Detail"], ["panel", "Executive View"], ["deepdive", "Deep Dives"], ["aimult", "AI Architecture"], ["gcaas", "GCCaaS"], ["versus", "vs Alternatives"], ["cities", "City Selection"], ["citybalance", "City Mix"], ["talent", "Talent Strategy"], ["salarybands", "Salary Bands"], ["journey", "Execution Journey"], ["engine", "Talent Engine"], ["tower", "Control Tower"], ["transfer", "Transfer Readiness"], ["portugal", "Portugal GBS"], ["partnerdisclosure", "Partner Vetting"], ["vendorconsolidation", "Vendor Consolidation"], ["proof", "Proof Points"], ["trust", "Why Us"], ["legalcompliance", "Legal Framework"], ["tough", "Hard Questions"], ["gbsmarket", "GBS"], ["itmarket", "IT"], ["rnd", "R&D / GR&D"], ["statemap", "State Map & Stats"]];
       return /*#__PURE__*/React.createElement("div", {
         id: "app"
       }, /*#__PURE__*/React.createElement("div", {
@@ -7677,7 +8229,7 @@ html{}
         size: 16
       })), /*#__PURE__*/React.createElement("nav", {
         className: "mnav"
-      }, [["mandate", "Brief", ["mandate","blueprint"]], ["numbers", "Market", ["numbers","why","gbsmarket","itmarket","rnd"]], ["model", "Model", ["model","gcaas","aimult"]], ["moneymath", "Cost", ["moneymath","commercial","commercialresp","versus"]], ["cities", "Cities", ["cities","statemap","citybalance"]], ["talent", "Build", ["talent","salarybands","engine","journey","tower","transfer","portugal"]], ["vendorconsolidation", "Trust", ["vendorconsolidation","partnerdisclosure","deepdive","proof","trust","legalcompliance","panel","tough"]]].map(([id, l, ids]) => /*#__PURE__*/React.createElement("a", {
+      }, [["mandate", "Brief", ["mandate","blueprint"]], ["numbers", "Market", ["numbers","indialedger","deeptech","why","gbsmarket","itmarket","rnd"]], ["model", "Model", ["model","gcaas","aimult"]], ["moneymath", "Cost", ["moneymath","commercial","commercialresp","versus"]], ["cities", "Cities", ["cities","statemap","citybalance"]], ["talent", "Build", ["talent","salarybands","engine","journey","tower","transfer","portugal"]], ["vendorconsolidation", "Trust", ["vendorconsolidation","partnerdisclosure","deepdive","proof","trust","legalcompliance","panel","tough"]]].map(([id, l, ids]) => /*#__PURE__*/React.createElement("a", {
         key: id,
         className: ids.indexOf(sec) >= 0 ? "act" : "",
         onClick: () => scrollTo(id)
@@ -7868,6 +8420,8 @@ html{}
       }, n.s), /*#__PURE__*/React.createElement("div", {
         className: "numsrc"
       }, "\u21B3 ", n.src)))))),
+/*#__PURE__*/React.createElement(IndiaLedger, { key: "indialedger", addRef: addRef }),
+/*#__PURE__*/React.createElement(DeepTech, { key: "deeptech", addRef: addRef }),
 /*#__PURE__*/React.createElement("section", {
         className: "sec alt",
         id: "why",
@@ -8052,13 +8606,13 @@ html{}
         }
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cl"
-      }, "Traditional"), /*#__PURE__*/React.createElement("div", {
+      }, "Traditional SI (Opaque)"), /*#__PURE__*/React.createElement("div", {
         className: "cv"
-      }, Math.round(25 + 12 * (100 - cmpX) / 100), "\u2013", Math.round(30 + 10 * (100 - cmpX) / 100), "%"))), /*#__PURE__*/React.createElement("div", {
+      }, Math.round(25 + 10 * (cmpX / 100)), "\u2013", Math.round(30 + 10 * (cmpX / 100)), "%"))), /*#__PURE__*/React.createElement("div", {
         className: "cmpB"
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cl"
-      }, "Open Book"), /*#__PURE__*/React.createElement("div", {
+      }, "Partner Open-Book"), /*#__PURE__*/React.createElement("div", {
         className: "cv"
       }, "15% flat"))), /*#__PURE__*/React.createElement("div", {
         className: "cmph2",
@@ -8071,11 +8625,12 @@ html{}
         style: {
           color: "var(--red)"
         }
-      }, "\u2190 Drag: traditional cost"), /*#__PURE__*/React.createElement("span", {
+      }, "\u2190 Slide to view Traditional SI markup: 25%\u201340% opaque rates"), /*#__PURE__*/React.createElement("span", {
         style: {
-          color: "var(--blue)"
+          color: "var(--blue)",
+          fontWeight: "600"
         }
-      }, "open book \u2192"))))), /*#__PURE__*/React.createElement("div", {
+      }, "Open-Book Partner: 15% flat & audited markup \u2192"))))), /*#__PURE__*/React.createElement("div", {
         className: "mpanel rv",
         ref: addRef
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
@@ -9292,18 +9847,19 @@ html{}
         y: XMAP.hyd[1] + 4,
         textAnchor: "start"
       }, "Hyderabad")), /*#__PURE__*/React.createElement("g", {
-        className: "xs-citydot"
-      }, /*#__PURE__*/React.createElement("circle", {
+        className: "xs-citydot",
+        onClick: () => setActiveCity("chennai")
+      }, activeCity === "chennai" ? /*#__PURE__*/React.createElement("circle", {
         className: "xs-pulse",
         cx: XMAP.chn[0],
         cy: XMAP.chn[1],
         r: "6",
-        fill: "#111"
-      }), /*#__PURE__*/React.createElement("circle", {
+        fill: "#0f766e"
+      }) : null, /*#__PURE__*/React.createElement("circle", {
         cx: XMAP.chn[0],
         cy: XMAP.chn[1],
-        r: 5,
-        fill: "#111",
+        r: activeCity === "chennai" ? 7 : 5,
+        fill: activeCity === "chennai" ? "#0f766e" : "#555",
         stroke: "#fff",
         strokeWidth: "2"
       }), /*#__PURE__*/React.createElement("text", {
@@ -9312,18 +9868,19 @@ html{}
         y: XMAP.chn[1] + 4,
         textAnchor: "start"
       }, "Chennai")), /*#__PURE__*/React.createElement("g", {
-        className: "xs-citydot"
-      }, /*#__PURE__*/React.createElement("circle", {
+        className: "xs-citydot",
+        onClick: () => setActiveCity("pune")
+      }, activeCity === "pune" ? /*#__PURE__*/React.createElement("circle", {
         className: "xs-pulse",
         cx: XMAP.pun[0],
         cy: XMAP.pun[1],
         r: "6",
-        fill: "#111"
-      }), /*#__PURE__*/React.createElement("circle", {
+        fill: "#6d28d9"
+      }) : null, /*#__PURE__*/React.createElement("circle", {
         cx: XMAP.pun[0],
         cy: XMAP.pun[1],
-        r: 5,
-        fill: "#111",
+        r: activeCity === "pune" ? 7 : 5,
+        fill: activeCity === "pune" ? "#6d28d9" : "#555",
         stroke: "#fff",
         strokeWidth: "2"
       }), /*#__PURE__*/React.createElement("text", {
@@ -9337,7 +9894,7 @@ html{}
         className: "cpanel"
       }, /*#__PURE__*/React.createElement("div", {
         className: "ctabs"
-      }, ["hyderabad", "bengaluru"].map(c => /*#__PURE__*/React.createElement("div", {
+      }, ["hyderabad", "bengaluru", "chennai", "pune"].map(c => /*#__PURE__*/React.createElement("div", {
         key: c,
         className: `ctab${activeCity === c ? " act" : ""}`,
         onClick: () => setActiveCity(c)
