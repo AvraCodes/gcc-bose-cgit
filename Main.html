@@ -8416,20 +8416,52 @@ html{}
       const cbBlrFte = blrIT + blrGBS + blrGRD;
       
       const CB_HOURS_FACTOR = 2000;
-      const cbHydCost = (hydIT * 16 + hydGBS * 10.5 + hydGRD * 24) * CB_HOURS_FACTOR;
-      const cbBlrCost = (blrIT * 23 + blrGBS * 14.5 + blrGRD * 31.5) * CB_HOURS_FACTOR;
-      const cbTotalCost = cbHydCost + cbBlrCost;
+      const cbHydCostMin = (hydIT * 12 + hydGBS * 8 + hydGRD * 18) * CB_HOURS_FACTOR;
+      const cbHydCostMax = (hydIT * 16 + hydGBS * 10.5 + hydGRD * 24) * CB_HOURS_FACTOR;
+      const cbBlrCostMin = (blrIT * 17.5 + blrGBS * 11 + blrGRD * 23.5) * CB_HOURS_FACTOR;
+      const cbBlrCostMax = (blrIT * 23 + blrGBS * 14.5 + blrGRD * 31.5) * CB_HOURS_FACTOR;
       
-      const CB_HYD_COST = cbHydFte > 0 ? cbHydCost / cbHydFte : 32000;
-      const CB_BLR_COST = cbBlrFte > 0 ? cbBlrCost / cbBlrFte : 46000;
+      // Total cost range
+      const cbTotalCostMin = cbHydCostMin + cbBlrCostMin;
+      const cbTotalCostMax = cbHydCostMax + cbBlrCostMax;
       
-      const cbRecCost = 33760000; // recommended cost at 60/40 mix
-      const cbDelta = cbTotalCost - cbRecCost;
+      // Cost per FTE ranges
+      const CB_HYD_COST_MIN = cbHydFte > 0 ? cbHydCostMin / cbHydFte : 28000;
+      const CB_HYD_COST_MAX = cbHydFte > 0 ? cbHydCostMax / cbHydFte : 40000;
+      const CB_BLR_COST_MIN = cbBlrFte > 0 ? cbBlrCostMin / cbBlrFte : 48000;
+      const CB_BLR_COST_MAX = cbBlrFte > 0 ? cbBlrCostMax / cbBlrFte : 63000;
+      
+      // Recommended model cost range (at 60/40 mix)
+      const cbRecCostMin = 28960000;
+      const cbRecCostMax = 39520000;
+      
+      // Delta ranges
+      const cbDeltaMin = cbTotalCostMin - cbRecCostMin;
+      const cbDeltaMax = cbTotalCostMax - cbRecCostMax;
+      
       const cbBlrPctTotal = 100 - cityAlloc;
       const cbBlendedAttr = ((cbHydFte * CB_HYD_ATTR + cbBlrFte * CB_BLR_ATTR) / CB_TOTAL).toFixed(1);
       const cbNicheFit = Math.min(100, Math.round(cbBlrPctTotal * 2.5)); // niche talent score, max at ~40% Bengaluru
-      const cbFmt = v => v >= 1e6 ? "$" + (v / 1e6).toFixed(1) + "M" : "$" + Math.round(v / 1000) + "k";
-      const cbBlrPremium = cbHydFte > 0 && cbBlrFte > 0 ? Math.round(((cbBlrCost / cbBlrFte) / (cbHydCost / cbHydFte) - 1) * 100) : 50;
+      
+      // Formatting helper for single value
+      const cbFmtVal = v => v >= 1e6 ? "$" + (v / 1e6).toFixed(1) + "M" : "$" + Math.round(v / 1000) + "k";
+      
+      // Formatting helper for range
+      const cbFmtRange = (min, max) => {
+        return `${cbFmtVal(min)}–${cbFmtVal(max)}`;
+      };
+      
+      // Formatting helper for delta range
+      const cbFmtDelta = (min, max) => {
+        if (min === 0 && max === 0) return "$0k";
+        const fmtSingle = v => {
+          const sign = v > 0 ? "+" : v < 0 ? "-" : "";
+          const abs = Math.abs(v);
+          const str = abs >= 1e6 ? "$" + (abs / 1e6).toFixed(1) + "M" : "$" + Math.round(abs / 1000) + "k";
+          return sign + str;
+        };
+        return `${fmtSingle(min)}–${fmtSingle(max)}`;
+      };
 
       // Synchronizer handlers
       const handleMainSliderChange = (newAlloc) => {
@@ -10613,11 +10645,11 @@ html{}
         className: "cbct"
       }, "Annual cost"), /*#__PURE__*/React.createElement("div", {
         className: "cbcv"
-      }, cbFmt(cbHydCost), /*#__PURE__*/React.createElement("em", null, "/yr"))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      }, cbFmtRange(cbHydCostMin, cbHydCostMax), /*#__PURE__*/React.createElement("em", null, "/yr"))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cbct"
       }, "Cost per FTE"), /*#__PURE__*/React.createElement("div", {
         className: "cbcv"
-      }, "$", (CB_HYD_COST / 1000).toFixed(0), "k", /*#__PURE__*/React.createElement("em", null, "/yr")))), /*#__PURE__*/React.createElement("div", {
+      }, cbFmtRange(CB_HYD_COST_MIN, CB_HYD_COST_MAX), /*#__PURE__*/React.createElement("em", null, "/yr")))), /*#__PURE__*/React.createElement("div", {
         className: "cbtags"
       }, ["HITEC City", "Low attrition", "TSIC ecosystem", "Cost-optimal"].map(t => /*#__PURE__*/React.createElement("span", {
         key: t,
