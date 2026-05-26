@@ -5441,12 +5441,12 @@ html{}
           }],
           body: "Karnataka GCC Policy 2024-29 \u2014 India's first dedicated GCC policy (19 Nov 2024). Targets +500 GCCs \u2192 1,000 by 2029, 350k jobs, $50B output. R&D grants up to \u20B9500M, rental reimbursement up to 50%, EPF support, 5-yr electricity-duty exemption, 45-day approvals, three innovation districts (Bengaluru, Mysuru, Belagavi)."
         },
-        score: 71.6
+        score: 85
       },
       chennai: {
         name: "Chennai",
         role: "The Transaction Anchor (Not Selected)",
-        desc: "Scored 48/60 (80%), which actually outperforms Bengaluru's score. However, it was not selected. Chennai is a transactional powerhouse—ideal for stable, process-heavy back-office and service operations, but narrower in talent depth and weaker for the deep-tech R&D innovation/audio capabilities Bose requires.",
+        desc: "Scored 48/60 (80%). However, it was not selected. Chennai is a transactional powerhouse—ideal for stable, process-heavy back-office and service operations, but narrower in talent depth and weaker for the deep-tech R&D innovation/audio capabilities Bose requires.",
         alloc: [{
           l: "Suitability Score",
           v: "48 / 60",
@@ -5478,7 +5478,7 @@ html{}
             v: "48/60 score",
             s: "80% total rating"
           }],
-          body: "Chennai scored 48/60 (80%), which is higher than Bengaluru's 43/60 (71.6%). But Chennai was not selected because it is stronger for stable, process-heavy transactional operations, not for the full Bose GCC ambition. Its talent depth is narrower for this mandate, and it is weaker as an innovation / R&D / deep-tech location where Bose needs wearable R&D engineering and AI/ML capability (where Bengaluru clearly outperforms). The proposal recommends a dual-city model: Hyderabad (operational sweet spot for IT + GBS) and Bengaluru (R&D / BCP anchor)."
+          body: "Chennai scored 48/60 (80%), while Bengaluru scored 51/60 (85%). But Chennai was not selected because it is stronger for stable, process-heavy transactional operations, not for the full Bose GCC ambition. Its talent depth is narrower for this mandate, and it is weaker as an innovation / R&D / deep-tech location where Bose needs wearable R&D engineering and AI/ML capability (where Bengaluru clearly outperforms). The proposal recommends a dual-city model: Hyderabad (operational sweet spot for IT + GBS) and Bengaluru (R&D / BCP anchor)."
         },
         score: 80
       },
@@ -5911,6 +5911,29 @@ html{}
       l: "Hyderabad suitability score",
       s: "40-factor algorithmic city scoring. Highest in our model.",
       src: "Internal location scoring"
+    }, {
+      v: "85",
+      c: "/100",
+      l: "Bengaluru suitability score",
+      s: "Innovation & R&D anchor. Structurally unmatched engineering depth.",
+      src: "Internal location scoring"
+    }, {
+      v: "80",
+      c: "%",
+      l: "Chennai suitability score",
+      s: "Stable transactional powerhouse. Highly optimized for transactional scale but not selected.",
+      src: "Internal location scoring"
+    }, {
+      v: "75",
+      c: "%",
+      l: "Pune suitability score",
+      s: "Product engineering focus. Strong niche embedded talent hub.",
+      src: "Internal location scoring"
+    }, {
+      v: "40",
+      l: "Scoring factors evaluated",
+      s: "Rigorous quantitative model tracking cost, talent, and ecosystem maturity.",
+      src: "Location selection methodology"
     }, {
       v: "100",
       c: "%",
@@ -7961,6 +7984,122 @@ html{}
   .dt-grid{grid-template-columns:1fr;}
   .dt-prem-row{grid-template-columns:1fr;}
 }
+
+/* Mini Dynamic Sliders */
+.cb-mini-sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 18px 0;
+  padding: 16px 0;
+  border-top: 1px dashed var(--l2);
+  border-bottom: 1px dashed var(--l2);
+}
+.cb-mini-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cb-mini-slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--M);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.cb-mini-slider-role {
+  font-weight: 600;
+  color: var(--navy);
+}
+.cb-mini-slider-val {
+  color: var(--ink2);
+}
+.cb-mini-slider-wage {
+  font-size: 8.5px;
+  color: var(--ink3);
+}
+.cb-mini-slider-input-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  outline: none;
+  margin: 4px 0;
+  border: 1px solid var(--l1);
+  transition: background 150ms var(--ease);
+}
+.cb-mini-slider-input-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+}
+.cb-mini-slider-input-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: var(--sh1);
+  margin-top: -5px;
+  transition: border-color 300ms, transform 150ms;
+}
+.cb-mini-slider-input-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: var(--sh1);
+  transition: border-color 300ms, transform 150ms;
+}
+.cb-mini-slider.opt .cb-mini-slider-input-range::-webkit-slider-thumb {
+  border: 2px solid var(--blue);
+}
+.cb-mini-slider.cau .cb-mini-slider-input-range::-webkit-slider-thumb {
+  border: 2px solid var(--gold);
+}
+.cb-mini-slider.warn .cb-mini-slider-input-range::-webkit-slider-thumb {
+  border: 2px solid var(--red);
+}
+.cb-mini-slider.opt .cb-mini-slider-input-range::-moz-range-thumb {
+  border: 2px solid var(--blue);
+}
+.cb-mini-slider.cau .cb-mini-slider-input-range::-moz-range-thumb {
+  border: 2px solid var(--gold);
+}
+.cb-mini-slider.warn .cb-mini-slider-input-range::-moz-range-thumb {
+  border: 2px solid var(--red);
+}
+.cb-mini-slider.opt .cb-mini-slider-input-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px var(--bs);
+}
+.cb-mini-slider.cau .cb-mini-slider-input-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px var(--gs);
+}
+.cb-mini-slider.warn .cb-mini-slider-input-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px var(--rs);
+}
+.cb-mini-slider.opt .cb-mini-slider-input-range::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px var(--bs);
+}
+.cb-mini-slider.cau .cb-mini-slider-input-range::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px var(--gs);
+}
+.cb-mini-slider.warn .cb-mini-slider-input-range::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px var(--rs);
+}
 `;
 
     function App() {
@@ -7997,6 +8136,9 @@ html{}
       const [aiHc, setAiHc] = useState(200);
       const [aiPct, setAiPct] = useState(75);
       const [cityAlloc, setCityAlloc] = useState(60);
+      const [hydIT, setHydIT] = useState(320);
+      const [hydGBS, setHydGBS] = useState(160);
+      const [hydGRD, setHydGRD] = useState(0);
       const [panelView, setPanelView] = useState("ceo");
       const [openCap, setOpenCap] = useState(null);
       const [botModel, setBotModel] = useState("seq");
@@ -8177,7 +8319,7 @@ html{}
       const mmY3 = Math.round(mmHc * mmSavePerFte * 1.0); // full steady
       const mmCum = mmY1 + mmY2 + mmY3;
       const mmMonthDelay = Math.round(mmHc * mmSavePerFte / 12);
-      const mmFmt = v => v >= 1e6 ? "$" + (v / 1e6).toFixed(1) + "M" : "$" + Math.round(v / 1000) + "k";
+      const mmFmt = v => v >= 1e6 ? "$" + (v / 1e6).toFixed(1) + "M" : v >= 1000 ? "$" + (v / 1000).toFixed(v < 10000 ? 1 : 0) + "k" : "$" + Math.round(v);
 
       /* AI multiplier */
       const aiMult = +(1 + aiPct / 100 * 4).toFixed(2); // up to 5x at 100% adoption
@@ -8187,22 +8329,66 @@ html{}
 
       /* city balancer — 800 FTE between Hyderabad and Bengaluru */
       const CB_TOTAL = 800;
-      const CB_HYD_COST = 42000; // annual fully loaded per FTE (blended IT/GBS/R&D)
-      const CB_BLR_COST = 52000; // ~24% premium vs Hyderabad
       const CB_HYD_ATTR = 12; // % attrition
       const CB_BLR_ATTR = 18;
       const CB_REC_PCT = 60; // recommended allocation to Hyderabad
-      const cbHydFte = Math.round(CB_TOTAL * cityAlloc / 100);
-      const cbBlrFte = CB_TOTAL - cbHydFte;
-      const cbHydCost = cbHydFte * CB_HYD_COST;
-      const cbBlrCost = cbBlrFte * CB_BLR_COST;
+      
+      // Derived role allocations for Bengaluru
+      const blrIT = 320 - hydIT;
+      const blrGBS = 160 - hydGBS;
+      const blrGRD = 320 - hydGRD;
+      
+      const cbHydFte = hydIT + hydGBS + hydGRD;
+      const cbBlrFte = blrIT + blrGBS + blrGRD;
+      
+      const CB_HOURS_FACTOR = 1500;
+      const cbHydCost = (hydIT * 30 + hydGBS * 20 + hydGRD * 34) * CB_HOURS_FACTOR;
+      const cbBlrCost = (blrIT * 34.5 + blrGBS * 23 + blrGRD * 40) * CB_HOURS_FACTOR;
       const cbTotalCost = cbHydCost + cbBlrCost;
-      const cbRecCost = Math.round(CB_TOTAL * CB_REC_PCT / 100) * CB_HYD_COST + (CB_TOTAL - Math.round(CB_TOTAL * CB_REC_PCT / 100)) * CB_BLR_COST;
+      
+      const CB_HYD_COST = cbHydFte > 0 ? cbHydCost / cbHydFte : 42000;
+      const CB_BLR_COST = cbBlrFte > 0 ? cbBlrCost / cbBlrFte : 52000;
+      
+      const cbRecCost = 38400000; // recommended cost at 60/40 mix
       const cbDelta = cbTotalCost - cbRecCost;
       const cbBlrPctTotal = 100 - cityAlloc;
       const cbBlendedAttr = ((cbHydFte * CB_HYD_ATTR + cbBlrFte * CB_BLR_ATTR) / CB_TOTAL).toFixed(1);
       const cbNicheFit = Math.min(100, Math.round(cbBlrPctTotal * 2.5)); // niche talent score, max at ~40% Bengaluru
       const cbFmt = v => v >= 1e6 ? "$" + (v / 1e6).toFixed(1) + "M" : "$" + Math.round(v / 1000) + "k";
+      const cbBlrPremium = cbHydFte > 0 && cbBlrFte > 0 ? Math.round(((cbBlrCost / cbBlrFte) / (cbHydCost / cbHydFte) - 1) * 100) : 50;
+
+      // Synchronizer handlers
+      const handleMainSliderChange = (newAlloc) => {
+        setCityAlloc(newAlloc);
+        const newHydFte = Math.round(CB_TOTAL * newAlloc / 100);
+        const gbs = Math.min(newHydFte, 160);
+        const it = Math.min(Math.max(0, newHydFte - 160), 320);
+        const grd = Math.min(Math.max(0, newHydFte - 480), 320);
+        setHydGBS(gbs);
+        setHydIT(it);
+        setHydGRD(grd);
+      };
+
+      const updateIT = (val, isHyd) => {
+        const targetHyd = isHyd ? val : 320 - val;
+        setHydIT(targetHyd);
+        const totalHyd = targetHyd + hydGBS + hydGRD;
+        setCityAlloc(Math.round((totalHyd / CB_TOTAL) * 100));
+      };
+
+      const updateGBS = (val, isHyd) => {
+        const targetHyd = isHyd ? val : 160 - val;
+        setHydGBS(targetHyd);
+        const totalHyd = hydIT + targetHyd + hydGRD;
+        setCityAlloc(Math.round((totalHyd / CB_TOTAL) * 100));
+      };
+
+      const updateGRD = (val, isHyd) => {
+        const targetHyd = isHyd ? val : 320 - val;
+        setHydGRD(targetHyd);
+        const totalHyd = hydIT + hydGBS + targetHyd;
+        setCityAlloc(Math.round((totalHyd / CB_TOTAL) * 100));
+      };
 
       // Insight mode based on cityAlloc position
       let cbMode, cbInsightTitle, cbInsightBody;
@@ -8439,7 +8625,7 @@ html{}
         className: "skick"
       }, "The math behind the mandate")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", {
         className: "sh2"
-      }, "Eight numbers ", /*#__PURE__*/React.createElement("em", null, "that decide this.")), /*#__PURE__*/React.createElement("p", {
+      }, "Twelve numbers ", /*#__PURE__*/React.createElement("em", null, "that decide this.")), /*#__PURE__*/React.createElement("p", {
         className: "slede"
       }, "Every claim in this document compounds to these. Hover any tile for the source."))), /*#__PURE__*/React.createElement("div", {
         className: "numwall rv",
@@ -8813,64 +8999,7 @@ html{}
           color: "var(--blue)",
           fontWeight: "600"
         }
-      }, "Partner Open-Book model: contractually flat 15.0% \u2192"))))), /*#__PURE__*/React.createElement("div", {
-        className: "mpanel rv",
-        ref: addRef
-      }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-        className: "mlbl"
-      }, "Architecture \xB7 III"), /*#__PURE__*/React.createElement("h3", null, "Two cities. ", /*#__PURE__*/React.createElement("em", null, "One engine.")), /*#__PURE__*/React.createElement("p", {
-        className: "msum"
-      }, "Hyderabad anchors operations and scale. Bengaluru anchors innovation. 800 FTE across the most defensible footprint in India.")), /*#__PURE__*/React.createElement("div", {
-        className: "cmini"
-      }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-        className: "cmr"
-      }, "Operational anchor"), /*#__PURE__*/React.createElement("div", {
-        className: "cmt"
-      }, "Hyderabad"), /*#__PURE__*/React.createElement("div", {
-        className: "cmss"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "cms"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "l"
-      }, "Headcount"), /*#__PURE__*/React.createElement("div", {
-        className: "v"
-      }, "480")), /*#__PURE__*/React.createElement("div", {
-        className: "cms"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "l"
-      }, "Suitability"), /*#__PURE__*/React.createElement("div", {
-        className: "v"
-      }, "90/100"))), /*#__PURE__*/React.createElement("div", {
-        className: "cmts"
-      }, ["IT · 320", "GBS · 160", "HITEC City", "Low attrition", "TSIC ecosystem"].map(t => /*#__PURE__*/React.createElement("span", {
-        key: t,
-        className: "pill"
-      }, t)))), /*#__PURE__*/React.createElement("div", {
-        className: "cmdiv"
-      }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-        className: "cmr"
-      }, "Innovation anchor"), /*#__PURE__*/React.createElement("div", {
-        className: "cmt"
-      }, "Bengaluru"), /*#__PURE__*/React.createElement("div", {
-        className: "cmss"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "cms"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "l"
-      }, "Headcount"), /*#__PURE__*/React.createElement("div", {
-        className: "v"
-      }, "320")), /*#__PURE__*/React.createElement("div", {
-        className: "cms"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "l"
-      }, "Suitability"), /*#__PURE__*/React.createElement("div", {
-        className: "v"
-      }, "71/100"))), /*#__PURE__*/React.createElement("div", {
-        className: "cmts"
-      }, ["R&D · 320", "Audio DSP", "IISc · Harman", "DR / BCP", "39% of India GCCs"].map(t => /*#__PURE__*/React.createElement("span", {
-        key: t,
-        className: "pill"
-      }, t))))))))),
+      }, "Partner Open-Book model: contractually flat 15.0% \u2192")))))))),
 /*#__PURE__*/React.createElement("section", {
         className: "sec",
         id: "gcaas",
@@ -9136,7 +9265,7 @@ html{}
         className: "mmtitle"
       }, "What India saves Bose, ", /*#__PURE__*/React.createElement("em", null, "year on year.")), /*#__PURE__*/React.createElement("p", {
         className: "mmsub"
-      }, "Blended saving across GR&D (~$110K/FTE/yr), IT (~$95K/FTE/yr), and GBS (~$60K/FTE/yr) vs US fully loaded baseline. Includes our 15% margin. Ramp curve assumed: 55% Y1, 92% Y2, 100% Y3. Headcount 800"), /*#__PURE__*/React.createElement("div", {
+      }, `Blended saving across GR&D (~$110K/FTE/yr), IT (~$95K/FTE/yr), and GBS (~$60K/FTE/yr) vs US fully loaded baseline. Includes our 15% margin. Ramp curve assumed: 55% Y1, 92% Y2, 100% Y3. Model scale: ${mmHc} FTEs`), /*#__PURE__*/React.createElement("div", {
         className: "mmctrl"
       }, /*#__PURE__*/React.createElement("span", {
         className: "mmcl"
@@ -10216,7 +10345,103 @@ html{}
         className: "cbfte"
       }, cbHydFte), /*#__PURE__*/React.createElement("div", {
         className: "cbfl"
-      }, "FTE \xB7 IT operations & GBS"), /*#__PURE__*/React.createElement("div", {
+      }, "FTE \xB7 IT operations & GBS"),
+      
+      /* Dynamic Mini Sliders Hyderabad */
+      /*#__PURE__*/React.createElement("div", {
+        className: "cb-mini-sliders"
+      },
+        /* Mini Slider IT */
+        /*#__PURE__*/React.createElement("div", {
+          className: `cb-mini-slider ${cbMode}`
+        },
+          /*#__PURE__*/React.createElement("div", {
+            className: "cb-mini-slider-header"
+          },
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-role"
+            }, "IT"),
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-val"
+            }, hydIT, " / 320 FTE"),
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-wage"
+            }, "$30/hr")
+          ),
+          /*#__PURE__*/React.createElement("input", {
+            type: "range",
+            min: 0,
+            max: 320,
+            step: 10,
+            value: hydIT,
+            onChange: e => updateIT(+e.target.value, true),
+            className: "cb-mini-slider-input-range",
+            style: {
+              background: `linear-gradient(to right, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} 0%, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} ${(hydIT / 320) * 100}%, var(--bg3) ${(hydIT / 320) * 100}%, var(--bg3) 100%)`
+            }
+          })
+        ),
+        /* Mini Slider GBS */
+        /*#__PURE__*/React.createElement("div", {
+          className: `cb-mini-slider ${cbMode}`
+        },
+          /*#__PURE__*/React.createElement("div", {
+            className: "cb-mini-slider-header"
+          },
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-role"
+            }, "GBS"),
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-val"
+            }, hydGBS, " / 160 FTE"),
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-wage"
+            }, "$20/hr")
+          ),
+          /*#__PURE__*/React.createElement("input", {
+            type: "range",
+            min: 0,
+            max: 160,
+            step: 5,
+            value: hydGBS,
+            onChange: e => updateGBS(+e.target.value, true),
+            className: "cb-mini-slider-input-range",
+            style: {
+              background: `linear-gradient(to right, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} 0%, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} ${(hydGBS / 160) * 100}%, var(--bg3) ${(hydGBS / 160) * 100}%, var(--bg3) 100%)`
+            }
+          })
+        ),
+        /* Mini Slider GR&D */
+        /*#__PURE__*/React.createElement("div", {
+          className: `cb-mini-slider ${cbMode}`
+        },
+          /*#__PURE__*/React.createElement("div", {
+            className: "cb-mini-slider-header"
+          },
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-role"
+            }, "GR&D"),
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-val"
+            }, hydGRD, " / 320 FTE"),
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-wage"
+            }, "$34/hr")
+          ),
+          /*#__PURE__*/React.createElement("input", {
+            type: "range",
+            min: 0,
+            max: 320,
+            step: 10,
+            value: hydGRD,
+            onChange: e => updateGRD(+e.target.value, true),
+            className: "cb-mini-slider-input-range",
+            style: {
+              background: `linear-gradient(to right, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} 0%, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} ${(hydGRD / 320) * 100}%, var(--bg3) ${(hydGRD / 320) * 100}%, var(--bg3) 100%)`
+            }
+          })
+        )
+      ), /*#__PURE__*/React.createElement("div", {
         className: "cbcost"
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cbct"
@@ -10228,7 +10453,7 @@ html{}
         className: "cbcv"
       }, "$", (CB_HYD_COST / 1000).toFixed(0), "k", /*#__PURE__*/React.createElement("em", null, "/yr")))), /*#__PURE__*/React.createElement("div", {
         className: "cbtags"
-      }, ["HITEC City", "Low attrition", "TSIC ecosystem", "Cost-optimal", "BFSI depth"].map(t => /*#__PURE__*/React.createElement("span", {
+      }, ["HITEC City", "Low attrition", "TSIC ecosystem", "Cost-optimal"].map(t => /*#__PURE__*/React.createElement("span", {
         key: t,
         className: "cbtagp"
       }, t)))), /*#__PURE__*/React.createElement("div", {
@@ -10241,11 +10466,117 @@ html{}
         className: "cbcity"
       }, "Bengaluru")), /*#__PURE__*/React.createElement("div", {
         className: "cbsuit"
-      }, "Suitability ", /*#__PURE__*/React.createElement("em", null, "71/100"))), /*#__PURE__*/React.createElement("div", {
+      }, "Suitability ", /*#__PURE__*/React.createElement("em", null, "85/100"))), /*#__PURE__*/React.createElement("div", {
         className: "cbfte"
       }, cbBlrFte), /*#__PURE__*/React.createElement("div", {
         className: "cbfl"
-      }, "FTE \xB7 R&D engineering"), /*#__PURE__*/React.createElement("div", {
+      }, "FTE \xB7 R&D engineering"),
+      
+      /* Dynamic Mini Sliders Bengaluru */
+      /*#__PURE__*/React.createElement("div", {
+        className: "cb-mini-sliders"
+      },
+        /* Mini Slider IT */
+        /*#__PURE__*/React.createElement("div", {
+          className: `cb-mini-slider ${cbMode}`
+        },
+          /*#__PURE__*/React.createElement("div", {
+            className: "cb-mini-slider-header"
+          },
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-role"
+            }, "IT"),
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-val"
+            }, blrIT, " / 320 FTE"),
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-wage"
+            }, "$34.5/hr")
+          ),
+          /*#__PURE__*/React.createElement("input", {
+            type: "range",
+            min: 0,
+            max: 320,
+            step: 10,
+            value: blrIT,
+            onChange: e => updateIT(+e.target.value, false),
+            className: "cb-mini-slider-input-range",
+            style: {
+              background: `linear-gradient(to right, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} 0%, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} ${(blrIT / 320) * 100}%, var(--bg3) ${(blrIT / 320) * 100}%, var(--bg3) 100%)`
+            }
+          })
+        ),
+        /* Mini Slider GBS */
+        /*#__PURE__*/React.createElement("div", {
+          className: `cb-mini-slider ${cbMode}`
+        },
+          /*#__PURE__*/React.createElement("div", {
+            className: "cb-mini-slider-header"
+          },
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-role"
+            }, "GBS"),
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-val"
+            }, blrGBS, " / 160 FTE"),
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-wage"
+            }, "$23/hr")
+          ),
+          /*#__PURE__*/React.createElement("input", {
+            type: "range",
+            min: 0,
+            max: 160,
+            step: 5,
+            value: blrGBS,
+            onChange: e => updateGBS(+e.target.value, false),
+            className: "cb-mini-slider-input-range",
+            style: {
+              background: `linear-gradient(to right, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} 0%, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} ${(blrGBS / 160) * 100}%, var(--bg3) ${(blrGBS / 160) * 100}%, var(--bg3) 100%)`
+            }
+          })
+        ),
+        /* Mini Slider GR&D */
+        /*#__PURE__*/React.createElement("div", {
+          className: `cb-mini-slider ${cbMode}`
+        },
+          /*#__PURE__*/React.createElement("div", {
+            className: "cb-mini-slider-header"
+          },
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-role"
+            }, "GR&D"),
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-val"
+            }, blrGRD, " / 320 FTE"),
+            /*#__PURE__*/React.createElement("span", {
+              className: "cb-mini-slider-wage"
+            }, "$40/hr")
+          ),
+          /*#__PURE__*/React.createElement("input", {
+            type: "range",
+            min: 0,
+            max: 320,
+            step: 10,
+            value: blrGRD,
+            onChange: e => updateGRD(+e.target.value, false),
+            className: "cb-mini-slider-input-range",
+            style: {
+              background: `linear-gradient(to right, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} 0%, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} ${(blrGRD / 320) * 100}%, var(--bg3) ${(blrGRD / 320) * 100}%, var(--bg3) 100%)`
+            }
+          })
+        ),
+        /*#__PURE__*/React.createElement("div", {
+          style: {
+            fontSize: "10px",
+            color: "var(--red)",
+            marginTop: "6px",
+            fontWeight: "500",
+            fontFamily: "var(--M)",
+            textAlign: "right"
+          }
+        }, "* Bengaluru roles carry a 15% wage premium vs. Hyderabad")
+      ), /*#__PURE__*/React.createElement("div", {
         className: "cbcost"
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cbct"
@@ -10257,7 +10588,7 @@ html{}
         className: "cbcv"
       }, "$", (CB_BLR_COST / 1000).toFixed(0), "k", /*#__PURE__*/React.createElement("em", null, "/yr")))), /*#__PURE__*/React.createElement("div", {
         className: "cbtags"
-      }, ["Audio DSP", "Harman · Dolby", "IISc alumni", "39% of India GCCs", "Premium pool"].map(t => /*#__PURE__*/React.createElement("span", {
+      }, ["Audio DSP", "Dolby", "IISc alumni", "39% of India GCCs", "Premium pool"].map(t => /*#__PURE__*/React.createElement("span", {
         key: t,
         className: "cbtagp"
       }, t))))), /*#__PURE__*/React.createElement("div", {
@@ -10268,7 +10599,7 @@ html{}
         className: "cbsltl"
       }, "Shift the mix \xB7 800 FTE total"), /*#__PURE__*/React.createElement("div", {
         className: "cbslreset",
-        onClick: () => setCityAlloc(60)
+        onClick: () => handleMainSliderChange(60)
       }, "\u21BA Reset to recommended (60/40)")), /*#__PURE__*/React.createElement("div", {
         className: "cbsltrack"
       }, /*#__PURE__*/React.createElement("div", {
@@ -10295,7 +10626,7 @@ html{}
         max: 100,
         step: 5,
         value: cityAlloc,
-        onChange: e => setCityAlloc(+e.target.value)
+        onChange: e => handleMainSliderChange(+e.target.value)
       }))), /*#__PURE__*/React.createElement("div", {
         className: "cbslends"
       }, /*#__PURE__*/React.createElement("span", {
@@ -10379,7 +10710,7 @@ html{}
         className: "l"
       }, "vs 100% Bengaluru"), /*#__PURE__*/React.createElement("div", {
         className: "v good"
-      }, "save", " ", cbFmt((CB_BLR_COST - (cbHydCost + cbBlrCost) / CB_TOTAL) * CB_TOTAL), "/yr"))))), /*#__PURE__*/React.createElement("div", {
+      }, "save", " ", cbFmt(((320 * 34.5 + 160 * 23 + 320 * 40) * CB_HOURS_FACTOR) - cbTotalCost), "/yr"))))), /*#__PURE__*/React.createElement("div", {
         style: {
           marginTop: 22,
           padding: "16px 22px",
@@ -10417,11 +10748,7 @@ html{}
         style: {
           color: "var(--navy)"
         }
-      }, "$", (CB_HYD_COST / 1000).toFixed(0), "k/FTE/yr"), " ", "fully loaded. Bengaluru runs", " ", /*#__PURE__*/React.createElement("strong", {
-        style: {
-          color: "var(--red)"
-        }
-      }, "~24% higher"), " ", "at ~$", (CB_BLR_COST / 1000).toFixed(0), "k. Numbers blended across IT, GBS, and R&D from our live Q1 2026 placement data. Niche premiums (Audio DSP, TinyML) sit on top of Bengaluru rates \u2014 that is why R&D", " ", /*#__PURE__*/React.createElement("em", {
+      }, "$", (CB_HYD_COST / 1000).toFixed(0), "k/FTE/yr"), " ", "fully loaded. Bengaluru runs", " ", /*#__PURE__*/React.createElement("strong", { style: { color: "var(--red)" } }, "~", cbBlrPremium, "% higher"), " ", "at ~$", (CB_BLR_COST / 1000).toFixed(0), "k. Numbers blended across IT, GBS, and R&D from our live Q1 2026 placement data. Niche premiums (Audio DSP, TinyML) sit on top of Bengaluru rates \u2014 that is why R&D", " ", /*#__PURE__*/React.createElement("em", {
         style: {
           fontStyle: "italic"
         }
