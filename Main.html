@@ -7391,11 +7391,7 @@ html{}
       k: "BOT transition framework maturity",
       v: "Require exact contract terms, talent-transfer premiums, and asset-depreciation timelines governing the eventual transfer option."
     }];
-    const PORTUGAL_GBS = {
-      stance: "Portugal GBS is treated as a co-designer of the transition — not a recipient of a decision made elsewhere.",
-      cadence: ["Min. four 2-hr process-ownership workshops · Weeks 3–6", "Division of labour agreed by Week 8", "Joint GBS Leadership Council established · Month 4 onward", "Co-chaired by India Head of GBS + Portugal GBS lead"],
-      risk: "Portugal non-participation in ownership workshops delays Wave 1 by 6–8 weeks. Mitigated by gating each transition wave on Portugal GBS sign-off."
-    };
+
     const MA_DISCLOSURE = {
       events: "None — no mergers, acquisitions, or restructuring.",
       ownership: "Founder-led private firm. No external investors. No competing client obligations.",
@@ -7500,12 +7496,7 @@ html{}
       { k: "Price validity", v: "90 days from submission date (May 2026)." }
     ];
 
-    const PG_MILESTONES = [
-      { n: "Process Workshops", mo: "Weeks 3\u20136", d: "Minimum four 2-hour process-ownership workshops with Portugal GBS leadership. Map every in-scope process, agree on India vs Portugal ownership, and identify co-run candidates.", hc: "4 workshops \xB7 8 hrs total" },
-      { n: "Division of Labour", mo: "Week 8", d: "Formal signed agreement on which processes stay in Portugal, which move in Wave 1, which move in Wave 2. No wave proceeds without this document.", hc: "Signed DOL document" },
-      { n: "GBS Council", mo: "Month 4+", d: "Joint GBS Leadership Council established. Co-chaired by India Head of GBS and Portugal GBS lead. Monthly cadence. Escalation authority over wave gating.", hc: "Monthly steering" },
-      { n: "Wave Gating", mo: "Ongoing", d: "Each transition wave is gated on Portugal GBS sign-off. No process moves to India without formal approval from the Portugal GBS lead and the Joint Council.", hc: "Per-wave sign-off" }
-    ];
+
 
     const LEGAL_ITEMS = [
       {
@@ -8174,6 +8165,23 @@ html{}
 }
 `;
 
+
+
+
+
+    const PORTUGAL_GBS = {
+      stance: "Portugal GBS is treated as a co-designer of the transition — not a recipient of a decision made elsewhere.",
+      cadence: ["Min. four 2-hr process-ownership workshops · Weeks 3–6", "Division of labour agreed by Week 8", "Joint GBS Leadership Council established · Month 4 onward", "Co-chaired by India Head of GBS + Portugal GBS lead"],
+      risk: "Portugal non-participation in ownership workshops delays Wave 1 by 6–8 weeks. Mitigated by gating each transition wave on Portugal GBS sign-off."
+    };
+
+    const PG_MILESTONES = [
+      { n: "Process Workshops", mo: "Weeks 3\u20136", d: "Minimum four 2-hour process-ownership workshops with Portugal GBS leadership. Map every in-scope process, agree on India vs Portugal ownership, and identify co-run candidates.", hc: "4 workshops \xB7 8 hrs total" },
+      { n: "Division of Labour", mo: "Week 8", d: "Formal signed agreement on which processes stay in Portugal, which move in Wave 1, which move in Wave 2. No wave proceeds without this document.", hc: "Signed DOL document" },
+      { n: "GBS Council", mo: "Month 4+", d: "Joint GBS Leadership Council established. Co-chaired by India Head of GBS and Portugal GBS lead. Monthly cadence. Escalation authority over wave gating.", hc: "Monthly steering" },
+      { n: "Wave Gating", mo: "Ongoing", d: "Each transition wave is gated on Portugal GBS sign-off. No process moves to India without formal approval from the Portugal GBS lead and the Joint Council.", hc: "Per-wave sign-off" }
+    ];
+
     function App() {
       const [sy, setSy] = useState(0);
       const [spct, setSpct] = useState(0);
@@ -8439,6 +8447,8 @@ html{}
       const cbDeltaMin = cbTotalCostMin - cbRecCostMin;
       const cbDeltaMax = cbTotalCostMax - cbRecCostMax;
       
+
+      
       const cbBlrPctTotal = 100 - cityAlloc;
       const cbBlendedAttr = ((cbHydFte * CB_HYD_ATTR + cbBlrFte * CB_BLR_ATTR) / CB_TOTAL).toFixed(1);
       const cbNicheFit = Math.min(100, Math.round(cbBlrPctTotal * 2.5)); // niche talent score, max at ~40% Bengaluru
@@ -8462,6 +8472,17 @@ html{}
         };
         return `${fmtSingle(min)}–${fmtSingle(max)}`;
       };
+      
+      // Backward-compatible single-value variables to prevent ReferenceErrors (defined after helpers to prevent TDZ ReferenceErrors)
+      const cbHydCost = (cbHydCostMin + cbHydCostMax) / 2;
+      const cbBlrCost = (cbBlrCostMin + cbBlrCostMax) / 2;
+      const cbTotalCost = cbHydCost + cbBlrCost;
+      const CB_HYD_COST = cbHydFte > 0 ? cbHydCost / cbHydFte : 32000;
+      const CB_BLR_COST = cbBlrFte > 0 ? cbBlrCost / cbBlrFte : 46000;
+      const cbRecCost = (cbRecCostMin + cbRecCostMax) / 2;
+      const cbDelta = cbTotalCost - cbRecCost;
+      const cbBlrPremium = cbHydFte > 0 && cbBlrFte > 0 ? Math.round(((cbBlrCost / cbBlrFte) / (cbHydCost / cbHydFte) - 1) * 100) : 50;
+      const cbFmt = cbFmtVal;
 
       // Synchronizer handlers
       const handleMainSliderChange = (newAlloc) => {
@@ -8535,7 +8556,7 @@ html{}
       const city = CITIES[activeCity];
       const bd = BOT[botPhase];
       const rLabels = ["Leadership", "Process", "Infra", "People", "Govern", "Commerc"];
-      const navItems = [["mandate", "The Mandate"], ["numbers", "By the Numbers"], ["deeptech", "Deep Roots"], ["blueprint", "Our Blueprint"], ["model", "Delivery Model"], ["moneymath", "Financial Model"], ["commercial", "Commercial & Tax"], ["commercialresp", "Commercial Detail"], ["panel", "Executive View"], ["deepdive", "Deep Dives"], ["aimult", "AI Architecture"], ["gcaas", "GCCaaS"], ["versus", "vs Alternatives"], ["cities", "City Selection"], ["citybalance", "City Mix"], ["talent", "Talent Strategy"], ["salarybands", "Salary Bands"], ["journey", "Execution Journey"], ["engine", "Talent Engine"], ["tower", "Control Tower"], ["transfer", "Transfer Readiness"], ["portugal", "Portugal GBS"], ["partnerdisclosure", "Partner Vetting"], ["vendorconsolidation", "Vendor Consolidation"], ["proof", "Proof Points"], ["trust", "Why Us"], ["legalcompliance", "Legal Framework"], ["why", "Why India. Why Now."], ["tough", "Hard Questions"], ["gbsmarket", "GBS"], ["itmarket", "IT"], ["rnd", "R&D / GR&D"], ["statemap", "State Map & Stats"]];
+      const navItems = [["mandate", "The Mandate"], ["numbers", "By the Numbers"], ["deeptech", "Deep Roots"], ["blueprint", "Our Blueprint"], ["model", "Delivery Model"], ["moneymath", "Financial Model"], ["commercial", "Commercial & Tax"], ["commercialresp", "Commercial Detail"], ["panel", "Executive View"], ["deepdive", "Deep Dives"], ["aimult", "AI Architecture"], ["gcaas", "GCCaaS"], ["versus", "vs Alternatives"], ["cities", "City Selection"], ["citybalance", "City Mix"], ["talent", "Talent Strategy"], ["salarybands", "Salary Bands"], ["journey", "Execution Journey"], ["engine", "Talent Engine"], ["tower", "Control Tower"], ["transfer", "Transfer Readiness"], ["partnerdisclosure", "Partner Vetting"], ["vendorconsolidation", "Vendor Consolidation"], ["proof", "Proof Points"], ["trust", "Why Us"], ["legalcompliance", "Legal Framework"], ["why", "Why India. Why Now."], ["tough", "Hard Questions"], ["gbsmarket", "GBS"], ["itmarket", "IT"], ["rnd", "R&D / GR&D"], ["statemap", "State Map & Stats"]];
       return /*#__PURE__*/React.createElement("div", {
         id: "app"
       }, /*#__PURE__*/React.createElement("div", {
@@ -8559,7 +8580,7 @@ html{}
         size: 16
       })), /*#__PURE__*/React.createElement("nav", {
         className: "mnav"
-      }, [["mandate", "Blueprint", ["mandate","blueprint"]], ["numbers", "Market", ["numbers","deeptech","gbsmarket","itmarket","rnd"]], ["model", "Model", ["model","gcaas","aimult"]], ["moneymath", "Cost", ["moneymath","commercial","commercialresp","versus"]], ["cities", "Cities", ["cities","statemap","citybalance"]], ["talent", "Build", ["talent","salarybands","engine","journey","tower","transfer","portugal"]], ["vendorconsolidation", "Trust", ["vendorconsolidation","partnerdisclosure","deepdive","proof","trust","legalcompliance","panel","why","tough"]]].map(([id, l, ids]) => /*#__PURE__*/React.createElement("a", {
+      }, [["mandate", "Blueprint", ["mandate","blueprint"]], ["numbers", "Market", ["numbers","deeptech","gbsmarket","itmarket","rnd"]], ["model", "Model", ["model","gcaas","aimult"]], ["moneymath", "Cost", ["moneymath","commercial","commercialresp","versus"]], ["cities", "Cities", ["cities","statemap","citybalance"]], ["talent", "Build", ["talent","salarybands","engine","journey","tower","transfer"]], ["vendorconsolidation", "Trust", ["vendorconsolidation","partnerdisclosure","deepdive","proof","trust","legalcompliance","panel","why","tough"]]].map(([id, l, ids]) => /*#__PURE__*/React.createElement("a", {
         key: id,
         className: ids.indexOf(sec) >= 0 ? "act" : "",
         onClick: () => scrollTo(id)
@@ -8865,14 +8886,58 @@ html{}
             )
           )
         ),
-        /* Portugal Bridge */
         /*#__PURE__*/React.createElement("div", {
-          className: "xs-exec-bridge rv",
-          ref: addRef
-        },
-          /*#__PURE__*/React.createElement("h4", { style: { marginBottom: '10px' } }, "The transition partner, not the recipient."),
-          /*#__PURE__*/React.createElement("p", null, "Portugal GBS is a co-designer of every transition wave. Here is the structured co-design plan, the gating protocol, and the risk mitigation framework.")
-        )
+          className: "pgStage rv",
+          ref: addRef,
+          style: { marginTop: '30px' }
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "pgStance"
+        }, /*#__PURE__*/React.createElement("strong", null, PORTUGAL_GBS.stance)), /*#__PURE__*/React.createElement("div", {
+          className: "pgTimeline"
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "pgTrack"
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "pgFill",
+          style: {
+            width: pgStep / (PG_MILESTONES.length - 1) * 100 + "%"
+          }
+        })), PG_MILESTONES.map((m, i) => /*#__PURE__*/React.createElement("button", {
+          key: i,
+          className: "pgDot" + (pgStep === i ? " act" : "") + (i <= pgStep ? " done" : ""),
+          onMouseEnter: () => setPgStep(i),
+          style: {
+            left: i / (PG_MILESTONES.length - 1) * 100 + "%"
+          }
+        }))), /*#__PURE__*/React.createElement("div", {
+          className: "pgLabels"
+        }, PG_MILESTONES.map((m, i) => /*#__PURE__*/React.createElement("button", {
+          key: i,
+          className: "pgLab" + (pgStep === i ? " act" : ""),
+          onMouseEnter: () => setPgStep(i)
+        }, m.n))), /*#__PURE__*/React.createElement("div", {
+          className: "pgDetail"
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "pgDetailL"
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "pgMo"
+        }, PG_MILESTONES[pgStep].mo), /*#__PURE__*/React.createElement("h3", null, PG_MILESTONES[pgStep].n), /*#__PURE__*/React.createElement("p", null, PG_MILESTONES[pgStep].d)), /*#__PURE__*/React.createElement("div", {
+          className: "pgDetailR"
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "pgHc"
+        }, PG_MILESTONES[pgStep].hc), /*#__PURE__*/React.createElement("div", {
+          className: "pgChecks"
+        }, PORTUGAL_GBS.cadence.map((line, i) => /*#__PURE__*/React.createElement("div", {
+          key: i,
+          className: "pgChk"
+        }, /*#__PURE__*/React.createElement("span", {
+          className: "pgChkIcon"
+        }, "\u2713"), line))))), /*#__PURE__*/React.createElement("div", {
+          className: "pgRisk"
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "pgRiskLbl"
+        }, "Risk \xB7 Mitigation"), /*#__PURE__*/React.createElement("div", {
+          className: "pgRiskBody"
+        }, PORTUGAL_GBS.risk)))
       )),
       /*#__PURE__*/React.createElement(ExtraSections, { setSecRef: setSecRef, addRef: addRef, scrollTo: scrollTo }),
 /*#__PURE__*/React.createElement(RndSection, { key: "rnd", addRef: addRef, setSecRef: setSecRef }),
@@ -10754,28 +10819,18 @@ html{}
               background: `linear-gradient(to right, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} 0%, ${cbMode === 'opt' ? 'var(--blue)' : cbMode === 'cau' ? 'var(--gold)' : 'var(--red)'} ${(blrGRD / 320) * 100}%, var(--bg3) ${(blrGRD / 320) * 100}%, var(--bg3) 100%)`
             }
           })
-        ),
-        /*#__PURE__*/React.createElement("div", {
-          style: {
-            fontSize: "10px",
-            color: "var(--red)",
-            marginTop: "6px",
-            fontWeight: "500",
-            fontFamily: "var(--M)",
-            textAlign: "right"
-          }
-        }, "* Bengaluru roles carry a 15% wage premium vs. Hyderabad")
+        )
       ), /*#__PURE__*/React.createElement("div", {
         className: "cbcost"
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cbct"
       }, "Annual cost"), /*#__PURE__*/React.createElement("div", {
         className: "cbcv"
-      }, cbFmt(cbBlrCost), /*#__PURE__*/React.createElement("em", null, "/yr"))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      }, cbFmtRange(cbBlrCostMin, cbBlrCostMax), /*#__PURE__*/React.createElement("em", null, "/yr"))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cbct"
       }, "Cost per FTE"), /*#__PURE__*/React.createElement("div", {
         className: "cbcv"
-      }, "$", (CB_BLR_COST / 1000).toFixed(0), "k", /*#__PURE__*/React.createElement("em", null, "/yr")))), /*#__PURE__*/React.createElement("div", {
+      }, cbFmtRange(CB_BLR_COST_MIN, CB_BLR_COST_MAX), /*#__PURE__*/React.createElement("em", null, "/yr")))), /*#__PURE__*/React.createElement("div", {
         className: "cbtags"
       }, ["Audio DSP", "Dolby", "IISc alumni", "39% of India GCCs", "Premium pool"].map(t => /*#__PURE__*/React.createElement("span", {
         key: t,
@@ -10842,15 +10897,15 @@ html{}
         className: "cbttll"
       }, "Total annual cost \xB7 at this mix"), /*#__PURE__*/React.createElement("div", {
         className: "cbttlv"
-      }, cbFmt(cbTotalCost), /*#__PURE__*/React.createElement("span", {
+      }, cbFmtRange(cbTotalCostMin, cbTotalCostMax), /*#__PURE__*/React.createElement("span", {
         className: "cbttlu"
       }, " / year")), /*#__PURE__*/React.createElement("div", {
         className: "cbdrow"
       }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cbdl"
       }, "vs recommended (60/40)"), /*#__PURE__*/React.createElement("div", {
-        className: `cbdv${cbDelta > 0 ? " up" : cbDelta < 0 ? " down" : ""}`
-      }, cbDelta > 0 ? "+" : "", cbFmt(Math.abs(cbDelta)), cbDelta !== 0 ? " /yr" : "")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+        className: `cbdv${cbDeltaMin > 0 ? " up" : cbDeltaMax < 0 ? " down" : ""}`
+      }, cbFmtDelta(cbDeltaMin, cbDeltaMax), cbDeltaMin !== 0 || cbDeltaMax !== 0 ? " /yr" : "")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cbdl"
       }, "Blended attrition risk"), /*#__PURE__*/React.createElement("div", {
         className: `cbdv${parseFloat(cbBlendedAttr) > 15 ? " up" : parseFloat(cbBlendedAttr) < 13 ? " down" : ""}`
@@ -10863,8 +10918,8 @@ html{}
       }, "%"))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cbdl"
       }, "3-year cost impact"), /*#__PURE__*/React.createElement("div", {
-        className: `cbdv${cbDelta > 0 ? " up" : cbDelta < 0 ? " down" : ""}`
-      }, cbDelta > 0 ? "+" : "", cbFmt(Math.abs(cbDelta * 3)))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+        className: `cbdv${cbDeltaMin > 0 ? " up" : cbDeltaMax < 0 ? " down" : ""}`
+      }, cbFmtDelta(cbDeltaMin * 3, cbDeltaMax * 3))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
         className: "cbdl"
       }, "Niche talent fit"), /*#__PURE__*/React.createElement("div", {
         className: `cbdv${cbNicheFit < 60 ? " up" : cbNicheFit > 85 ? " down" : ""}`
@@ -10899,7 +10954,7 @@ html{}
         className: "l"
       }, "vs US Baseline"), /*#__PURE__*/React.createElement("div", {
         className: "v good"
-      }, "save", " ", cbFmt(((320 * 67.5 + 160 * 40 + 320 * 82.5) * CB_HOURS_FACTOR) - cbTotalCost), "/yr"))))), /*#__PURE__*/React.createElement("div", {
+      }, "save", " ", cbFmtRange(108800000 - cbTotalCostMax, 108800000 - cbTotalCostMin), "/yr"))))), /*#__PURE__*/React.createElement("div", {
         style: {
           marginTop: 22,
           padding: "16px 22px",
@@ -11486,57 +11541,6 @@ html{}
       }, /*#__PURE__*/React.createElement("div", {
         className: "pnum"
       }, n), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h4", null, t), /*#__PURE__*/React.createElement("p", null, d)))))))),
-/*#__PURE__*/React.createElement("section", {
-        className: "sec alt",
-        id: "portugal",
-        ref: el => setSecRef("portugal", el)
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "wrap"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "shead rv",
-        ref: addRef
-      }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SectionIcon, { name: "portugal" }), /*#__PURE__*/React.createElement("div", {
-        className: "snum"
-      }, "22 / 31"), /*#__PURE__*/React.createElement("div", {
-        className: "skick"
-      }, "Portugal GBS \xB7 Co-design \xB7 not directive")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", {
-        className: "sh2"
-      }, "The transition partner, ", /*#__PURE__*/React.createElement("em", null, "not the recipient.")), /*#__PURE__*/React.createElement("p", {
-        className: "slede"
-      }, "Portugal GBS is a co-designer of every transition wave. Here is the structured co-design plan, the gating protocol, and the risk mitigation framework."))), /*#__PURE__*/React.createElement("div", {
-        className: "pgStage rv",
-        ref: addRef
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "pgStance"
-      }, /*#__PURE__*/React.createElement("strong", null, PORTUGAL_GBS.stance)), /*#__PURE__*/React.createElement("div", {
-        className: "pgTimeline"
-      }, /*#__PURE__*/React.createElement("div", { className: "pgTrack" }, /*#__PURE__*/React.createElement("div", {
-        className: "pgFill",
-        style: { width: (pgStep / (PG_MILESTONES.length - 1) * 100) + "%" }
-      })), PG_MILESTONES.map((m, i) => /*#__PURE__*/React.createElement("button", {
-        key: i,
-        className: "pgDot" + (pgStep === i ? " act" : "") + (i <= pgStep ? " done" : ""),
-        onMouseEnter: () => setPgStep(i),
-        style: { left: (i / (PG_MILESTONES.length - 1) * 100) + "%" }
-      }))), /*#__PURE__*/React.createElement("div", {
-        className: "pgLabels"
-      }, PG_MILESTONES.map((m, i) => /*#__PURE__*/React.createElement("button", {
-        key: i,
-        className: "pgLab" + (pgStep === i ? " act" : ""),
-        onMouseEnter: () => setPgStep(i)
-      }, m.n))), /*#__PURE__*/React.createElement("div", {
-        className: "pgDetail"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "pgDetailL"
-      }, /*#__PURE__*/React.createElement("div", { className: "pgMo" }, PG_MILESTONES[pgStep].mo), /*#__PURE__*/React.createElement("h3", null, PG_MILESTONES[pgStep].n), /*#__PURE__*/React.createElement("p", null, PG_MILESTONES[pgStep].d)), /*#__PURE__*/React.createElement("div", {
-        className: "pgDetailR"
-      }, /*#__PURE__*/React.createElement("div", { className: "pgHc" }, PG_MILESTONES[pgStep].hc), /*#__PURE__*/React.createElement("div", { className: "pgChecks" }, PORTUGAL_GBS.cadence.map((line, i) => /*#__PURE__*/React.createElement("div", {
-        key: i,
-        className: "pgChk"
-      }, /*#__PURE__*/React.createElement("span", { className: "pgChkIcon" }, "✓"), line))))), /*#__PURE__*/React.createElement("div", {
-        className: "pgRisk"
-      }, /*#__PURE__*/React.createElement("div", { className: "pgRiskLbl" }, "Risk \xB7 Mitigation"), /*#__PURE__*/React.createElement("div", { className: "pgRiskBody" }, PORTUGAL_GBS.risk))))),
-
 /*#__PURE__*/React.createElement("section", {
         className: "sec alt",
         id: "vendorconsolidation",
